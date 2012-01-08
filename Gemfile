@@ -6,7 +6,7 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'nifty-generators'
 gem 'jquery-rails', '>= 1.0.12'
-gem 'sqlite3'
+gem 'pg'
 
 # Use unicorn as the web server
 # gem 'unicorn'
