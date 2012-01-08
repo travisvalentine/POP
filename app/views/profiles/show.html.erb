@@ -1,9 +1,23 @@
 <%= div_for @profile do %>
 <div id="wrapper">
   <div id="content" class="clearfix">
-    <% @profile_problems.each do |problem| %>
-    <%= problem.body %>
-    <% end %>
+    <div id="profile">
+      <div id="profileInfo">
+        <h1><%= @profile.name %></h1>
+        <p class="mainInfo"><%= @profile.bio %></p>
+        <p class="mainInfo"><%= @profile.party_affiliation.to_s %><% if @profile.job_title? %>, &nbsp;<%= @profile.job_title %><% end %></p>
+        <p class="mainInfo"><%= link_to '@', "http://twitter.com/#{@profile.twitter}" %><%= link_to @profile.twitter, "http://twitter.com/#{@profile.twitter}" %></p>
+        <p class="mainInfo"></p>
+      </div>
+      <div id="editProfile">
+      
+      </div>
+      <div id="profileProblems">
+        <% @profile_problems.each do |problem| %>
+          <%= problem.body %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 <% end %>

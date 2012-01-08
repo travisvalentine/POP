@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.new
     @user.profile = Profile.new
     if logged_in?
-      redirect_to current_user.profile
+      redirect_to problems_path
     end
   end
 

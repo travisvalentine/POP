@@ -1,11 +1,15 @@
 <div id="wrapper">
   <div id="content">
     <div id="indexNewProblem">
-      <%= link_to "Add a New Problem", new_problem_path %>      
+      <%= link_to "Add a New Problem, #{current_user.profile.first_name}", new_problem_path %>
     </div>
+    <div id="problems">
     <% @problems.each do |problem| %>
-    <%= problem.body %>
-    <%= problem.solution.body %>
+      <div class="problem">
+        <%= problem.body %>
+        <%= problem.solution.body %>
+      </div>
     <% end %>
+    </div>
   </div>
 </div>

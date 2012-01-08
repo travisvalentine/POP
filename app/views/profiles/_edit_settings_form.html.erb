@@ -28,4 +28,7 @@
   <%= f.label :party_affiliation %>
   <%= f.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %>
 </div>
+<div id="button">
+  <%= submit_tag 'Save', :class => 'button grey' %>
+</div>
 <% end %>

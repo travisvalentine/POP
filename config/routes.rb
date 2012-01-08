@@ -2,6 +2,7 @@ POP::Application.routes.draw do
   root :to => "users#new"
   match "/logout" => "sessions#destroy", :as => "logout"
   match "/settings" => "settings#show", :as => 'settings'
+  match "/login" => "sessions#new", :as => "login"
 
   resources :settings
   resources :users

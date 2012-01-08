@@ -39,4 +39,13 @@ class ProfilesController < ApplicationController
     @profile = user.profile
     render :layout => "join_form"
   end
+
+  def update
+    @profile = user.profile
+    if @profile.update_attributes(params[:profile])
+      redirect_to profile_path, :notice => 'Updated user information successfully.'
+    else
+      render :edit
+    end
+  end
 end

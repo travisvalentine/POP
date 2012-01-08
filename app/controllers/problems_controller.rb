@@ -2,8 +2,8 @@ class ProblemsController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
   layout "application"
 
-  # GET /Problems
-  # GET /Problems.xml
+  # GET /problems
+  # GET /problems.xml
   def index
     @problems = Problem.all
     respond_to do |format|
@@ -12,8 +12,8 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # GET /Problems/1
-  # GET /Problems/1.xml
+  # GET /problems/1
+  # GET /problems/1.xml
   def show
     @problem = Problem.find(params[:id])
     respond_to do |format|
@@ -22,8 +22,8 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # GET /Problems/new
-  # GET /Problems/new.xml
+  # GET /problems/new
+  # GET /problems/new.xml
   def new
     @problem = Problem.new
     @problem.published_at = Time.now
@@ -35,15 +35,15 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # GET /Problems/1/edit
+  # GET /problems/1/edit
   def edit
-    @problem = current_user.Problems.find(params[:id])
+    @problem = current_user.problems.find(params[:id])
   end
 
-  # POST /Problems
-  # POST /Problems.xml
+  # POST /problems
+  # POST /problems.xml
   def create
-    @problem = current_user.Problems.new(params[:Problem])
+    @problem = current_user.problems.new(params[:Problem])
     @problem.published_at = Time.now
     respond_to do |format|
       if @problem.save
@@ -56,10 +56,10 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # PUT /Problems/1
-  # PUT /Problems/1.xml
+  # PUT /problems/1
+  # PUT /problems/1.xml
   def update
-    @problem = current_user.Problems.find(params[:id])
+    @problem = current_user.problems.find(params[:id])
 
     respond_to do |format|
       if @problem.update_attributes(params[:Problem])
@@ -72,14 +72,14 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # DELETE /Problems/1
-  # DELETE /Problems/1.xml
+  # DELETE /problems/1
+  # DELETE /problems/1.xml
   def destroy
-    @problem = current_user.Problems.find(params[:id])
+    @problem = current_user.problems.find(params[:id])
     @problem.destroy
 
     respond_to do |format|
-      format.html { redirect_to(Problems_url) }
+      format.html { redirect_to(problems_url) }
       format.xml  { head :ok }
     end
   end
