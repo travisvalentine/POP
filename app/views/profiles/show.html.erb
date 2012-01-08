@@ -6,7 +6,7 @@
         <h1><%= @profile.name %></h1>
         <p class="mainInfo"><%= @profile.bio %></p>
         <p class="mainInfo"><%= @profile.party_affiliation.to_s %><% if @profile.job_title? %>, &nbsp;<%= @profile.job_title %><% end %></p>
-        <p class="mainInfo"><%= link_to '@', "http://twitter.com/#{@profile.twitter}" %><%= link_to @profile.twitter, "http://twitter.com/#{@profile.twitter}" %></p>
+        <p class="mainInfo"><%= link_to '@', "http://twitter.com/#{@profile.twitter}", :target => "_blank" %><%= link_to @profile.twitter, "http://twitter.com/#{@profile.twitter}", :target => "_blank" %></p>
         <p class="mainInfo"></p>
       </div>
       <div id="editProfile">
