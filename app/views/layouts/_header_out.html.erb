@@ -1,0 +1,12 @@
+<div id="header">
+  <div id="logo"><a href="/">POP</a></div>
+  <div id="loginNav">
+    <ul>
+      <% if request.path == "/login" %>
+      <li><%= link_to "Sign Up", {:controller =>"users", :action => "new"}, {:id => 'login'} %></li>
+      <% else %>
+      <li><%= link_to "Log In", {:controller =>"sessions", :action => "new"}, {:id => 'login'} %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

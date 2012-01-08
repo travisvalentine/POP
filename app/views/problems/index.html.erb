@@ -1,0 +1,11 @@
+<div id="wrapper">
+  <div id="content">
+    <div id="indexNewProblem">
+      <%= link_to "Add a New Problem", new_problem_path %>      
+    </div>
+    <% @problems.each do |problem| %>
+    <%= problem.body %>
+    <%= problem.solution.body %>
+    <% end %>
+  </div>
+</div>

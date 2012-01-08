@@ -1,0 +1,31 @@
+<%= form_for(@profile) do |f| %>
+<div>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>  
+</div>
+<div>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name  %>  
+</div>
+<div>
+  <%= f.label :birthday %>
+  <%= f.date_select :birthday,
+      {:start_year => Time.now.year,
+        :end_year => Time.now.year - 115,
+        :order => [:month, :day, :year],
+        :prompt => {:month => 'Month', :day => 'Day', :year => 'Year'}}
+  %>
+</div>
+<div>
+  <%= f.label :twitter %>
+  <%= f.text_field :twitter %>
+</div>
+<div>
+  <%= f.label :job_title %>
+  <%= f.text_field :job_title %>
+</div>
+<div>
+  <%= f.label :party_affiliation %>
+  <%= f.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %>
+</div>
+<% end %>

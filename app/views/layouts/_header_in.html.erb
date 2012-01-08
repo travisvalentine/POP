@@ -1,0 +1,19 @@
+<div id="header">
+  <div id="logo"><a href="/">POP</a></div>
+  <div id="findNav">
+    <ul>
+      <li><%= link_to 'Issues', issues_path %></li>
+      <li><%= link_to 'Problems', problems_path %></li>
+    </ul>
+  </div><!-- end find -->
+  <div id="usernav">
+    <ul>
+      <li id="userParent"><%= link_to current_user.profile.name, current_user.profile %>
+        <ul id="userChildren">
+          <li><%= link_to 'Settings', settings_path %></li>
+          <li><%= link_to 'Log Out', logout_path %></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- end usernav -->
+</div><!-- end innerheader -->

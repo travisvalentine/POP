@@ -1,0 +1,9 @@
+<%= div_for @profile do %>
+<div id="wrapper">
+  <div id="content" class="clearfix">
+    <% @profile_problems.each do |problem| %>
+    <%= problem.body %>
+    <% end %>
+  </div>
+</div>
+<% end %>

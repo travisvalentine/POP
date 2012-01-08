@@ -1,0 +1,45 @@
+<% content_for :head do %>
+  <script type="text/javascript">
+    // replaceWith homepage
+    $(function(){
+      $("a#startSlide").click(function(){
+        $('div#leftText').replaceWith($('div#slide'));
+        $('#slides').css('visibility', 'visible');
+        return false;
+      });
+    });
+    // Focus goal on click
+    $(function(){
+      $("span#wanttobe").click(function(){
+        $("span#wanttobe input").focus();
+        $(this).addClass("focused");
+      });
+    });
+    // Focus goal on tab
+    $(function(){
+      $("span#wanttobe").focusin(function(){
+        $("span#wanttobe input").focus();
+        $(this).addClass("focused");
+      });
+    });
+    // Focus out
+    $(function(){
+      $("span#wanttobe").focusout(function(){
+        $(this).removeClass("focused");
+      });
+    });
+  </script>
+<% end %>
+<div id="wrapper">
+  <div id="home">
+    <div id="welcomeHead">
+      <h1 class="old">Pissed off? Be a part of the solution.</h1>
+    </div>
+    <div id="homeForm">
+    <%= render 'new_user_form' %>
+    </div>
+    <div id="welcomeDisclaimer">
+      <h1 class="old">JOIN, or be QUIET.</h1>
+    </div>
+  </div><!-- end home -->
+</div><!-- end wrapper -->

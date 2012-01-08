@@ -1,0 +1,43 @@
+<%= form_for(@user, :html => {:multipart => true}) do |f| %>
+  <% if @user.errors.any? %>
+  <div id="errorRight">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <%= f.fields_for :profile do |profile| %>
+  <div class="inputContainer">
+    <%= profile.text_field :first_name, :size => 18, :placeholder => "First name" %>&nbsp;
+    <%= profile.text_field :last_name, :size => 18, :placeholder => "Last name" %>
+  </div>
+  <% end %>
+  <div class="inputContainer">
+    <%= f.text_field :email, :size => 42, :placeholder => "Enter your email" %>
+    <%= f.password_field :password, :size => 42, :placeholder => "Password" %>
+  </div>
+  <%= f.fields_for :profile do |profile| %>
+  <div class="inputContainer">
+    <%= profile.text_field :bio, :size => 42, :placeholder => "Give a short bio about yourself if you'd like" %>
+  </div>
+  <div class="inputContainer">
+    <p>What's your Birthday?</p>
+    <%= profile.date_select :birthday,
+      {:start_year => Time.now.year,
+        :end_year => Time.now.year - 115,
+        :order => [:month, :day, :year],
+        :prompt => {:month => 'Month', :day => 'Day', :year => 'Year'}}
+    %>
+  </div>
+  <div class="inputContainer">
+    <p>What's your Party affiliation?</p>
+    <%= profile.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %>
+  </div>
+  <% end %>
+  <div id ="button">
+    <%= submit_tag 'Join', :class => 'button grey' %>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<%= form_for(@problem) do |f| %>
+  <%= f.hidden_field :published_at, :value => Time.now %>
+  <% if @problem.errors.any? %>
+  <div id="errorExplanation">
+    <p>Halt! Just so you know, you have to fix these <%= pluralize(@problem.errors.count, "error") %> before you can ask a question:</p>
+    <ul>
+    <% @problem.errors.full_messages.each do |msg| %>
+      <li>-&nbsp;<%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <%= f.text_field :body %>
+  <%= form_for(@solution) do |f| %>
+    <%= f.hidden_field :published_at, :value => Time.now %>
+    <% if @solution.errors.any? %>
+      <div id="errorExplanation">
+        <p>Halt! Just so you know, you have to fix these <%= pluralize(@solution.errors.count, "error") %> before you can ask a question:</p>
+        <ul>
+          <% @solution.errors.full_messages.each do |msg| %>
+            <li>-&nbsp;<%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.text_field :body %>
+  <% end %>
+<% end %>

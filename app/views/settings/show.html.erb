@@ -1,0 +1,27 @@
+<%= div_for @user do %>
+<div id="wrapper">
+  <div id="content" class="clearfix">
+    <div class="infoBlock">
+      <div id="mainSettingsInfo">
+        <div id="settingsHeader">
+          <h3><%= @user.profile.name %></h3>
+        </div>
+        <div id="settingsInfo">
+          <p class="maininfo">Email:&nbsp;<%= @user.email %></p>
+        </div>
+        <div id="settingsDelete">
+          <p class="delete"><%= link_to 'Delete Account', @user, :method => :delete, :confirm => 'Are you sure?' %></p>
+        </div>
+      </div>
+    </div>
+    <div id="settings">
+      <div>
+        <ul>
+          <li>Profile Info</li>
+        </ul>
+      </div>
+      <%= render :partial => 'profiles/edit_settings_form' %>
+    </div>
+  </div><!-- end content -->
+</div><!-- end wrapper -->
+<% end %>
