@@ -37,7 +37,7 @@ POP::Application.configure do
     :authentication       => "plain",
     :enable_starttls_auto => true
   }
-
+  
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
   # like if you have constraints or database-specific column types
