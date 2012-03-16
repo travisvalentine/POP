@@ -37,16 +37,16 @@ POP::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
-  # GMail settings
-  ActionMailer::Base.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => "localhost:3000",
-    :user_name            => "hungryopensource",
-    :password             => "hungryacademy",
-    :authentication       => "plain",
-    :enable_starttls_auto => true
-  }
+  # # GMail settings
+  # ActionMailer::Base.smtp_settings = {
+  #   :address              => "smtp.gmail.com",
+  #   :port                 => 587,
+  #   :domain               => "popopen.herokuapp.com",
+  #   :user_name            => "hungryopensource",
+  #   :password             => "hungryacademy",
+  #   :authentication       => "plain",
+  #   :enable_starttls_auto => true
+  # }
 
   # Enable threaded mode
   # config.threadsafe!
