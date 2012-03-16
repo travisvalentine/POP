@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
+      UserMailer.registration_confirmation(@user).deliver
       redirect_to new_problem_path, :notice => 'User successfully added.'
     else
       render :action => 'new'

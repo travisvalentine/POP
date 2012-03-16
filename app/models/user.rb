@@ -46,6 +46,19 @@ class User < ActiveRecord::Base
     end while User.exists?(column => self[column])
   end
 
+  def legal?
+    self.age >= 13
+  end
+
+  def age
+    now = Date.today
+    now.year - self.profile.birthday.year - (self.profile.birthday.to_date.change(:year => now.year) > now ? 1 : 0)
+  end
+
+  def name
+    "#{self.profile.first_name} #{self.profile.last_name}"
+  end
+
   protected
     def encrypt_new_password
       return if password.blank?
@@ -58,15 +71,6 @@ class User < ActiveRecord::Base
 
     def encrypt(string)
       Digest::SHA1.hexdigest(string)
-    end
-
-    def legal
-      self.age >= "13"
-    end
-
-    def age
-      now = Time.now.utc.to_date
-      now.year - birthday.year - (birthday.to_date.change(:year => now.year) > now ? 1 : 0)
     end
 
   scope :profiles, lambda {

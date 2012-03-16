@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120107044247) do
+ActiveRecord::Schema.define(:version => 20120316180941) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(:version => 20120107044247) do
     t.string   "hashed_password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end
