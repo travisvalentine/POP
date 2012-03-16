@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
   #
   def password_reset(user)
     @user = user
-    mail(:to => "#{user.email}", :subject => "Resetting your password")
+    mail(:to => "#{user.email}", :subject => "Check yourself and reset yourself")
   end
   def registration_confirmation(user)
     @user = user
