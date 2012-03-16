@@ -633,6 +633,7 @@ p.label {
 
 #loginHeader {
     padding:0px 0px 15px;
+    clear:both;
 }
 
 #loginHeader h3 {

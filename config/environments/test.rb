@@ -25,6 +25,19 @@ POP::Application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
+  config.action_mailer.default_url_options = {:host => "localhost:3000"}
+
+  # GMail settings
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "localhost:3000",
+    :user_name            => "hungryopensource",
+    :password             => "hungryacademy",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
+
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
   # like if you have constraints or database-specific column types
