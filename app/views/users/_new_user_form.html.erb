@@ -11,7 +11,7 @@
   <% end %>
   <%= f.fields_for :profile do |profile| %>
   <div class="inputContainer">
-    <%= profile.text_field :first_name, :size => 18, :placeholder => "First name" %>&nbsp;
+    <%= profile.text_field :first_name, :size => 17, :placeholder => "First name" %>&nbsp;
     <%= profile.text_field :last_name, :size => 18, :placeholder => "Last name" %>
   </div>
   <% end %>
@@ -34,10 +34,10 @@
   </div>
   <div class="inputContainer">
     <p>What's your Party affiliation?</p>
-    <%= profile.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %>
+    <%= profile.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %> <!-- where do you stand?  -->
   </div>
   <% end %>
   <div id ="button">
-    <%= submit_tag 'Join', :class => 'button grey' %>
+    <%= submit_tag 'JOIN, or BE QUIET', :class => 'button grey' %>
   </div>
 <% end %>
