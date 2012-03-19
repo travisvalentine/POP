@@ -8,15 +8,15 @@
       </div>
     <% end %>
       <div id="loginHeader">
-        <h3>Welcome Back</h3>
+        <h3>Welcome back. Log in.</h3>
       </div>
       <div class="loginSection">
         <p class="label"><label for="email">Email:</label></p>
-        <p><%= text_field_tag :email, nil, :autofocus => true, :autocomplete => 'off' %></p>
+        <p><%= text_field_tag :email, nil, :autofocus => true, :autocomplete => 'off', :size => 42 %></p>
       </div>
       <div class="loginSection">
         <p class="label"><label for="password">Password:</label></p>
-        <p><%= password_field_tag :password, nil, :autocomplete => 'off' %></p>
+        <p><%= password_field_tag :password, nil, :autocomplete => 'off', :size => 42 %></p>
       </div>
       <div id="loginButton"><%= submit_tag 'Log In', :class => 'button grey' %></div>
       <div id="forget"><p><%= link_to "Forgot password?", new_password_reset_path %></p></div>

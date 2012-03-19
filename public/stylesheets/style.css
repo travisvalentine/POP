@@ -629,7 +629,6 @@ p.label {
     -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.60);
     -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.60);
     box-shadow: inset 0 1px 2px rgba(0,0,0,.60);
-    width:400px;
 }
 
 #loginHeader {
@@ -647,6 +646,11 @@ p.label {
 
 .loginSection {
     float:left;
+    width:inherit;
+}
+
+#loginContainer form p input { 
+    width:440px;
 }
 
 #loginButton {
@@ -655,7 +659,7 @@ p.label {
 }
 
 #loginButton input {
-    width: 100px !important;
+    width: auto !important;
 }
 
 #forget {
