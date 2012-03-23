@@ -27,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  background-color: #E2F0E0;
 }
 
 @font-face {
@@ -80,6 +81,7 @@ body {
   left: 0;
   position: relative;
   padding: 0;
+  margin: 0;
 }
 
 #header, #footer {
@@ -127,6 +129,13 @@ a {
   text-decoration: none;
   outline: none;
 }
+
+/*-----------------ERROR--------------------*/
+
+#errorExplanation { background-color:black; padding: 5px;}
+#errorExplanation p { font-size: 12pt;}
+#errorExplanation ul li { font-size: 10pt;}
+#errorExplanation p, #errorExplanation li { color: white;}
 
 /*-------------HOME-HEADER------------------*/
 
@@ -427,7 +436,6 @@ ul#userChildren li:last-child a:hover {
 }
 
 #homeForm p {
-    font-size:8pt;
     margin:4px 2px;
     font-weight:600;
 }
@@ -597,6 +605,7 @@ li#button input {
     -moz-border-radius:12px 12px;
     width:500px;
     border:0px;
+    background-image: -webkit-radial-gradient(center center, 800px 800px, white, white);
 }
 
 #loginContainer form {
@@ -622,7 +631,7 @@ p.label {
     font-size: 13pt;
     font-family:"Essays1743", Helvetica;
     padding: 6px 4px;
-    border: 0px solid #E5ECFF;
+    border: 2px solid #fff;
     border-radius: 3px 3px;
     -moz-border-radius: 3px 3px;
     -webkit-border-radius: 3px 3px;
@@ -632,7 +641,7 @@ p.label {
 }
 
 #loginHeader {
-    padding:0px 65px 15px;
+    padding:0px 0px 15px;
 }
 
 #loginHeader h3 {
@@ -669,11 +678,15 @@ p.label {
 
 /*------------PROBLEM-----------------*/
 
-#indexNewProblem {
-    margin:25px 0px 5px;
-}
+#problemDetails { padding-top:10px;}
 
-#indexNewProblem a {
+#problemDetails h1 { padding: 5px 0; }
+
+#problemHead h1 { display: inline-block; }
+
+#problemHead { padding: 30px 0; }
+
+#problemHead a#indexNewProblem {
     padding:.7em 2em;
     background-color:#ccc;
     color:#000;
@@ -682,10 +695,12 @@ p.label {
     border-radius: 10px;
 }
 
-#indexNewProblem a:active {
+#problemHead a#indexNewProblem:active {
     color:#FFF;
     background-color:#333333;
 }
+
+.problem { padding: 10px 0;}
 
 /*---------------STORY----------------*/
 
@@ -726,92 +741,6 @@ textarea#story:focus{
   padding: 0px;
 }
 
-#contentLeft, #contentRight {
-  position: relative;
-  display: block;
-  margin:0 auto;
-}
-
-#contentLeft, #contentRight {
-  width:400px;
-}
-
-#contentLeft, #contentMiddle {
-  margin:0 30px 0 0;
-}
-
-#contentMiddle {
-  width:35px;
-  float:left;
-}
-
-#contentMiddle li {
-  padding:1em 0;
-}
-
-#contentLeft {
-  float:left;
-}
-
-#contentRight {
-  float:left;
-}
-
-#profile #left {
-  width: 24%;
-  float: left;
-  display: block;
-  padding: 30px 10px 0px;
-  height:auto;
-}
-
-.frame, .frame_LoggedOut {
-  background: url("images/frame.png") no-repeat;
-  height:270px;
-  width:200px;
-  margin-bottom:5px;
-}
-
-.frame_LoggedOut {
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-}
-
-.frame_LoggedOut:hover {
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-}
-
-.frame:hover {
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-}
-
-.frame .userphoto img, .frame_LoggedOut .userphoto img  {
-  height:220px;
-  width:153px;
-  position:relative;
-  top: 25px;
-  left:22px;
-}
-
-#superlatives, #activitiesawards {
-  width: auto;
-  display: block;
-  text-align: left;
-  min-height:20px;
-  padding:.4em;
-  margin-bottom:5px;
-/*  border:1px solid gray;
-    border-radius: 10px;
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;*/
-}
-
-#activitiesawards div, #superlatives div {
-  padding:5px;
-}
-
 #profile input {
   font-size:9pt;
   padding:0.3em;
@@ -827,145 +756,6 @@ textarea#story:focus{
   font-size:11pt;
 }
 
-.questions {
-  position:relative;
-}
-
-.questionContainer ul, .questionContainer_LoggedOut ul, .settingHeader ul {
-  padding:.5em;
-}
-
-.questionContainer li, .questionContainer_LoggedOut li {
-  padding:2px 10px;
-}
-
-ul#questionee {
-  margin:0 1em .5em 1em;
-  width:200px;
-}
-
-.questions li a, .questionsLoggedOut li a {
-  font-size:9pt;
-}
-
-.questions li a:hover, .questionsLoggedOut li a:hover {
-  text-decoration:underline;
-}
-
-.questionContainer, .questionContainer_LoggedOut {
-  position:relative;
-  height:30px;
-  background-color:#7FFFD4;
-}
-
-.question-list, .public_question-list {
-  position:relative;
-  margin:0;
-  padding:.5px;
-}
-
-.question-list div, .public_question-list div {
-  min-height:50px;
-  width:100%;
-  padding:.5px;
-  border-bottom:1px solid gray;
-}
-
-.questionContainer ul#questions, .questionContainer_LoggedOut ul#questions_LoggedOut {
-  float:left;
-}
-
-.questionContainer ul#settingsLinks {
-  float:right;
-}
-
-.questionContainer ul#questionee {
-  margin:0;
-  float:right;
-}
-
-.questionContainer li a, .questionContainer_LoggedOut li a {
-  font-size:10.5pt;
-}
-
-.questionContainer div, .questionContainer_LoggedOut div {
-  height:70px;
-}
-
-.questionContainer li:hover, .questionContainer_LoggedOut li:hover {
-  text-decoration:underline;
-}
-
-p.question {
-  opacity:.5;
-  margin:0.3em 0.8em;
-  text-align:justify;
-}
-
-li .heading {
-  padding-right:15px;
-  opacity: 0.45;
-  vertical-align: top;
-}
-
-#profile #right .profileMain {
-  width: 625px;
-  float: left;
-  display: block;
-  text-align: left;
-  margin-bottom:15px;
-  min-height:155px;
-}
-
-#profile #right .questions {
-  width: 575px;
-  float: left;
-  display: block;
-  text-align: left;
-  margin:0 0 15px 15px;
-  min-height:55px;
-  border:1px solid gray;
-    border-radius:6px;
-    -moz-border-radius:6px;
-    -webkit-border-radius:6px;
-}
-
-#profile #right h3, h4, a {
-  display:inline;
-}
-
-#right want {
-  display:none;
-}
-
-.profileMain ul li, .questionContainer ul li {
-  display:inline;
-}
-
-.profileMain ul {
-  padding:8px;
-}
-
-.profileMain li {
-  padding:10px 5px;
-}
-
-#right a:hover want {
-  display:inherit;
-  opacity: 0.45;
-  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; /*IE 8 hack*/
-  filter: alpha(opacity=40); /*IE 5-7 hack*/
-}
-
-/*
-#right a.white:hover {
-  background: #f47c20;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
-  background: -moz-linear-gradient(top,  #f88e11,  #f06015);
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
-}
-*/
-
 #right form {
   padding-left:40px;
 }
@@ -979,6 +769,41 @@ a.newfield {
   font-weight:normal;
 }
 
+#profileInfo {
+    padding:15px 0px 10px;
+}
+
+#editProfile {
+    padding:10px 0px 85px;
+}
+
+#editProfile form div {
+    padding:3px 0px;
+}
+
+#editProfile form div label {
+    font-size:11pt;
+    cursor:pointer;
+}
+
+#profileInfo h2 {
+    padding:10px 0px;
+}
+
+p.maininfo {
+    font-size:10pt;
+    padding:15px 0 1px;
+}
+
+p.delete a {
+    font-size:8pt;
+}
+
+p.delete {
+    padding:0px;
+}
+
+div.profileProblem { padding: 10px 0;}
 
 /*----------------FIND------------------*/
 
@@ -1496,40 +1321,6 @@ form#questionheadSearch {
 
 #settings div {
     position:relative;
-}
-
-#profileInfo {
-    padding:15px 0px 10px;
-}
-
-#editProfile {
-    padding:10px 0px 85px;
-}
-
-#editProfile form div {
-    padding:3px 0px;
-}
-
-#editProfile form div label {
-    font-size:11pt;
-    cursor:pointer;
-}
-
-#profileInfo h2 {
-    padding:10px 0px;
-}
-
-p.maininfo {
-    font-size:10pt;
-    padding:15px 0 1px;
-}
-
-p.delete a {
-    font-size:8pt;
-}
-
-p.delete {
-    padding:0px;
 }
 
 .headerContainer {

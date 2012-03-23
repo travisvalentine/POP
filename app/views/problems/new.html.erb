@@ -1,34 +1,4 @@
 <% content_for :head do %>
-  <script type="text/javascript">
-    // replaceWith homepage
-    $(function(){
-      $("a#startSlide").click(function(){
-        $('div#leftText').replaceWith($('div#slide'));
-        $('#slides').css('visibility', 'visible');
-        return false;
-      });
-    });
-    // Focus goal on click
-    $(function(){
-      $("span#wanttobe").click(function(){
-        $("span#wanttobe input").focus();
-        $(this).addClass("focused");
-      });
-    });
-    // Focus goal on tab
-    $(function(){
-      $("span#wanttobe").focusin(function(){
-        $("span#wanttobe input").focus();
-        $(this).addClass("focused");
-      });
-    });
-    // Focus out
-    $(function(){
-      $("span#wanttobe").focusout(function(){
-        $(this).removeClass("focused");
-      });
-    });
-  </script>
 <% end %>
 <div id="wrapper">
   <div id="content">
@@ -37,7 +7,7 @@
       <p>*Here at POP, every problem must come with a solution. We want to keep things productive!</p>
     </div>
     <div id="homeForm">
-    <%= render :partial => 'problems/new_problem_form' %>
+    <%= render :partial => 'problems/form' %>
     </div>
   </div><!-- end content -->
 </div><!-- end wrapper -->

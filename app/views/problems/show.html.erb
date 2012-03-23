@@ -1,6 +1,8 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
-
-<%= "show.html" %>
+<div id="wrapper">
+  <div id="content">
+    <div id="problemDetails">
+      <h1><%= @problem.body %></h1>
+      <h2><%= link_to @problem.user.profile.name, @problem.user.profile %></h2>
+    </div>
+  </div>
+</div>

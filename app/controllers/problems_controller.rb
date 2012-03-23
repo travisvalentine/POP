@@ -27,8 +27,6 @@ class ProblemsController < ApplicationController
   def new
     @problem = Problem.new
     @problem.published_at = Time.now
-    @solution = Solution.new
-    @solution.published_at = Time.now
     respond_to do |format|
       format.html { }
       format.xml  { render :xml => @problem }
