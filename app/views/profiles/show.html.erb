@@ -13,8 +13,11 @@
       
       </div>
       <div id="profileProblems">
+        <h1>Things <%= @profile.first_name %> cares about.</h1>
         <% @profile_problems.each do |problem| %>
-          <%= problem.body %>
+        <div class="profileProblem">
+          <p><%= link_to problem.body, problem %></p>
+        </div>
         <% end %>
       </div>
     </div>
