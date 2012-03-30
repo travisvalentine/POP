@@ -10,7 +10,10 @@
     </ul>
   </div>
   <% end %>
-  <%= f.text_field :body %>
+  <%= f.text_field :body, :placeholder => "What's your problem?" %>
+  <%#= f.fields_for :solutions do |solution| %>
+  <%= render :partial => "solutions/new_problem_solution_form" %>
+  <%# end %>
   <div id="button">
   <%= f.submit 'Add', :class => 'button' %>
   </div>
