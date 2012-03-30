@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   has_many :problems, :order => 'published_at DESC, title ASC',
                       :dependent => :nullify
-  has_many :solutions, :through => :questions, :source => :comments
+  has_many :solutions, :through => :problems, :source => :comments
 
   has_many :factchecks
   has_many :comments

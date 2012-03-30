@@ -1,2 +1,4 @@
-<%= solution.hidden_field :published_at, :value => Time.now %>
-<%= solution.text_field :body, :placeholder => "What solution do you propose?" %>
+<%= fields_for :solutions do |solution| %>
+  <%= solution.hidden_field :published_at, :value => Time.now %>
+  <%= solution.text_field :body, :placeholder => "What solution do you propose?" %>
+<% end %>
