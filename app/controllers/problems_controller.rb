@@ -2,28 +2,7 @@ class ProblemsController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
   layout "application"
 
-  # GET /problems
-  # GET /problems.xml
-  def index
-    @problems = Problem.all
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @problems }
-    end
-  end
-
-  # GET /problems/1
-  # GET /problems/1.xml
-  def show
-    @problem = Problem.find(params[:id])
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @problem }
-    end
-  end
-
-  # GET /problems/new
-  # GET /problems/new.xml
+  # GET
   def new
     @problem = Problem.new
     @solution = @problem.solutions.new
@@ -33,16 +12,9 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # GET /problems/1/edit
-  def edit
-    @problem = current_user.problems.find(params[:id])
-  end
-
-  # POST /problems
-  # POST /problems.xml
+  # POST
   def create
     @problem = current_user.problems.new(params[:problem])
-    @problem.published_at = Time.now
     respond_to do |format|
       if @problem.save
         format.html { redirect_to(@problem, :notice => 'Problem was successfully created.') }
@@ -52,6 +24,30 @@ class ProblemsController < ApplicationController
         format.xml  { render :xml => @problem.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  # GET
+  def index
+    @problems = Problem.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @problems }
+    end
+  end
+
+  # GET
+  def show
+    @problem = Problem.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @problem }
+    end
+  end
+
+
+  # GET
+  def edit
+    @problem = current_user.problems.find(params[:id])
   end
 
   # PUT /problems/1
@@ -70,8 +66,7 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # DELETE /problems/1
-  # DELETE /problems/1.xml
+  # DELETE
   def destroy
     @problem = current_user.problems.find(params[:id])
     @problem.destroy

@@ -3,8 +3,13 @@ class SolutionsController < ApplicationController
   before_filter :load_problem, :except => :destroy
   before_filter :authenticate, :only => :destroy
 
+  def new
+    @solution = Solution.new(params[:solution])
+  end
+
   def create
-    solution = @problem.solutions.new(params[:solution].merge(:user_id => current_user.id))
+    @solution = Solution.new(params[:solution])
+    #solution = @problem.solutions.new(params[:solution].merge(:user_id => current_user.id))
     if solution.save
       redirect_to @problem, :notice => 'Thanks for your solution'
     else
