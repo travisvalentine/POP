@@ -26,7 +26,7 @@ class ProblemsController < ApplicationController
   # GET /problems/new.xml
   def new
     @problem = Problem.new
-    @problem.published_at = Time.now
+    @problem.solutions = @problem.solutions.new
     respond_to do |format|
       format.html { }
       format.xml  { render :xml => @problem }
@@ -41,7 +41,7 @@ class ProblemsController < ApplicationController
   # POST /problems
   # POST /problems.xml
   def create
-    @problem = current_user.problems.new(params[:Problem])
+    @problem = current_user.problems.new(params[:problem])
     @problem.published_at = Time.now
     respond_to do |format|
       if @problem.save
