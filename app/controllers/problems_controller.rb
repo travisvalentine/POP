@@ -26,7 +26,7 @@ class ProblemsController < ApplicationController
   # GET /problems/new.xml
   def new
     @problem = Problem.new
-    @problem.solutions = @problem.solutions.new
+    @solution = @problem.solutions.new
     respond_to do |format|
       format.html { }
       format.xml  { render :xml => @problem }
