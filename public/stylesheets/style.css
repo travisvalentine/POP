@@ -27,7 +27,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
-  background-color: #E2F0E0;
+  background-color: rgb(227, 242, 231);
+   background: -webkit-gradient(linear, left, top, left bottom, from(rgb(227,242,231)), to(rgb(227, 242, 231))) ;
 }
 
 @font-face {
@@ -42,7 +43,7 @@ body {
 }
 
 h1.old {
-    font-family:"Essays1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+    font-family:"Essays1743", Helvetica, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
     font-size:40pt;
 }
 
@@ -65,7 +66,7 @@ table {
 
 body {
   margin: 0px;
-  font-family:sans-serif;
+  font-family:Helvetica, sans-serif;
 }
 
 .clearfix:after {
@@ -81,18 +82,20 @@ body {
   left: 0;
   position: relative;
   padding: 0;
-  margin: 0;
+  background-color: rgb(227, 242, 231);
 }
 
 #header, #footer {
   width:100%;
+  background-color: rgb(227, 242, 231));
 }
 
 #home {
   position: relative;
   width: 950px;
-  min-height: 425px;
+  min-height: 460px;
   margin:auto;
+  background-color: rgb(227, 242, 231);
 }
 
 #content {
@@ -100,6 +103,7 @@ body {
   width: 950px;
   min-height: 425px;
   margin:auto;
+  background-color: rgb(227, 242, 231);
 }
 
 h1 {
@@ -130,43 +134,37 @@ a {
   outline: none;
 }
 
-/*-----------------ERROR--------------------*/
-
-#errorExplanation { background-color:black; padding: 5px;}
-#errorExplanation p { font-size: 12pt;}
-#errorExplanation ul li { font-size: 10pt;}
-#errorExplanation p, #errorExplanation li { color: white;}
-
 /*-------------HOME-HEADER------------------*/
 
 #header, #innerheader {
   position: relative;
   display: block;
   border-bottom: solid;
-  border-width: 1px;
-  border-color:#fff;
-  height: 68px;
-  background-color: 119, 223, 244;
+  border-width: 2.25px;
+  border-color: rgb(78, 93, 89);
+  height: 75px;
+  overflow: visible;
+  background-color: rgb(227, 242, 231);
 }
 
 #logo {
-  top: 5px;
+  top: 20px;
   position: absolute;
-  overflow:hidden; /* donít let content leak beyond the header - not needed as height of anchor will cover whole header */
+  overflow: hidden; /* donít let content leak beyond the header - not needed as height of anchor will cover whole header */
   padding: 0;
   width: 275px;
-  height: 64px;
+  height: 50px;
   left:20px;
 }
 
 #logo a {
-  padding-top: 64px;
+/*  padding-top: 100px;*/
   /*background-image: url("images/logo.png");*/
-        background-color:white; /*white background for now until logo designed*/
+  background-color:white; /*white background for now until logo designed*/
 }
 
 #logo a {
-  position: absolute; /* defaults to top:0,left:0 and so these can be left out */ height: 0; /* hiding text, prevent it peaking out */width: 275px; /* 686px; fill the parent element */
+  position: absolute; /* defaults to top:0,left:0 and so these can be left out */ height: 50px; /* hiding text, prevent it peaking out */width: 275px; /* 686px; fill the parent element */
   background-position: left top;
   background-repeat: no-repeat;
 }
@@ -283,6 +281,7 @@ a {
   position:absolute;
   right:60px;
   top:15px;
+
 }
 
 #usernav ul {
@@ -340,11 +339,11 @@ a {
 }
 
 #usernav li {
-    background-color:#F2F2F2;
+    background-color:#E2F0E0;
 }
 
 #userChildren li:hover {
-    background-color:#CCC;
+    background-color:#E2F0E0;
 }
 
 #userChildren li:hover a {
@@ -436,17 +435,19 @@ ul#userChildren li:last-child a:hover {
 }
 
 #homeForm p {
+    font-size:8pt;
     margin:4px 2px;
     font-weight:600;
 }
 
 #homeForm div#button input {
-    width:600px !important;
-    margin:0 0 0 -100px;
+    width:345px !important;
+    height:50px;
+    margin:10px 0 0 -2px;
 }
 
 li#button input {
-    width:inherit;
+    width: fixed;
 }
 
 #welcomeHead {
@@ -469,7 +470,7 @@ li#button input {
 }*/
 
 .inputContainer {
-    padding:2px 0;
+    padding:2px 0px 0px 0px;
 }
 
 /*----------------BUTTON--------------------*/
@@ -484,19 +485,20 @@ li#button input {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  font: 55px/100% "Essays1743", Arial, Helvetica, sans-serif;
+  font: 30px/100% "Essays1743", Helvetica, Arial, sans-serif;
     padding: .35em .0em .85em;
     text-shadow: 0 0px 0px;
     -webkit-border-radius: .9em;
     -moz-border-radius: .5em;
     border-radius: .5em;
-    -webkit-box-shadow: 0 0px 0px;
-    -moz-box-shadow: 0 0px 0px;
-    box-shadow: 0 0px 0px;
+    -webkit-box-shadow: 0 4px 4px;
+    -moz-box-shadow: 0 4px 4px;
+    box-shadow: 0 4px 4px;
 }
 
 .button:hover, #button .button {
   text-decoration:none;
+  text-shadow: 2px 2px 2px 2px;
 }
 
 /*----------------ORANGE---------------*/
@@ -534,29 +536,35 @@ li#button input {
 
 .grey, #button .grey {
     color: #000000;
-    border: 0px solid #2B3840;
-    background-color:#FFFFFF;
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#FFFFFF));
-    background: -moz-linear-gradient(top,  #FFFFFF,  #FFFFFF);
+    background-color:#BBDCB7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#E2F0E0), to(#E2F0E0));
+    background: -moz-linear-gradient(top,  #E2F0E0, #E2F0E0 );
     filter:  progid:DXImageTransf.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
 }
 
 .grey:active, #button .grey:active {
-    background: -webkit-gradient(linear, left top, left bottom, from(#2B3840), to(#4A5F6D));
-    background: -moz-linear-gradient(top,  #2B3840,  #4A5F6D);
+    background: -webkit-gradient(linear, left top, left bottom, from(##BBDCB7), to(#E2F0E0));
+    background: -moz-linear-gradient(top,  #BBDCB7,  #E2F0E0);
+}
+
+.grey:hover, #button .grey:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(##BBDCB7), to(#BBDCB7));
+    background: -moz-linear-gradient(top,  #BBDCB7,  #BBDCB7);
+    text-shadow: 2px 2px 2px 2px;
 }
 
 /*-------------HOMESIGNUP---------------*/
 
 #homeForm input, #login input, #settings input {
   font-size: 13pt;
-  font-family:"Essays1743", sans-serif;
+  font-family:"Essays1743", Helvetica, Arial, sans-serif;
 
   padding: 5px;
 
   border: 1px;
   border-style:solid;
-  border-color:#93FFCC; 
+  border-color: rgb(78, 93, 89);
+
 
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -570,11 +578,11 @@ li#button input {
 }
 
 #homeForm input:focus, #loginContainer input:focus, #settings input:focus {
-    border:2px solid #99B3FF;
+    border:2px solid rgb(78, 93, 89);
     outline:none;
-    -webkit-box-shadow: 0 0 2px #4D79FF;
-    -moz-box-shadow: 0 0 2px #4D79FF;
-    box-shadow: 0 0 2px #4D79FF;
+    -webkit-box-shadow: 0 0 2px rgb(78, 93, 89);
+    -moz-box-shadow: 0 0 2px rgb(78, 93, 89);
+    box-shadow: 0 0 2px rgb(78, 93, 89);
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -599,13 +607,12 @@ li#button input {
 #loginContainer {
     top:40px;
     margin:60px auto 20px;
-    background:#FFFFFF;
+    background: rgb(227,242, 231);
     border-radius:12px 12px;
     -webkit-border-radius:12px 12px;
     -moz-border-radius:12px 12px;
     width:500px;
     border:0px;
-    background-image: -webkit-radial-gradient(center center, 800px 800px, white, white);
 }
 
 #loginContainer form {
@@ -631,7 +638,7 @@ p.label {
     font-size: 13pt;
     font-family:"Essays1743", Helvetica;
     padding: 6px 4px;
-    border: 2px solid #fff;
+    border: 0px solid #BBDCB7;
     border-radius: 3px 3px;
     -moz-border-radius: 3px 3px;
     -webkit-border-radius: 3px 3px;
@@ -645,8 +652,10 @@ p.label {
 }
 
 #loginHeader h3 {
-    font-family:"Essays1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+    font-family:"Essays1743", Helvetica, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
     font-size:32pt;
+    clear:left;
+    padding:15px 0 0;
 }
 
 .loginSection, #loginButton {
@@ -667,26 +676,23 @@ p.label {
     padding-top:15px;
 }
 
-#loginButton input {
-    width: auto !important;
-}
+/*#loginButton input {
+    width: 150px !important;
+    height: 150px !important;
+}*/
 
 #forget {
-    float:left;
-    padding-top:0px;
+    float: left;
+    padding-top:5px;
 }
 
 /*------------PROBLEM-----------------*/
 
-#problemDetails { padding-top:10px;}
+#indexNewProblem {
+    margin:25px 0px 5px;
+}
 
-#problemDetails h1 { padding: 5px 0; }
-
-#problemHead h1 { display: inline-block; }
-
-#problemHead { padding: 30px 0; }
-
-#problemHead a#indexNewProblem {
+#indexNewProblem a {
     padding:.7em 2em;
     background-color:#ccc;
     color:#000;
@@ -695,12 +701,10 @@ p.label {
     border-radius: 10px;
 }
 
-#problemHead a#indexNewProblem:active {
+#indexNewProblem a:active {
     color:#FFF;
-    background-color:#333333;
+    background-color: rgb(227, 242, 231);
 }
-
-.problem { padding: 10px 0;}
 
 /*---------------STORY----------------*/
 
@@ -741,6 +745,92 @@ textarea#story:focus{
   padding: 0px;
 }
 
+#contentLeft, #contentRight {
+  position: relative;
+  display: block;
+  margin:0 auto;
+}
+
+#contentLeft, #contentRight {
+  width:400px;
+}
+
+#contentLeft, #contentMiddle {
+  margin:0 30px 0 0;
+}
+
+#contentMiddle {
+  width:35px;
+  float:left;
+}
+
+#contentMiddle li {
+  padding:1em 0;
+}
+
+#contentLeft {
+  float:left;
+}
+
+#contentRight {
+  float:left;
+}
+
+#profile #left {
+  width: 24%;
+  float: left;
+  display: block;
+  padding: 30px 10px 0px;
+  height:auto;
+}
+
+.frame, .frame_LoggedOut {
+  background: url("images/frame.png") no-repeat;
+  height:270px;
+  width:200px;
+  margin-bottom:5px;
+}
+
+.frame_LoggedOut {
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+}
+
+.frame_LoggedOut:hover {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+}
+
+.frame:hover {
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+}
+
+.frame .userphoto img, .frame_LoggedOut .userphoto img  {
+  height:220px;
+  width:153px;
+  position:relative;
+  top: 25px;
+  left:22px;
+}
+
+#superlatives, #activitiesawards {
+  width: auto;
+  display: block;
+  text-align: left;
+  min-height:20px;
+  padding:.4em;
+  margin-bottom:5px;
+/*  border:1px solid gray;
+    border-radius: 10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;*/
+}
+
+#activitiesawards div, #superlatives div {
+  padding:5px;
+}
+
 #profile input {
   font-size:9pt;
   padding:0.3em;
@@ -756,6 +846,145 @@ textarea#story:focus{
   font-size:11pt;
 }
 
+.questions {
+  position:relative;
+}
+
+.questionContainer ul, .questionContainer_LoggedOut ul, .settingHeader ul {
+  padding:.5em;
+}
+
+.questionContainer li, .questionContainer_LoggedOut li {
+  padding:2px 10px;
+}
+
+ul#questionee {
+  margin:0 1em .5em 1em;
+  width:200px;
+}
+
+.questions li a, .questionsLoggedOut li a {
+  font-size:9pt;
+}
+
+.questions li a:hover, .questionsLoggedOut li a:hover {
+  text-decoration:underline;
+}
+
+.questionContainer, .questionContainer_LoggedOut {
+  position:relative;
+  height:30px;
+  background-color:#7FFFD4;
+}
+
+.question-list, .public_question-list {
+  position:relative;
+  margin:0;
+  padding:.5px;
+}
+
+.question-list div, .public_question-list div {
+  min-height:50px;
+  width:100%;
+  padding:.5px;
+  border-bottom:1px solid gray;
+}
+
+.questionContainer ul#questions, .questionContainer_LoggedOut ul#questions_LoggedOut {
+  float:left;
+}
+
+.questionContainer ul#settingsLinks {
+  float:right;
+}
+
+.questionContainer ul#questionee {
+  margin:0;
+  float:right;
+}
+
+.questionContainer li a, .questionContainer_LoggedOut li a {
+  font-size:10.5pt;
+}
+
+.questionContainer div, .questionContainer_LoggedOut div {
+  height:70px;
+}
+
+.questionContainer li:hover, .questionContainer_LoggedOut li:hover {
+  text-decoration:underline;
+}
+
+p.question {
+  opacity:.5;
+  margin:0.3em 0.8em;
+  text-align:justify;
+}
+
+li .heading {
+  padding-right:15px;
+  opacity: 0.45;
+  vertical-align: top;
+}
+
+#profile #right .profileMain {
+  width: 625px;
+  float: left;
+  display: block;
+  text-align: left;
+  margin-bottom:15px;
+  min-height:155px;
+}
+
+#profile #right .questions {
+  width: 575px;
+  float: left;
+  display: block;
+  text-align: left;
+  margin:0 0 15px 15px;
+  min-height:55px;
+  border:1px solid gray;
+    border-radius:6px;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+}
+
+#profile #right h3, h4, a {
+  display:inline;
+}
+
+#right want {
+  display:none;
+}
+
+.profileMain ul li, .questionContainer ul li {
+  display:inline;
+}
+
+.profileMain ul {
+  padding:8px;
+}
+
+.profileMain li {
+  padding:10px 5px;
+}
+
+#right a:hover want {
+  display:inherit;
+  opacity: 0.45;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; /*IE 8 hack*/
+  filter: alpha(opacity=40); /*IE 5-7 hack*/
+}
+
+/*
+#right a.white:hover {
+  background: #f47c20;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+  background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+*/
+
 #right form {
   padding-left:40px;
 }
@@ -769,41 +998,6 @@ a.newfield {
   font-weight:normal;
 }
 
-#profileInfo {
-    padding:15px 0px 10px;
-}
-
-#editProfile {
-    padding:10px 0px 85px;
-}
-
-#editProfile form div {
-    padding:3px 0px;
-}
-
-#editProfile form div label {
-    font-size:11pt;
-    cursor:pointer;
-}
-
-#profileInfo h2 {
-    padding:10px 0px;
-}
-
-p.maininfo {
-    font-size:10pt;
-    padding:15px 0 1px;
-}
-
-p.delete a {
-    font-size:8pt;
-}
-
-p.delete {
-    padding:0px;
-}
-
-div.profileProblem { padding: 10px 0;}
 
 /*----------------FIND------------------*/
 
@@ -866,9 +1060,9 @@ td.right {
 #criteriabar input {
   font-size: 9pt;
   padding: 2px 0;
-  border: 1px;
+ /* border: 1px;
   border-style:solid;
-  border-color:#7FFFD4;
+  border-color:#7FFFD4;*/
 
   border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1013,7 +1207,7 @@ td.right {
   padding: 1em;
   width: 377px;
   display:block;
-  background:#B8B8B8;
+  background: rgb(227, 242, 231);
       -webkit-border-radius: .5em;
       -moz-border-radius: .5em;
       border-radius: .5em;
@@ -1323,6 +1517,40 @@ form#questionheadSearch {
     position:relative;
 }
 
+#profileInfo {
+    padding:15px 0px 10px;
+}
+
+#editProfile {
+    padding:10px 0px 85px;
+}
+
+#editProfile form div {
+    padding:3px 0px;
+}
+
+#editProfile form div label {
+    font-size:11pt;
+    cursor:pointer;
+}
+
+#profileInfo h2 {
+    padding:10px 0px;
+}
+
+p.maininfo {
+    font-size:10pt;
+    padding:15px 0 1px;
+}
+
+p.delete a {
+    font-size:8pt;
+}
+
+p.delete {
+    padding:0px;
+}
+
 .headerContainer {
   position:relative;
   padding-bottom:20px;
@@ -1412,7 +1640,7 @@ form#questionheadSearch {
 .settingHeader {
   position:relative;
   height:30px;
-  background-color:#7FFFD4;
+  background-color: rgb(227, 242, 231); 
 }
 
 .settingHeader h4 {
@@ -1502,12 +1730,13 @@ ul.settings li, ul.accountSettings li {
   zoom: 1;
   position: relative;
   overflow: hidden;
-  border-top: solid 1px #7FFFD4;
-  margin-bottom:30px;
+  border-top: solid 2.25px rgb(78, 93, 89);
+  margin-bottom: 400px;
+  background-color: rgb(227, 242, 231);
 }
 
 #footer ul {
-  padding:4px 15px 10px 15px;
+  padding: 4px 15px 10px 15px;
 }
 
 #footer li {
@@ -1521,6 +1750,7 @@ ul.settings li, ul.accountSettings li {
 #footer .main {
   float:left;
   width: auto;
+  background-color: rgb(227, 242, 231);
 }
 
 #footer .socialnetworks {

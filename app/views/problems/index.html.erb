@@ -7,9 +7,10 @@
     <div id="problems">
     <% @problems.each do |problem| %>
       <div class="problem">
-        <%= link_to problem.body, problem %>
+        <p><%= link_to problem.body, problem %></p>
+        <% unless problem.user.nil? %>
         <p><%= problem.user.profile.name %></p>
-        <%#= problem.solution.body %>
+        <% end %>
       </div>
     <% end %>
     </div>

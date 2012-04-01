@@ -1,20 +1,24 @@
 class SolutionsController < ApplicationController
   layout "application"
-  before_filter :load_problem, :except => :destroy
+  #before_filter :load_problem, :except => :destroy
   before_filter :authenticate, :only => :destroy
 
   def new
-    @solution = Solution.new(params[:solution])
+    solution = @problem.solutions.new(params[:solution])
   end
 
   def create
-    @solution = Solution.new(params[:solution])
-    #solution = @problem.solutions.new(params[:solution].merge(:user_id => current_user.id))
-    if solution.save
-      redirect_to @problem, :notice => 'Thanks for your solution'
-    else
-      redirect_to @problem, :alert => 'Unable to add solution'
+    @solution = @problem.solutions.build(params[:solution].merge(:user_id => current_user.id))
+    respond_to do |format|
+      if @solution.save
+        format.html { redirect_to(@solution, :notice => 'Problem was successfully created.') }
+        format.xml  { render :xml => @solution, :status => :created, :location => @solution }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @solution.errors, :status => :unprocessable_entity }
+      end
     end
+
   end
 
   def edit
@@ -29,7 +33,7 @@ class SolutionsController < ApplicationController
   end
 
   private
-    def load_problem
+    def find_problem
       @problem = Problem.find(params[:problem_id])
     end
 end

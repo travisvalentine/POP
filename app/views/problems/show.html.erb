@@ -3,6 +3,16 @@
     <div id="problemDetails">
       <h1><%= @problem.body %></h1>
       <h2><%= link_to @problem.user.profile.name, @problem.user.profile %></h2>
+      <%= link_to "Add a solution", new_problem_solution_path(@problem) %>
+    </div>
+    <div id="problemSolutions">
+      <h1>Solutions</h2>
+      <% @problem.solutions.each do |solution| %>        
+        <%= solution.body %>
+        <% if solution.user.name != current_user.name %>
+        <%= link_to solution.user.name, solution.user.profile %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

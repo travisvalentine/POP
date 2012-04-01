@@ -5,16 +5,16 @@ class ProblemsController < ApplicationController
   # GET
   def new
     @problem = Problem.new
-    @solution = @problem.solutions.new
-    respond_to do |format|
-      format.html { }
-      format.xml  { render :xml => @problem }
-    end
   end
 
   # POST
   def create
-    @problem = current_user.problems.new(params[:problem])
+    @solution_params = params[:problem][:solution].merge(:user_id => current_user.id)
+    params[:problem].delete(:solution)
+    @problem = current_user.problems.create(params[:problem])
+    if @problem.valid?
+      @solution = @problem.solutions.create!(@solution_params)
+    end
     respond_to do |format|
       if @problem.save
         format.html { redirect_to(@problem, :notice => 'Problem was successfully created.') }
@@ -29,19 +29,11 @@ class ProblemsController < ApplicationController
   # GET
   def index
     @problems = Problem.all
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @problems }
-    end
   end
 
   # GET
   def show
     @problem = Problem.find(params[:id])
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @problem }
-    end
   end
 
 
