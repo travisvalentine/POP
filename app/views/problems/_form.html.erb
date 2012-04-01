@@ -14,7 +14,6 @@
   <%= f.fields_for :solution do |f| %>  
     <%= f.hidden_field :published_at, :value => Time.now %>
     <%= f.text_field :body, :placeholder => "What solution do you propose?" %>
-    <%#= render :partial => "solutions/new_problem_solution_form", :f => builder %>
   <% end %>
   <div id="button">
   <%= f.submit 'Add', :class => 'button' %>

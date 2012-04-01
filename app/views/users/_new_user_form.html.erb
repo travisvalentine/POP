@@ -17,11 +17,11 @@
   <% end %>
   <div class="inputContainer">
     <%= f.text_field :email, :size => 42, :placeholder => "Enter your email" %>
-    <%= f.password_field :password, :size => 42, :placeholder => "Password" %>
+    <%= f.password_field :password, :size => 42, :placeholder => "Choose a password" %>
   </div>
   <%= f.fields_for :profile do |profile| %>
   <div class="inputContainer">
-    <%= profile.text_field :bio, :size => 42, :placeholder => "Give a short bio about yourself if you'd like" %>
+    <%= profile.text_field :bio, :size => 42, :placeholder => "Enter a short bio, if you'd like" %>
   </div>
   <div class="inputContainer">
     <p>What's your Birthday?</p>
@@ -38,6 +38,6 @@
   </div>
   <% end %>
   <div id ="button">
-    <%= submit_tag 'JOIN, or BE QUIET', :class => 'button grey' %>
+    <%= submit_tag 'JOIN', :class => 'button grey' %>
   </div>
 <% end %>

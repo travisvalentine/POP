@@ -13,5 +13,6 @@ POP::Application.routes.draw do
   resources :problems do
     resources :solutions
   end
+  resources :solutions
   resources :password_resets
 end

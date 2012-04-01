@@ -1,6 +1,6 @@
-<%= form_for([@problem, @problem.responses.new]) do |f| %>
+<%= form_for [@problem, @solution] do |f| %>
   <div class="field">
-    <%= f.text_area :body, :placeholder => "Body" %>
+    <%= f.text_field :body, :placeholder => "Body" %>
   </div>
   <div id="button">
     <%= f.submit 'Submit' %>
