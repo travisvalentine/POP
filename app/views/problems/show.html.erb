@@ -2,13 +2,13 @@
   <div id="content">
     <div id="problemDetails">
       <h1><%= @problem.body %></h1>
-      <h2><%= link_to @problem.user.profile.name, @problem.user.profile %></h2>
-      <%= link_to "Add a solution", new_problem_solution_path(@problem) %>
+      <p>- by <%= link_to @problem.user.profile.name, @problem.user.profile %></p>
     </div>
     <div id="problemSolutions">
-      <h1>Solutions</h2>
+      <h1>Solutions (<%= @problem.solutions.count %>)</h2>
+      <p><%= link_to "Add a solution", new_problem_solution_path(@problem) %></p>
       <% @problem.solutions.each do |solution| %>        
-        <%= solution.body %>
+        <p><%= solution.body %></p>
         <% if solution.user.name != current_user.name %>
         <%= link_to solution.user.name, solution.user.profile %>
         <% end %>

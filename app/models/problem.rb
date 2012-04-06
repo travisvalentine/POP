@@ -15,5 +15,13 @@ class Problem < ActiveRecord::Base
       solution.body
     end
   end
+
+  def solution
+    solutions
+  end
+
+  def solution=(value)
+    solutions = value
+  end
   
 end

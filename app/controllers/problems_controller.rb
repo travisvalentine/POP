@@ -9,14 +9,12 @@ class ProblemsController < ApplicationController
 
   # POST
   def create
-    @solution_params = params[:problem][:solution].merge(:user_id => current_user.id)
-    params[:problem].delete(:solution)
-    @problem = current_user.problems.create(params[:problem])
-    if @problem.valid?
-      @solution = @problem.solutions.create!(@solution_params)
-    end
+    @problem = current_user.problems.new(params[:problem])
+    @solution = @problem.solutions.new(params[:problem][:solution])
     respond_to do |format|
       if @problem.save
+        @solution.save!
+        @solution.update_attributes(problem_id: @problem.id, user_id: current_user.id)
         format.html { redirect_to(@problem, :notice => 'Problem was successfully created.') }
         format.xml  { render :xml => @problem, :status => :created, :location => @problem }
       else

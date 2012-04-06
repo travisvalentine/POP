@@ -12,10 +12,9 @@ class User < ActiveRecord::Base
                        :presence => true,
                        :if => :password_required?
 
-  has_many :problems, :order => 'published_at DESC, title ASC',
-                      :dependent => :nullify
+  has_many :problems
 
-  has_many :solutions, :through => :problems
+  has_many :solutions#, :through => :problems
 
   has_many :factchecks
   has_many :comments
