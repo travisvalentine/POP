@@ -534,14 +534,14 @@ li#button input {
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
 }
 
-.grey, #button .grey {
+/*.grey, #button .grey {
     color: #000000;
     background-color:#BBDCB7;
     background: -webkit-gradient(linear, left top, left bottom, from(#E2F0E0), to(#E2F0E0));
     background: -moz-linear-gradient(top,  #E2F0E0, #E2F0E0 );
     filter:  progid:DXImageTransf.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
 }
-
+*/
 .grey:active, #button .grey:active {
     background: -webkit-gradient(linear, left top, left bottom, from(##BBDCB7), to(#E2F0E0));
     background: -moz-linear-gradient(top,  #BBDCB7,  #E2F0E0);
@@ -676,11 +676,6 @@ p.label {
     padding-top:15px;
 }
 
-/*#loginButton input {
-    width: 150px !important;
-    height: 150px !important;
-}*/
-
 #forget {
     float: left;
     padding-top:5px;
@@ -688,9 +683,13 @@ p.label {
 
 /*------------PROBLEM-----------------*/
 
-#indexNewProblem {
-    margin:25px 0px 5px;
-}
+#problemDetails { margin: 10px 0 20px; }
+
+#problemDetails h1 { margin-bottom: 10px; }
+
+#problemSolutions p { margin: 10px 0; }
+
+#indexNewProblem { margin:25px 0px 5px; }
 
 #indexNewProblem a {
     padding:.7em 2em;
