@@ -10,10 +10,14 @@
     </ul>
   </div>
   <% end %>
-  <%= f.text_field :body, :placeholder => "What's your problem?" %>
+  <div class="input-container">
+    <%= f.text_field :body, :placeholder => "What's your problem?" %>
+  </div>
   <%= f.fields_for :solution do |f| %>  
     <%= f.hidden_field :published_at, :value => Time.now %>
+  <div class="input-container">
     <%= f.text_field :body, :placeholder => "What solution do you propose?" %>
+  </div>
   <% end %>
   <div id="button">
   <%= f.submit 'Add', :class => 'button' %>

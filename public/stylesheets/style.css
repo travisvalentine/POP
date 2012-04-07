@@ -473,11 +473,9 @@ li#button input {
     padding: 3px 0px 3px 0px;
 }
 
-form#new_user input { 
-  width: 440px;
-}
+form#new_user input, form#new_problem input { width: 440px; }
 
-form#new_user div#button { margin-top: 15px; }
+form#new_user div#button, form#new_problem div#button { margin-top: 15px; }
 
 form#new_user div.name { display: inline-block; }
 
@@ -485,7 +483,7 @@ form#new_user div.name input { width: 207px; }
 
 div.last { margin-left: 6px; }
 
-form#new_user div#button input.button { width: 100%; padding: 10px; border: 1px solid rgb(78, 93, 89); }
+form#new_user div#button input.button, form#new_problem div#button input.button { width: 100%; padding: 10px; border: 1px solid rgb(78, 93, 89); }
 
 /*----------------BUTTON--------------------*/
 
