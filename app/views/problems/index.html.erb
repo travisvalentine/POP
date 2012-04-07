@@ -4,6 +4,7 @@
       <h1>What people are thinking</h1>
       <%= link_to "Add a New Problem, #{current_user.profile.first_name}", new_problem_path, :id => "index_new_problem" %>
     </div>
+    <% unless current_user.problems.empty? %>
     <div id="my_problems">
       <h1>Your Problems</h1>
       <% current_user.problems.each do |problem| %>
@@ -13,8 +14,14 @@
         <% end %>
       <% end %>
     </div>
+    <% end %>
+    <% unless @problems.empty? %>
     <div id="others_problems">
       <h1>Others Problems</h1>
-    </div>
+      <!-- <#% others_problems.each do |problem| %>
+        <p><%#= link_to problem.body, problem_path %></p>
+      <#% end %>
+    </div> -->
+    <% end %>
   </div>
 </div>
