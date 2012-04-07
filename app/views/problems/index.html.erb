@@ -1,20 +1,20 @@
 <div id="wrapper">
   <div id="content">
-    <div id="problemHead">
+    <div id="problem_head">
       <h1>What people are thinking</h1>
-      <%= link_to "Add a New Problem, #{current_user.profile.first_name}", new_problem_path, :id => "indexNewProblem" %>
+      <%= link_to "Add a New Problem, #{current_user.profile.first_name}", new_problem_path, :id => "index_new_problem" %>
     </div>
-    <div id="my-problems">
+    <div id="my_problems">
       <h1>Your Problems</h1>
       <% current_user.problems.each do |problem| %>
-        <p class="user_problem" id="problem_<%= problem.id %>"><%= link_to problem.body, problem_path(problem) %></p>
+        <p class="user-problem" id="problem_<%= problem.id %>"><%= link_to problem.body, problem_path(problem) %></p>
         <% if problem.solutions.any? %>
-          <p><%= problem.solutions.count %></p>
+          <p><%= pluralize(problem.solutions.count, "solution") %></p>
         <% end %>
       <% end %>
     </div>
-    <div="others-problems">
-
+    <div id="others_problems">
+      <h1>Others Problems</h1>
     </div>
   </div>
 </div>

@@ -1,12 +1,12 @@
 <div id="wrapper">
   <div id="content">
-    <div id="problemDetails">
+    <div id="problem_details">
       <h1><%= @problem.body %></h1>
       <p>- by <%= link_to @problem.user.profile.name, @problem.user.profile %></p>
     </div>
-    <div id="problemSolutions">
+    <div id="problem_solutions">
       <h1>Solutions (<%= @problem.solutions.count %>)</h2>
-      <p><%= link_to "Add a solution", new_problem_solution_path(@problem) %></p>
+      <%= link_to "Add a solution", new_solution_path(:problem_id => @problem.id), :id => "new_solution" %>
       <% @problem.solutions.each do |solution| %>        
         <p><%= solution.body %></p>
         <% if solution.user.name != current_user.name %>
