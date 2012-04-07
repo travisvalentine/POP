@@ -7,14 +7,14 @@
         <p id="error"><%= flash.now[:alert] %></p>
       </div>
     <% end %>
-      <div id="loginHeader">
+      <div id="login_header">
         <h3>Welcome Back</h3>
       </div>
-      <div class="loginSection">
+      <div class="login-section">
         <p class="label"><label for="email">Email:</label></p>
         <p><%= text_field_tag :email, nil, :autofocus => true, :autocomplete => 'off' %></p>
       </div>
-      <div class="loginSection">
+      <div class="login-section">
         <p class="label"><label for="password">Password:</label></p>
         <p><%= password_field_tag :password, nil, :autocomplete => 'off' %></p>
       </div>

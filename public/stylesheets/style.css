@@ -430,8 +430,8 @@ ul#userChildren li:last-child a:hover {
 /*-------homeform-------*/
 
 #homeForm {
-    margin: 0 auto;
-    width:500px;
+    margin: 0 auto 30px;
+    width: 450px;
 }
 
 #homeForm p {
@@ -440,11 +440,11 @@ ul#userChildren li:last-child a:hover {
     font-weight:600;
 }
 
-#homeForm div#button input {
+/*#homeForm div#button input {
     width:345px !important;
     height:50px;
     margin:10px 0 0 -2px;
-}
+}*/
 
 li#button input {
     width: fixed;
@@ -469,9 +469,23 @@ li#button input {
     padding:20px 0px 50px;
 }*/
 
-.inputContainer {
-    padding:2px 0px 0px 0px;
+.input-container {
+    padding: 3px 0px 3px 0px;
 }
+
+form#new_user input { 
+  width: 440px;
+}
+
+form#new_user div#button { margin-top: 15px; }
+
+form#new_user div.name { display: inline-block; }
+
+form#new_user div.name input { width: 207px; }
+
+div.last { margin-left: 6px; }
+
+form#new_user div#button input.button { width: 100%; padding: 10px; border: 1px solid rgb(78, 93, 89); }
 
 /*----------------BUTTON--------------------*/
 
@@ -563,7 +577,7 @@ li#button input {
 
   border: 1px;
   border-style:solid;
-  border-color: rgb(78, 93, 89);
+  border-color: #8DA09C;
 
 
   border-radius: 3px;
@@ -578,7 +592,7 @@ li#button input {
 }
 
 #homeForm input:focus, #loginContainer input:focus, #settings input:focus {
-    border:2px solid rgb(78, 93, 89);
+    border:1px solid rgb(78, 93, 89);
     outline:none;
     -webkit-box-shadow: 0 0 2px rgb(78, 93, 89);
     -moz-box-shadow: 0 0 2px rgb(78, 93, 89);
@@ -620,7 +634,7 @@ li#button input {
     padding:25px;
 }
 
-#loginContainer form p {
+#login_header p, #login-section p, #loginContainer label, #forget p {
     font-size:13pt;
     font-family: "Essays1743", Helvetica;
     text-align:left;
@@ -647,22 +661,22 @@ p.label {
     box-shadow: inset 0 1px 2px rgba(0,0,0,.60);
 }
 
-#loginHeader {
-    padding:0px 0px 15px;
+#login_header {
+    padding:0px 0px 10px;
 }
 
-#loginHeader h3 {
+#login_header h3 {
     font-family:"Essays1743", Helvetica, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
     font-size:32pt;
     clear:left;
     padding:15px 0 0;
 }
 
-.loginSection, #loginButton {
+.login-section, #loginButton {
     padding:5px 0px;
 }
 
-.loginSection {
+.login-section {
     float:left;
     width:inherit;
 }
@@ -676,22 +690,37 @@ p.label {
     padding-top:15px;
 }
 
+#loginButton input.button { padding: 10px; margin: 0; border: 1px; border-style:solid; border-color: rgb(78, 93, 89); }
+
 #forget {
     float: left;
     padding-top:5px;
 }
 
+#error_messages { background-color: rgb(78, 93, 89); padding: 10px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+
+p#error { text-align: center; color: #fff; }
+
 /*------------PROBLEM-----------------*/
 
-#problemDetails { margin: 10px 0 20px; }
+#problem_details { margin: 10px 0 20px; }
 
-#problemDetails h1 { margin-bottom: 10px; }
+#problem_details h1 { padding-bottom: 10px; }
 
-#problemSolutions p { margin: 10px 0; }
+#problem_solutions p { margin: 10px 0; }
 
-#indexNewProblem { margin:25px 0px 5px; }
 
-#indexNewProblem a {
+/*-----------PROBLEM-INDEX------------*/
+
+#problem_head { margin: 20px 0 20px; }
+
+#my_problems, #others_problems { margin-bottom: 30px; }
+
+#problem_head h1, #my_problems h1, #others_problems h1, #problem_solutions h1 { padding-bottom: 10px; display: inline; }
+
+a#index_new_problem, a#new_solution { margin: 0 15px; display: inline-block; vertical-align: 3px; }
+
+a#index_new_problem, a#new_solution {
     padding:.7em 2em;
     background-color:#ccc;
     color:#000;
@@ -700,10 +729,12 @@ p.label {
     border-radius: 10px;
 }
 
-#indexNewProblem a:active {
+a#index_new_problem:active, a#new_solution:active {
     color:#FFF;
     background-color: rgb(227, 242, 231);
 }
+
+.user-problem { padding: 10px 0; }
 
 /*---------------STORY----------------*/
 
@@ -1516,28 +1547,28 @@ form#questionheadSearch {
     position:relative;
 }
 
-#profileInfo {
+#profile_info {
     padding:15px 0px 10px;
 }
 
-#editProfile {
+#edit_profile {
     padding:10px 0px 85px;
 }
 
-#editProfile form div {
+#edit_profile form div {
     padding:3px 0px;
 }
 
-#editProfile form div label {
+#edit_profile form div label {
     font-size:11pt;
     cursor:pointer;
 }
 
-#profileInfo h2 {
+#profile_info h2 {
     padding:10px 0px;
 }
 
-p.maininfo {
+p.main-info {
     font-size:10pt;
     padding:15px 0 1px;
 }

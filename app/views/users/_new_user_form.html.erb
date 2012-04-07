@@ -10,20 +10,24 @@
   </div>
   <% end %>
   <%= f.fields_for :profile do |profile| %>
-  <div class="inputContainer">
-    <%= profile.text_field :first_name, :size => 17, :placeholder => "First name" %>&nbsp;
-    <%= profile.text_field :last_name, :size => 18, :placeholder => "Last name" %>
+  <div class="input-container name">
+    <%= profile.text_field :first_name, :placeholder => "First name" %>
+  </div>
+  <div class="input-container last name">
+    <%= profile.text_field :last_name, :placeholder => "Last name" %>
   </div>
   <% end %>
-  <div class="inputContainer">
-    <%= f.text_field :email, :size => 42, :placeholder => "Enter your email" %>
-    <%= f.password_field :password, :size => 42, :placeholder => "Choose a password" %>
+  <div class="input-container">
+    <%= f.text_field :email, :placeholder => "Enter your email" %>
+  </div>
+  <div class="input-container">
+    <%= f.password_field :password, :placeholder => "Choose a password" %>
   </div>
   <%= f.fields_for :profile do |profile| %>
-  <div class="inputContainer">
-    <%= profile.text_field :bio, :size => 42, :placeholder => "Enter a short bio, if you'd like" %>
+  <div class="input-container">
+    <%= profile.text_field :bio, :placeholder => "Enter a short bio, if you'd like" %>
   </div>
-  <div class="inputContainer">
+  <div class="input-container">
     <p>What's your Birthday?</p>
     <%= profile.date_select :birthday,
       {:start_year => Time.now.year,
@@ -32,7 +36,7 @@
         :prompt => {:month => 'Month', :day => 'Day', :year => 'Year'}}
     %>
   </div>
-  <div class="inputContainer">
+  <div class="input-container">
     <p>What's your Party affiliation?</p>
     <%= profile.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %> <!-- where do you stand?  -->
   </div>

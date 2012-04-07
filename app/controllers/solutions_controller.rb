@@ -10,11 +10,10 @@ class SolutionsController < ApplicationController
   def create
     @solution = @problem.solutions.new(params[:solution])
     respond_to do |format|
-      if @problem.save
-        @solution.save!
+      if @solution.save
         @solution.update_attributes(problem_id: @problem.id, user_id: current_user.id)
-        format.html { redirect_to(@problem.solutions.last, :notice => 'Problem was successfully created.') }
-        format.xml  { render :xml => @problem.solutions.last, :status => :created, :location => @problem }
+        format.html { redirect_to(@problem, :notice => 'Problem was successfully created.') }
+        format.xml  { render :xml => @problem, :status => :created, :location => @problem }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @solution.errors, :status => :unprocessable_entity }

@@ -2,20 +2,20 @@
 <div id="wrapper">
   <div id="content" class="clearfix">
     <div id="profile">
-      <div id="profileInfo">
+      <div id="profile_info">
         <h1><%= @profile.name %></h1>
-        <p class="mainInfo"><%= @profile.bio %></p>
-        <p class="mainInfo"><%= @profile.party_affiliation.to_s %><% if @profile.job_title? %>, &nbsp;<%= @profile.job_title %><% end %></p>
-        <p class="mainInfo"><%= link_to '@', "http://twitter.com/#{@profile.twitter}", :target => "_blank" %><%= link_to @profile.twitter, "http://twitter.com/#{@profile.twitter}", :target => "_blank" %></p>
-        <p class="mainInfo"></p>
+        <p class="main-info"><%= @profile.bio %></p>
+        <p class="main-info"><%= @profile.party_affiliation.to_s %><% if @profile.job_title? %>, &nbsp;<%= @profile.job_title %><% end %></p>
+        <p class="main-info"><%= link_to '@', "http://twitter.com/#{@profile.twitter}", :target => "_blank" %><%= link_to @profile.twitter, "http://twitter.com/#{@profile.twitter}", :target => "_blank" %></p>
+        <p class="main-info"></p>
       </div>
-      <div id="editProfile">
+      <div id="edit_profile">
       
       </div>
-      <div id="profileProblems">
+      <div id="profile_problems">
         <h1>Things <%= @profile.first_name %> cares about.</h1>
         <% @profile_problems.each do |problem| %>
-        <div class="profileProblem">
+        <div class="profile-problem">
           <p><%= link_to problem.body, problem %></p>
         </div>
         <% end %>
