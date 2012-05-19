@@ -28,7 +28,12 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   background-color: rgb(227, 242, 231);
-   background: -webkit-gradient(linear, left, top, left bottom, from(rgb(227,242,231)), to(rgb(227, 242, 231))) ;
+  background: -webkit-gradient(linear, left, top, left bottom, from(rgb(227,242,231)), to(rgb(227, 242, 231))) ;
+}
+
+.inaug { 
+  background-color: #fff;
+  background: url(/images/lincoln.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
 }
 
 @font-face {
@@ -43,8 +48,9 @@ body {
 }
 
 h1.old {
-    font-family:"Essays1743", Helvetica, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-    font-size:40pt;
+  font-family:"Essays1743", Helvetica, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-size:44pt;
+  color: #1C031E;
 }
 
 ol, ul {
@@ -82,20 +88,29 @@ body {
   left: 0;
   position: relative;
   padding: 0;
-  background-color: rgb(227, 242, 231);
+  /*  background-color: rgb(227, 242, 231);*/
+}
+
+.home-bg {
 }
 
 #header, #footer {
   width:100%;
-  background-color: rgb(227, 242, 231));
 }
 
-#home {
+#home_form {
   position: relative;
-  width: 950px;
+  width: 650px;
   min-height: 460px;
   margin:auto;
-  background-color: rgb(227, 242, 231);
+  background-color: #FAFAFA;
+  padding: 30px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin-bottom:200px;
+  top: 50px;
+  opacity: .9;
 }
 
 #content {
@@ -134,9 +149,11 @@ a {
   outline: none;
 }
 
+.italics { font-style: italic; }
+
 /*-------------HOME-HEADER------------------*/
 
-#header, #innerheader {
+#header {
   position: relative;
   display: block;
   border-bottom: solid;
@@ -144,7 +161,7 @@ a {
   border-color: rgb(78, 93, 89);
   height: 75px;
   overflow: visible;
-  background-color: rgb(227, 242, 231);
+  /*background-color: rgb(227, 242, 231);*/
 }
 
 #logo {
@@ -154,7 +171,7 @@ a {
   padding: 0;
   width: 275px;
   height: 50px;
-  left:20px;
+  left:40px;
 }
 
 #logo a {
@@ -171,8 +188,8 @@ a {
 
 #loginNav {
   float:right;
-  margin-top: 30px;
-  margin-right: 37px;
+  margin-top: 25px;
+  margin-right: 40px;
 }
 
 #loginNav a {
@@ -452,7 +469,7 @@ li#button input {
 
 #welcomeHead {
     position:relative;
-    padding:30px 0px 20px;
+    padding:10px 0px 20px;
 }
 
 #welcomeHead h1, #welcomeDisclaimer h1, #welcomeHead p {
@@ -473,7 +490,7 @@ li#button input {
     padding: 3px 0px 3px 0px;
 }
 
-form#new_user input, form#new_problem input { width: 440px; }
+form#new_user input[type="text"], form#new_problem input[type="text"] { width: 440px; }
 
 form#new_user div#button, form#new_problem div#button { margin-top: 15px; }
 
@@ -511,6 +528,145 @@ form#new_user div#button input.button, form#new_problem div#button input.button 
 .button:hover, #button .button {
   text-decoration:none;
   text-shadow: 2px 2px 2px 2px;
+}
+
+/*----------------BUTTON-BLUE---------------*/
+
+#button input[type="submit"].home-join { 
+  height:60px;
+  font: 30px/100% "Essays1743", Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  *display: inline;
+  padding: 6px 14px 6px;
+  margin-bottom: 0;
+  *margin-left: .3em;
+  font-size: 13px;
+  line-height: 18px;
+  *line-height: 20px;
+  color: #333333;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #fff;
+  *background-color: #e6e6e6;
+  background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  *zoom: 1;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn:hover,
+.btn:active,
+.btn.active,
+.btn.disabled,
+.btn[disabled] {
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+
+.btn:active,
+.btn.active {
+  background-color: #cccccc \9;
+}
+
+.btn:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  /* Buttons in IE7 don't get borders, so darken on hover */
+
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+     -moz-transition: background-position 0.1s linear;
+      -ms-transition: background-position 0.1s linear;
+       -o-transition: background-position 0.1s linear;
+          transition: background-position 0.1s linear;
+}
+
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.btn.active,
+.btn:active {
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
+.btn-blue {
+  background-color: #759ae9;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #759ae9), color-stop(50%, #376fe0), color-stop(50%, #1a5ad9), color-stop(100%, #2463de));
+  background-image: -webkit-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+  background-image: -moz-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+  background-image: -ms-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+  background-image: -o-linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+  background-image: linear-gradient(top, #759ae9 0%, #376fe0 50%, #1a5ad9 50%, #2463de 100%);
+  border-top: 1px solid #1f58cc;
+  border-right: 1px solid #1b4db3;
+  border-bottom: 1px solid #174299;
+  border-left: 1px solid #1b4db3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+  -moz-box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+  box-shadow: inset 0 0 2px 0 rgba(57, 140, 255, 0.8);
+  color: #fff;
+  font: bold 12px "helvetica neue", helvetica, arial, sans-serif;
+  padding: 7px 0;
+  text-shadow: 0 -1px 1px #1a5ad9;
+  width: 150px; 
+}
+
+.btn-blue:hover {
+  background-color: #5d89e8;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5d89e8), color-stop(50%, #2261e0), color-stop(50%, #044bd9), color-stop(100%, #0d53de));
+  background-image: -webkit-linear-gradient(top, #5d89e8 0%, #2261e0 50%, #044bd9 50%, #0d53de 100%);
+  background-image: -moz-linear-gradient(top, #5d89e8 0%, #2261e0 50%, #044bd9 50%, #0d53de 100%);
+  background-image: -ms-linear-gradient(top, #5d89e8 0%, #2261e0 50%, #044bd9 50%, #0d53de 100%);
+  background-image: -o-linear-gradient(top, #5d89e8 0%, #2261e0 50%, #044bd9 50%, #0d53de 100%);
+  background-image: linear-gradient(top, #5d89e8 0%, #2261e0 50%, #044bd9 50%, #0d53de 100%);
+  cursor: pointer; 
+}
+
+.btn-blue:active {
+  border-top: 1px solid #1b4db3;
+  border-right: 1px solid #174299;
+  border-bottom: 1px solid #133780;
+  border-left: 1px solid #174299;
+  -webkit-box-shadow: inset 0 0 5px 2px #1a47a0, 0 1px 0 #eeeeee;
+  -moz-box-shadow: inset 0 0 5px 2px #1a47a0, 0 1px 0 #eeeeee;
+  box-shadow: inset 0 0 5px 2px #1a47a0, 0 1px 0 #eeeeee; 
 }
 
 /*----------------ORANGE---------------*/
@@ -570,26 +726,29 @@ form#new_user div#button input.button, form#new_problem div#button input.button 
 #homeForm input, #login input, #settings input {
   font-size: 13pt;
   font-family:"Essays1743", Helvetica, Arial, sans-serif;
-
   padding: 5px;
-
   border: 1px;
   border-style:solid;
   border-color: #8DA09C;
-
-
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-
   text-shadow: none;
-
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.20);
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.20);
   box-shadow: inset 0 1px 2px rgba(0,0,0,.20);
 }
 
-#homeForm input:focus, #loginContainer input:focus, #settings input:focus {
+#homeForm input:focus { 
+  border-color:rgba(35,146,231,0.8);
+  outline:0;
+  outline:thin dotted \9;
+  -webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6);
+  -moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6)}
+}
+
+#loginContainer input:focus, #settings input:focus {
     border:1px solid rgb(78, 93, 89);
     outline:none;
     -webkit-box-shadow: 0 0 2px rgb(78, 93, 89);
@@ -710,11 +869,11 @@ p#error { text-align: center; color: #fff; }
 
 /*-----------PROBLEM-INDEX------------*/
 
-#problem_head { margin: 20px 0 20px; }
+.container-head { margin: 20px 0 20px; }
 
 #my_problems, #others_problems { margin-bottom: 30px; }
 
-#problem_head h1, #my_problems h1, #others_problems h1, #problem_solutions h1 { padding-bottom: 10px; display: inline; }
+.container-head h1, #my_problems h1, #others_problems h1, #problem_solutions h1 { padding-bottom: 10px; display: inline; }
 
 a#index_new_problem, a#new_solution { margin: 0 15px; display: inline-block; vertical-align: 3px; }
 
@@ -733,6 +892,12 @@ a#index_new_problem:active, a#new_solution:active {
 }
 
 .user-problem { padding: 10px 0; }
+
+/*-----------ISSUE-PROBLEMS-----------*/
+
+h2.issue_name { font-size: 28pt; }
+
+.issue_problem { margin: 10px 0; }
 
 /*---------------STORY----------------*/
 
@@ -1759,8 +1924,7 @@ ul.settings li, ul.accountSettings li {
   position: relative;
   overflow: hidden;
   border-top: solid 2.25px rgb(78, 93, 89);
-  margin-bottom: 400px;
-  background-color: rgb(227, 242, 231);
+  /*background-color: rgb(227, 242, 231);*/
 }
 
 #footer ul {
