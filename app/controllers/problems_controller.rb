@@ -13,6 +13,7 @@ class ProblemsController < ApplicationController
     @solution = @problem.solutions.new(params[:problem][:solution])
     respond_to do |format|
       if @problem.save
+        @problem.issues << @problem.issue
         @solution.save!
         @solution.update_attributes(problem_id: @problem.id, user_id: current_user.id)
         format.html { redirect_to(@problem, :notice => 'Problem was successfully created.') }

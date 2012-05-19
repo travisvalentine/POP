@@ -2,7 +2,13 @@
   <div id="logo"><a href="/">POP</a></div>
   <div id="findNav">
     <ul>
-      <li><%= link_to 'Issues', issues_path %></li>
+      <li><%= link_to 'Issues', "#" %>
+        <ul>
+          <% Issue.all.each do |issue| %>
+          <li><%= link_to issue.name, issue_path(issue) %></li>
+          <% end %>
+        </ul>
+      </li>
       <li><%= link_to 'Problems', problems_path %></li>
     </ul>
   </div><!-- end find -->
