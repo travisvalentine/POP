@@ -11,7 +11,7 @@
   <% end %>
   <%= f.fields_for :profile do |profile| %>
   <div class="input-container name">
-    <%= profile.text_field :first_name, :placeholder => "First name" %>
+    <%= profile.text_field :first_name, :placeholder => "First name", :autofocus => true %>
   </div>
   <div class="input-container last name">
     <%= profile.text_field :last_name, :placeholder => "Last name" %>
@@ -38,10 +38,10 @@
   </div>
   <div class="input-container">
     <p>What's your Party affiliation?</p>
-    <%= profile.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %> <!-- where do you stand?  -->
+    <%= profile.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %>
   </div>
   <% end %>
   <div id ="button">
-    <%= submit_tag 'JOIN', :class => 'button grey' %>
+    <%= submit_tag 'JOIN', :class => 'btn-blue home-join' %>
   </div>
 <% end %>

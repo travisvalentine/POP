@@ -1,0 +1,6 @@
+<div class="other-problem">
+  <p><%= link_to other_problem.body, problem_path(other_problem) %></p>
+  <% if other_problem.solutions.any? %>
+    <p><%= pluralize(other_problem.solutions.count, "solution") %></p>
+  <% end %>
+</div>

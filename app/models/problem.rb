@@ -1,5 +1,4 @@
 class Problem < ActiveRecord::Base
-  # attr_reader :print_solutions
 
   validates :body, :presence => true
 
@@ -7,14 +6,17 @@ class Problem < ActiveRecord::Base
   
   has_many :solutions
 
-  accepts_nested_attributes_for :solutions
+  has_many :issue_problems
+  has_many :issues, :through => :issue_problems
 
-  # def print_solutions
-  #   solutions = Solution.find_all_by_problem_id(self.id)
-  #   solutions.collect do |solution|
-  #     solution.body
-  #   end
-  # end
+  accepts_nested_attributes_for :solutions, :issues
+
+  def print_solutions
+    solutions = Solution.find_all_by_problem_id(self.id)
+    solutions.collect do |solution|
+      solution.body
+    end
+  end
 
   def solution
     solutions
@@ -24,9 +26,8 @@ class Problem < ActiveRecord::Base
     solutions = value
   end
 
-  # def others_problems
-  #   problems = Problem.all
-  #   others_problems = problems.collect { |p| p.user_id != current_user.id }
-  # end
+  def issue
+    issues.first
+  end
   
 end
