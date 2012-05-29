@@ -2,12 +2,10 @@ class ProblemsController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
   layout "application"
 
-  # GET
   def new
     @problem = Problem.new
   end
 
-  # POST
   def create
     @problem = current_user.problems.new(params[:problem])
     @solution = @problem.solutions.new(params[:problem][:solution])
@@ -25,24 +23,19 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # GET
   def index
     @problems = Problem.all
   end
 
-  # GET
   def show
     @problem = Problem.find(params[:id])
   end
 
 
-  # GET
   def edit
     @problem = current_user.problems.find(params[:id])
   end
 
-  # PUT /problems/1
-  # PUT /problems/1.xml
   def update
     @problem = current_user.problems.find(params[:id])
 
@@ -57,7 +50,6 @@ class ProblemsController < ApplicationController
     end
   end
 
-  # DELETE
   def destroy
     @problem = current_user.problems.find(params[:id])
     @problem.destroy
