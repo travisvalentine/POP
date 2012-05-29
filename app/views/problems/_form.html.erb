@@ -11,14 +11,24 @@
   </div>
   <% end %>
   <div class="input-container">
-    <%= f.text_field :body, :placeholder => "What's your problem?" %>
+    <%= f.text_area :body, :placeholder => "What's your problem?" %>
   </div>
   <%= f.fields_for :solution do |f| %>  
     <%= f.hidden_field :published_at, :value => Time.now %>
   <div class="input-container">
-    <%= f.text_field :body, :placeholder => "What solution do you propose?" %>
+    <%= f.text_area :body, :placeholder => "What solution do you propose?" %>
   </div>
   <% end %>
+  <h4>Add an issue:</h4>
+  <div id="issue_container">
+  <%= hidden_field_tag "problem[issue_ids][]", nil %>
+  <% Issue.all.each do |issue| %>
+    <p class="issue-list" id="<%= issue.id %>">
+    <%= check_box_tag "problem[issue_ids][]", issue.id, @problem.issue_ids.include?(issue.id), id: dom_id(issue) %>
+    <%= label_tag dom_id(issue), issue.name %>
+    </p>
+  <% end %>
+  </div>
   <div id="button">
   <%= f.submit 'Add', :class => 'button' %>
   </div>

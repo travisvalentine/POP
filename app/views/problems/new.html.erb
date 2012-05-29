@@ -2,9 +2,9 @@
   <div id="content">
     <div id="welcomeHead">
       <h1 class="old">What ails you, <%= current_user.profile.first_name %>?</h1>
-      <p>*Here at POP, every problem must come with a solution. We want to keep things productive!</p>
+      <p class="italics">*Every problem must come with a solution.</p>
     </div>
-    <div id="homeForm">
+    <div class="new-problem-container">
     <%= render :partial => 'problems/form' %>
     </div>
   </div><!-- end content -->
