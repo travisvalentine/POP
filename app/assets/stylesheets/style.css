@@ -33,7 +33,7 @@ body {
 
 .inaug { 
   background-color: #fff;
-  background: url(lincoln.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+  background: url(lincoln.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
 }
 
 @font-face {
@@ -255,7 +255,7 @@ a {
   display:block;
   padding:0.5em;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
-  margin-top:12px
+  margin-top:12px;
   font-size:small;
 }
 
@@ -263,7 +263,7 @@ a {
   display:block;
   padding:0.5em;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
-  margin-top:12px
+  margin-top:12px;
   font-size:small;
 }
 
@@ -378,10 +378,6 @@ a {
 #usernav li#userParent:hover ul {
     padding:0px;
     z-index:350;
-}
-
-#usernav li {
-    background-color:$weathervane;
 }
 
 #usernav #children li:hover {
@@ -554,7 +550,7 @@ form#new_user div#button input.button, form#new_problem div#button input.button 
 
 .button, #button .button, #loginButton .button {
   display: inline-block;
-  zoom: 1; */ zoom and *display = ie7 hack for display:inline-block 
+  zoom: 1;
   *display: inline;
   vertical-align: baseline;
   margin: 0 0px;
@@ -766,12 +762,12 @@ form#new_user div#button input.button, form#new_problem div#button input.button 
 }
 */
 .grey:active, #button .grey:active {
-    background: -webkit-gradient(linear, left top, left bottom, from(##BBDCB7), to(#E2F0E0));
+    background: -webkit-gradient(linear, left top, left bottom, from(#BBDCB7), to(#E2F0E0));
     background: -moz-linear-gradient(top,  #BBDCB7,  #E2F0E0);
 }
 
 .grey:hover, #button .grey:hover {
-    background: -webkit-gradient(linear, left top, left bottom, from(##BBDCB7), to(#BBDCB7));
+    background: -webkit-gradient(linear, left top, left bottom, from(#BBDCB7), to(#BBDCB7));
     background: -moz-linear-gradient(top,  #BBDCB7,  #BBDCB7);
     text-shadow: 2px 2px 2px 2px;
 }
@@ -806,7 +802,7 @@ form#new_user div#button input.button, form#new_problem div#button input.button 
   outline:thin dotted \9;
   -webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6);
   -moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6);
-  box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6)}
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6)
 }
 
 .signup label {
