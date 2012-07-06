@@ -2,8 +2,8 @@
   <div id="logo"><a href="/">POP</a></div>
   <div id="findNav">
     <ul>
-      <li><%= link_to 'Issues', "#" %>
-        <ul>
+      <li id="userParent"><%= link_to 'Issues', "#" %>
+        <ul id="userChildren">
           <% Issue.all.each do |issue| %>
           <li><%= link_to issue.name, issue_path(issue) %></li>
           <% end %>

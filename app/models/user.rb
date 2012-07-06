@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
 
   validates :email, :uniqueness => true,
+                    :presence => true,
                     :length => { :within => 5..50 },
                     :format => { :with => /^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i }
   validates :password, :confirmation => true,
@@ -14,15 +15,12 @@ class User < ActiveRecord::Base
 
   has_many :problems
 
-  has_many :solutions#, :through => :problems
+  has_many :solutions
 
   has_many :factchecks
   has_many :comments
 
   before_save :encrypt_new_password
-  #before_create { generate_token(:auth_token) }
-
-  #after_save :create_profile
 
   def self.authenticate(email, password)
     user = find_by_email(email)

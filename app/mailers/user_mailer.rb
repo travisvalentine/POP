@@ -1,4 +1,5 @@
 class UserMailer < ActionMailer::Base
+
   default :from => "Test <hungryopensource@gmail.com>",
           :return_path => "hungryopensource@gmail.com"
 

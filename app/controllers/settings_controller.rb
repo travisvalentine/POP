@@ -1,5 +1,6 @@
 class SettingsController < ApplicationController
   layout "application"
+  before_filter :authenticate
 
   def show
     @user = current_user

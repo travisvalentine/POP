@@ -1,14 +1,15 @@
+
 <%= div_for @user do %>
 <div id="wrapper">
   <div id="content" class="clearfix">
     <div id="settings">
-      <div id="profileInfo">
+      <div id="profile_info">
         <h1>Profile Info</h1>
         <h2><%= @user.profile.name %></h2>
         <p class="maininfo">Email:&nbsp;<%= @user.email %></p>
         <p class="delete"><%= link_to 'Delete Account', @user, :method => :delete, :confirm => 'Are you sure?' %></p>
       </div>
-        <div id="editProfile">
+        <div id="edit_profile">
         <%= render :partial => 'profiles/edit_settings_form' %>
       </div>
     </div>

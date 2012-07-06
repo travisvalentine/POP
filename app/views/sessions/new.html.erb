@@ -1,5 +1,16 @@
 <div id="wrapper">
   <div id="content">
+    <% if flash[:alert] || flash[:notice] %>
+    <div class="alert">
+      <% if flash[:alert] %>
+        <p class="flash-error"><%= flash[:alert] %></p>
+      <% end %>
+      <% if flash[:notice] %>
+        <p class="flash-notice"><%= flash[:notice] %></p>
+      <% end %>
+      <%= yield %>
+    </div>
+    <% end %>
     <div id="loginContainer">
     <%= form_tag session_path, :class => "clearfix" do %>
     <% if !alert.nil? %>
