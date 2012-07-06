@@ -1,24 +1,34 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.9'
-
-gem 'jquery-rails', '>= 1.0.12'
+gem 'jquery-rails'
 gem 'nifty-generators'
 gem 'pg'
+gem 'rails', '3.1.0'
+gem 'redis-store', '~>1.0.0'
 gem 'resque'
+gem 'escape_utils'
+
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
 
 group :development, :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'rspec-rails'
+  gem 'simplecov', :require => false
+  gem 'sqlite3'
+end
+
+group :test do
   gem 'cane', :git => "git://github.com/square/cane.git"
   gem 'capybara'
-  gem 'database_cleaner'
+  gem 'faker'
   gem 'growl'
   gem 'guard-rspec'
-  gem 'fabrication'
-  gem 'faker'
   gem 'launchy'
-  gem 'redis-store', '~>1.0.0'
   gem 'reek', :git => "git://github.com/mvz/reek.git", :branch => "ripper_ruby_parser-2"
-  gem 'rspec-rails'
-  gem 'simplecov'
-  gem 'sqlite3'
 end

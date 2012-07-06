@@ -1,3 +1,12 @@
+<%= content_for(:head) do %>
+	<%= javascript_include_tag "chosen.jquery.min" %>
+	<%= stylesheet_link_tag "chosen.css" %>
+	<script type="text/javascript">
+		$(function(){
+    	$(".chzn-select").chosen()
+    });
+  </script>
+<% end %>
 <div id="wrapper">
   <div id="content">
     <div id="welcomeHead">
