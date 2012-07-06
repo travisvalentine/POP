@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'bourbon', "~> 2.1.1"
 gem 'jquery-rails'
 gem 'nifty-generators'
 gem 'pg'
