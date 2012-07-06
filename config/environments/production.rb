@@ -64,9 +64,8 @@ POP::Application.configure do
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
 
-  # Precompile additional assets (application.js, application.css, and all
-    # non-JS/CSS are already added)
-  config.assets.precompile << '*.png'
+  # Precompile images
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif] 
 
   # Generate digests for assets URLs
   config.assets.digest = true
