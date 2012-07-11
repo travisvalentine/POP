@@ -1,3 +1,8 @@
+$dark-blue: rgb(0, 69, 173);
+$med-blue: rgb(1, 113, 208);
+$light-blue: rgb(0, 167, 232);
+$gop-red: rgb(201, 34, 26);
+
 /*---------------MAIN-----------------------*/
 
 html, body, div, span, applet, object, iframe,
@@ -545,37 +550,9 @@ div.last { margin-left: 6px; }
 
 form#new_user div#button input.button, form#new_problem div#button input.button { width: 100%; padding: 10px; border: 1px solid rgb(78, 93, 89); }
 
-/*----------------BUTTON--------------------*/
+/*----------------BUTTON-----------------*/
 
-.button, #button .button, #loginButton .button {
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  vertical-align: baseline;
-  margin: 0 0px;
-  outline: none;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  font: 30px/100% "Essays1743", Helvetica, Arial, sans-serif;
-    padding: .35em .0em .85em;
-    text-shadow: 0 0px 0px;
-    -webkit-border-radius: .9em;
-    -moz-border-radius: .5em;
-    border-radius: .5em;
-    -webkit-box-shadow: 0 4px 4px;
-    -moz-box-shadow: 0 4px 4px;
-    box-shadow: 0 4px 4px;
-}
-
-.button:hover, #button .button {
-  text-decoration:none;
-  text-shadow: 2px 2px 2px 2px;
-}
-
-/*----------------BUTTON-BLUE---------------*/
-
-#button input[type="submit"].home-join { 
+form.new_user div#button input.home-join { 
   height:60px;
   font: 30px/100% "Essays1743", Helvetica, Arial, sans-serif;
   width: 100%;
@@ -583,22 +560,19 @@ form#new_user div#button input.button, form#new_problem div#button input.button 
 
 .btn { @include button(simple, #D9D9D9); font-size: 110%; }
 
-.btn-blue { @include button(shiny, #4294f0); }
+.btn-light-blue-shiny { @include button(shiny, $light-blue); }
+.btn-med-blue-shiny { @include button(shiny, $med-blue); }
+.btn-dark-blue-shiny { @include button(shiny, $dark-blue); }
+.btn-gop-red-shiny { @include button(shiny, $gop-red); }
+
+.btn-light-blue { @include button(simple, $light-blue); }
+.btn-med-blue { @include button(simple, $med-blue); }
+.btn-dark-blue { @include button(simple, $dark-blue); }
+.btn-gop-red { @include button(simple, $gop-red); }
 
 .btn-grey { @include button; }
 
-/*----------------ORANGE---------------*/
-
-.grey:active, #button .grey:active {
-    background: -webkit-gradient(linear, left top, left bottom, from(#BBDCB7), to(#E2F0E0));
-    background: -moz-linear-gradient(top,  #BBDCB7,  #E2F0E0);
-}
-
-.grey:hover, #button .grey:hover {
-    background: -webkit-gradient(linear, left top, left bottom, from(#BBDCB7), to(#BBDCB7));
-    background: -moz-linear-gradient(top,  #BBDCB7,  #BBDCB7);
-    text-shadow: 2px 2px 2px 2px;
-}
+.btn-large { padding: 10px 20px; font-size: 120%; }
 
 /*-------------FORM-INPUTS---------------*/
 
@@ -679,7 +653,7 @@ p.label {
     padding:0 0px 3px 1px;
 }
 
-#loginContainer form input {
+#loginContainer form input[type="text"], #loginContainer form input[type="password"] {
     font-size: 13pt;
     font-family:"Essays1743", Helvetica;
     padding: 6px 4px;
