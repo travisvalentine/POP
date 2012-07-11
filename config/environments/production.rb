@@ -58,15 +58,17 @@ POP::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  # Precompile additional assets (application.js, application.css, and all
+    # non-JS/CSS are already added)
+  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif]
+
+  config.assets.initialize_on_precompile = false
+
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
-
-  # Precompile additional assets (application.js, application.css, and all
-    # non-JS/CSS are already added)
-  config.assets.precompile += %w[*.png *.jpg *.jpeg *.gif] 
 
   # Generate digests for assets URLs
   config.assets.digest = true
