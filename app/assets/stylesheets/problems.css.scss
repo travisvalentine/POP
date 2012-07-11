@@ -160,6 +160,7 @@ a {
   overflow: visible;
   @include box-shadow(0 0 2px 1px grey);
   /*background-color: rgb(227, 242, 231);*/
+  margin-bottom: 10px;
 }
 
 #logo {
@@ -580,7 +581,7 @@ form#new_user div#button input.button, form#new_problem div#button input.button 
   width: 100%;
 }
 
-.btn { @include button(simple, gray); }
+.btn { @include button(simple, #D9D9D9); font-size: 110%; }
 
 .btn-blue { @include button(shiny, #4294f0); }
 
