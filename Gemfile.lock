@@ -215,7 +215,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bourbon (~> 2.1.1)
+  bourbon
   cane!
   capybara
   coffee-rails (~> 3.2.1)
@@ -230,6 +230,7 @@ DEPENDENCIES
   nifty-generators
   pg
   rails (= 3.2.0)
+  redis
   redis-store (~> 1.0.0)
   reek!
   resque
