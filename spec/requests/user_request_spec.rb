@@ -141,7 +141,15 @@ describe User do
     describe "when signing up" do
       before(:each) do
         visit root_path
-        fill_signup_form_as(new_user2, profile2)
+        fill_in 'user_profile_attributes_first_name', :with => 'Citizen'
+        fill_in 'user_profile_attributes_last_name', :with => 'Kane'
+        fill_in 'user_email', :with => 'disgruntled@usa.gov'
+        fill_in 'user_password', :with => 'password'
+        fill_in 'user_profile_attributes_bio', :with => 'This is my bio'
+        page.select 'March', :from => 'user_profile_attributes_birthday_2i'
+        page.select '16', :from => 'user_profile_attributes_birthday_3i'
+        page.select '1983', :from => 'user_profile_attributes_birthday_1i'
+        page.select 'Democrat', :from => 'user_profile_attributes_party_affiliation'
       end
 
       it "both new user and new user's profile are persisted" do
