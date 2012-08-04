@@ -1,5 +1,4 @@
 class SolutionsController < ApplicationController
-  layout "application"
   before_filter :find_problem, :except => :destroy
   before_filter :authenticate, :only => :destroy
 

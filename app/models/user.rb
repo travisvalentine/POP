@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password
+  attr_accessible :email, :password, :password_confirmation, :profile_attributes
   before_validation :downcase_email
   has_one :profile, :dependent => :destroy
   accepts_nested_attributes_for :profile

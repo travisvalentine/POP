@@ -1,4 +1,5 @@
 class Profile < ActiveRecord::Base
+  attr_accessible :first_name, :last_name, :bio, :birthday, :party_affiliation
   belongs_to :user
   accepts_nested_attributes_for :user
 
