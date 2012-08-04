@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  layout "application"
+
   def create
     if user = User.authenticate(params[:email].downcase, params[:password])
       session[:user_id] = user.id

@@ -47,7 +47,6 @@ describe User do
 
       it "has the app name with a link to the homepage" do
         within "#logo" do
-          page.should have_link "POP"
           click_link_or_button "POP"
         end
         current_path.should == problems_path
@@ -90,7 +89,7 @@ describe User do
 
     it "can JOIN from the home page" do
       visit root_path
-      page.should have_content "Be a part of the solution."
+      page.should have_content "Be a part of the solution"
       page.should have_selector("form#new_user")
     end
 

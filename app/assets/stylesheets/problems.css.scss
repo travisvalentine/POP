@@ -53,7 +53,7 @@ body {
 }
 
 h1.old {
-  font-family:"Essays1743", Helvetica, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-family:"Essays1743", "Helvetica Neue", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
   font-size:44pt;
   color: #1C031E;
 }
@@ -77,7 +77,7 @@ table {
 
 body {
   margin: 0px;
-  font-family:Helvetica, sans-serif;
+  font-family:"Helvetica Neue", Helvetica, sans-serif;
 }
 
 .clearfix:after {
@@ -181,7 +181,8 @@ a {
 #logo a {
 /*  padding-top: 100px;*/
   /*background-image: url("logo.png");*/
-  background-color:white; /*white background for now until logo designed*/
+  background-color:#E3F2E7; /*white background for now until logo designed*/
+  color: #E3F2E7;
 }
 
 #logo a {
@@ -259,7 +260,6 @@ a {
   display:block;
   padding:0.5em;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
-  margin-top:12px;
   font-size:small;
 }
 
@@ -482,12 +482,6 @@ a {
     font-weight:600;
 }
 
-/*.home-form-container div#button input {
-    width:345px !important;
-    height:50px;
-    margin:10px 0 0 -2px;
-}*/
-
 /*-------new-problem-container------*/
 
 .new-problem-container {
@@ -501,16 +495,7 @@ a {
     font-weight:600;
 }
 
-/*.home-form-container div#button input {
-    width:345px !important;
-    height:50px;
-    margin:10px 0 0 -2px;
-}*/
-
-
-li#button input {
-    width: fixed;
-}
+.new-problem-container input[type="submit"] { width: 100%; }
 
 #welcomeHead {
     position:relative;
@@ -554,7 +539,7 @@ form#new_user div#button input.button, form#new_problem div#button input.button 
 
 form.new_user div#button input.home-join { 
   height:60px;
-  font: 30px/100% "Essays1743", Helvetica, Arial, sans-serif;
+  font: 30px/100% "Essays1743", "Helvetica Neue", Helvetica, sans-serif;
   width: 100%;
 }
 
@@ -576,9 +561,9 @@ form.new_user div#button input.home-join {
 
 /*-------------FORM-INPUTS---------------*/
 
-.home-form-container input, .new-problem-container input, .new-problem-container textarea, #login input, #settings input {
+.home-form-container input[type="text"], .home-form-container input[type="password"], #loginContainer input[type="text"], .new-problem-container input[type="text"], .new-problem-container textarea, #login input[type="text"], #settings input[type="text"] {
   font-size: 13pt;
-  font-family:"Essays1743", Helvetica, Arial, sans-serif;
+  font-family:"Essays1743", "Helvetica Neue", Helvetica, sans-serif;
   padding: 5px;
   border: 1px;
   border-style:solid;
@@ -593,7 +578,7 @@ form.new_user div#button input.home-join {
 }
 
 .new-problem-container textarea {
-  width: 100%;
+  width: 98%;
   height: 50px;
   resize: none;
 }
@@ -641,7 +626,7 @@ form.new_user div#button input.home-join {
 
 #login_header p, #login-section p, #loginContainer label, #forget p {
     font-size:13pt;
-    font-family: "Essays1743", Helvetica;
+    font-family: "Essays1743", "Helvetica Neue", Helvetica;
     text-align:left;
     font-weight:600;
     color:#4D4D4D;
@@ -655,7 +640,7 @@ p.label {
 
 #loginContainer form input[type="text"], #loginContainer form input[type="password"] {
     font-size: 13pt;
-    font-family:"Essays1743", Helvetica;
+    font-family:"Essays1743", "Helvetica Neue", Helvetica;
     padding: 6px 4px;
     border: 0px solid #BBDCB7;
     border-radius: 3px 3px;
@@ -671,7 +656,7 @@ p.label {
 }
 
 #login_header h3 {
-    font-family:"Essays1743", Helvetica, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+    font-family:"Essays1743", "Helvetica Neue", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
     font-size:32pt;
     clear:left;
     padding:15px 0 0;
