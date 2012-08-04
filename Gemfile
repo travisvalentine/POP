@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'bourbon', "~> 2.1.1"
+gem 'bourbon'
 gem 'jquery-rails'
 gem 'nifty-generators'
 gem 'pg'
 gem 'rails', '3.2.0'
 gem 'redis-store', '~>1.0.0'
+gem 'redis'
 gem 'resque'
 gem 'escape_utils'
 
