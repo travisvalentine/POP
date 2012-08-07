@@ -1,14 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'bourbon'
+gem 'client_side_validations'
+gem 'escape_utils'
 gem 'jquery-rails'
 gem 'nifty-generators'
 gem 'pg'
 gem 'rails', '3.2.0'
-gem 'redis-store', '~>1.0.0'
+
 gem 'redis'
 gem 'resque'
-gem 'escape_utils'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.2.3"
@@ -20,6 +21,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'redis-store', '~>1.0.0'
   gem 'rspec-rails'
   gem 'simplecov', :require => false
   gem 'sqlite3'

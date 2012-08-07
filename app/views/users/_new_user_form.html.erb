@@ -1,4 +1,4 @@
-<%= form_for(@user, :html => {:multipart => true}) do |f| %>
+<%= form_for(@user, :html => {:multipart => true}, :validate => true) do |f| %>
   <% if @user.errors.any? %>
   <div id="errorRight">
     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,7 +11,7 @@
   <% end %>
   <%= f.fields_for :profile do |profile| %>
   <div class="input-container name">
-    <%= profile.text_field :first_name, :placeholder => "First name", :autofocus => true %>
+    <%= profile.text_field :first_name, :placeholder => "First name", :autofocus => true, :validate => false %>
   </div>
   <div class="input-container last name">
     <%= profile.text_field :last_name, :placeholder => "Last name" %>
@@ -36,7 +36,7 @@
         :prompt => {:month => 'Month', :day => 'Day', :year => 'Year'} }
     %>
   </div>
-  <div class="input-container">
+  <div class="input-container select">
     <p>What's your Party affiliation?</p>
     <%= profile.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %>
   </div>
