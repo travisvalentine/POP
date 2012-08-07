@@ -157,6 +157,6 @@ a {
 .italics { font-style: italic; }
 
 .field_with_errors { display:inline; }
-.field_with_errors .message { white-space: nowrap; display:block;font-size:14px; position:absolute; background-color: black; padding: 6px 10px; color: #fff; @include border-radius(5px); margin:7px 8px;
+.field_with_errors .message { white-space: nowrap; display:inline-block;font-size:14px; position:absolute; background-color: black; padding: 6px 10px; color: #fff; @include border-radius(5px); margin:7px 8px;
   &:after { content:""; width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:10px solid black;border-left:10px solid transparent; position:absolute; left:0;margin:3px 0 0 -15px;top:0}
 }
