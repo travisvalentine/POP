@@ -11,4 +11,5 @@ class Solution < ActiveRecord::Base
 
   has_many :comments
 
+  make_voteable
 end

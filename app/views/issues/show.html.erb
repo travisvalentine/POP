@@ -1,21 +1,48 @@
 <div id="wrapper">
   <div id="content">
+    <% if flash[:alert] || flash[:notice] %>
+    <div class="alert">
+      <% if flash[:alert] %>
+        <p class="flash-error"><%= flash[:alert] %></p>
+      <% end %>
+      <% if flash[:notice] %>
+        <p class="flash-notice"><%= flash[:notice] %></p>
+      <% end %>
+      <%= yield %>
+    </div>
+    <% end %>
     <div class="container-head">
-      <h2 class="issue_name"><%= @issue.name %></h2>
+      <h2 class="issue-name"><%= @issue.name %></h2>
     </div>
     <% @issue.problems.each do |issue_problem| %>
-      <div class="issue_problem">
-        <p>
-          <%= issue_problem.body %>
-        </p>
+      <div class="issue-problem">
+        <div class="vote">
+          <%= button_to "Up", problem_upvotes_path(:id => issue_problem.id), :method => :post %>
+          <%= issue_problem.votes %>
+          <%= button_to "Down", problem_downvotes_path(:id => issue_problem.id), :method => :post %>
+        </div>
+        <div class="issue-problem-details">
+          <p>
+            <%= issue_problem.body %>
+          </p>
+        </div>
+      </div>
         <% issue_problem.solutions.each do |solution| %>
-        <p>
-          <%= solution.body %>
-        </p>
+        <div class="issue-problem-solution">
+          <div class="vote">
+            <%= button_to "Up", solution_upvotes_path(:id => solution.id, :method => :post) %>
+            <%= solution.votes %>
+            <%= button_to "Down", solution_downvotes_path(:id => solution.id, :method => :post) %>
+          </div>
+          <div class="issue-problem-solution-details">
+            <p>
+              <%= solution.body %>
+            </p>
+            <p>
+              <%= link_to issue_problem.user.name, user_path(issue_problem.user) %>
+            </p>
+          </div>
         <% end %>
-        <p>
-          <%= link_to issue_problem.user.name, user_path(issue_problem.user) %>
-        </p>
       </div>
     <% end %>
   </div>
