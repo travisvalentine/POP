@@ -1,5 +1,5 @@
 POP::Application.routes.draw do
-  
+
   require 'resque/server'
   mount Resque::Server.new, :at => "/resque"
 
@@ -19,4 +19,8 @@ POP::Application.routes.draw do
   end
   resources :solutions
   resources :password_resets
+  resources :problem_upvotes, :only => [:create]
+  resources :problem_downvotes, :only => [:create]
+  resources :solution_upvotes, :only => [:create]
+  resources :solution_downvotes, :only => [:create]
 end
