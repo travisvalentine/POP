@@ -13,6 +13,8 @@ class Problem < ActiveRecord::Base
 
   accepts_nested_attributes_for :solutions, :issues
 
+  make_voteable
+
   def print_solutions
     solutions = Solution.find_all_by_problem_id(self.id)
     solutions.collect do |solution|
