@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'bourbon'
+gem 'bourbon', "~> 2.0.0.rc1"
 gem 'client_side_validations'
 gem 'escape_utils'
 gem 'jquery-rails'
