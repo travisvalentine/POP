@@ -1,5 +1,16 @@
 <div id="wrapper">
   <div id="content">
+    <% if flash[:alert] || flash[:notice] %>
+    <div class="alert">
+      <% if flash[:alert] %>
+        <p class="flash-error"><%= flash[:alert] %></p>
+      <% end %>
+      <% if flash[:notice] %>
+        <p class="flash-notice"><%= flash[:notice] %></p>
+      <% end %>
+      <%= yield %>
+    </div>
+    <% end %>
     <div class="container-head">
       <h2 class="issue_name"><%= @issue.name %></h2>
     </div>
@@ -7,10 +18,16 @@
       <div class="issue_problem">
         <p>
           <%= issue_problem.body %>
+          <%= issue_problem.votes %>
+          <%= button_to "Up", problem_upvotes_path(:id => issue_problem.id), :method => :post %>
+          <%= button_to "Down", problem_downvotes_path(:id => issue_problem.id), :method => :post %>
         </p>
         <% issue_problem.solutions.each do |solution| %>
         <p>
           <%= solution.body %>
+          <%= solution.votes %>
+          <%= button_to "Up", solution_upvotes_path(:id => solution.id, :method => :post) %>
+          <%= button_to "Down", solution_downvotes_path(:id => solution.id, :method => :post) %>
         </p>
         <% end %>
         <p>
