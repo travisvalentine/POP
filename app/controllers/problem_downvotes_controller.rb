@@ -1,9 +1,11 @@
 class ProblemDownvotesController < ApplicationController
+  before_filter :set_return_session
+
   def create
     @problem = Problem.find(params[:id])
     if current_user
       current_user.down_vote(@problem)
-      redirect_to problem_path(@problem), :notice => "Yay!"
+      redirect_to session[:return_to]
     else
       redirect_to(login_path, :notice => "Please log in to continue")
     end
