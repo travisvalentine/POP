@@ -1,52 +1,32 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  #before_filter :prepare_for_mobile
+private
 
-  private
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+  helper_method :current_user
 
+  def authenticate
+    logged_in? ? true : access_denied
+  end
 
-  #def mobile_device?
-   # if session[:mobile_param]
-    #  session[:mobile_param] == "1"
-    #else
-     # request.user_agent =~ /Mobile|webOS/
-    #end
-  #end
-  #helper_method :mobile_device?
+  def logged_in?
+    current_user
+  end
+  helper_method :logged_in?
 
-  #def prepare_for_mobile
-   # session[:mobile_param] = params[:mobile] if params[:mobile]
-    #request.format = :mobile if mobile_device?
-  #end
+  def access_denied
+    redirect_to login_path, :notice => "Please log in to continue" and return false
+  end
 
-  protected
-    # Returns the currently logged in user or nil if there isn't one
-    def current_user
-      return unless session[:user_id]
-      @current_user ||= User.find_by_id(session[:user_id])
-      #@current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
-    end
+  def create_user_session
+    session[:user_id] = @user.id
+  end
 
-    # Make current_user available in templates as a helper
-    helper_method :current_user
-
-    # Filter method to enforce a login requirement
-    # Apply as a before_filter on any controller you want to protect
-    def authenticate
-      logged_in? ? true : access_denied
-    end
-
-    # Predicate method to test for a logged in user
-    def logged_in?
-      current_user.is_a? User
-    end
-
-    # Make logged_in? available in templates as a helper
-    helper_method :logged_in?
-
-    def access_denied
-      redirect_to login_path, :notice => "Please log in to continue" and return false
-    end
+  def set_return_session
+    session[:return_to] = request.referrer
+  end
 
 end
