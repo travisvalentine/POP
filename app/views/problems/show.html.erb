@@ -11,26 +11,34 @@
       <%= yield %>
     </div>
     <% end %>
-    <div id="problem_details">
-      <h1><%= @problem.body %></h1>
-      <p>- by <%= link_to @problem.user.profile.name, @problem.user.profile %></p>
-    </div>
-    <div id="vote">
-      <%= @problem.votes %>
-      <%= button_to "Up", problem_upvotes_path(:id => @problem.id), :method => :post %>
-      <%= button_to "Down", problem_downvotes_path(:id => @problem.id), :method => :post %>
+    <div class="problem-show">
+      <div class="vote">
+        <%= button_to "Up", problem_upvotes_path(:id => @problem.id), :method => :post %>
+        <%= @problem.votes %>
+        <%= button_to "Down", problem_downvotes_path(:id => @problem.id), :method => :post %>
+      </div>
+      <div id="problem_details">
+        <h1><%= @problem.body %></h1>
+        <p>- by <%= link_to @problem.user.profile.name, @problem.user.profile %></p>
+      </div>
     </div>
     <div id="problem_solutions">
       <h1>Solutions (<%= @problem.solutions.count %>)</h2>
       <%= link_to "Add a solution", new_solution_path(:problem_id => @problem.id), :id => "new_solution" %>
       <% @problem.solutions.each do |solution| %>        
-        <p><%= solution.body %></p>
-        <%= solution.votes %>
-        <%= button_to "Up", solution_upvotes_path(:id => solution.id, :method => :post) %>
-        <%= button_to "Down", solution_downvotes_path(:id => solution.id, :method => :post) %>
-        <% if solution.user.name != current_user.name %>
-        <%= link_to solution.user.name, solution.user.profile %>
-        <% end %>
+        <div class="problem-solution">
+          <div class="vote">
+            <%= button_to "Up", solution_upvotes_path(:id => solution.id, :method => :post) %>
+            <%= solution.votes %>
+            <%= button_to "Down", solution_downvotes_path(:id => solution.id, :method => :post) %>
+          </div>
+          <div class="solution-details">
+            <p><%= solution.body %></p>
+            <% if solution.user.name != current_user.name %>
+            <%= link_to solution.user.name, solution.user.profile %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
