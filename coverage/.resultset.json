@@ -30,7 +30,7 @@
         null,
         null,
         1,
-        0,
+        4,
         null,
         null,
         null
@@ -97,6 +97,8 @@
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/controllers/problem_downvotes_controller.rb": [
         1,
         1,
+        null,
+        1,
         1,
         0,
         0,
@@ -109,6 +111,8 @@
       ],
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/controllers/problem_upvotes_controller.rb": [
         1,
+        1,
+        null,
         1,
         1,
         0,
@@ -243,6 +247,8 @@
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/controllers/solution_downvotes_controller.rb": [
         1,
         1,
+        null,
+        1,
         1,
         0,
         0,
@@ -255,6 +261,8 @@
       ],
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/controllers/solution_upvotes_controller.rb": [
         1,
+        1,
+        null,
         1,
         1,
         0,
@@ -1085,6 +1093,6 @@
         null
       ]
     },
-    "timestamp": 1344396676
+    "timestamp": 1344473903
   }
 }
