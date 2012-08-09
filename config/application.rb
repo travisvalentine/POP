@@ -79,6 +79,7 @@ module POP
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
+    # fix for Heroku ActionView::Template::Error (File to import not found or unreadable: bourbon
     config.assets.initialize_on_precompile = false
   end
 end
