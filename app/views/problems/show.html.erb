@@ -13,9 +13,9 @@
     <% end %>
     <div class="problem-show">
       <div class="vote">
-        <%= link_to image_tag("up-large.png"), problem_upvotes_path(:id => @problem.id), :method => :post %>
+        <%= upvote_problem(@problem, "up-large.png") %>
         <h1><%= @problem.votes %></h1>
-        <%= link_to image_tag("down-large.png"), problem_downvotes_path(:id => @problem.id), :method => :post %>
+        <%= downvote_problem(@problem, "down-large.png") %>
       </div>
       <div id="problem_details">
         <h1><%= @problem.body %></h1>
@@ -28,9 +28,9 @@
       <% @problem.solutions.each do |solution| %>        
         <div class="problem-solution">
           <div class="vote-small">
-            <%= link_to image_tag("up-small.png"), solution_upvotes_path(:id => solution.id), :method => :post %>
+            <%= upvote_solution(solution, "up-small.png") %>
             <h4><%= solution.votes %></h4>
-            <%= link_to image_tag("down-small.png"), solution_downvotes_path(:id => solution.id), :method => :post %>
+            <%= downvote_solution(solution, "down-small.png") %>
           </div>
           <div class="solution-details">
             <p><%= solution.body %></p>

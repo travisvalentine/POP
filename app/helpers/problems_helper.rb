@@ -1,2 +1,17 @@
 module ProblemsHelper
+  def upvote_problem(problem, image)
+    if current_user.up_voted?(problem)
+      link_to image_tag(image), existing_problem_votes_path(:id => problem.id), :method => :post
+    else
+      link_to image_tag(image), problem_upvotes_path(:id => problem.id), :method => :post
+    end
+  end
+
+  def downvote_problem(problem, image)
+    if current_user.down_voted?(problem)
+      link_to image_tag(image), existing_problem_votes_path(:id => problem.id), :method => :post
+    else
+      link_to image_tag(image), problem_downvotes_path(:id => problem.id), :method => :post
+    end
+  end
 end
