@@ -23,4 +23,6 @@ POP::Application.routes.draw do
   resources :problem_downvotes, :only => [:create]
   resources :solution_upvotes, :only => [:create]
   resources :solution_downvotes, :only => [:create]
+  resources :existing_problem_votes, :only => [:create]
+  resources :existing_solution_votes, :only => [:create]
 end
