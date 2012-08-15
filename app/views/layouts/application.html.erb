@@ -14,7 +14,9 @@
 <% else %>
 <%= render 'layouts/header_out' %>
 <% end %>
-<%= yield %>
+<div class="container clearfix">
+  <%= yield %>
+</div>
 <%= render 'layouts/footer' %>
 </body>
 </html>

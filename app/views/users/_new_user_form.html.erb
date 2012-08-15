@@ -10,10 +10,10 @@
   </div>
   <% end %>
   <%= f.fields_for :profile do |profile| %>
-  <div class="input-container name">
+  <div class="input-container name clearfix">
     <%= profile.text_field :first_name, :placeholder => "First name", :autofocus => true, :validate => false %>
   </div>
-  <div class="input-container last name">
+  <div class="input-container name last clearfix">
     <%= profile.text_field :last_name, :placeholder => "Last name" %>
   </div>
   <% end %>

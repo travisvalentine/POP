@@ -1,0 +1,17 @@
+@import "colors";
+
+.btn { @include button(simple, #D9D9D9); font-size: 110%; }
+
+.btn-light-blue-shiny { @include button(shiny, $light-blue); }
+.btn-med-blue-shiny { @include button(shiny, $med-blue); }
+.btn-dark-blue-shiny { @include button(shiny, $dark-blue); }
+.btn-gop-red-shiny { @include button(shiny, $gop-red); }
+
+.btn-light-blue { @include button(simple, $light-blue); }
+.btn-med-blue { @include button(simple, $med-blue); }
+.btn-dark-blue { @include button(simple, $dark-blue); }
+.btn-gop-red { @include button(simple, $gop-red); }
+
+.btn-grey { @include button; }
+
+.btn-large { padding: 10px 20px; font-size: 120%; }
