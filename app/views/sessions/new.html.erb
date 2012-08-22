@@ -1,6 +1,5 @@
 <div class="row">
-  <div class="threecol"></div>
-  <div class="sixcol">
+  <div class="span5 offset3">
     <% if flash[:alert] || flash[:notice] %>
     <div class="alert">
       <% if flash[:alert] %>
@@ -21,6 +20,7 @@
     <% end %>
       <div id="form_header">
         <h1>Welcome Back</h1>
+        <p><%= link_to image_tag("sign-in-with-twitter-d.png") %></p>
       </div>
       <div class="input-container">
         <p class="label"><label for="email">Email:</label></p>
