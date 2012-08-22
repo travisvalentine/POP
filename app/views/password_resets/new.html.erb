@@ -1,21 +1,21 @@
-<div id="wrapper">
-  <div id="content">
-    <div id="loginContainer">
+<div class="row">
+  <div class="span7">
+    <div id="login">
     <%= form_tag password_resets_path, :method => :post, :class => "clearfix" do %>
       <% if notice %>
       <div id="error_messages">
         <p id="error"><%= flash.now[:notice] %></p>
       </div>
       <% end %>
-      <div id="loginHeader">
-        <h3>Forgot your password?</h3>
+      <div id="form_header">
+        <h2>Forgot your password?</h2>
       </div>
-      <div class="loginSection">
+      <div class="input-container">
         <p class="label"><label for="email">Email:</label></p>
         <p><%= text_field_tag :email, nil, :autofocus => true, :autocomplete => 'off', :placeholder => 'What\'s your email?' %></p>
       </div>
-      <div id="loginButton"><%= submit_tag 'Reset Password', :class => 'button grey' %></div>
+      <div id="submit_button"><%= submit_tag 'Reset Password', :class => 'btn grey' %></div>
     <% end %>
-    </div><!-- end loginContainer -->
-  </div><!-- end login -->
-</div><!-- end wrapper -->
+    </div>
+  </div>
+</div>
