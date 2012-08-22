@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
   accepts_nested_attributes_for :profile
 
+  validates_presence_of :email, :message => "Email can't be blank."
+
   validates :email, :uniqueness => true,
-                    :presence => true,
                     :length => { :within => 5..50 },
                     :format => { :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i }
   validates :password, :confirmation => true,

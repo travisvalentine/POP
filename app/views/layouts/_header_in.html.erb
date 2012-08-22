@@ -1,25 +1,27 @@
 <div id="header">
-  <div id="logo"><%= link_to "POP", root_path %></div>
-  <div id="findNav">
-    <ul>
-      <li id="userParent"><%= link_to 'Issues', "#" %>
-        <ul id="userChildren">
-          <% Issue.all.each do |issue| %>
-          <li><%= link_to issue.name, issue_path(issue) %></li>
-          <% end %>
-        </ul>
-      </li>
-      <li><%= link_to 'Problems', problems_path %></li>
-    </ul>
-  </div><!-- end find -->
-  <div id="usernav">
-    <ul>
-      <li id="userParent"><%= link_to current_user.profile.name, current_user.profile %>
-        <ul id="userChildren">
-          <li><%= link_to 'Settings', settings_path %></li>
-          <li><%= link_to 'Log Out', logout_path %></li>
-        </ul>
-      </li>
-    </ul>
-  </div><!-- end usernav -->
-</div><!-- end innerheader -->
+  <div class="container clearfix">
+    <div id="logo"><%= link_to "POP", root_path %></div>
+    <div id="content_nav">
+      <ul>
+        <li id="user_parent"><%= link_to 'Issues', "#" %>
+          <ul id="user_children">
+            <% Issue.all.each do |issue| %>
+            <li><%= link_to issue.name, issue_path(issue) %></li>
+            <% end %>
+          </ul>
+        </li>
+        <li><%= link_to 'Problems', problems_path %></li>
+      </ul>
+    </div>
+    <div id="user_nav">
+      <ul>
+        <li id="user_parent"><%= link_to current_user.profile.name, current_user.profile %>
+          <ul id="user_children">
+            <li><%= link_to 'Settings', settings_path %></li>
+            <li><%= link_to 'Log Out', logout_path %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -3,8 +3,8 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   accepts_nested_attributes_for :user
 
-  validates :first_name, :presence => true
-  validates :last_name, :presence => true
+  validates_presence_of :first_name, :message => "Name can't be blank."
+  validates_presence_of :last_name, :message => "Name can't be blank."
   validates :birthday, :presence => true
   validates :party_affiliation, :presence => true
   #validates :bio, :presence => true
