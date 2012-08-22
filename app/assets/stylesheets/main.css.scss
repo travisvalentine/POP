@@ -1,162 +1,17 @@
-$dark-blue: rgb(0, 69, 173);
-$med-blue: rgb(1, 113, 208);
-$light-blue: rgb(0, 167, 232);
-$gop-red: rgb(201, 34, 26);
-
-/*---------------MAIN-----------------------*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  list-style-type:none;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1;
-  background-color: rgb(227, 242, 231);
-  background: -webkit-gradient(linear, left, top, left bottom, from(rgb(227,242,231)), to(rgb(227, 242, 231))) ;
-}
-
 .inaug { 
   background-color: #fff;
   background: url(lincoln.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
 }
 
-@font-face {
-  font-family: 'Essays 1743';
-  src: url('tagesschrift.ttf');
-}
-
-@font-face {
-  font-family: 'Essays1743';
-  /*src: url('../fonts/UglyQua.eot');*/
-  src: url('../fonts/Essays1743.ttf') format('truetype');/* Opera, Safari */
-}
-
 h1.old {
   font-family:"Essays1743", "Helvetica Neue", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-  font-size:44pt;
+  font-size:50px;
   color: #1C031E;
+  margin: 0;
+  text-align:center;
+  line-height: 65px;
 }
 
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-body {
-  margin: 0px;
-  font-family:"Helvetica Neue", Helvetica, sans-serif;
-}
-
-.clearfix:after {
-   content: ".";
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
-}
-
-#wrapper {
-  right: 0;
-  left: 0;
-  position: relative;
-  padding: 0;
-  /*  background-color: rgb(227, 242, 231);*/
-}
-
-.home-bg {
-}
-
-#header, #footer {
-  width:100%;
-}
-
-#home_signup {
-  position: relative;
-  width: 650px;
-  min-height: 460px;
-  margin:auto;
-  background-color: #FAFAFA;
-  padding: 30px;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  margin-bottom:200px;
-  top: 50px;
-  opacity: .9;
-}
-
-#content {
-  position: relative;
-  width: 950px;
-  min-height: 425px;
-  margin:auto;
-  background-color: rgb(227, 242, 231);
-}
-
-h1 {
-  font-size:20pt;
-}
-
-h2 {
-  font-size:15pt;
-}
-
-h3 {
-  font-size:14pt;
-}
-
-h4 {
-  font-size:12pt;
-}
-
-h5 {
-  font-size: 9pt;
-  font-face:bold;
-  margin:0;
-  padding-top:7px;
-}
-
-a {
-  text-decoration: none;
-  outline: none;
-}
-
-.italics { font-style: italic; }
-
-.field_with_errors { display:inline; }
-.field_with_errors .message { white-space: nowrap; display:inline-block;font-size:14px; position:absolute; background-color: black; padding: 6px 10px; color: #fff; @include border-radius(5px); margin:7px 8px;
-  &:after { content:""; width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:10px solid black;border-left:10px solid transparent; position:absolute; left:0;margin:3px 0 0 -15px;top:0}
+div#login {
+  margin-bottom:140px
 }

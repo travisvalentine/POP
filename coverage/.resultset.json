@@ -8,7 +8,7 @@
         1,
         null,
         1,
-        128,
+        132,
         null,
         1,
         null,
@@ -31,6 +31,36 @@
         null,
         1,
         4,
+        null,
+        null,
+        null
+      ],
+      "/Users/travisvalentine/hungry-projects/open_source/POP/app/controllers/existing_problem_votes_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/travisvalentine/hungry-projects/open_source/POP/app/controllers/existing_solution_votes_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
         null,
         null,
         null
@@ -1093,6 +1123,6 @@
         null
       ]
     },
-    "timestamp": 1344473903
+    "timestamp": 1344915498
   }
 }
