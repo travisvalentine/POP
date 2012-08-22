@@ -2,19 +2,46 @@
   <script type="text/javascript">
   $(function(){
     $('body').addClass('inaug');
-    $('#wrapper').addClass('home-bg');
-    $('#header').addClass('home-bg');
-    $('#footer').addClass('home-bg');
+    $('.form-container').toggle();
+    $('.join').click(function(){
+      $('.form-container').toggle();
+      $('#actions').toggle();
+    });
   })
   </script>
 <% end %>
-<div id="wrapper">
-  <div id="home_signup">
-    <div id="welcomeHead">
+<div class="row">
+  <div id="home_signup" class="span7 center">
+    <div id="form_header">
       <h1 class="old">Be a part of the solution</h1>
     </div>
-    <div class="home-form-container">
+    <div class="form-container">
     <%= render 'new_user_form' %>
     </div>
-  </div><!-- end home -->
-</div><!-- end wrapper -->
+    <div id="actions">
+      <%= link_to "Sign in with Twitter", "#", :class => 'home-action btn' %>
+      OR
+      <%= link_to "Sign up", "#", :class => 'home-action btn join' %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="step span4">
+    <div class="interior">
+      <h2>Step 1: Sign Up</h3>
+      <p>Sign up using your Twitter account, or create one with us. Either way works and will get you started in no time.</p>
+    </div>
+  </div>
+  <div class="step span4">
+    <div class="interior">
+      <h2>Step 2: Add a problem</h3>
+      <p>Have an opinion on what the Government is doing? Want to complain or gripe? Feel free. There's just one caveat: every problem must come with a solution. Is this an idealistic approach? You bet.</p>
+    </div>
+  </div>
+  <div class="step span4">
+    <div class="interior">
+      <h2>Step 3: Discuss others' problems</h3>
+      <p></p>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,14 @@
 <div id="header">
-  <div id="logo"><%= link_to "POP", root_path %></div>
-  <div id="loginNav">
-    <ul>
-      <% if request.path == "/login" %>
-      <li><%= link_to "Join", {:controller =>"users", :action => "new"}, {:id => 'login', :class => 'btn'} %></li>
-      <% else %>
-      <li><%= link_to "Sign In", {:controller =>"sessions", :action => "new"}, {:id => 'login', :class => 'btn'} %></li>
-      <% end %>
-    </ul>
+  <div class="container clearfix">
+    <div id="logo"><%= link_to "POP", root_path %></div>
+    <div id="header_action">
+      <ul>
+        <% if request.path == "/login" %>
+        <li><%= link_to "Join", {:controller =>"users", :action => "new"}, {:id => 'login', :class => 'btn'} %></li>
+        <% else %>
+        <li><%= link_to "Sign In", {:controller =>"sessions", :action => "new"}, {:id => 'login', :class => 'btn'} %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

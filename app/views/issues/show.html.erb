@@ -1,49 +1,47 @@
-<div id="wrapper">
-  <div id="content">
-    <% if flash[:alert] || flash[:notice] %>
-    <div class="alert">
-      <% if flash[:alert] %>
-        <p class="flash-error"><%= flash[:alert] %></p>
-      <% end %>
-      <% if flash[:notice] %>
-        <p class="flash-notice"><%= flash[:notice] %></p>
-      <% end %>
-      <%= yield %>
-    </div>
+<div class="row">
+  <% if flash[:alert] || flash[:notice] %>
+  <div class="alert">
+    <% if flash[:alert] %>
+      <p class="flash-error"><%= flash[:alert] %></p>
     <% end %>
-    <div class="container-head">
-      <h2 class="issue-name"><%= @issue.name %></h2>
+    <% if flash[:notice] %>
+      <p class="flash-notice"><%= flash[:notice] %></p>
+    <% end %>
+    <%= yield %>
+  </div>
+  <% end %>
+  <div class="container-head">
+    <h2 class="issue-name"><%= @issue.name %></h2>
+  </div>
+  <% @issue.problems.each do |issue_problem| %>
+    <div class="issue-problem row">
+      <div class="vote onecol last">
+        <%= upvote_problem(issue_problem, "up-large.png") %>
+        <h1 class="count"><%= issue_problem.votes %></h1>
+        <%= downvote_problem(issue_problem, "down-large.png") %>
+      </div>
+      <div class="issue-problem-details eightcol">
+        <p>
+          <%= issue_problem.body %>
+        </p>
+      </div>
     </div>
-    <% @issue.problems.each do |issue_problem| %>
-      <div class="issue-problem">
-        <div class="vote">
-          <%= upvote_problem(issue_problem, "up-large.png") %>
-          <h1><%= issue_problem.votes %></h1>
-          <%= downvote_problem(issue_problem, "down-large.png") %>
+      <% issue_problem.solutions.each do |solution| %>
+      <div class="issue-problem-solution row">
+        <div class="vote-small onecol last">
+          <%= upvote_solution(solution, "up-small.png") %>
+          <h4 class="count"><%= solution.votes %></h4>
+          <%= downvote_solution(solution, "down-small.png") %>
         </div>
-        <div class="issue-problem-details">
+        <div class="issue-problem-solution-details eightcol">
           <p>
-            <%= issue_problem.body %>
+            <%= solution.body %>
+          </p>
+          <p>
+            <%= link_to issue_problem.user.name, user_path(issue_problem.user) %>
           </p>
         </div>
-      </div>
-        <% issue_problem.solutions.each do |solution| %>
-        <div class="issue-problem-solution">
-          <div class="vote-small">
-            <%= upvote_solution(solution, "up-small.png") %>
-            <h4><%= solution.votes %></h4>
-            <%= downvote_solution(solution, "down-small.png") %>
-          </div>
-          <div class="issue-problem-solution-details">
-            <p>
-              <%= solution.body %>
-            </p>
-            <p>
-              <%= link_to issue_problem.user.name, user_path(issue_problem.user) %>
-            </p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
