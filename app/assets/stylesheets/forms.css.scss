@@ -1,0 +1,145 @@
+#{$all-text-inputs}, textarea {
+  font-size: 18px;
+  font-family:"Essays1743", "Helvetica Neue", Helvetica, sans-serif;
+  padding: 5px 0 5px 5px;
+  border: 1px;
+  border-style:solid;
+  border-color: #8DA09C;
+  @include border-radius(3px);
+  text-shadow: none;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.20);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.20);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.20);
+  &:focus {
+    border-color:rgba(35,146,231,0.8);
+    outline:0;
+    outline:thin dotted \9;
+    -webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6);
+    -moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6);
+    box-shadow:inset 0 1px 3px rgba(0,0,0,0.075),0 0 12px rgba(82,168,236,0.6)
+  }
+}
+
+textarea { 
+  height:70px;
+  resize: none;
+  width:99%;
+}
+
+/* ============================== */
+/* In-line validations
+/* ============================== */
+
+.field_with_errors { display:inline; }
+.field_with_errors .message { white-space: nowrap; display:inline-block;font-size:14px; position:absolute; background-color: black; padding: 6px 10px; color: #fff; @include border-radius(5px); margin:7px 8px;
+  &:after { content:""; width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:10px solid black;border-left:10px solid transparent; position:absolute; left:0;margin:3px 0 0 -15px;top:0}
+}
+
+/* ============================== */
+/* New User
+/* ============================== */
+
+#home_signup {
+  background-color: #FAFAFA;
+  padding: 30px;
+  @include border-radius(5px);
+  margin:20px auto;
+  top: 50px;
+  opacity: .9;
+  #button {
+    margin-top:10px;
+    input[type="submit"] {
+      font-size:30px;
+      width:100%;
+    }
+  }
+}
+
+#form_header {
+  position:relative;
+  margin:0px 0px 10px;
+  p { 
+    font-size:10pt; 
+    padding-top:20px;
+    text-align:center; 
+  }
+}
+
+.form-container {
+  margin: 0 auto 30px;
+  p {
+    font-size:8pt;
+    font-weight:600;
+    margin:4px 0px;
+  }
+}
+
+/* ============================== */
+/* New User & New Session
+/* ============================== */
+
+.input-container {
+  input { 
+    margin:6px 0;
+    width: 99%;
+  }
+  p.label {
+    font-size:14px;
+    font-weight:bold;
+    margin: 4px 0 2px;
+  }
+  p { 
+    margin: 0px 0 8px;
+  }
+}
+
+.input-container.name { 
+  float:left;
+  width: 49%;
+  &.last {
+    margin-left:8px;
+  }
+}
+
+/* ============================== */
+/* New User & New Session
+/* ============================== */
+
+#submit_button {
+  float: right;
+}
+
+#password_reset {
+  font-size: 14px;
+  font-weight: bold;
+  float: left;
+  
+  a {
+    text-decoration:none;
+  }
+}
+
+/* ============================== */
+/* New Problem
+/* ============================== */
+
+.new-problem-container {
+  margin-bottom: 200px;
+
+  textarea {
+    margin: 10px 0;
+  }
+  #button {
+    margin-top:12px;
+    input[type="submit"] {
+      font-size:30px;
+      width:100%;
+    }
+  }
+}
+
+#form_header p#problem_disclaimer {
+  font-style: italic;
+  margin: 10px 0 0;
+  padding: 0;
+}
