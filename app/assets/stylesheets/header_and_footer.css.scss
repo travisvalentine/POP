@@ -12,7 +12,7 @@
 }
 
 #logo {
-  top: 10px;
+  top: 7px;
   position: absolute;
   overflow: hidden; /* donít let content leak beyond the header - not needed as height of anchor will cover whole header */
   padding: 0;
@@ -43,6 +43,9 @@
   li {
     list-style:none;
     font-size:9pt;
+  }
+  ul {
+    margin: 15px 0;
   }
 }
 
@@ -328,6 +331,7 @@
   overflow: hidden;
   border-top: solid 2.25px rgb(78, 93, 89);
   /*background-color: rgb(227, 242, 231);*/
+  margin-top:20px;
 }
 
 #footer ul {
