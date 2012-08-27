@@ -9,24 +9,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-    @users = User.all
-  end
-
-  #def search
-   # index
-    #render :index
-  #end
-
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if @user.save!
       session[:user_id] = @user.id
       Resque.enqueue(Emailer, @user.id)
       redirect_to new_problem_path, :notice => 'User successfully added.'
     else
       render :action => 'new'
     end
+  end
+
+  def index
+    @users = User.all
   end
 
   def edit
@@ -49,11 +44,6 @@ class UsersController < ApplicationController
     else
       redirect_to settings_path
     end
-  end
-
-  def invisible
-    User.update_all(["invisible_at=?", Time.now], :id => params[:user_ids])
-    redirect_to settings_path
   end
 
 end

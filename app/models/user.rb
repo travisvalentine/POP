@@ -1,26 +1,33 @@
 class User < ActiveRecord::Base
-  attr_accessor :password
-  attr_accessible :email, :password, :password_confirmation, :profile_attributes
+  attr_accessor     :password
+  attr_accessible   :email, :password, :password_confirmation,
+                    :profile_attributes, :profile
   before_validation :downcase_email
-  has_one :profile, :dependent => :destroy
+
+  has_one           :profile, :dependent => :destroy
   accepts_nested_attributes_for :profile
 
-  validates_presence_of :email, :message => "Email can't be blank."
+  has_many :problems
+  has_many :solutions
+  has_many :factchecks
+  has_many :comments
+
+  validates_presence_of :email,
+                        :message => "Email can't be blank.",
+                        :unless => :provider?
+
+  validates_confirmation_of :email, :unless => :provider?
+
+  validates_confirmation_of :password,
+                        :unless => :provider?
 
   validates :email, :uniqueness => true,
                     :length => { :within => 5..50 },
-                    :format => { :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i }
-  validates :password, :confirmation => true,
-                       :length => { :within => 4..20 },
-                       :presence => true,
-                       :if => :password_required?
+                    :format => { :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i },
+                    :unless => :provider?
 
-  has_many :problems
-
-  has_many :solutions
-
-  has_many :factchecks
-  has_many :comments
+  validates :password, :length => { :within => 4..20, allow_nil: true },
+                       :unless => :provider?
 
   before_save :encrypt_new_password
 
@@ -33,6 +40,13 @@ class User < ActiveRecord::Base
 
   def authenticated?(password)
     self.hashed_password == encrypt(password)
+  end
+
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+    end
   end
 
   def send_password_reset
@@ -66,26 +80,24 @@ class User < ActiveRecord::Base
     problems.sort_by{|problem| problem.created_at}.reverse
   end
 
-  protected
-    def encrypt_new_password
-      return if password.blank?
-      self.hashed_password = encrypt(password)
-    end
+protected
 
-    def password_required?
-      hashed_password.blank? || password.present?
-    end
+  def encrypt_new_password
+    return if password.blank?
+    self.hashed_password = encrypt(password)
+  end
 
-    def encrypt(string)
-      Digest::SHA1.hexdigest(string)
-    end
+  def provider?
+    # hashed_password.blank? || password.present?
+    !provider.blank? && super
+  end
 
-  scope :profiles, lambda {
-    joins(:profiles).group("users.id") & Profile.id
-  }
+  def encrypt(string)
+    Digest::SHA1.hexdigest(string)
+  end
 
   def downcase_email
-    self.email = self.email.downcase if self.email.present?
+    email = email.downcase if email.present?
   end
 
 end

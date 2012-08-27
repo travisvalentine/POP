@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'make_voteable'
 gem 'nifty-generators'
 gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'pg'
 gem 'rails', '3.2.0'
 
