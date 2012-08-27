@@ -19,9 +19,11 @@
     <%= render 'new_user_form' %>
     </div>
     <div id="actions">
-      <%= link_to "Sign in with Twitter", "#", :class => 'home-action btn' %>
+      <%= link_to "auth/twitter", :id => "twitter_oauth" do %>
+        <%= image_tag("twitter-logo.png") %><p>Sign up with Twitter</p>
+      <% end %>
       OR
-      <%= link_to "Sign up", "#", :class => 'home-action btn join' %>
+      <%= link_to "Sign up with Email", "#", :class => 'home-action btn join', :id => "email_signup" %>
     </div>
   </div>
 </div>
