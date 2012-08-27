@@ -1,7 +1,15 @@
 class SessionsController < ApplicationController
 
   def create
-    if user = User.authenticate(params[:email].downcase, params[:password])
+    auth = request.env["omniauth.auth"]
+    if params[:email] && params[:password]
+      user = User.authenticate(params[:email], params[:password])
+    else
+      user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || 
+             User.create_with_omniauth(auth)
+    end
+    if user
+      Profile.create_with_omniauth(user.id, auth) if user.email.blank?
       session[:user_id] = user.id
       redirect_to new_problem_path, :notice => "Logged in successfully"
     else
@@ -12,7 +20,9 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    #cookies.delete(:auth_token)
     redirect_to root_path, :notice => "You successfully logged out"
   end
+
+private
+
 end
