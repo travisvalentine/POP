@@ -1,13 +1,28 @@
 class Profile < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :bio, :birthday, :party_affiliation
+  attr_accessible :first_name, :last_name, :bio, :birthday,
+                  :party_affiliation, :twitter, :job_title
   belongs_to :user
   accepts_nested_attributes_for :user
 
   validates_presence_of :first_name, :message => "Name can't be blank."
   validates_presence_of :last_name, :message => "Name can't be blank."
-  validates :birthday, :presence => true
-  validates :party_affiliation, :presence => true
-  #validates :bio, :presence => true
+  
+  validates_presence_of :birthday, :unless => :user_created_from_twitter?
+
+  validates_confirmation_of :birthday, :unless => :user_created_from_twitter?
+  
+  validates_confirmation_of :party_affiliation, :unless => :user_created_from_twitter?
+
+  def self.create_with_omniauth(user_id, auth)
+    name = auth["info"]["name"].split(" ")
+    create! do |profile|
+      profile.user_id = user_id
+      profile.first_name = name[0]
+      profile.last_name = name[1..-1].join(" ")
+      profile.bio = auth["info"]["description"]
+      profile.twitter = auth["info"]["nickname"]
+    end
+  end
 
   def name
     "#{first_name} #{last_name}"
@@ -22,18 +37,8 @@ class Profile < ActiveRecord::Base
     now.year - "#{birthday}".year - ((now.month > "#{birthday}".month || (now.month == "#{birthday}".month && now.day >= "#{birthday}".day)) ? 0 : 1)
   end
 
-#  has_attached_file :photo,
- #   :styles => { :normal => "153x220#", :small => "75x108#", :thumb => "54x78#" },
-  #  :default_url => 'missing_:style.png',
-   # :storage => :s3,
-    #:bucket => 'yourturn_profile',
-   # :s3_credentials => "#{Rails.root}/config/amazon_s3.yml",
-    #:s3_credentials => {
-    #:access_key_id => ENV['S3_KEY'],
-    #:secret_access_key => ENV['S3_SECRET'],
-    #},
-    #:path => ":attachment/:style/:id.:extension"
-
-#  validates_attachment_size :photo, :less_than => 1.megabytes
+  def user_created_from_twitter?
+    !user.nil? && !user.provider.blank? && !user.uid.blank?
+  end
 
 end
