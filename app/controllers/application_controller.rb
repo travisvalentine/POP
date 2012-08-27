@@ -25,6 +25,11 @@ private
     session[:user_id] = @user.id
   end
 
+  def reset_session
+    session[:user_id] = nil
+  end
+  helper_method :reset_session
+
   def set_return_session
     session[:return_to] = request.referrer
   end
