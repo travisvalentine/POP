@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807032710) do
+ActiveRecord::Schema.define(:version => 20120822005359) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -101,6 +101,8 @@ ActiveRecord::Schema.define(:version => 20120807032710) do
     t.datetime "password_reset_sent_at"
     t.integer  "up_votes",               :default => 0, :null => false
     t.integer  "down_votes",             :default => 0, :null => false
+    t.string   "provider"
+    t.string   "uid"
   end
 
   create_table "votings", :force => true do |t|

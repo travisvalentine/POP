@@ -17,5 +17,39 @@ describe Problem do
       page.should have_content solution.body
     end
 
+    context "who wants to vote on a problem" do
+      before(:each) do
+        visit problem_path(problem)
+      end
+
+      it "has links to vote up and down a problem" do
+        page.should have_selector ".vote"
+      end
+
+      it "shows an arrow to upvote the problem" do
+        within(".vote") do
+          page.should have_selector "#upvote_big"
+        end
+      end
+
+      it "allows a user to upvote the problem" do
+        within(".vote") do
+          page.should have_selector "#upvote_big"
+        end
+      end
+
+      it "shows an arrow to downvote the problem" do
+        within(".vote") do
+          page.should have_selector "#downvote_big"
+        end
+      end
+
+      it "allows a user to downvote the problem" do
+        within(".vote") do
+          page.should have_selector "#downvote_big"
+        end
+      end      
+    end
   end
+
 end
