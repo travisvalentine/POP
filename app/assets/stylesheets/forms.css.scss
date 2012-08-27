@@ -58,10 +58,26 @@ textarea {
 #form_header {
   position:relative;
   margin:0px 0px 10px;
+
+  h1 {
+    display:inline;
+
+    &#login {
+      float: left;
+    }
+  }
+
   p { 
-    font-size:10pt; 
+    display:inline;
+    font-size:10pt;
     padding-top:20px;
-    text-align:center; 
+    text-align:center;
+    
+    &#login {
+      float: right;
+      padding: 0;
+      margin: 8px 0 0 0;
+    }
   }
 }
 
