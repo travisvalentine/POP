@@ -1,15 +1,22 @@
 <%= content_for(:head) do %>
-	<%= javascript_include_tag "chosen.jquery.min" %>
+	<%= javascript_include_tag "chosen.jquery.min", "charCount.js" %>
 	<%= stylesheet_link_tag "chosen.css" %>
 	<script type="text/javascript">
 		$(function(){
     	$(".chzn-select").chosen({ disable_search_threshold : 25 });
+      $("#problem_body").charCount({
+        allowed: 250,
+        warning: 20
+      });
+      $("#problem_solution_body").charCount({
+        allowed: 250,
+        warning: 20
+      });
     });
   </script>
 <% end %>
 <div class="row">
-  <div class="twocol"></div>
-  <div class="eightcol">
+  <div class="span7 offset2 center">
     <div id="form_header" class="new-problem">
       <h1 class="old">What ails you, <%= current_user.profile.first_name %>?</h1>
       <p id="problem_disclaimer">* Every problem must come with a solution.</p>
