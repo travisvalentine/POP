@@ -3,10 +3,10 @@
     <h1>What people are thinking</h1>
     <%= link_to "Add a New Problem, #{current_user.profile.first_name}", new_problem_path, :class => 'btn' %>
   </div>
+</div>
   <% unless @problems.empty? %>
-  <div id="others_problems">
-    <h1>Others' Problems</h1>
-    <%= render :partial => "other_problem", :collection => current_user.excluded_problems %>
-  </div>
+    <div class="row">
+      <%= render :partial => "other_problem", :collection => current_user.excluded_problems %>
+    </div>
   <% end %>
 </div>
