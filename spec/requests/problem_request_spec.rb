@@ -4,6 +4,16 @@ describe Problem do
   let!(:user) { FactoryGirl.create(:user) }
   let!(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
   let!(:problem) { FactoryGirl.create(:problem, :user_id => user.id) }
+  let(:problem_with_upvote) { FactoryGirl.create( :problem,
+                                                  :user_id => user.id,
+                                                  :up_votes => 1,
+                                                  :down_votes => 0
+                                                ) }
+  let(:problem_without_votes) { FactoryGirl.create( :problem,
+                                                    :user_id => user.id,
+                                                    :up_votes => 0,
+                                                    :down_votes => 0
+                                                  ) }
   let!(:solution) { FactoryGirl.create(:solution, :problem_id => problem.id, :user_id => user.id) }
 
   context "as an authenticated user" do
@@ -48,7 +58,42 @@ describe Problem do
         within(".vote") do
           page.should have_selector "#downvote_big"
         end
-      end      
+      end
+
+      context "that has not been voted" do
+        before(:each) {
+          problem_without_votes
+          visit problem_path(problem_without_votes)
+        }
+
+        it "adds an upvote when voted up" do
+          within(".vote") do
+            page.find("#upvote_big").click
+          end
+          problem_without_votes.up_votes.should == 1
+        end
+
+        it "redirects back to the problem when voted on" do
+          page.find("#upvote_big").click
+          current_path.should == problem_path(problem_without_votes)
+        end
+
+        # user.up_votes.should == 1
+      end
+
+      context "that has already been voted up" do
+        before(:each) {
+          visit problem_path(problem_with_upvote)
+        }
+
+        it "has an upvote" do
+          problem_with_upvote.up_votes.should == 1
+        end
+
+        it "" do
+        end
+      end
+
     end
   end
 
