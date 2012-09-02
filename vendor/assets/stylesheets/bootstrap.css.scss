@@ -1785,8 +1785,8 @@ legend + .control-group {
 .dropdown-submenu:hover > a {
   color: #ffffff;
   text-decoration: none;
-  background-color: #0088cc;
-  background-color: #0081c2;
+  background-color: $gop-red;
+  background-color: $gop-red;
   background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
   background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
@@ -2408,11 +2408,12 @@ legend + .control-group {
 }
 
 .navbar .brand {
+  font-family: 'Imprima', sans-serif;
   display: block;
   float: left;
   padding: 10px 20px 10px;
   margin-left: -20px;
-  font-size: 20px;
+  font-size: 27px;
   font-weight: 200;
   color: #555555;
   text-shadow: 0 1px 0 #ffffff;

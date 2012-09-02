@@ -37,64 +37,67 @@ describe Problem do
       end
 
       it "shows an arrow to upvote the problem" do
-        within(".vote") do
-          page.should have_selector "#upvote_big"
+        within(".vote.big") do
+          page.should have_selector("img[alt=Up-large]")
         end
       end
 
       it "allows a user to upvote the problem" do
-        within(".vote") do
+        within(".vote.big") do
           page.should have_selector "#upvote_big"
         end
       end
 
       it "shows an arrow to downvote the problem" do
-        within(".vote") do
-          page.should have_selector "#downvote_big"
+        within(".vote.big") do
+          page.should have_selector("img[alt=Down-large]")
         end
       end
 
       it "allows a user to downvote the problem" do
-        within(".vote") do
+        within(".vote.big") do
           page.should have_selector "#downvote_big"
         end
       end
+    end
 
-      context "that has not been voted" do
-        before(:each) {
-          problem_without_votes
-          visit problem_path(problem_without_votes)
-        }
+    context "that has not been voted" do
+      before(:each) {
+        problem_without_votes
+        visit problem_path(problem_without_votes)
+      }
 
-        it "adds an upvote when voted up" do
-          within(".vote") do
-            page.find("#upvote_big").click
-          end
-          problem_without_votes.up_votes.should == 1
-        end
-
-        it "redirects back to the problem when voted on" do
-          page.find("#upvote_big").click
-          current_path.should == problem_path(problem_without_votes)
-        end
-
-        # user.up_votes.should == 1
+      it "adds an upvote when voted up" do
+        page.find("#upvote_big").click
+        problem_without_votes.up_votes.should == 1
+        problem_without_votes.votes.should == 1
       end
 
-      context "that has already been voted up" do
-        before(:each) {
-          visit problem_path(problem_with_upvote)
-        }
-
-        it "has an upvote" do
-          problem_with_upvote.up_votes.should == 1
-        end
-
-        it "" do
-        end
+      it "redirects back to the problem when voted on" do
+        page.find("#upvote_big").click
+        current_path.should == problem_path(problem_without_votes)
       end
 
     end
+
+    context "that has already been voted up" do
+      before(:each) {
+        problem_with_upvote
+        visit problem_path(problem_with_upvote)
+      }
+
+      it "has an upvote" do
+        problem_with_upvote.up_votes.should == 1
+      end
+
+      it "removes the up vote when clicked up again" do
+        page.find("#upvote_big").click
+        problem_with_upvote.up_votes.should == 0
+        problem_without_votes.votes.should == 0
+      end
+
+    end
+
   end
 
 end
