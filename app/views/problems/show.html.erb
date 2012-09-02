@@ -11,8 +11,8 @@
       <%= yield %>
     </div>
     <% end %>
-    <div class="problem-show">
-      <div class="vote">
+    <div class="problem-show row">
+      <div class="vote big">
         <%= upvote_problem(@problem, "up-large.png") %>
         <h1><%= @problem.votes %></h1>
         <%= downvote_problem(@problem, "down-large.png") %>
@@ -22,12 +22,12 @@
         <p>- by <%= link_to @problem.user.profile.name, @problem.user.profile %></p>
       </div>
     </div>
-    <div id="problem_solutions">
-      <h1>Solutions (<%= @problem.solutions.count %>)</h2>
-      <%= link_to "Add a solution", new_solution_path(:problem_id => @problem.id), :id => "new_solution" %>
+    <div id="problem_solutions" class="row">
+      <h3>Solutions (<%= @problem.solutions.count %>)</h3>
+      <%= link_to "Add a solution", new_solution_path(:problem_id => @problem.id), :class => "btn" %>
       <% @problem.solutions.each do |solution| %>        
         <div class="problem-solution">
-          <div class="vote-small">
+          <div class="vote small">
             <%= upvote_solution(solution, "up-small.png") %>
             <h4><%= solution.votes %></h4>
             <%= downvote_solution(solution, "down-small.png") %>

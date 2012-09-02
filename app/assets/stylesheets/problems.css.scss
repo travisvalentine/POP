@@ -5,3 +5,61 @@
 .index-head h1 {
   display:inline-block;
 }
+
+#problem_solutions {
+  margin-left: 45px;
+
+  h3 {
+    display:inline;
+  }
+}
+
+#problem_details {
+  float: left;
+  height: 90px;
+
+  h1 {
+    line-height: 50px;
+  }
+}
+
+.solution-details {
+  float: left;
+  height: 54px;
+
+  p {
+    line-height: 50px;
+  }
+}
+
+.other-problem {
+  border-bottom: 1px dotted #ccc;
+  padding: 15px 0;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  .details {
+    float: left;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.overview {
+  float: left;
+  margin-right: 15px;
+  width: 35px;
+}
+
+.solution-count {
+
+}
+
+.vote-count {
+  margin: 0 auto;
+  text-align: center;
+}
