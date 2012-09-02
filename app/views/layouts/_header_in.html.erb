@@ -1,27 +1,43 @@
-<div id="header">
-  <div class="container clearfix">
-    <div id="logo"><%= link_to "POP", root_path %></div>
-    <div id="content_nav">
-      <ul>
-        <li id="user_parent"><%= link_to 'Issues', "#" %>
-          <ul id="user_children">
-            <% Issue.all.each do |issue| %>
-            <li><%= link_to issue.name, issue_path(issue) %></li>
-            <% end %>
-          </ul>
-        </li>
-        <li><%= link_to 'Problems', problems_path %></li>
-      </ul>
-    </div>
-    <div id="user_nav">
-      <ul>
-        <li id="user_parent"><%= link_to current_user.profile.name, current_user.profile %>
-          <ul id="user_children">
-            <li><%= link_to 'Settings', settings_path %></li>
-            <li><%= link_to 'Log Out', logout_path %></li>
-          </ul>
-        </li>
-      </ul>
+<div class="navbar navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to "POP", root_path, :class => "brand" %>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="issue_list">Issues
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="issue_list">
+              <% Issue.all.each do |issue| %>
+              <li><%= link_to issue.name, issue_path(issue) %></li>
+              <% end %>
+            </ul>
+          </li>
+          <li><%= link_to 'Problems', problems_path %></li>
+          <li class="dropdown">
+          </li>
+        </ul>
+        <ul class="nav pull-right">
+          <li id="user_info"><%= image_tag(current_user.profile.image, :alt => "#{current_user.name}'s Image") if current_user.profile.image.present? %><%= link_to current_user.profile.name, current_user.profile %></li>
+          <li class="divider-vertical"></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="user_settings">
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="user_settings">
+              <li><%= link_to 'Settings', settings_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to 'Log Out', logout_path %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
