@@ -1,5 +1,24 @@
 @import "colors";
 
+.h-btn {
+  @include border-radius(5px);
+  background-color: #fff;
+  border: 1px solid #FFCCD2;
+  letter-spacing: 1px;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+#login {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 26px;
+  margin-top: 5px;
+  padding: 0px 15px;
+}
+
 .btn { @include button(simple, #D9D9D9); font-size: 110%; }
 
 .btn-light-blue-shiny { @include button(shiny, $light-blue); }
