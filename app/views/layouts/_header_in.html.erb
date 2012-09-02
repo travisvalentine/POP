@@ -6,9 +6,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <%= link_to "POP", root_path, :class => "brand" %>
+      <%= link_to "proposit", root_path, :class => "brand" %>
       <div class="nav-collapse">
-        <ul class="nav">
+        <ul class="nav" id="content_nav">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="issue_list">Issues
               <b class="caret"></b>
@@ -24,7 +24,7 @@
           </li>
         </ul>
         <ul class="nav pull-right">
-          <li id="user_info"><%= image_tag(current_user.profile.image, :alt => "#{current_user.name}'s Image") if current_user.profile.image.present? %><%= link_to current_user.profile.name, current_user.profile %></li>
+          <li id="user_profile"><%= image_tag(current_user.profile.image, :alt => "#{current_user.name}'s Image") if current_user.profile.image.present? %><%= link_to current_user.profile.name, current_user.profile %></li>
           <li class="divider-vertical"></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="user_settings">
