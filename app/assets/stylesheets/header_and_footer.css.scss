@@ -13,6 +13,12 @@ ul[aria-labelledby="issue_list"] {
   }
 }
 
+ul[aria-labelledby="user_settings"] {
+  li.divider {
+    margin: 5px 1px;
+  }
+}
+
 #user_info {
 
   img {
