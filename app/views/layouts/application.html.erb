@@ -10,9 +10,9 @@
 </head>
 <body>
 <% if logged_in? %>
-<%= render 'layouts/header_in' %>
+  <%= render 'layouts/header_in' %>
 <% else %>
-<%= render 'layouts/header_out' %>
+  <%= render 'layouts/header_out' %>
 <% end %>
 <div class="container">
   <%= yield %>

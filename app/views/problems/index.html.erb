@@ -1,12 +1,9 @@
-<div class="row">
-  <div class="index-head">
-    <h1>What people are thinking</h1>
-    <%= link_to "Add a New Problem, #{current_user.profile.first_name}", new_problem_path, :class => 'btn' %>
-  </div>
-  <% unless @problems.empty? %>
-  <div id="others_problems">
-    <h1>Others' Problems</h1>
+<div class="index-head">
+  <h1>What people are thinking</h1>
+  <%= link_to "Add a New Problem, #{current_user.profile.first_name}", new_problem_path, :class => 'btn' %>
+</div>
+<% unless @problems.empty? %>
+  <div class="problem">
     <%= render :partial => "other_problem", :collection => current_user.excluded_problems %>
   </div>
-  <% end %>
-</div>
+<% end %>

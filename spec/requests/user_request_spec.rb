@@ -46,14 +46,12 @@ describe User do
     context "and navigating the site from the header" do
 
       it "has the app name with a link to the homepage" do
-        within "#logo" do
-          click_link_or_button "POP"
-        end
+        page.find(".brand").click
         current_path.should == problems_path
       end
 
       it "links to the current user's profile" do
-        within "#user_nav" do
+        within "#user_profile" do
           page.should have_link "#{profile.name}"
           click_link_or_button "#{profile.name}"
         end
@@ -61,7 +59,7 @@ describe User do
       end
 
       it "links to the current user's settings" do
-        within "#user_nav" do
+        within "ul[aria-labelledby='user_settings']" do
           page.should have_link "Settings"
           click_link_or_button "Settings"
         end
@@ -72,7 +70,7 @@ describe User do
       end
 
       it "links to log out" do
-        within "#user_nav" do
+        within "ul[aria-labelledby='user_settings']" do
           page.should have_link "Log Out"
           click_link_or_button "Log Out"
         end
