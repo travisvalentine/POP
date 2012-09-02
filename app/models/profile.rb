@@ -17,6 +17,8 @@ class Profile < ActiveRecord::Base
     name = auth["info"]["name"].split(" ")
     create! do |profile|
       profile.user_id = user_id
+      profile.image = auth['info']['image']
+      profile.location = auth['info']['location']
       profile.first_name = name[0]
       profile.last_name = name[1..-1].join(" ")
       profile.bio = auth["info"]["description"]

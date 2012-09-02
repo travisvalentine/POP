@@ -1,26 +1,18 @@
-<%= div_for @profile do %>
-<div id="wrapper">
-  <div id="content" class="clearfix">
-    <div id="profile">
-      <div id="profile_info">
-        <h1><%= @profile.name %></h1>
-        <p class="main-info"><%= @profile.bio %></p>
-        <p class="main-info"><%= @profile.party_affiliation.to_s %><% if @profile.job_title? %>, &nbsp;<%= @profile.job_title %><% end %></p>
-        <p class="main-info"><%= link_to '@', "http://twitter.com/#{@profile.twitter}", :target => "_blank" %><%= link_to @profile.twitter, "http://twitter.com/#{@profile.twitter}", :target => "_blank" %>
-        </p>
-        <p class="main-info">
-          <%= link_to "Edit Profile", settings_path %>
-        </p>
-      </div>
-      <div id="profile_problems">
-        <h1>Things <%= @profile.first_name %> cares about.</h1>
-        <% @profile_problems.each do |problem| %>
-        <div class="profile-problem">
-          <p><%= link_to problem.body, problem %></p>
-        </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<div id="profile_info">
+  <h1><%= @profile.name %></h1>
+  <p class="main-info"><%= @profile.bio %></p>
+  <p class="main-info"><%= @profile.party_affiliation.to_s %><% if @profile.job_title? %>, &nbsp;<%= @profile.job_title %><% end %></p>
+  <p class="main-info"><%= link_to '@', "http://twitter.com/#{@profile.twitter}", :target => "_blank" %><%= link_to @profile.twitter, "http://twitter.com/#{@profile.twitter}", :target => "_blank" %>
+  </p>
+  <p class="main-info">
+    <%= link_to "Edit Profile", settings_path %>
+  </p>
 </div>
-<% end %>
+<div id="profile_problems">
+  <h1>Things <%= @profile.first_name %> cares about.</h1>
+  <% @profile_problems.each do |problem| %>
+  <div class="profile-problem">
+    <p><%= link_to problem.body, problem %></p>
+  </div>
+  <% end %>
+</div>
