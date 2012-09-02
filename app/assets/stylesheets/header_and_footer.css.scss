@@ -14,12 +14,14 @@ ul[aria-labelledby="issue_list"] {
 }
 
 ul[aria-labelledby="user_settings"] {
+  margin-top: 12px;
+  
   li.divider {
     margin: 5px 1px;
   }
 }
 
-#user_info {
+#user_profile {
 
   img {
     display: inline-block;
@@ -36,6 +38,10 @@ ul[aria-labelledby="user_settings"] {
 a#user_settings {
   margin-top: 10px;
   padding: 0 8px;
+}
+
+ul#content_nav {
+  margin-left: 80px;
 }
 
 /*----------------FOOTER----------------*/
