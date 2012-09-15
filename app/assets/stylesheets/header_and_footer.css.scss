@@ -15,7 +15,7 @@ ul[aria-labelledby="issue_list"] {
 
 ul[aria-labelledby="user_settings"] {
   margin-top: 12px;
-  
+
   li.divider {
     margin: 5px 1px;
   }
@@ -47,16 +47,17 @@ ul#content_nav {
 /*----------------FOOTER----------------*/
 
 #footer {
+  border-top: 1px solid #d4d4d4;
   display: block;
   zoom: 1;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgb(78, 93, 89);
   margin-top:20px;
 }
 
 #footer ul {
-  padding: 4px 15px 10px 15px;
+  padding: 4px 0px 10px;
+  margin: 0;
 }
 
 #footer li {
@@ -70,7 +71,6 @@ ul#content_nav {
 #footer .main {
   float:left;
   width: auto;
-  background-color: rgb(227, 242, 231);
 }
 
 #footer .socialnetworks {
