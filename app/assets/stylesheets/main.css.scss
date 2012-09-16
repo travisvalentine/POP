@@ -29,11 +29,8 @@ div#login {
   margin-bottom: 140px;
   margin-top: 20px;
 
-  p.label {
-    padding: 0;
-  }
 }
 
-a.btn:hover {
+a.btn:hover, a.btn-gop-red:hover {
   text-decoration: none;
 }
