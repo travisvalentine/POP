@@ -20,6 +20,11 @@
   height: auto;
   margin-left: 80px;
 
+  span {
+    font-family: "georgia";
+    font-style: italic;
+  }
+
   #email_signup {
     margin-left: 5px;
   }
@@ -44,7 +49,7 @@
     }
 
     img {
-      @include border-radius(5px);
+      @include border-radius(3px 0px 0px 3px);
       height: 34px;
       margin-top:-4px;
     }
