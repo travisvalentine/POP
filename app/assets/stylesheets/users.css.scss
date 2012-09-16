@@ -17,7 +17,8 @@
 }
 
 #actions {
-  height: 355px;
+  height: auto;
+  margin-left: 80px;
 
   #email_signup {
     margin-left: 5px;
@@ -25,10 +26,15 @@
 
   #twitter_oauth {
     @include border-radius(3px);
-    background-color: #00B4EA;
+    background-color: darken(#00B4EA, 2%);
     color: #fff;
     padding: 10px 10px 10px 0;
     margin-right: 5px;
+
+    &:hover {
+      background-color: lighten(#00B4EA, 10%);
+      text-decoration: none;
+    }
 
     p {
       display: inline;

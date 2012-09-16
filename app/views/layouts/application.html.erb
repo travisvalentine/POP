@@ -14,9 +14,14 @@
 <% else %>
   <%= render 'layouts/header_out' %>
 <% end %>
+<% if homepage? %>
+<div>
+  <%= yield %>
+<% else %>
 <div class="container">
   <%= yield %>
 </div>
+<% end %>
 <%= render 'layouts/footer' %>
 </body>
 </html>
