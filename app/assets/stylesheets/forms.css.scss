@@ -73,10 +73,15 @@ select#user_profile_attributes_birthday_3i {
   margin-bottom: 20px;
   top: 50px;
   opacity: .9;
+
   #button {
     margin-top:10px;
+
     input[type="submit"] {
-      font-size:30px;
+      font-size:26px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      padding: 12px 0;
       width:100%;
     }
   }
@@ -133,6 +138,7 @@ select#user_profile_attributes_birthday_3i {
     font-size:14px;
     font-weight:bold;
     margin: 4px 0 2px;
+    padding: 0;
   }
   p {
     margin: 0px 0 8px;

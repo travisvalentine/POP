@@ -1,0 +1,17 @@
+<div class="row">
+  <div id="home_signup" class="span6 offset3">
+    <div id="form_header">
+      <h1 class="old">Be a part of the solution</h1>
+    </div>
+    <div class="form-container">
+    <%= render 'new_user_form' %>
+    </div>
+    <div id="actions">
+      <%= link_to "auth/twitter", :id => "twitter_oauth" do %>
+        <%= image_tag("twitter-logo.png") %><p>Sign up with Twitter</p>
+      <% end %>
+      <span>~ OR ~</span>
+      <%= link_to "Sign up with Email", "#", :class => 'home-action btn-gop-red lg-text', :id => "email_signup" %>
+    </div>
+  </div>
+</div>

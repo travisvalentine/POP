@@ -1,32 +1,7 @@
 <div id="wrapper">
   <div id="content">
     <div id="loginContainer">
-    <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
-      <% if @user.errors.any? %>
-        <div class="error_messages">
-          <h2>Form is invalid</h2>
-          <ul>
-            <% for message in @user.errors.full_messages %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="loginHeader">
-        <h3>Forgot your password?</h3>
-      </div>
-      <div class="field">
-        <p class="label"><label for="password">New Password:</label></p>
-        <p><%= f.password_field :password, :placeholder => 'Enter a new password' %></p>
-      </div>
-      <div class="field">
-        <p class="label"><label for="password_confirmation">Confirm password:</label><%= f.password_field :password_confirmation, :placeholder => 'Confirm password' %></p>
-      </div>
-      <div class="field"
-      <div id="loginButton">
-        <%= submit_tag 'Reset Password', :class => 'button grey' %>
-      </div>
-    <% end %>
-    </div><!-- end loginContainer -->
-  </div><!-- end login -->
-</div><!-- end wrapper -->
+      <%= render "edit_new_password_form" %>
+    </div>
+  </div>
+</div>
