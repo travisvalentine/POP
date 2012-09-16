@@ -4,14 +4,21 @@
   background: #CEE3E8;
 }
 
-.inaug { 
+//.inaug {
+//  background-color: #fff;
+//  background: url(lincoln.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
+//}
+
+.main-form {
+  height: 563px;
   background-color: #fff;
   background: url(lincoln.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
 }
 
 h1.old {
-  font-family:"Essays1743", "Helvetica Neue", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-  font-size:50px;
+  font-family: "Helvetica Neue", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-size:45px;
+  font-weight: 500;
   color: #1C031E;
   margin: 0;
   text-align:center;
@@ -19,5 +26,14 @@ h1.old {
 }
 
 div#login {
-  margin-bottom:140px
+  margin-bottom: 140px;
+  margin-top: 20px;
+
+  p.label {
+    padding: 0;
+  }
+}
+
+a.btn:hover {
+  text-decoration: none;
 }
