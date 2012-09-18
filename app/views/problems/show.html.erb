@@ -1,45 +1,21 @@
-<div id="wrapper">
-  <div id="content">
-    <% if flash[:alert] || flash[:notice] %>
-    <div class="alert">
-      <% if flash[:alert] %>
-        <p class="flash-error"><%= flash[:alert] %></p>
-      <% end %>
-      <% if flash[:notice] %>
-        <p class="flash-notice"><%= flash[:notice] %></p>
-      <% end %>
-      <%= yield %>
-    </div>
-    <% end %>
-    <div class="problem-show row">
-      <div class="vote big">
-        <%= upvote_problem(@problem, "up-large.png") %>
-        <h1><%= @problem.votes %></h1>
-        <%= downvote_problem(@problem, "down-large.png") %>
-      </div>
-      <div id="problem_details">
-        <h1><%= @problem.body %></h1>
-        <p>- by <%= link_to @problem.user.profile.name, @problem.user.profile %></p>
-      </div>
-    </div>
-    <div id="problem_solutions" class="row">
-      <h3>Solutions (<%= @problem.solutions.count %>)</h3>
-      <%= link_to "Add a solution", new_solution_path(:problem_id => @problem.id), :class => "btn" %>
-      <% @problem.solutions.each do |solution| %>        
-        <div class="problem-solution">
-          <div class="vote small">
-            <%= upvote_solution(solution, "up-small.png") %>
-            <h4><%= solution.votes %></h4>
-            <%= downvote_solution(solution, "down-small.png") %>
-          </div>
-          <div class="solution-details">
-            <p><%= solution.body %></p>
-            <% if solution.user.name != current_user.name %>
-            <%= link_to solution.user.name, solution.user.profile %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+<% if flash[:alert] || flash[:notice] %>
+<div class="alert">
+  <% if flash[:alert] %>
+    <p class="flash-error"><%= flash[:alert] %></p>
+  <% end %>
+  <% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+  <% end %>
+  <%= yield %>
+</div>
+<% end %>
+<div class="problem-show row">
+  <%= render partial: "problem_with_votes" %>
+</div>
+<div id="problem_solutions" class="row">
+  <h3>Solutions (<%= @problem.solutions.count %>)</h3>
+  <%= link_to "Add a solution", new_solution_path(:problem_id => @problem.id), :class => "btn-light-blue lg-text" %>
+  <% @problem.solutions.each do |solution| %>
+    <%= render partial: "solutions/problem_solution", locals: {:solution => solution} %>
+  <% end %>
 </div>

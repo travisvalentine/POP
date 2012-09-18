@@ -1,0 +1,13 @@
+<div class="vote big">
+  <%= upvote_problem(@problem, "up-large.png") %>
+  <h1><%= @problem.votes %></h1>
+  <%= downvote_problem(@problem, "down-large.png") %>
+</div>
+<div id="problem_details">
+  <h1><%= @problem.body %></h1>
+  <p>- by <%= link_to @problem.user.profile.name, @problem.user.profile %>
+    <% if @problem.user.profile.bio? %>
+     , <%= truncate(@problem.user.profile.bio, :length => 20) %>
+    <% end %>
+  </p>
+</div>

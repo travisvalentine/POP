@@ -139,11 +139,7 @@ select#user_profile_attributes_birthday_3i {
 /* New User & New Session
 /* ============================== */
 
-.input-container {
-  input {
-    margin:6px 0;
-    width: 99%;
-  }
+.input-container, #issue_container {
   p.label {
     font-size:14px;
     margin: 4px 0 2px;
@@ -152,6 +148,13 @@ select#user_profile_attributes_birthday_3i {
     label {
       font-weight:600;
     }
+  }
+}
+
+.input-container {
+  input {
+    margin:6px 0;
+    width: 99%;
   }
   p {
     margin: 0px 0 8px;
