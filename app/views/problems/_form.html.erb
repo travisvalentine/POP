@@ -11,15 +11,15 @@
   </div>
   <% end %>
   <div class="input-container clearfix">
-    <p class="label"><%= f.label :body, "Problem" %></p>
-    <%= f.text_area :body, :placeholder => "ex: This sucks" %>
+    <p class="label"><%= f.label :body, "Your Problem or Gripe:" %></p>
+    <%= f.text_area :body, :placeholder => "ex: \"This\" or \"This\"" %>
     <span class="counter">250 Characters remaining</span>
   </div>
   <%= f.fields_for :solution do |f| %>
     <%= f.hidden_field :published_at, :value => Time.now %>
   <div class="input-container clearfix">
-    <p class="label"><%= f.label :body, "Solution" %></p>
-    <%= f.text_area :body, :placeholder => "ex: Fix it" %>
+    <p class="label"><%= f.label :body, "Your Solution:" %></p>
+    <%= f.text_area :body, :placeholder => "ex: \"This\" or \"This\"" %>
   </div>
   <% end %>
   <div id="issue_container">
