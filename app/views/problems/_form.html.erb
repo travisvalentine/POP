@@ -10,9 +10,10 @@
     </ul>
   </div>
   <% end %>
-  <div class="input-container">
+  <div class="input-container first">
     <p class="label"><%= f.label :body, "Problem" %></p>
     <%= f.text_area :body, :placeholder => "ex: This sucks" %>
+    <span class="counter">250 Characters remaining</span>
   </div>
   <%= f.fields_for :solution do |f| %>
     <%= f.hidden_field :published_at, :value => Time.now %>

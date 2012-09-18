@@ -45,8 +45,8 @@ select#user_profile_attributes_birthday_3i {
   right:0;
   top:0;
   font-size:16px;
-  font-weight:bold;
-  color:#ccc;
+  font-weight:400;
+  color:darken(#ccc, 10%);
 }
 
 .input-container .warning { color: #ccc; }
@@ -87,6 +87,10 @@ select#user_profile_attributes_birthday_3i {
   }
 }
 
+.new-problem {
+  margin-top: 20px;
+}
+
 #form_header {
   position:relative;
   margin:0px 0px 10px;
@@ -102,10 +106,15 @@ select#user_profile_attributes_birthday_3i {
   }
 
   p {
-    display:inline;
     font-size:10pt;
     padding-top:20px;
     text-align:center;
+
+    &#problem_disclaimer {
+      font-style: italic;
+      margin: 0;
+      padding: 0;
+    }
 
     &#login {
       float: right;
@@ -188,10 +197,4 @@ select#user_profile_attributes_birthday_3i {
       width:100%;
     }
   }
-}
-
-#form_header p#problem_disclaimer {
-  font-style: italic;
-  margin: 10px 0 0;
-  padding: 0;
 }
