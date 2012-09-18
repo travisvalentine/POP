@@ -1,4 +1,4 @@
 require 'resque/tasks'
-task "resque:setup" => :environment do
-  Resque.before_fork = Proc.new { ActiveRecord::Base.establish_connection }
-end
+ENV["QUEUE"] = "*"
+task "resque:setup" => :environment
+task "jobs:work" => "resque:work"
