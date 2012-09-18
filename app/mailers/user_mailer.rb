@@ -12,8 +12,4 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail(:to => "#{user.email}", :subject => "Check yourself and reset yourself")
   end
-  def registration_confirmation(user)
-    @user = user
-    mail(:to => "#{user.email}", :subject => "Welcome!")
-  end
 end
