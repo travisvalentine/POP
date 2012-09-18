@@ -2,24 +2,42 @@
   margin: 0;
 }
 
-.index-head h1 {
-  display:inline-block;
+.index-head {
+  margin-top: 20px;
+
+  h1 {
+    display:inline-block;
+    font-size: 30px;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+
+  a {
+    vertical-align: 3px;
+  }
+}
+
+.problem-show {
+  margin: 30px 0 20px 5px;
 }
 
 #problem_solutions {
-  margin-left: 45px;
+  margin: 20px 75px;
 
   h3 {
     display:inline;
+    margin-right: 10px;
   }
 }
 
 #problem_details {
   float: left;
   height: 90px;
+  width: 90%;
 
   h1 {
-    line-height: 50px;
+    line-height: 32px;
+    font-weight: 400;
   }
 }
 

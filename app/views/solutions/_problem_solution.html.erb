@@ -1,0 +1,13 @@
+<div class="problem-solution">
+  <div class="vote small">
+    <%= upvote_solution(solution, "up-small.png") %>
+    <h4><%= solution.votes %></h4>
+    <%= downvote_solution(solution, "down-small.png") %>
+  </div>
+  <div class="solution-details">
+    <p><%= solution.body %></p>
+    <% if solution.user.name != current_user.name %>
+    <%= link_to solution.user.name, solution.user.profile %>
+    <% end %>
+  </div>
+</div>

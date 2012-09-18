@@ -1,6 +1,6 @@
 <div class="index-head">
   <h1>What people are thinking</h1>
-  <%= link_to "Add a New Problem, #{current_user.profile.first_name}", new_problem_path, :class => 'btn' %>
+  <%= link_to "Add a New Problem, #{current_user.profile.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
 </div>
 <% unless @problems.empty? %>
   <div class="problem">
