@@ -26,16 +26,16 @@ textarea {
   width:99%;
 }
 
-select#user_profile_attributes_birthday_1i {
+select#user_profile_attributes_birthday_1i, select#profile_birthday_1i {
   width: 135px;
 }
 
-select#user_profile_attributes_birthday_2i {
+select#user_profile_attributes_birthday_2i, select#profile_birthday_2i {
   margin-right: 10px;
   width: 145px;
 }
 
-select#user_profile_attributes_birthday_3i {
+select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
   margin-right: 10px;
   width: 85px;
 }
@@ -204,4 +204,12 @@ select#user_profile_attributes_birthday_3i {
       width:100%;
     }
   }
+}
+
+/* ============================== */
+/* Edit Profile Settings
+/* ============================== */
+
+form.edit_profile {
+  width: 50%;
 }

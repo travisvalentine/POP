@@ -1,0 +1,10 @@
+<h3><%= @profile.name %></h3>
+<p class="main-info">Bio: <%= @profile.bio %></p>
+<% unless @profile.party_affiliation.blank? %>
+  <p class="main-info">Party: <%= @profile.party_affiliation %><% if @profile.job_title? %>, &nbsp;<%= @profile.job_title %><% end %></p>
+<% end %>
+<p class="main-info">Twitter: <%= link_to '@', "http://twitter.com/#{@profile.twitter}", :target => "_blank" %><%= link_to @profile.twitter, "http://twitter.com/#{@profile.twitter}", :target => "_blank" %>
+</p>
+<p class="main-info">
+  <%= link_to "Edit Profile", settings_path %>
+</p>
