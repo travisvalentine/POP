@@ -1,14 +1,5 @@
-<% if flash[:alert] || flash[:notice] %>
-<div class="alert">
-  <% if flash[:alert] %>
-    <p class="flash-error"><%= flash[:alert] %></p>
-  <% end %>
-  <% if flash[:notice] %>
-    <p class="flash-notice"><%= flash[:notice] %></p>
-  <% end %>
-  <%= yield %>
-</div>
-<% end %>
+<%= render partial: "shared/errors" %>
+
 <div class="problem-show row">
   <%= render partial: "problem_with_votes" %>
 </div>

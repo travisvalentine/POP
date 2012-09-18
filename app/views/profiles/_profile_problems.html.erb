@@ -1,0 +1,8 @@
+<div id="profile_problems">
+  <h3>Things <%= @profile.first_name %> cares about.</h3>
+  <% @profile_problems.each do |problem| %>
+  <div class="profile-problem">
+    <p><%= link_to problem.body, problem %></p>
+  </div>
+  <% end %>
+</div>

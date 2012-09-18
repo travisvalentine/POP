@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_filter :authenticate, :only => [:edit, :update]
-  
+
   def new
     @profile = Profile.new(params[:profile])
   end
@@ -25,12 +25,11 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = user.profile
-    render :layout => "join_form"
+    @profile = current_user.profile
   end
 
   def update
-    @profile = user.profile
+    @profile = current_user.profile
     if @profile.update_attributes(params[:profile])
       redirect_to profile_path, :notice => 'Updated user information successfully.'
     else
