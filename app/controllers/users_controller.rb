@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save!
       session[:user_id] = @user.id
       Resque.enqueue(Emailer, @user.id)
-      redirect_to new_problem_path, :notice => 'User successfully added.'
+      redirect_to problems_path, :notice => 'Welcome! See what other people are saying below.'
     else
       render :action => 'new'
     end
