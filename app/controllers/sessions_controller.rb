@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         Profile.create_with_omniauth(user.id, auth)
       end
       session[:user_id] = user.id
-      redirect_to new_problem_path, :notice => "Logged in successfully"
+      redirect_to problems_path, :notice => "Logged in successfully"
     else
       flash.now[:alert] = "Invalid login/password. Try again!"
       render :action => 'new'
