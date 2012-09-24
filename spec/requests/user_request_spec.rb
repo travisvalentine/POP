@@ -60,10 +60,9 @@ describe User do
 
       it "links to the current user's settings" do
         within "ul[aria-labelledby='user_settings']" do
-          page.should have_link "Settings"
-          click_link_or_button "Settings"
+          page.should have_link "Edit Profile"
+          click_link_or_button "Edit Profile"
         end
-        page.should have_content "Profile Info"
         page.should have_content "#{profile.name}"
         page.should have_content "#{user.email}"
         page.should have_link "Delete Account"
