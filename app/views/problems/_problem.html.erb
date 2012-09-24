@@ -1,0 +1,12 @@
+<div class="other-problem clearfix">
+  <div class="overview">
+    <h4 class="vote-count"><%= problem.votes %></h4>
+    <span>Votes</span>
+  </div>
+  <div class="details">
+    <p><%= link_to problem.body, problem_path(problem) %></p>
+    <% if problem.solutions.any? %>
+      <h4 class="solution-count"><%= pluralize(problem.solutions.count, "solution") %></h4>
+    <% end %>
+  </div>
+</div>

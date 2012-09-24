@@ -5,8 +5,8 @@ class Problem < ActiveRecord::Base
                    :length    => { :in => 20..255 }
 
   belongs_to :user
-  
-  has_many :solutions
+
+  has_many :solutions, :order => "up_votes DESC, created_at DESC"
 
   has_many :issue_problems
   has_many :issues, :through => :issue_problems
@@ -33,5 +33,5 @@ class Problem < ActiveRecord::Base
   def issue
     issues.first
   end
-  
+
 end

@@ -4,6 +4,6 @@
 </div>
 <% unless @problems.empty? %>
   <div class="problem">
-    <%= render :partial => "other_problem", :collection => current_user.excluded_problems %>
+    <%= render :partial => "problem", :collection => @problems %>
   </div>
 <% end %>

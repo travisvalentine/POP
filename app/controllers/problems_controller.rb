@@ -19,7 +19,7 @@ class ProblemsController < ApplicationController
   end
 
   def index
-    @problems = Problem.all
+    @problems = Problem.find(:all, :order => "up_votes DESC, created_at DESC")
   end
 
   def show
