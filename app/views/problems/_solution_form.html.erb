@@ -1,0 +1,7 @@
+<%= f.fields_for :solution do |f| %>
+  <%= f.hidden_field :published_at, :value => Time.now %>
+<div class="input-container clearfix">
+  <p class="label"><%= f.label :body, "Propose a Solution:" %></p>
+  <%= f.text_area :body, :placeholder => "ex: \"Increase transparency\"" %>
+</div>
+<% end %>

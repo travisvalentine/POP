@@ -1,32 +1,26 @@
 <%= form_for(@problem) do |f| %>
-  <%= f.hidden_field :published_at, :value => Time.now %>
+
   <% if @problem.errors.any? %>
-  <div id="errorExplanation">
-    <p>Halt! Just so you know, you have to fix these <%= pluralize(@problem.errors.count, "error") %> before you can ask a question:</p>
-    <ul>
-    <% @problem.errors.full_messages.each do |msg| %>
-      <li>-&nbsp;<%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
+    <div id="errorExplanation">
+      <p>Halt! Just so you know, you have to fix these <%= pluralize(@problem.errors.count, "error") %> before you can ask a question:</p>
+      <ul>
+      <% @problem.errors.full_messages.each do |msg| %>
+        <li>-&nbsp;<%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
-  <div class="input-container clearfix">
-    <p class="label"><%= f.label :body, "Your Problem or Gripe:" %></p>
-    <%= f.text_area :body, :placeholder => "ex: \"This\" or \"This\"" %>
-    <span class="counter">250 Characters remaining</span>
-  </div>
-  <%= f.fields_for :solution do |f| %>
-    <%= f.hidden_field :published_at, :value => Time.now %>
-  <div class="input-container clearfix">
-    <p class="label"><%= f.label :body, "Your Solution:" %></p>
-    <%= f.text_area :body, :placeholder => "ex: \"This\" or \"This\"" %>
-  </div>
-  <% end %>
-  <div id="issue_container">
-    <p class="label"><%= f.label :issue, "Issue (optional):" %></p>
-  <%= select_tag "problem[issue_ids][]", options_for_select([["", ""]]+ Issue.all.collect{ |issue| [issue.name,issue.id] } ), :class=>'chzn-select', :data => { :placeholder => "Select an Issue" } %>
-  </div>
+
+  <%= f.hidden_field :published_at, :value => Time.now %>
+
+  <%= render partial: "problem_form", locals: { f: f } %>
+
+  <%= render partial: "problems/solution_form", locals: { f: f } %>
+
+  <%= render partial: "problems/issue_form", locals: { f: f } %>
+
   <div id="button">
-  <%= f.submit 'Add', :class => 'btn btn-large btn-gop-red' %>
+    <%= f.submit 'Add', :class => 'btn btn-large btn-gop-red' %>
   </div>
+
 <% end %>
