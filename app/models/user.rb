@@ -75,11 +75,6 @@ class User < ActiveRecord::Base
     "#{self.profile.first_name} #{self.profile.last_name}"
   end
 
-  def excluded_problems
-    problems = Problem.all - self.problems
-    problems.sort_by{|problem| problem.created_at}.reverse
-  end
-
 protected
 
   def encrypt_new_password
