@@ -1,14 +1,14 @@
 <div id="profile_problems">
 
   <% if current_user %>
-    <h4>My problems:</h4>
+    <h4>My solutions:</h4>
   <% else %>
     <h4>Things <%= @profile.first_name %> cares about:</h4>
   <% end %>
 
-  <% @profile.problems.each do |problem| %>
-    <div class="profile-problem">
-      <p><%= link_to problem.body, problem %></p>
+  <% @profile.solutions.each do |solution| %>
+    <div class="profile-solution">
+      <p><%= link_to solution.body, solution %></p>
     </div>
   <% end %>
 

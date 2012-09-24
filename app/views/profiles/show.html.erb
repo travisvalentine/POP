@@ -6,6 +6,11 @@
   <p>Up votes: <%= @profile.user.up_votes %></p>
   <p>Down votes: <%= @profile.user.down_votes %></p>
 </div>
-<% unless @profile_problems.empty? %>
+
+<% unless @profile.problems.empty? %>
   <%= render partial: "profile_problems" %>
+<% end %>
+
+<% unless @profile.solutions.empty? %>
+  <%= render partial: "profile_solutions" %>
 <% end %>
