@@ -1,0 +1,4 @@
+<div id="issue_container">
+  <p class="label"><%= f.label :issue, "Issue (optional):" %></p>
+<%= select_tag "problem[issue_ids][]", options_for_select([["", ""]]+ Issue.all.collect{ |issue| [issue.name,issue.id] } ), :class=>'chzn-select', :data => { :placeholder => "Select an Issue" } %>
+</div>

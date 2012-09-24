@@ -19,7 +19,7 @@
               <% end %>
             </ul>
           </li>
-          <li><%= link_to 'Problems', problems_path %></li>
+          <%= index_active %>
           <li class="dropdown">
           </li>
         </ul>
@@ -31,7 +31,7 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="user_settings">
-              <li><%= link_to 'Settings', settings_path %></li>
+              <li><%= link_to 'Edit Profile', settings_path %></li>
               <li class="divider"></li>
               <li><%= link_to 'Log Out', logout_path %></li>
             </ul>
