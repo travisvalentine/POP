@@ -1,12 +1,17 @@
 <div class="row">
   <div class="span5 offset3">
     <div id="login" class="span5 center">
+
+    <%= render partial: "shared/errors" %>
+
     <%= form_tag session_path, :class => "clearfix" do %>
+
     <% if !alert.nil? %>
       <div id="error_messages">
         <p id="error"><%= flash.now[:alert] %></p>
       </div>
     <% end %>
+
       <div id="form_header" class="clearfix">
         <h1 id="login">Welcome Back</h1>
         <p id="login"><%= link_to image_tag("sign-in-with-twitter-d.png"), "auth/twitter" %></p>
@@ -22,6 +27,7 @@
       <div id="submit_button"><%= submit_tag 'Log In', :class => 'btn-med-blue btn-large' %></div>
       <div id="password_reset"><p><%= link_to "Forgot your password?", new_password_reset_path %></p></div>
     <% end %>
+
     </div>
   </div>
 </div>
