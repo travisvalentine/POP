@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe User do
-  let!(:user) { FactoryGirl.create(:user) }
-  let!(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
-  let!(:problem) { FactoryGirl.create(:problem, :user_id => user.id) }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
+  let(:problem) { FactoryGirl.create(:problem, :user_id => user.id) }
 
   context "who is unauthenticated" do
     describe "and visits their settings page" do
@@ -17,11 +17,14 @@ describe User do
 
   context "who is authenticated" do
     before(:each) do
+      user
+      profile
       login_as(user)
     end
 
     describe "and visits their profile page" do
       before(:each) do
+        problem
         visit profile_path(profile)
       end
 
