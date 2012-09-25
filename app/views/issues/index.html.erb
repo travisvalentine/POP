@@ -1,5 +1,5 @@
 <div class="row">
-  <div id="issueHead">
+  <div id="issue_head">
     <h1>Sort by issues goes here:</h1>
     <% Issue.all.each do |issue| %>
       <%= link_to issue.name, issue_path(issue) %>
