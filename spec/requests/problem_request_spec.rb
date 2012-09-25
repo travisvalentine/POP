@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Problem do
-  let!(:user) { FactoryGirl.create(:user) }
-  let!(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
-  let!(:problem) { FactoryGirl.create(:problem, :user_id => user.id) }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
+  let(:problem) { FactoryGirl.create(:problem, :user_id => user.id) }
   let(:problem_with_upvote) { FactoryGirl.create( :problem,
                                                   :user_id => user.id,
                                                   :up_votes => 1,
@@ -14,11 +14,18 @@ describe Problem do
                                                     :up_votes => 0,
                                                     :down_votes => 0
                                                   ) }
-  let!(:solution) { FactoryGirl.create(:solution, :problem_id => problem.id, :user_id => user.id) }
+  let(:solution) { FactoryGirl.create(:solution, :problem_id => problem.id, :user_id => user.id) }
+
+  before {
+    user
+    profile
+  }
 
   context "as an authenticated user" do
     before(:each) do
       login_as(user)
+      problem
+      solution
     end
 
     it "shows the problem title and it's solution" do
@@ -69,8 +76,9 @@ describe Problem do
 
       it "adds an upvote when voted up" do
         page.find("#upvote_big").click
-        problem_without_votes.up_votes.should == 1
-        problem_without_votes.votes.should == 1
+        within(".vote.big h1") do
+          page.should have_content("1")
+        end
       end
 
       it "redirects back to the problem when voted on" do
@@ -92,8 +100,13 @@ describe Problem do
 
       it "removes the up vote when clicked up again" do
         page.find("#upvote_big").click
-        problem_with_upvote.up_votes.should == 0
-        problem_without_votes.votes.should == 0
+        within(".vote.big h1") do
+          page.should have_content("2")
+        end
+        page.find("#upvote_big").click
+        within(".vote.big h1") do
+          page.should have_content("1")
+        end
       end
 
     end
