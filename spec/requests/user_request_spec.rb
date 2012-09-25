@@ -38,7 +38,7 @@ describe User do
       end
 
       it "sees their problems" do
-        page.should have_content "Things #{profile.first_name} cares about"
+        page.should have_content "My problems"
         page.should have_link problem.body
       end
     end
