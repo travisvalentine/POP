@@ -14,16 +14,18 @@ class Profile < ActiveRecord::Base
   validates_confirmation_of :party_affiliation, :unless => :user_created_from_twitter?
 
   def self.create_with_omniauth(user_id, auth)
+    puts "Creating Profile from Auth"
     name = auth["info"]["name"].split(" ")
     create! do |profile|
       profile.user_id = user_id
-      profile.image = auth['info']['image']
-      profile.location = auth['info']['location']
-      profile.first_name = name[0]
-      profile.last_name = name[1..-1].join(" ")
-      profile.bio = auth["info"]["description"]
-      profile.twitter = auth["info"]["nickname"]
+      profile.image = auth['info']['image'] rescue nil
+      profile.location = auth['info']['location'] rescue ""
+      profile.first_name = name[0] rescue nil
+      profile.last_name = name[1..-1].join(" ") rescue nil
+      profile.bio = auth["info"]["description"] rescue nil
+      profile.twitter = auth["info"]["nickname"] rescue nil
     end
+    puts "Profile created"
   end
 
   def name
