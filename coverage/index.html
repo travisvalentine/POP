@@ -14,7 +14,7 @@
     <link href='./assets/0.5.3/highlight.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
     <link href='./assets/0.5.3/fancybox/jquery.fancybox-1.3.1.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
     <link href='./assets/0.5.3/smoothness/jquery-ui-1.8.4.custom.css' media='screen, projection, print' rel='stylesheet' type='text/css'>    
-    <link rel="shortcut icon" type="image/png" href="./assets/0.5.3/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.5.3/favicon_red.png" />
     <link rel="icon" type="image/png" href="./assets/0.5.3/favicon.png" />
   </head>
   
@@ -23,27 +23,27 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-09-25T00:05:40-04:00">2012-09-25T00:05:40-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-09-25T22:40:54-04:00">2012-09-25T22:40:54-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">80.22%</span></span>
+    (<span class="covered_percent"><span class="red">79.53%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.49
+         2.47
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>37</b> files in total.
-    <b>632</b> relevant lines. 
-    <span class="green"><b>507</b> lines covered</span> and
-    <span class="red"><b>125</b> lines missed </span>
+    <b>640</b> relevant lines. 
+    <span class="green"><b>509</b> lines covered</span> and
+    <span class="red"><b>131</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -151,12 +151,12 @@
       
       <tr>
         <td class="strong"><a href="#d7a4ef69aaf63933e8ee7cbda520323170994c70" class="src_link" title="app/controllers/sessions_controller.rb">app/controllers/sessions_controller.rb</a></td>
-        <td class="red strong">76.47 %</td>
-        <td>30</td>
-        <td>17</td>
-        <td>13</td>
-        <td>4</td>
-        <td>7.8</td>
+        <td class="red strong">71.43 %</td>
+        <td>34</td>
+        <td>21</td>
+        <td>15</td>
+        <td>6</td>
+        <td>8.0</td>
       </tr>
       
       <tr>
@@ -281,12 +281,12 @@
       
       <tr>
         <td class="strong"><a href="#b7bb107b9a76cbe662658bce28314e8bbd9151cc" class="src_link" title="app/models/profile.rb">app/models/profile.rb</a></td>
-        <td class="red strong">62.5 %</td>
-        <td>54</td>
-        <td>32</td>
+        <td class="red strong">58.82 %</td>
+        <td>56</td>
+        <td>34</td>
         <td>20</td>
-        <td>12</td>
-        <td>6.8</td>
+        <td>14</td>
+        <td>6.4</td>
       </tr>
       
       <tr>
@@ -301,12 +301,12 @@
       
       <tr>
         <td class="strong"><a href="#f942a21fdf2cb2f8fafd9369611762f77f8b720c" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="yellow strong">88.24 %</td>
-        <td>98</td>
-        <td>51</td>
+        <td class="yellow strong">84.91 %</td>
+        <td>100</td>
+        <td>53</td>
         <td>45</td>
-        <td>6</td>
-        <td>13.7</td>
+        <td>8</td>
+        <td>13.2</td>
       </tr>
       
       <tr>
@@ -1876,11 +1876,11 @@
         <div class="source_table" id="d7a4ef69aaf63933e8ee7cbda520323170994c70">
   <div class="header">
     <h3>app/controllers/sessions_controller.rb</h3>
-    <h4><span class="red">76.47 %</span> covered</h4>
+    <h4><span class="red">71.43 %</span> covered</h4>
     <div>
-      <b>17</b> relevant lines. 
-      <span class="green"><b>13</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <b>21</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
   
@@ -1920,148 +1920,172 @@
         <li class="covered" data-hits="18" data-linenumber="6">
           <span class="hits">18</span>
           
+          <code class="ruby">      puts &quot;Auth via Email&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="18" data-linenumber="7">
+          <span class="hits">18</span>
+          
           <code class="ruby">      user = User.authenticate(params[:email], params[:password])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
+          
+          <code class="ruby">      puts &quot;Auth via Twitter&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="10">
           
           
           <code class="ruby">      user = User.find_by_provider_and_uid(auth[&quot;provider&quot;], auth[&quot;uid&quot;]) ||</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">             User.create_with_omniauth(auth)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="11">
+        <li class="covered" data-hits="18" data-linenumber="13">
           <span class="hits">18</span>
           
           <code class="ruby">    if user</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="12">
+        <li class="covered" data-hits="18" data-linenumber="14">
           <span class="hits">18</span>
           
           <code class="ruby">      if user.email.blank? and user.profile.blank?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">        puts &quot;Creating profile from user&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
           
           
           <code class="ruby">        Profile.create_with_omniauth(user.id, auth)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="15">
+        <li class="covered" data-hits="18" data-linenumber="18">
           <span class="hits">18</span>
           
           <code class="ruby">      session[:user_id] = user.id</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="16">
+        <li class="covered" data-hits="18" data-linenumber="19">
+          <span class="hits">18</span>
+          
+          <code class="ruby">      puts &quot;Session set to User ID&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="18" data-linenumber="20">
           <span class="hits">18</span>
           
           <code class="ruby">      redirect_to problems_path, :notice =&gt; &quot;Logged in successfully&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
           <code class="ruby">      flash.now[:alert] = &quot;Invalid login/password. Try again!&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
+        <li class="missed" data-hits="0" data-linenumber="23">
           
           
           <code class="ruby">      render :action =&gt; 'new'</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def destroy</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    reset_session</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    redirect_to root_path, :notice =&gt; &quot;You successfully logged out&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
-          <code class="ruby">private</code>
+          <code class="ruby">    reset_session</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    redirect_to root_path, :notice =&gt; &quot;You successfully logged out&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">end</code>
@@ -3490,11 +3514,11 @@
         <div class="source_table" id="b7bb107b9a76cbe662658bce28314e8bbd9151cc">
   <div class="header">
     <h3>app/models/profile.rb</h3>
-    <h4><span class="red">62.5 %</span> covered</h4>
+    <h4><span class="red">58.82 %</span> covered</h4>
     <div>
-      <b>32</b> relevant lines. 
+      <b>34</b> relevant lines. 
       <span class="green"><b>20</b> lines covered</span> and
-      <span class="red"><b>12</b> lines missed.</span>
+      <span class="red"><b>14</b> lines missed.</span>
     </div>
   </div>
   
@@ -3600,226 +3624,238 @@
         <li class="missed" data-hits="0" data-linenumber="17">
           
           
-          <code class="ruby">    name = auth[&quot;info&quot;][&quot;name&quot;].split(&quot; &quot;)</code>
+          <code class="ruby">    puts &quot;Creating Profile from Auth&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="18">
           
           
-          <code class="ruby">    create! do |profile|</code>
+          <code class="ruby">    name = auth[&quot;info&quot;][&quot;name&quot;].split(&quot; &quot;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="19">
           
           
-          <code class="ruby">      profile.user_id = user_id</code>
+          <code class="ruby">    create! do |profile|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="20">
           
           
-          <code class="ruby">      profile.image = auth['info']['image']</code>
+          <code class="ruby">      profile.user_id = user_id</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">      profile.location = auth['info']['location']</code>
+          <code class="ruby">      profile.image = auth['info']['image'] rescue nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="22">
           
           
-          <code class="ruby">      profile.first_name = name[0]</code>
+          <code class="ruby">      profile.location = auth['info']['location'] rescue &quot;&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="23">
           
           
-          <code class="ruby">      profile.last_name = name[1..-1].join(&quot; &quot;)</code>
+          <code class="ruby">      profile.first_name = name[0] rescue nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="24">
           
           
-          <code class="ruby">      profile.bio = auth[&quot;info&quot;][&quot;description&quot;]</code>
+          <code class="ruby">      profile.last_name = name[1..-1].join(&quot; &quot;) rescue nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="25">
           
           
-          <code class="ruby">      profile.twitter = auth[&quot;info&quot;][&quot;nickname&quot;]</code>
+          <code class="ruby">      profile.bio = auth[&quot;info&quot;][&quot;description&quot;] rescue nil</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="missed" data-hits="0" data-linenumber="26">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      profile.twitter = auth[&quot;info&quot;][&quot;nickname&quot;] rescue nil</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="28">
+          
+          
+          <code class="ruby">    puts &quot;Profile created&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
           <code class="ruby">  def name</code>
         </li>
       
-        <li class="covered" data-hits="68" data-linenumber="30">
+        <li class="covered" data-hits="68" data-linenumber="32">
           <span class="hits">68</span>
           
           <code class="ruby">    &quot;#{first_name} #{last_name}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
           <code class="ruby">  def legal</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
           <code class="ruby">    self.age &gt;= &quot;13&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
           <code class="ruby">  def age</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="38">
+        <li class="missed" data-hits="0" data-linenumber="40">
           
           
           <code class="ruby">    now = Time.now.utc.to_date</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="39">
+        <li class="missed" data-hits="0" data-linenumber="41">
           
           
           <code class="ruby">    now.year - &quot;#{birthday}&quot;.year - ((now.month &gt; &quot;#{birthday}&quot;.month || (now.month == &quot;#{birthday}&quot;.month &amp;&amp; now.day &gt;= &quot;#{birthday}&quot;.day)) ? 0 : 1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
           <code class="ruby">  def user_created_from_twitter?</code>
         </li>
       
-        <li class="covered" data-hits="117" data-linenumber="43">
+        <li class="covered" data-hits="117" data-linenumber="45">
           <span class="hits">117</span>
           
           <code class="ruby">    !user.nil? &amp;&amp; !user.provider.blank? &amp;&amp; !user.uid.blank?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
+        <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
           <code class="ruby">  def problems</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="47">
+        <li class="covered" data-hits="10" data-linenumber="49">
           <span class="hits">10</span>
           
           <code class="ruby">    Problem.find_all_by_user_id(self.user_id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
           <code class="ruby">  def solutions</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="51">
+        <li class="covered" data-hits="6" data-linenumber="53">
           <span class="hits">6</span>
           
           <code class="ruby">    Solution.find_all_by_user_id(self.user_id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">end</code>
@@ -3940,11 +3976,11 @@
         <div class="source_table" id="f942a21fdf2cb2f8fafd9369611762f77f8b720c">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="yellow">88.24 %</span> covered</h4>
+    <h4><span class="yellow">84.91 %</span> covered</h4>
     <div>
-      <b>51</b> relevant lines. 
+      <b>53</b> relevant lines. 
       <span class="green"><b>45</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <span class="red"><b>8</b> lines missed.</span>
     </div>
   </div>
   
@@ -4224,199 +4260,199 @@
         <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">    create! do |user|</code>
+          <code class="ruby">    puts &quot;Creating new user from Auth response&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="47">
           
           
-          <code class="ruby">      user.provider = auth[&quot;provider&quot;]</code>
+          <code class="ruby">    create! do |user|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">      user.uid = auth[&quot;uid&quot;]</code>
+          <code class="ruby">      user.provider = auth[&quot;provider&quot;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="missed" data-hits="0" data-linenumber="49">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      user.uid = auth[&quot;uid&quot;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="51">
+          
+          
+          <code class="ruby">    puts &quot;User created&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
           <code class="ruby">  def send_password_reset</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="53">
+        <li class="covered" data-hits="6" data-linenumber="55">
           <span class="hits">6</span>
           
           <code class="ruby">    generate_token(:password_reset_token)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="54">
+        <li class="covered" data-hits="6" data-linenumber="56">
           <span class="hits">6</span>
           
           <code class="ruby">    self.password_reset_sent_at = Time.zone.now</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="55">
+        <li class="covered" data-hits="6" data-linenumber="57">
           <span class="hits">6</span>
           
           <code class="ruby">    save!</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="56">
+        <li class="covered" data-hits="6" data-linenumber="58">
           <span class="hits">6</span>
           
           <code class="ruby">    UserMailer.password_reset(self).deliver</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="59">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def generate_token(column)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def generate_token(column)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
           <code class="ruby">    begin</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="61">
+        <li class="covered" data-hits="6" data-linenumber="63">
           <span class="hits">6</span>
           
           <code class="ruby">      self[column] = SecureRandom.urlsafe_base64</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="62">
+        <li class="covered" data-hits="6" data-linenumber="64">
           <span class="hits">6</span>
           
           <code class="ruby">    end while User.exists?(column =&gt; self[column])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
           <code class="ruby">  def legal?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="66">
+        <li class="missed" data-hits="0" data-linenumber="68">
           
           
           <code class="ruby">    self.age &gt;= 13</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="69">
+        <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
           <code class="ruby">  def age</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="70">
+        <li class="missed" data-hits="0" data-linenumber="72">
           
           
           <code class="ruby">    now = Date.today</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
+        <li class="missed" data-hits="0" data-linenumber="73">
           
           
           <code class="ruby">    now.year - self.profile.birthday.year - (self.profile.birthday.to_date.change(:year =&gt; now.year) &gt; now ? 1 : 0)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="74">
+        <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
           <code class="ruby">  def name</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="75">
+        <li class="covered" data-hits="13" data-linenumber="77">
           <span class="hits">13</span>
           
           <code class="ruby">    &quot;#{self.profile.first_name} #{self.profile.last_name}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="78">
-          <span class="hits">1</span>
-          
-          <code class="ruby">protected</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
@@ -4428,112 +4464,124 @@
         <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
+          <code class="ruby">protected</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
+          
           <code class="ruby">  def encrypt_new_password</code>
         </li>
       
-        <li class="covered" data-hits="50" data-linenumber="81">
+        <li class="covered" data-hits="50" data-linenumber="83">
           <span class="hits">50</span>
           
           <code class="ruby">    return if password.blank?</code>
         </li>
       
-        <li class="covered" data-hits="45" data-linenumber="82">
+        <li class="covered" data-hits="45" data-linenumber="84">
           <span class="hits">45</span>
           
           <code class="ruby">    self.hashed_password = encrypt(password)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="84">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def provider?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby">    # hashed_password.blank? || password.present?</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="357" data-linenumber="87">
-          <span class="hits">357</span>
+        <li class="covered" data-hits="1" data-linenumber="87">
+          <span class="hits">1</span>
           
-          <code class="ruby">    !provider.blank? &amp;&amp; super</code>
+          <code class="ruby">  def provider?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
+          <code class="ruby">    # hashed_password.blank? || password.present?</code>
+        </li>
+      
+        <li class="covered" data-hits="357" data-linenumber="89">
+          <span class="hits">357</span>
+          
+          <code class="ruby">    !provider.blank? &amp;&amp; super</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="90">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="90">
+        <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
           <code class="ruby">  def encrypt(string)</code>
         </li>
       
-        <li class="covered" data-hits="63" data-linenumber="91">
+        <li class="covered" data-hits="63" data-linenumber="93">
           <span class="hits">63</span>
           
           <code class="ruby">    Digest::SHA1.hexdigest(string)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="94">
+        <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
           <code class="ruby">  def downcase_email</code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="95">
+        <li class="covered" data-hits="51" data-linenumber="97">
           <span class="hits">51</span>
           
           <code class="ruby">    email = email.downcase if email.present?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="97">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="never" data-hits="" data-linenumber="100">
           
           
           <code class="ruby">end</code>

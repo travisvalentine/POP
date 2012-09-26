@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     end
     if user
       if user.email.blank? and user.profile.blank?
-        puts "Creating profile from user"
+        puts "Creating profile from #{user} - #{user.profile}"
         Profile.create_with_omniauth(user.id, auth)
       end
       session[:user_id] = user.id
