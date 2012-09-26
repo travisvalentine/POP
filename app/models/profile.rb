@@ -5,8 +5,7 @@ class Profile < ActiveRecord::Base
   accepts_nested_attributes_for :user
 
   validates_presence_of :first_name, :message => "Name can't be blank."
-  validates_presence_of :last_name, :message => "Name can't be blank.",
-                                    :allow_blank => true
+  validates_presence_of :last_name, :message => "Name can't be blank."
 
   validates_presence_of :birthday, :unless => :user_created_from_twitter?
 
@@ -16,18 +15,19 @@ class Profile < ActiveRecord::Base
 
   def self.create_with_omniauth(user_id, auth)
     name = auth["info"]["name"].split(" ")
-    puts "<<<<<------- NAME: #{name}"
     create! do |profile|
       profile.user_id = user_id
       profile.image = auth['info']['image'] rescue nil
       profile.location = auth['info']['location'] rescue ""
       profile.first_name = name[0] rescue ""
-      puts "<<<<------ LAST NAME NIL: #{name[1..-1].join(" ").empty?}"
-      profile.last_name = name[1..-1].join(" ")
+      if name.length > 1
+        profile.last_name = name[1..-1].join(" ")
+      else
+        profile.last_name = "org"
+      end
       profile.bio = auth["info"]["description"]
       profile.twitter = auth["info"]["nickname"]
     end
-    puts "<<<<<------ Profile created"
   end
 
   def name
