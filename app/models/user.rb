@@ -43,10 +43,12 @@ class User < ActiveRecord::Base
   end
 
   def self.create_with_omniauth(auth)
+    puts "Creating new user from Auth response"
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
     end
+    puts "User created"
   end
 
   def send_password_reset
