@@ -16,6 +16,7 @@ class Profile < ActiveRecord::Base
 
   def self.create_with_omniauth(user_id, auth)
     name = auth["info"]["name"].split(" ")
+    puts "<<<<<------- NAME: #{name}"
     create! do |profile|
       profile.user_id = user_id
       profile.image = auth['info']['image'] rescue nil
