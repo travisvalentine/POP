@@ -14,7 +14,7 @@ class Profile < ActiveRecord::Base
   validates_confirmation_of :party_affiliation, :unless => :user_created_from_twitter?
 
   def self.create_with_omniauth(user_id, auth)
-    puts "Creating Profile from Auth: #{auth}"
+    puts "<<<<<------ Creating Profile from Auth: #{auth}"
     create! do |profile|
       name = auth["info"]["name"].split(" ")
       profile.user_id = user_id
@@ -25,7 +25,7 @@ class Profile < ActiveRecord::Base
       profile.bio = auth["info"]["description"] rescue nil
       profile.twitter = auth["info"]["nickname"] rescue nil
     end
-    puts "Profile created"
+    puts "<<<<<------ Profile created"
   end
 
   def name
