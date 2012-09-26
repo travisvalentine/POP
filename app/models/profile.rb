@@ -22,8 +22,8 @@ class Profile < ActiveRecord::Base
       profile.location = auth['info']['location'] rescue ""
       profile.first_name = name[0] rescue ""
       puts "<<<<<----- FIRST NAME: #{profile.first_name}"
+      puts "<<<<<----- LAST NAME: #{name[1..-1].join(" ")}"
       profile.last_name = name[1..-1].join(" ")
-      puts "<<<<<----- LAST NAME: #{profile.last_name}"
       profile.bio = auth["info"]["description"]
       profile.twitter = auth["info"]["nickname"]
     end
