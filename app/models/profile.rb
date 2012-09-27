@@ -36,8 +36,8 @@ class Profile < ActiveRecord::Base
     Solution.find_all_by_user_id(self.user_id)
   end
 
-  def first_name
-    self || name.split(" ")[0] || name
-  end
+  # def first_name
+  #   self.first_name || name.split(" ")[0] || name
+  # end
 
 end
