@@ -1,0 +1,11 @@
+<div id="profile_congresspeople">
+
+  <h4>My congresspeople:</h4>
+
+  <% @profile.congresspeople.each_pair do |k,v| %>
+    <div class="member">
+      <p><%= "#{k.capitalize}: #{v.firstname} #{v.lastname} (#{v.party}), @#{v.twitter_id}" %></p>
+    </div>
+  <% end %>
+
+</div>

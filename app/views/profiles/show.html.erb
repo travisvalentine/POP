@@ -14,3 +14,7 @@
 <% unless @profile.solutions.empty? %>
   <%= render partial: "profile_solutions" %>
 <% end %>
+
+<% unless @profile.address.nil? %>
+  <%= render partial: "profile_congresspeople" %>
+<% end %>
