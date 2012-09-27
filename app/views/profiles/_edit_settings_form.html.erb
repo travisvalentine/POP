@@ -1,11 +1,7 @@
 <%= form_for(@profile) do |f| %>
   <div class="input-container">
-    <p class="label"><%= f.label :first_name %></p>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="input-container">
-    <p class="label"><%= f.label :last_name %></p>
-    <%= f.text_field :last_name  %>
+    <p class="label"><%= f.label :name %></p>
+    <%= f.text_field :name %>
   </div>
   <div class="input-container">
     <p class="label"><%= f.label :birthday %></p>
