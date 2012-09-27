@@ -7,5 +7,5 @@ $ ->
       height: "437px"
     , 300
     $(".form-container").toggle()
-    $("input#user_profile_attributes_first_name").focus()
+    $("input#user_profile_attributes_name").focus()
     $("#actions").toggle()

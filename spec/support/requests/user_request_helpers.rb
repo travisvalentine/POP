@@ -14,8 +14,7 @@ module UserRequestHelpers
   end
 
   def fill_signup_form_as(user, profile)
-    fill_in "user_profile_attributes_first_name", :with => profile.first_name
-    fill_in "user_profile_attributes_last_name", :with => profile.last_name
+    fill_in "user_profile_attributes_name", :with => profile.name
     fill_in "user_email", :with => user.email
     fill_in "user_password", :with =>
       FactoryGirl.attributes_for(:user)[:password]
