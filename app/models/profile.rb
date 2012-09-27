@@ -1,6 +1,6 @@
 class Profile < ActiveRecord::Base
   attr_accessible :name, :bio, :birthday, :party_affiliation,
-                  :twitter, :job_title
+                  :twitter, :job_title, :address
 
   belongs_to :user
   accepts_nested_attributes_for :user
@@ -38,6 +38,12 @@ class Profile < ActiveRecord::Base
 
   def first_name
     name.split(" ")[0] || name
+  end
+
+  def congresspeople
+    @congresspeople ||= Sunlight::Legislator.all_for(
+      :address => address
+    ).reject { |k,v| v.nil? }
   end
 
 end
