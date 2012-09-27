@@ -7,8 +7,9 @@ POP::Application.routes.draw do
   match "/logout" => "sessions#destroy", :as => "logout"
   match "/settings" => "settings#show", :as => 'settings'
   match "/login" => "sessions#new", :as => "login"
-  match "/auth/:provider/callback" => "sessions#create"
+  match "/auth/:provider/callback" => "oauth#create"
 
+  resources :oauths, :only => [:create]
   resources :settings
   resources :users
   resources :profiles
