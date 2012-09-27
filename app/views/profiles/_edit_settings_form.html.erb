@@ -25,6 +25,10 @@
     <%= f.text_field :bio %>
   </div>
   <div class="input-container">
+    <p class="label"><%= f.label :address %></p>
+    <%= f.text_field :address, :placeholder => "ex: 1600 Pennsylvania Ave NW Washington, DC 20005" %>
+  </div>
+  <div class="input-container">
     <p class="label"><%= f.label :party_affiliation %></p>
     <%= f.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %>
   </div>
