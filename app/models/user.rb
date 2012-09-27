@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   before_validation :downcase_email
 
   has_one           :profile, :dependent => :destroy
+
+  delegate :first_name, :to=> :profile
+  delegate :name, :to=> :profile
+
   accepts_nested_attributes_for :profile
 
   has_many :problems
@@ -60,19 +64,6 @@ class User < ActiveRecord::Base
     begin
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
-  end
-
-  def legal?
-    self.age >= 13
-  end
-
-  def age
-    now = Date.today
-    now.year - self.profile.birthday.year - (self.profile.birthday.to_date.change(:year => now.year) > now ? 1 : 0)
-  end
-
-  def name
-    "#{self.profile.first_name} #{self.profile.last_name}"
   end
 
 protected

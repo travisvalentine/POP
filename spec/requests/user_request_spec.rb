@@ -146,8 +146,7 @@ describe User do
     describe "when signing up" do
       before(:each) do
         visit root_path
-        fill_in 'user_profile_attributes_first_name', :with => 'Citizen'
-        fill_in 'user_profile_attributes_last_name', :with => 'Kane'
+        fill_in 'user_profile_attributes_name', :with => 'Citizen Kane'
         fill_in 'user_email', :with => 'disgruntled@usa.gov'
         fill_in 'user_password', :with => 'password'
         fill_in 'user_profile_attributes_bio', :with => 'This is my bio'
