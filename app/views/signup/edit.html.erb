@@ -1,0 +1,16 @@
+<div class="main-form">
+  <div class="container">
+    <div class="row">
+      <div id="complete_signup" class="span6 offset3">
+        <div id="form_header">
+          <h1 class="old">Welcome, <%= current_user.first_name %></h1>
+          <p id="disclaimer">Complete your profile by filling in the fields below.</p>
+        </div>
+        <div class="welcome-form-container">
+        <%= render :partial => 'signup/edit_settings_form' %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

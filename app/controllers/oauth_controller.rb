@@ -21,7 +21,7 @@ private
 
   def login_from_oauth(user_id)
     session[:user_id] = user_id
-    redirect_to problems_path, :notice => "Welcome to this!"
+    redirect_to welcome_path
   end
 
 end

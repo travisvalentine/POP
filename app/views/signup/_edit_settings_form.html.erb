@@ -1,0 +1,26 @@
+<%= form_for @profile, :url => signup_path(@profile), :method => :put do |f| %>
+  <div class="input-container">
+    <p class="label"><%= f.label :bio %></p>
+    <%= f.text_field :bio %>
+  </div>
+  <div class="input-container">
+    <p class="label"><%= f.label :address, "Address (optional)" %></p>
+    <%= f.text_field :address, :placeholder => "ex: 1600 Pennsylvania Ave NW Washington, DC 20005" %>
+  </div>
+  <div class="input-container">
+    <p class="label"><%= f.label :party_affiliation, "Party affiliation (optional)" %></p>
+    <%= f.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %>
+  </div>
+  <div class="input-container">
+    <p class="label"><%= f.label :birthday %></p>
+    <%= f.date_select :birthday,
+        {:start_year => Time.now.year,
+          :end_year => Time.now.year - 115,
+          :order => [:month, :day, :year],
+          :prompt => {:month => 'Month', :day => 'Day', :year => 'Year'}}
+    %>
+  </div>
+  <div id="button">
+    <%= submit_tag 'Finish', :class => 'btn-med-blue lg-text' %>
+  </div>
+<% end %>

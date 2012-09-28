@@ -8,13 +8,18 @@
   <%= csrf_meta_tag %>
   <%= yield :head %>
 </head>
+
 <body>
-<% if logged_in? %>
+
+<% if logged_in? and completing_profile? %>
+  <%= render 'layouts/completing_profile' %>
+<% elsif logged_in? %>
   <%= render 'layouts/header_in' %>
 <% else %>
   <%= render 'layouts/header_out' %>
 <% end %>
-<% if homepage? %>
+
+<% if homepage? || completing_profile? %>
 <div>
   <%= yield %>
 <% else %>
@@ -22,6 +27,9 @@
   <%= yield %>
 </div>
 <% end %>
+
 <%= render 'layouts/footer' %>
+
 </body>
+
 </html>

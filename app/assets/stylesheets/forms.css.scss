@@ -111,7 +111,7 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
     padding-top:20px;
     text-align:center;
 
-    &#problem_disclaimer {
+    &#disclaimer {
       font-style: italic;
       margin: 0;
       padding: 5px 0 15px;
@@ -125,13 +125,43 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
   }
 }
 
-.form-container {
+.form-container, .welcome-form-container {
   margin: 0 auto 30px;
 
   p {
     font-size:8pt;
     font-weight:600;
     margin:4px 0px;
+  }
+}
+
+/* ============================== */
+/* Profile Complete (from Twitter)
+/* ============================== */
+
+.welcome-form-container form.edit_profile {
+  width: 100%;
+}
+
+#complete_signup {
+  background-color: #FAFAFA;
+  padding: 30px;
+  @include border-radius(5px);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  top: 50px;
+  opacity: .9;
+
+  #button {
+    margin-top:10px;
+
+    input[type="submit"] {
+      font-size:26px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      padding: 12px 0;
+      width:100%;
+    }
   }
 }
 
