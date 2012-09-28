@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120927033842) do
+ActiveRecord::Schema.define(:version => 20120927230838) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -106,6 +106,8 @@ ActiveRecord::Schema.define(:version => 20120927033842) do
     t.integer  "down_votes",             :default => 0, :null => false
     t.string   "provider"
     t.string   "uid"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
   end
 
   create_table "votings", :force => true do |t|
