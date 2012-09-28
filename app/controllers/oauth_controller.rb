@@ -1,6 +1,7 @@
 class OauthController < ApplicationController
 
   def create
+    # raise request.env["omniauth.auth"].to_yaml
     auth = request.env["omniauth.auth"]
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
 
@@ -10,6 +11,7 @@ class OauthController < ApplicationController
       login_from_oauth(user.id)
       return
     elsif user.present? and user.profile.present?
+      user.update_from_omniauth(auth)
       session[:user_id] = user.id
       redirect_to problems_path, :notice => "Welcome back!"
     end

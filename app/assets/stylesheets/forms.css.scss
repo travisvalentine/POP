@@ -139,6 +139,41 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
 /* New User & New Session
 /* ============================== */
 
+textarea#problem_solution_body {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#post_options {
+  height: 29px;
+  margin: 20px 0;
+}
+
+#tweet_container {
+  margin-right: 6px;
+
+  label.checkbox {
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      @include border-radius(3px 0px 0px 3px);
+      margin-top: -4px;
+      width:29px;
+    }
+
+    p {
+      @include border-radius(0px 3px 3px 0px);
+      background-color: darken(#00B4EA, 2%);
+      color: #fff;
+      display:inline-block;
+      padding: 0px 20px 0px 5px;
+      line-height: 2.1;
+    }
+  }
+}
+
 .input-container, #issue_container {
   p.label {
     font-size:14px;
@@ -198,7 +233,6 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
     margin: 10px 0;
   }
   #button {
-    margin-top:12px;
     input[type="submit"] {
       font-size:30px;
       width:100%;
