@@ -11,6 +11,7 @@ gem 'omniauth-twitter'
 gem 'pg'
 gem 'rails', '3.2.0'
 gem 'sunlight'
+gem 'twitter'
 
 gem 'redis'
 gem 'resque'
