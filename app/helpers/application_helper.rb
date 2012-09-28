@@ -1,7 +1,4 @@
 module ApplicationHelper
-  def homepage?
-    request.fullpath == root_path
-  end
 
   def index_active
     if request.fullpath == "/problems"

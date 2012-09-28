@@ -15,6 +15,6 @@
   <%= render partial: "profile_solutions" %>
 <% end %>
 
-<% unless @profile.address.nil? %>
+<% unless @profile.address.blank? %>
   <%= render partial: "profile_congresspeople" %>
 <% end %>
