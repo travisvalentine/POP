@@ -4,7 +4,7 @@
 
   <% @profile.congresspeople.each_pair do |k,v| %>
     <div class="member">
-      <p><%= "#{k.capitalize}: #{v.firstname} #{v.lastname} (#{v.party}), @#{v.twitter_id}" %></p>
+      <p><%= "#{k.humanize.titleize}: #{v.firstname} #{v.lastname} (#{v.party}), @#{v.twitter_id}" %></p>
     </div>
   <% end %>
 
