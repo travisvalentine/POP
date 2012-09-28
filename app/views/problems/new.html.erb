@@ -23,6 +23,16 @@
         $(this).next().toggle();
       });
 
+      $('textarea#problem_solution_body').focus(function(){
+        $(this).css('padding-bottom', '+=5');
+        $(this).css('margin-bottom', '+=10');
+      });
+
+      $('textarea#problem_solution_body').focusout(function(){
+        $(this).css('padding-bottom', '-=5');
+        $(this).css('margin-bottom', '-=10');
+      });
+
       $('textarea#problem_body, textarea#problem_solution_body').focusout(function(){
         $(this).next().toggle();
       });
