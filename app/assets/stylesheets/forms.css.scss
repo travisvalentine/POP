@@ -139,6 +139,16 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
 /* New User & New Session
 /* ============================== */
 
+textarea#problem_solution_body {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#post_options {
+  height: 29px;
+  margin: 20px 0;
+}
+
 #tweet_container {
   margin-right: 6px;
 
@@ -223,7 +233,6 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
     margin: 10px 0;
   }
   #button {
-    margin-top:12px;
     input[type="submit"] {
       font-size:30px;
       width:100%;
