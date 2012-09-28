@@ -1,13 +1,16 @@
 class User < ActiveRecord::Base
   attr_accessor     :password
   attr_accessible   :email, :password, :password_confirmation,
-                    :profile_attributes, :profile
+                    :profile_attributes, :profile, :oauth_token,
+                    :oauth_secret
+
   before_validation :downcase_email
 
   has_one           :profile, :dependent => :destroy
 
-  delegate :first_name, :to=> :profile
-  delegate :name, :to=> :profile
+  delegate :first_name, :to => :profile
+  delegate :name,       :to => :profile
+  delegate :twitter,    :to => :profile
 
   accepts_nested_attributes_for :profile
 
@@ -48,8 +51,8 @@ class User < ActiveRecord::Base
 
   def self.create_with_omniauth(auth)
     create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
+      user.provider     = auth["provider"]
+      user.uid          = auth["uid"]
     end
   end
 
@@ -64,6 +67,34 @@ class User < ActiveRecord::Base
     begin
       self[column] = SecureRandom.urlsafe_base64
     end while User.exists?(column => self[column])
+  end
+
+  def client
+    Twitter::Client.new(
+      :consumer_key       => ENV["TWITTER_KEY"],
+      :consumer_secret    => ENV["TWITTER_SECRET"],
+      :oauth_token        => self.oauth_token,
+      :oauth_token_secret => self.oauth_secret
+    )
+  end
+
+  def update_from_omniauth(auth)
+    update_attributes(
+      :oauth_token  => auth["credentials"]["token"],
+      :oauth_secret => auth["credentials"]["secret"]
+    )
+  end
+
+  def post_to_twitter(message)
+    begin
+      result = client.update(message)
+
+    rescue Twitter::Error => e
+      if e.is_a? Twitter::Error::Unauthorized
+        self.needs_reauthorization = e.message
+        self.save
+      end
+    end
   end
 
 protected
