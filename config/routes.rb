@@ -10,7 +10,7 @@ POP::Application.routes.draw do
   match "/signup/welcome" => "signup#edit", :as => "welcome"
 
   match "/auth/:provider/callback" => "oauth#create"
-  match 'auth/failure', :to => redirect('/')
+  match "auth/failure", :to => redirect('/')
 
   resources :oauth, :only => [:create]
   resources :signup, :only => [:edit, :update]

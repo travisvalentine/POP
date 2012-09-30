@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/oauth/request_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - OAuth gem v0.4.6
+      content-length:
+      - '0'
+      content-type:
+      - application/x-www-form-urlencoded
+      authorization:
+      - OAuth oauth_callback="http%3A%2F%2Fwww.example.com%2Fauth%2Ftwitter%2Fcallback",
+        oauth_consumer_key="CwTypnTmAGl0IqTpGX08g", oauth_nonce="JuaKlz0qLI7FGyikDyk25TAcpcpuC3hkQuUcGVvU1g",
+        oauth_signature="7iv7q0c36Qg0ZHIVN6pbSFDV0eE%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1349027756", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 30 Sep 2012 17:55:58 GMT
+      status:
+      - 200 OK
+      x-mid:
+      - 1c31f6a38efb88ea455c3fc991b1842aafcdbe61
+      content-length:
+      - '146'
+      pragma:
+      - no-cache
+      content-type:
+      - text/html; charset=utf-8
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      etag:
+      - ! '"108c5fa9ee479d9e68eb33ef6b2b3462"'
+      x-frame-options:
+      - SAMEORIGIN
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      x-runtime:
+      - '0.02360'
+      last-modified:
+      - Sun, 30 Sep 2012 17:55:58 GMT
+      x-transaction:
+      - b0505217540282be
+      set-cookie:
+      - k=10.35.38.113.1349027758408137; path=/; expires=Sun, 07-Oct-12 17:55:58 GMT;
+        domain=.twitter.com
+      - guest_id=v1%3A134902775844537088; domain=.twitter.com; path=/; expires=Wed,
+        01-Oct-2014 05:55:58 GMT
+      - _twitter_sess=BAh7CDoPY3JlYXRlZF9hdGwrCG4BUhg6AToHaWQiJTcyNjk3OTNiMGFmMTVi%250AOGI4MGU0NTM4N2JhOWY2ZmQwIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy%250AOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--77b5d4d3cd03123f97cc7aa160d74d6da38daf61;
+        domain=.twitter.com; path=/; HttpOnly
+      vary:
+      - Accept-Encoding
+      server:
+      - tfe
+    body:
+      encoding: US-ASCII
+      string: oauth_token=Pw8vpQ6w7hs4dVtcptCrtJ9S4heCRkrwkHc1vYXJLLg&oauth_token_secret=xq7AzDoh4Uc0wKjJevDxfQCJsPbhBX7YseoL3JCeA&oauth_callback_confirmed=true
+    http_version: '1.1'
+  recorded_at: Sun, 30 Sep 2012 17:55:57 GMT
+recorded_with: VCR 2.2.4
