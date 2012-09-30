@@ -15,23 +15,12 @@ class Problem < ActiveRecord::Base
 
   make_voteable
 
-  def print_solutions
-    solutions = Solution.find_all_by_problem_id(self.id)
-    solutions.collect do |solution|
-      solution.body
-    end
-  end
-
   def solution
     solutions
   end
 
   def solution=(value)
     solutions = value
-  end
-
-  def issue
-    issues.first
   end
 
 end

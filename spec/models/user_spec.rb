@@ -1,8 +1,24 @@
 require 'spec_helper'
 
 describe User do
-  let!(:user) { FactoryGirl.create(:user) }
-  let!(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
+
+  let(:auth)    { TwitterOauthHash.default }
+
+  before {
+    user
+    profile
+    auth
+  }
+
+  describe ".create_from_auth(auth)" do
+    it "creates a user from the auth hash" do
+      user = User.create_with_omniauth(auth)
+      user.provider.should == "twitter"
+      user.uid.should == "31983"
+    end
+  end
 
   describe "#send_password_reset" do
 
