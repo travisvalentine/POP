@@ -12,9 +12,8 @@ gem 'pg'
 gem 'rails', '3.2.0'
 gem 'sunlight'
 gem 'twitter'
-
 gem 'redis'
-gem 'resque'
+gem 'resque', "~> 1.22.0" 
 
 group :assets do
   gem 'sass-rails', "  ~> 3.2.3"
@@ -40,6 +39,5 @@ group :test do
   gem 'growl'
   gem 'guard-rspec'
   gem 'launchy'
-  gem 'reek', :git => "git://github.com/mvz/reek.git", :branch => "ripper_ruby_parser-2"
   gem 'vcr'
 end
