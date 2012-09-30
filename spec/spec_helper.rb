@@ -35,6 +35,20 @@ RSpec.configure do |config|
   # VCR support for RSpec
   config.extend VCR::RSpec::Macros
 
+  # Testing for OmniAuth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+      :provider => 'twitter',
+      :uid => '123545',
+      :info => {
+        :image => "http://www.google.com/image.png",
+        :location => "Washington, DC",
+        :name => "Example Oauth",
+        :description => "This is an example",
+        :nickname => "example",
+      }
+  })
+
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.

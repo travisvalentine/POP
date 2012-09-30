@@ -17,6 +17,19 @@ describe User do
     end
   end
 
+  context "who authenticates with twitter" do
+    use_vcr_cassette
+
+    describe "and isn't a user yet" do
+      it "creates the user from twitter auth and redirects them to complete their profile" do
+        visit root_path
+        click_link_or_button("Sign up with Twitter")
+        current_path.should == welcome_path
+        page.should have_content "Welcome, Example"
+      end
+    end
+  end
+
   context "who is authenticated" do
     before(:each) do
       user
