@@ -458,6 +458,11 @@
         7,
         7,
         null,
+        null,
+        1,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/models/comment.rb": [
@@ -1333,6 +1338,6 @@
         null
       ]
     },
-    "timestamp": 1349029551
+    "timestamp": 1349029858
   }
 }

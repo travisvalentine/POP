@@ -6,7 +6,7 @@ describe User do
 
   let(:auth)        { TwitterOauthHash.default }
 
-  let(:user2)       { FactoryGirl.create(:user, :email => "test@testing.com") }
+  let!(:user2)       { FactoryGirl.create(:user, :email => "test@testing.com") }
   let(:update_auth) { TwitterOauthHash.updated_auth }
 
   before {
@@ -30,7 +30,7 @@ describe User do
     }
 
     it "updates the user's auth tokens from the auth hash" do
-      user2.update_from_omniauth(update_auth)
+      visit "auth/twitter"
       user2.oauth_token.should == "53190u09u31"
       user2.oauth_secret.should == "zjiwoj1830420ojdfalj13"
     end

@@ -23,27 +23,27 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-09-30T14:25:51-04:00">2012-09-30T14:25:51-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-09-30T14:30:58-04:00">2012-09-30T14:30:58-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">82.83%</span></span>
+    (<span class="covered_percent"><span class="yellow">82.62%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.57
+         2.54
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>40</b> files in total.
-    <b>699</b> relevant lines. 
-    <span class="green"><b>579</b> lines covered</span> and
-    <span class="red"><b>120</b> lines missed </span>
+    <b>702</b> relevant lines. 
+    <span class="green"><b>580</b> lines covered</span> and
+    <span class="red"><b>122</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -231,12 +231,12 @@
       
       <tr>
         <td class="strong"><a href="#2d258149bf1ce6824c5853ae8949b339c7fd12fa" class="src_link" title="app/mailers/user_mailer.rb">app/mailers/user_mailer.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>3.4</td>
+        <td class="red strong">75.0 %</td>
+        <td>20</td>
+        <td>8</td>
+        <td>6</td>
+        <td>2</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -3232,11 +3232,11 @@
         <div class="source_table" id="2d258149bf1ce6824c5853ae8949b339c7fd12fa">
   <div class="header">
     <h3>app/mailers/user_mailer.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">75.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>8</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -3318,7 +3318,7 @@
         <li class="covered" data-hits="7" data-linenumber="13">
           <span class="hits">7</span>
           
-          <code class="ruby">    mail(:to =&gt; &quot;#{user.email}&quot;, :subject =&gt; &quot;Check yourself and reset yourself&quot;)</code>
+          <code class="ruby">    mail(:to =&gt; &quot;#{@user.email}&quot;, :subject =&gt; &quot;Check yourself and reset yourself&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
@@ -3328,6 +3328,36 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def registration_confirmation(user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">    @user = user </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">    mail(:to =&gt; &quot;#{@user.email}&quot;, :subject =&gt; &quot;Thanks for Signing Up!&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">  end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
