@@ -4,4 +4,8 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+task "resque:setup" => :environment do
+  Resque.before_fork = Proc.new { ActiveRecord::Base.establish_connection }
+end
+
 POP::Application.load_tasks

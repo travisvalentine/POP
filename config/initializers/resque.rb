@@ -7,4 +7,3 @@ else
   REDIS = Redis.new
 end
 Resque.redis = REDIS
-Resque.after_fork = Proc.new { ActiveRecord::Base.establish_connection }
