@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe User do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user)    { FactoryGirl.create(:user) }
   let(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
   let(:problem) { FactoryGirl.create(:problem, :user_id => user.id) }
+
+  let(:auth)    { TwitterAuth.default }
 
   context "who is unauthenticated" do
     describe "and visits their settings page" do

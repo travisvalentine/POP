@@ -1,0 +1,215 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.google.com/maps/geo?q=1600%20Pennsylvania%20Ave%20NW%20Washington,%20DC%2020005&key=&output=kml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/vnd.google-earth.kml+xml; charset=UTF-8
+      vary:
+      - Accept-Language
+      date:
+      - Sun, 30 Sep 2012 00:01:02 GMT
+      server:
+      - mafe
+      cache-control:
+      - private
+      x-xss-protection:
+      - 1; mode=block
+      x-frame-options:
+      - SAMEORIGIN
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<kml xmlns=\"http://earth.google.com/kml/2.0\"><Response>\n
+        \ <name>1600 Pennsylvania Ave NW Washington, DC 20005</name>\n  <Status>\n
+        \   <code>200</code>\n    <request>geocode</request>\n  </Status>\n  <Placemark
+        id=\"p1\">\n    <address>Pennsylvania Ave NW, Washington, DC 20005, USA</address>\n
+        \   <AddressDetails Accuracy=\"6\" xmlns=\"urn:oasis:names:tc:ciq:xsdschema:xAL:2.0\"><Country><CountryNameCode>US</CountryNameCode><CountryName>USA</CountryName><AdministrativeArea><AdministrativeAreaName>DC</AdministrativeAreaName><Locality><LocalityName>Washington</LocalityName><Thoroughfare><ThoroughfareName>Pennsylvania
+        Ave NW</ThoroughfareName></Thoroughfare><PostalCode><PostalCodeNumber>20005</PostalCodeNumber></PostalCode></Locality></AdministrativeArea></Country></AddressDetails>\n
+        \   <ExtendedData>\n      <LatLonBox north=\"38.9002908\" south=\"38.8975928\"
+        east=\"-77.0325123\" west=\"-77.0352103\" />\n    </ExtendedData>\n    <Point><coordinates>-77.0339270,38.8991130,0</coordinates></Point>\n
+        \ </Placemark>\n</Response></kml>\n"
+    http_version: '1.1'
+  recorded_at: Sun, 30 Sep 2012 00:01:02 GMT
+- request:
+    method: get
+    uri: http://services.sunlightlabs.com/api/districts.getDistrictFromLatLong.json?apikey=0ab78cd1a01f40628ff6e9bb0f13b703&latitude=38.899113&longitude=-77.033927
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.0.5
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '75'
+      date:
+      - Sun, 30 Sep 2012 00:01:27 GMT
+      x-varnish:
+      - '617421257'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"response": {"districts": [{"district": {"state": "DC", "number":
+        "0"}}]}}'
+    http_version: '1.1'
+  recorded_at: Sun, 30 Sep 2012 00:01:03 GMT
+- request:
+    method: get
+    uri: http://services.sunlightlabs.com/api/legislators.getList.json?apikey=0ab78cd1a01f40628ff6e9bb0f13b703&state=DC&district=Senior+Seat
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.0.5
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '33'
+      date:
+      - Sun, 30 Sep 2012 00:01:27 GMT
+      x-varnish:
+      - '617421282'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"response": {"legislators": []}}'
+    http_version: '1.1'
+  recorded_at: Sun, 30 Sep 2012 00:01:03 GMT
+- request:
+    method: get
+    uri: http://services.sunlightlabs.com/api/legislators.getList.json?apikey=0ab78cd1a01f40628ff6e9bb0f13b703&state=DC&district=Junior+Seat
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.0.5
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '33'
+      date:
+      - Sun, 30 Sep 2012 00:01:28 GMT
+      x-varnish:
+      - '617421289'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"response": {"legislators": []}}'
+    http_version: '1.1'
+  recorded_at: Sun, 30 Sep 2012 00:01:03 GMT
+- request:
+    method: get
+    uri: http://services.sunlightlabs.com/api/legislators.getList.json?apikey=0ab78cd1a01f40628ff6e9bb0f13b703&state=DC&district=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.0.5
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '895'
+      date:
+      - Sun, 30 Sep 2012 00:01:28 GMT
+      x-varnish:
+      - '617421295'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"response": {"legislators": [{"legislator": {"website": "http://www.norton.house.gov/",
+        "fax": "202-225-3002", "govtrack_id": "400295", "firstname": "Eleanor", "chamber":
+        "house", "middlename": "Holmes", "lastname": "Norton", "congress_office":
+        "2136 Rayburn House Office Building", "eventful_id": "", "phone": "202-225-8050",
+        "webform": "http://www.norton.house.gov/forms/contact.html", "youtube_url":
+        "http://www.youtube.com/EleanorHNorton", "nickname": "", "gender": "F", "district":
+        "0", "title": "Del", "congresspedia_url": "http://www.opencongress.org/wiki/Eleanor_Norton",
+        "in_office": true, "senate_class": "", "name_suffix": "", "twitter_id": "EleanorNorton",
+        "birthdate": "1937-06-13", "bioguide_id": "N000147", "fec_id": "H0DC00058",
+        "state": "DC", "crp_id": "N00001692", "official_rss": "", "facebook_id": "CongresswomanNorton",
+        "party": "D", "email": "", "votesmart_id": "775"}}]}}'
+    http_version: '1.1'
+  recorded_at: Sun, 30 Sep 2012 00:01:03 GMT
+recorded_with: VCR 2.2.4

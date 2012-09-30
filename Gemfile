@@ -36,8 +36,10 @@ group :test do
   gem 'cane', :git => "git://github.com/square/cane.git"
   gem 'capybara'
   gem 'faker'
+  gem 'fakeweb'
   gem 'growl'
   gem 'guard-rspec'
   gem 'launchy'
   gem 'reek', :git => "git://github.com/mvz/reek.git", :branch => "ripper_ruby_parser-2"
+  gem 'vcr'
 end
