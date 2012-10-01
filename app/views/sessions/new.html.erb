@@ -4,12 +4,6 @@
 
     <%= form_tag session_path, :class => "clearfix" do %>
 
-    <% if !alert.nil? %>
-      <div id="error_messages">
-        <p id="error"><%= flash.now[:alert] %></p>
-      </div>
-    <% end %>
-
       <div id="form_header" class="clearfix">
         <h1 id="login">Welcome Back</h1>
         <p id="login"><%= link_to image_tag("sign-in-with-twitter-d.png"), "auth/twitter" %></p>

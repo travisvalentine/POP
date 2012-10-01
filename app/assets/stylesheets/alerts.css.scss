@@ -7,21 +7,21 @@
   border: 1px solid #FBEED5;
   color: #C09853;
   margin: 0 auto;
-  padding: 5px 10px;
+  padding: 7px 10px 5px;
   position: absolute;
-  top: 40px;
+  top: 35px;
   width: 1150px;
   z-index: -1;
 }
 
 .flash-alert {
   @include border-radius(0px 0px 8px 8px);
-  background-color: $gop-red;
+  background-color: lighten($gop-red, 30%);
   margin-left: -10px;
-  border: 1px solid darken($gop-red, 5%);
-  color: #fff;
+  border: 1px solid lighten($gop-red, 15%);
+  color: darken($gop-red, 25%);
   margin: 0 auto;
-  padding: 10px;
+  padding: 7px 10px 5px;
   position: absolute;
   top: 35px;
   width: 1150px;
