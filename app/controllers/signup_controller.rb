@@ -10,7 +10,7 @@ class SignupController < ApplicationController
     if @profile.update_attributes(params[:profile])
       redirect_to problems_path
     else
-      render :edit, :notice => "Something went wrong. Try again."
+      render :edit, :alert => "Something went wrong. Try again."
     end
   end
 

@@ -7,7 +7,7 @@ class SolutionDownvotesController < ApplicationController
       current_user.down_vote(@solution)
       redirect_to session[:return_to]
     else
-      redirect_to(login_path, :notice => "Please log in to continue")
+      redirect_to(login_path, :alert => "Please log in to continue")
     end
   end
 end

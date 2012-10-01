@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save!
       session[:user_id] = @user.id
       Resque.enqueue(Emailer, @user.id)
-      redirect_to problems_path, :notice => 'Welcome! See what other people are saying below.'
+      redirect_to problems_path, :alert => 'Welcome! See what other people are saying below.'
     else
       render :action => 'new'
     end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      redirect_to settings_path, :notice => 'Updated user information successfully.'
+      redirect_to settings_path, :alert => 'Updated user information successfully.'
     else
       render :action => 'edit'
     end

@@ -1,11 +1,7 @@
-<% if flash[:alert] || flash[:notice] %>
-<div class="alert">
-  <% if flash[:alert] %>
-    <p class="flash-error"><%= flash[:alert] %></p>
+<% flash.each do |name, msg| %>
+  <% if name.to_s == "notice" %>
+    <%= content_tag :div, msg, :class => "flash-notice vanish" if msg.is_a?(String) %>
+  <% else %>
+    <%= content_tag :div, msg, :class => "flash-#{name}" if msg.is_a?(String) %>
   <% end %>
-  <% if flash[:notice] %>
-    <p class="flash-notice"><%= flash[:notice] %></p>
-  <% end %>
-  <%= yield %>
-</div>
 <% end %>

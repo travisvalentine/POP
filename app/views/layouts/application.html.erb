@@ -24,6 +24,7 @@
   <%= yield %>
 <% else %>
 <div class="container">
+  <%= render "shared/errors" %>
   <%= yield %>
 </div>
 <% end %>

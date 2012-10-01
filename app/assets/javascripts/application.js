@@ -4,5 +4,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require rails.validations
-//= require_tree .
+//= require alerts
+//= require forms
 //= require bootstrap
