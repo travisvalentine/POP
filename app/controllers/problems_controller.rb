@@ -19,7 +19,7 @@ class ProblemsController < ApplicationController
   end
 
   def index
-    @problems = Problem.find(:all, :order => "up_votes DESC, created_at DESC")
+    @problems = Problem.votes.page(params[:page]).per(2)
   end
 
   def show

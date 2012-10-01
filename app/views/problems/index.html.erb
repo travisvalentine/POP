@@ -4,6 +4,7 @@
 </div>
 <% unless @problems.empty? %>
   <div class="problem">
-    <%= render :partial => "problem", :collection => @problems %>
+    <%= render @problems %>
+    <%= paginate @problems %>
   </div>
 <% end %>
