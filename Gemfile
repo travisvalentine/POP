@@ -4,6 +4,7 @@ gem 'bourbon', "~> 2.1.1"
 gem 'client_side_validations'
 gem 'escape_utils'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'make_voteable'
 gem 'nifty-generators'
 gem 'omniauth'
@@ -13,7 +14,7 @@ gem 'rails', '3.2.0'
 gem 'sunlight'
 gem 'twitter'
 gem 'redis'
-gem 'resque', "~> 1.22.0" 
+gem 'resque', "~> 1.22.0"
 
 group :assets do
   gem 'sass-rails', "  ~> 3.2.3"

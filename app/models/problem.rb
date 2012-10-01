@@ -15,6 +15,8 @@ class Problem < ActiveRecord::Base
 
   make_voteable
 
+  scope :votes, order("up_votes DESC, created_at DESC")
+
   def solution
     solutions
   end
