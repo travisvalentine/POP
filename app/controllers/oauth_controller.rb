@@ -12,7 +12,7 @@ class OauthController < ApplicationController
     elsif user.present? and user.profile.present?
       user.update_from_omniauth(auth)
       session[:user_id] = user.id
-      redirect_to problems_path, :notice => "Welcome back!"
+      redirect_to problems_path, :alert => "Welcome back!"
     end
   end
 

@@ -13,7 +13,7 @@ private
   end
 
   def access_denied
-    redirect_to login_path, :notice => "Please log in to continue" and return false
+    redirect_to login_path, :alert => "Please log in to continue" and return false
   end
 
   def create_user_session

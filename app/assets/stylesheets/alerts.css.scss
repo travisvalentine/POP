@@ -1,0 +1,29 @@
+.flash-notice {
+  @include border-radius(0px 0px 8px 8px);
+//  background-color: lighten(#00B4EA, 20%);
+//  border: 1px solid lighten(#00B4EA, 15%);
+//  color: #fff;
+  background-color: #FFFEE0;
+  border: 1px solid #FBEED5;
+  color: #C09853;
+  margin: 0 auto;
+  padding: 5px 10px;
+  position: absolute;
+  top: 40px;
+  width: 1150px;
+  z-index: -1;
+}
+
+.flash-alert {
+  @include border-radius(0px 0px 8px 8px);
+  background-color: $gop-red;
+  margin-left: -10px;
+  border: 1px solid darken($gop-red, 5%);
+  color: #fff;
+  margin: 0 auto;
+  padding: 10px;
+  position: absolute;
+  top: 35px;
+  width: 1150px;
+  z-index: -1;
+}

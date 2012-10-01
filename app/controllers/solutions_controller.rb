@@ -11,7 +11,7 @@ class SolutionsController < ApplicationController
     respond_to do |format|
       if @solution.save
         @solution.update_attributes(problem_id: @problem.id, user_id: current_user.id)
-        format.html { redirect_to(@problem, :notice => 'Solution was successfully created.') }
+        format.html { redirect_to(@problem, :alert => 'Solution was successfully created.') }
       else
         format.html { render :action => "new" }
       end
@@ -27,7 +27,7 @@ class SolutionsController < ApplicationController
     @problem = current_user.problems.find(params[:problem_id])
     solution = @problem.solutions.find(params[:id])
     solution.destroy
-    redirect_to @problem, :notice => 'Solution deleted.'
+    redirect_to @problem, :alert => 'Solution deleted.'
   end
 
   private

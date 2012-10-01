@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(params[:profile])
     if @profile.save
-      redirect_to @user.profile, :notice => 'User successfully added.'
+      redirect_to @user.profile, :alert => 'User successfully added.'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = current_user.profile
     if @profile.update_attributes(params[:profile])
-      redirect_to profile_path, :notice => 'Updated user information successfully.'
+      redirect_to profile_path, :alert => 'Updated user information successfully.'
     else
       render :edit
     end
