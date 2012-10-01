@@ -19,7 +19,7 @@ class ProblemsController < ApplicationController
   end
 
   def index
-    @problems = Problem.votes.page(params[:page]).per(2)
+    @problems = Problem.votes.page(params[:page]).per(10)
   end
 
   def show
