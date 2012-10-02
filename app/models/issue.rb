@@ -5,4 +5,12 @@ class Issue < ActiveRecord::Base
   has_many :issue_problems
   has_many :problems, :through => :issue_problems
 
+  def self.with_problems
+    select { |issue| issue.has_problems? }
+  end
+
+  def has_problems?
+    problems.present?
+  end
+
 end

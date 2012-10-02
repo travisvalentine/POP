@@ -2,6 +2,11 @@
   <h1>What people are thinking</h1>
   <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
 </div>
+<div class="filter">
+  <% Issue.with_problems.each do |issue| %>
+    <%= link_to issue.name, issue_path(issue), :class => "btn" %>
+  <% end %>
+</div>
 <% unless @problems.empty? %>
   <div class="problem">
     <%= render @problems %>
