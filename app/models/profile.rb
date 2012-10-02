@@ -5,7 +5,8 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   accepts_nested_attributes_for :user
 
-  validates_presence_of :name, :message => "Name can't be blank."
+  validates_uniqueness_of :name
+  validates_presence_of :name
 
   validates_presence_of :birthday, :unless => :user_created_from_twitter?
 

@@ -16,8 +16,8 @@ module POP
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
-    # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    # Include email_format_validator for client_side_validations
+    config.autoload_paths << "#{config.root}/lib"
 
     # Only load the plugins named here, in the order given (default is
         # alphabetical).

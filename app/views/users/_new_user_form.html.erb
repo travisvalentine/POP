@@ -1,3 +1,7 @@
+<%= content_for(:head) do %>
+  <%= javascript_include_tag "rails.validations.custom" %>
+<% end %>
+
 <%= form_for(@user, :html => {:multipart => true}, :validate => true) do |f| %>
   <% if @user.errors.any? %>
   <div id="errorRight">

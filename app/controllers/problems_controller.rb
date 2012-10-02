@@ -3,6 +3,7 @@ class ProblemsController < ApplicationController
 
   def new
     @problem = Problem.new
+    @solution = @problem.solutions.new
   end
 
   def create
@@ -11,7 +12,7 @@ class ProblemsController < ApplicationController
     if @problem.save
       @solution.save!
       @solution.update_attributes(problem_id: @problem.id, user_id: current_user.id)
-      redirect_to(@problem, :alert => 'Problem was successfully created.')
+      redirect_to(@problem, :notice => 'Problem was successfully created.')
       post_to_twitter(@problem) if params[:tweet].present?
     else
       render :action => "new"

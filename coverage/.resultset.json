@@ -203,6 +203,7 @@
         null,
         1,
         0,
+        0,
         null,
         null,
         1,
@@ -510,6 +511,7 @@
         1,
         1,
         null,
+        null,
         1,
         null,
         null,
@@ -534,6 +536,10 @@
         19,
         null,
         null,
+        1,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/models/problem_solution.rb": [
@@ -550,6 +556,7 @@
         1,
         1,
         null,
+        1,
         1,
         null,
         1,
@@ -608,6 +615,8 @@
         1,
         null,
         1,
+        null,
+        1,
         null
       ],
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/models/user.rb": [
@@ -646,7 +655,16 @@
         null,
         null,
         null,
+        null,
+        null,
+        null,
+        null,
         1,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         1,
@@ -728,6 +746,17 @@
         null,
         1,
         60,
+        null,
+        null,
+        null
+      ],
+      "/Users/travisvalentine/hungry-projects/open_source/POP/lib/email_format_validator.rb": [
+        1,
+        null,
+        1,
+        58,
+        0,
+        null,
         null,
         null,
         null
@@ -1346,6 +1375,6 @@
         null
       ]
     },
-    "timestamp": 1349142761
+    "timestamp": 1349149165
   }
 }

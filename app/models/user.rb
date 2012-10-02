@@ -20,20 +20,24 @@ class User < ActiveRecord::Base
   has_many :comments
 
   validates_presence_of :email,
-                        :message => "Email can't be blank.",
                         :unless => :provider?
 
   validates_confirmation_of :email, :unless => :provider?
 
   validates_confirmation_of :password,
-                        :unless => :provider?
+                            :unless => :provider?
 
-  validates :email, :uniqueness => true,
-                    :length => { :within => 5..50 },
-                    :format => { :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i },
+  validates :email, :email_format => true,
+                    :uniqueness => true,
+                    :length => {
+                        :within => 5..40,
+                    },
                     :unless => :provider?
 
-  validates :password, :length => { :within => 4..20, allow_nil: true },
+  validates :password, :length => {
+                          :within => 6..15,
+                          :allow_nil => true
+                       },
                        :unless => :provider?
 
   before_save :encrypt_new_password

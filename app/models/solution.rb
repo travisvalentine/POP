@@ -12,4 +12,6 @@ class Solution < ActiveRecord::Base
   has_many :comments
 
   make_voteable
+
+  accepts_nested_attributes_for :problem
 end
