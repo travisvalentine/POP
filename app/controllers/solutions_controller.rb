@@ -14,7 +14,7 @@ class SolutionsController < ApplicationController
         @solution.update_attributes(problem_id: @problem.id, user_id: current_user.id)
         format.html { redirect_to(@problem, :notice => 'Solution was successfully created.') }
       else
-        format.html { redirect_to(:back), :notice => "There was an error." }
+        format.html { redirect_to(:back, :notice => "There was an error.") }
       end
     end
 
