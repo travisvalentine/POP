@@ -1,13 +1,24 @@
+<%= content_for(:head) do %>
+  <script type="text/javascript">
+    $(function(){
+      $('#new_solution_form').toggle();
+      $('#toggle_solution_form').click(function(){
+        $('#new_solution_form').toggle();
+      });
+    })
+  </script>
+<% end %>
+
 <div class="problem-show row">
   <%= render partial: "problem_with_votes" %>
 </div>
 <div id="problem_solutions" class="row">
   <h3>Solutions (<%= @problem.solutions.count %>)</h3>
-  <%= link_to "Add a solution", new_solution_path(:problem_id => @problem.id), :class => "btn-light-blue lg-text" %>
+  <%= link_to "Add a solution", "#", :id => "toggle_solution_form", :class => "btn-light-blue lg-text" %>
   <% @problem.solutions.each do |solution| %>
     <%= render partial: "solutions/problem_solution", locals: {:solution => solution} %>
   <% end %>
-</div>
-<div id="new_solution_form">
-  <%#= render partial: "solutions/form" %>
+  <div id="new_solution_form">
+    <%= render partial: "solutions/form" %>
+  </div>
 </div>

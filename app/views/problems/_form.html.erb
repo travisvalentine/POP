@@ -1,16 +1,5 @@
 <%= form_for(@problem, :validate => true) do |f| %>
 
-  <% if @problem.errors.any? %>
-    <div id="errorExplanation">
-      <p>Halt! Just so you know, you have to fix these <%= pluralize(@problem.errors.count, "error") %> before you can ask a question:</p>
-      <ul>
-      <% @problem.errors.full_messages.each do |msg| %>
-        <li>-&nbsp;<%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <%= f.hidden_field :published_at, :value => Time.now %>
 
   <%= render partial: "problem_form", locals: { f: f } %>
