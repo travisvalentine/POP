@@ -23,27 +23,27 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-10-01T00:32:54-04:00">2012-10-01T00:32:54-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-10-01T21:52:41-04:00">2012-10-01T21:52:41-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">82.65%</span></span>
+    (<span class="covered_percent"><span class="yellow">82.41%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.54
+         2.53
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>40</b> files in total.
-    <b>703</b> relevant lines. 
+    <b>705</b> relevant lines. 
     <span class="green"><b>581</b> lines covered</span> and
-    <span class="red"><b>122</b> lines missed </span>
+    <span class="red"><b>124</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -141,12 +141,12 @@
       
       <tr>
         <td class="strong"><a href="#8a4984f36f3198d28006a50ecc918a241a42d416" class="src_link" title="app/controllers/problems_controller.rb">app/controllers/problems_controller.rb</a></td>
-        <td class="red strong">47.62 %</td>
-        <td>36</td>
-        <td>21</td>
+        <td class="red strong">43.48 %</td>
+        <td>41</td>
+        <td>23</td>
         <td>10</td>
-        <td>11</td>
-        <td>2.0</td>
+        <td>13</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -1702,11 +1702,11 @@
         <div class="source_table" id="8a4984f36f3198d28006a50ecc918a241a42d416">
   <div class="header">
     <h3>app/controllers/problems_controller.rb</h3>
-    <h4><span class="red">47.62 %</span> covered</h4>
+    <h4><span class="red">43.48 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
+      <b>23</b> relevant lines. 
       <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>11</b> lines missed.</span>
+      <span class="red"><b>13</b> lines missed.</span>
     </div>
   </div>
   
@@ -1842,7 +1842,7 @@
         <li class="covered" data-hits="21" data-linenumber="22">
           <span class="hits">21</span>
           
-          <code class="ruby">    @problems = Problem.votes.page(params[:page]).per(2)</code>
+          <code class="ruby">    @problems = Problem.votes.page(params[:page]).per(10)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -1902,28 +1902,58 @@
         <li class="missed" data-hits="0" data-linenumber="32">
           
           
-          <code class="ruby">    message = &quot;I just offered a solution to #{problem.issue.name}&quot; +</code>
+          <code class="ruby">    if problem.issue.present?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
+          
+          <code class="ruby">      message = &quot;I just offered a solution to #{problem.issue.name}&quot; +</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">              &quot;  - #{problem_url(problem)}&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="36">
+          
+          
+          <code class="ruby">      message = &quot;I just offered a solution. Check it out:&quot; +</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">                &quot;  - #{problem_url(problem)}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="39">
           
           
           <code class="ruby">    current_user.post_to_twitter(message)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">end</code>

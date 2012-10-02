@@ -25,4 +25,8 @@ class Problem < ActiveRecord::Base
     solutions = value
   end
 
+  def issue
+    issues.first
+  end
+
 end
