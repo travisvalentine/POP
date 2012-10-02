@@ -12,6 +12,10 @@ $ ->
 
   charCounter = $("span.counter")
   charCounter.toggle()
+
+  $("textarea#problem_body").focus()
+  $("textarea#problem_body").next().toggle()
+
   $("textarea#problem_body, textarea#problem_solution_body").focus ->
     $(this).next().toggle()
 
@@ -26,3 +30,7 @@ $ ->
   $("textarea#problem_body, textarea#problem_solution_body").focusout ->
     $(this).next().toggle()
 
+  $("textarea#problem_solution_body").mouseout ->
+    if $(this).is(':focus')
+      $(this).blur()
+      $(this).next().hide()
