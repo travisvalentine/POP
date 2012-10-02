@@ -29,8 +29,13 @@ class ProblemsController < ApplicationController
 private
 
   def post_to_twitter(problem)
-    message = "I just offered a solution to #{problem.issue.name}" +
+    if problem.issue.present?
+      message = "I just offered a solution to #{problem.issue.name}" +
               "  - #{problem_url(problem)}"
+    else
+      message = "I just offered a solution. Check it out:" +
+                "  - #{problem_url(problem)}"
+    end
     current_user.post_to_twitter(message)
   end
 end
