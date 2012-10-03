@@ -87,22 +87,6 @@
         0,
         null,
         null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
         null
       ],
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/controllers/oauth_controller.rb": [
@@ -378,6 +362,7 @@
         0,
         0,
         0,
+        0,
         null,
         0,
         null,
@@ -495,6 +480,14 @@
         null,
         1,
         1,
+        null,
+        1,
+        21,
+        null,
+        null,
+        1,
+        0,
+        null,
         null,
         null
       ],
@@ -1370,6 +1363,6 @@
         null
       ]
     },
-    "timestamp": 1349151387
+    "timestamp": 1349230144
   }
 }

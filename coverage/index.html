@@ -23,27 +23,27 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-10-02T00:16:27-04:00">2012-10-02T00:16:27-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-10-02T22:09:04-04:00">2012-10-02T22:09:04-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">82.21%</span></span>
+    (<span class="covered_percent"><span class="yellow">82.68%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.82
+         2.88
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>41</b> files in total.
-    <b>714</b> relevant lines. 
+    <b>710</b> relevant lines. 
     <span class="green"><b>587</b> lines covered</span> and
-    <span class="red"><b>127</b> lines missed </span>
+    <span class="red"><b>123</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -91,12 +91,12 @@
       
       <tr>
         <td class="strong"><a href="#fe41a8c1cacdc53aa2dac5fdaab7321a703fffd6" class="src_link" title="app/controllers/issues_controller.rb">app/controllers/issues_controller.rb</a></td>
-        <td class="red strong">41.67 %</td>
-        <td>23</td>
-        <td>12</td>
-        <td>5</td>
+        <td class="red strong">66.67 %</td>
         <td>7</td>
-        <td>0.4</td>
+        <td>3</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0.7</td>
       </tr>
       
       <tr>
@@ -211,11 +211,11 @@
       
       <tr>
         <td class="strong"><a href="#aa91021bbb1f672fbbc4477e632e1767040c9e55" class="src_link" title="app/controllers/solutions_controller.rb">app/controllers/solutions_controller.rb</a></td>
-        <td class="red strong">40.91 %</td>
-        <td>37</td>
-        <td>22</td>
+        <td class="red strong">39.13 %</td>
+        <td>38</td>
+        <td>23</td>
         <td>9</td>
-        <td>13</td>
+        <td>14</td>
         <td>0.4</td>
       </tr>
       
@@ -261,12 +261,12 @@
       
       <tr>
         <td class="strong"><a href="#92e30928ce432b0bc81625d8276d5123ecc27662" class="src_link" title="app/models/issue.rb">app/models/issue.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="yellow strong">88.89 %</td>
+        <td>16</td>
+        <td>9</td>
         <td>8</td>
-        <td>5</td>
-        <td>5</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td>1</td>
+        <td>3.1</td>
       </tr>
       
       <tr>
@@ -980,11 +980,11 @@
         <div class="source_table" id="fe41a8c1cacdc53aa2dac5fdaab7321a703fffd6">
   <div class="header">
     <h3>app/controllers/issues_controller.rb</h3>
-    <h4><span class="red">41.67 %</span> covered</h4>
+    <h4><span class="red">66.67 %</span> covered</h4>
     <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>7</b> lines missed.</span>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -1006,13 +1006,13 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  def new</code>
+          <code class="ruby">  def show</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="4">
           
           
-          <code class="ruby">    @issue = Issue.new</code>
+          <code class="ruby">    @issue = Issue.find(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -1027,103 +1027,7 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
-          
-          <code class="ruby">    @issue = Issue.new(params[:issue])</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
-          
-          <code class="ruby">    if @issue.save</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
-          
-          <code class="ruby">      redirect_to :back</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
-          
-          <code class="ruby">      render :new</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def show</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
-          
-          <code class="ruby">    @issue = Issue.find(params[:id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def index</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
-          
-          <code class="ruby">    @issues = Issue.all</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>
@@ -2750,11 +2654,11 @@
         <div class="source_table" id="aa91021bbb1f672fbbc4477e632e1767040c9e55">
   <div class="header">
     <h3>app/controllers/solutions_controller.rb</h3>
-    <h4><span class="red">40.91 %</span> covered</h4>
+    <h4><span class="red">39.13 %</span> covered</h4>
     <div>
-      <b>22</b> relevant lines. 
+      <b>23</b> relevant lines. 
       <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>13</b> lines missed.</span>
+      <span class="red"><b>14</b> lines missed.</span>
     </div>
   </div>
   
@@ -2770,7 +2674,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_filter :find_problem, :except =&gt; :destroy</code>
+          <code class="ruby">  before_filter :find_problem, :except =&gt; [:destroy, :create]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -2818,166 +2722,172 @@
         <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">    @solution = @problem.solutions.new(params[:solution])</code>
+          <code class="ruby">    @problem = Problem.find(params[:solution][:problem_id])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="11">
           
           
-          <code class="ruby">    respond_to do |format|</code>
+          <code class="ruby">    @solution = @problem.solutions.new(params[:solution])</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="12">
           
           
-          <code class="ruby">      if @solution.save</code>
+          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">        @solution.update_attributes(problem_id: @problem.id, user_id: current_user.id)</code>
+          <code class="ruby">      if @solution.save</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">        format.html { redirect_to(@problem, :alert =&gt; 'Solution was successfully created.') }</code>
+          <code class="ruby">        @solution.update_attributes(problem_id: @problem.id, user_id: current_user.id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">        format.html { redirect_to(@problem, :notice =&gt; 'Solution was successfully created.') }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
+        <li class="missed" data-hits="0" data-linenumber="17">
           
           
-          <code class="ruby">        format.html { render :action =&gt; &quot;new&quot; }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        format.html { redirect_to(:back, :notice =&gt; &quot;There was an error.&quot;) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="missed" data-hits="0" data-linenumber="24">
           
           
           <code class="ruby">    solution = @problem.solutions.find(params[:id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">    @problem = current_user.problems.find(params[:problem_id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="29">
           
           
           <code class="ruby">    solution = @problem.solutions.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
+        <li class="missed" data-hits="0" data-linenumber="30">
           
           
           <code class="ruby">    solution.destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="31">
           
           
-          <code class="ruby">    redirect_to @problem, :alert =&gt; 'Solution deleted.'</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    redirect_to @problem, :notice =&gt; 'Solution deleted.'</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="33">
           
-          <code class="ruby">  private</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
           <code class="ruby">    def find_problem</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
           <code class="ruby">      @problem = Problem.find(params[:problem_id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby">end</code>
@@ -3530,11 +3440,11 @@
         <div class="source_table" id="92e30928ce432b0bc81625d8276d5123ecc27662">
   <div class="header">
     <h3>app/models/issue.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">88.89 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>9</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -3583,7 +3493,55 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.with_problems</code>
+        </li>
+      
+        <li class="covered" data-hits="21" data-linenumber="9">
+          <span class="hits">21</span>
+          
+          <code class="ruby">    select { |issue| issue.has_problems? }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def has_problems?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">    problems.present?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>
