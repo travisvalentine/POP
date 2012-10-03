@@ -19,7 +19,7 @@ POP::Application.routes.draw do
   resources :profiles
   resource :session
   resources :sessions
-  resources :issues
+  resources :issues, :only => [:show]
   resources :problems do
     resources :solutions
   end
