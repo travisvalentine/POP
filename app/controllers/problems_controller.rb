@@ -41,6 +41,7 @@ private
       message = "I just offered a solution. Check it out:" +
                 "  - #{problem_url(problem)}"
     end
-    current_user.post_to_twitter(message)
+    # current_user.post_to_twitter(message)
+    Resque.enqueue(TwitterPoster, current_user.id, message)
   end
 end
