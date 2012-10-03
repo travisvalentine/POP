@@ -1,20 +1,35 @@
 require 'spec_helper'
 
 describe Problem do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
-  let(:problem) { FactoryGirl.create(:problem, :user_id => user.id) }
-  let(:problem_with_upvote) { FactoryGirl.create( :problem,
-                                                  :user_id => user.id,
-                                                  :up_votes => 1,
-                                                  :down_votes => 0
-                                                ) }
+  let(:user)                  { FactoryGirl.create(:user) }
+
+  let(:profile)               { FactoryGirl.create(:profile, :user_id => user.id) }
+
+  let(:problem)               { FactoryGirl.create(:problem, :user_id => user.id) }
+
+  let(:problem_with_upvote)   { FactoryGirl.create( :problem,
+                                                    :user_id => user.id,
+                                                    :up_votes => 1,
+                                                    :down_votes => 0
+                                                  ) }
+
   let(:problem_without_votes) { FactoryGirl.create( :problem,
                                                     :user_id => user.id,
                                                     :up_votes => 0,
                                                     :down_votes => 0
                                                   ) }
-  let(:solution) { FactoryGirl.create(:solution, :problem_id => problem.id, :user_id => user.id) }
+
+  let(:solution)               { FactoryGirl.create(:solution,
+                                                    :problem_id => problem.id,
+                                                    :user_id => user.id) }
+
+  let(:solution_without_votes) { FactoryGirl.create(:solution,
+                                                    :problem_id => problem_without_votes.id,
+                                                    :user_id => user.id) }
+
+  let(:solution_with_upvote)   { FactoryGirl.create(:solution,
+                                                    :problem_id => problem_with_upvote.id,
+                                                    :user_id => user.id) }
 
   before {
     user
@@ -71,6 +86,7 @@ describe Problem do
     context "that has not been voted" do
       before(:each) {
         problem_without_votes
+        solution_without_votes
         visit problem_path(problem_without_votes)
       }
 
@@ -91,6 +107,7 @@ describe Problem do
     context "that has already been voted up" do
       before(:each) {
         problem_with_upvote
+        solution_with_upvote
         visit problem_path(problem_with_upvote)
       }
 

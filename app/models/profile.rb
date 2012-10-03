@@ -8,9 +8,9 @@ class Profile < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_presence_of :name
 
-  validates_presence_of :birthday, :unless => :user_created_from_twitter?
+  # validates_presence_of :birthday, :unless => :user_created_from_twitter?
 
-  validates_confirmation_of :birthday, :unless => :user_created_from_twitter?
+  # validates_confirmation_of :birthday, :unless => :user_created_from_twitter?
 
   validates_confirmation_of :party_affiliation, :unless => :user_created_from_twitter?
 

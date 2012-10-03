@@ -11,11 +11,12 @@
 
 <div class="problem-show row">
   <%= render partial: "problem_with_votes" %>
+  <%= @problem.original_solution.body if @problem.original_solution.present? %>
 </div>
 <div id="problem_solutions" class="row">
-  <h3>Solutions (<%= @problem.solutions.count %>)</h3>
+  <h3>Solutions (<%= @problem.other_solutions.count %>)</h3>
   <%= link_to "Add a solution", "#", :id => "toggle_solution_form", :class => "btn-light-blue lg-text" %>
-  <% @problem.solutions.each do |solution| %>
+  <% @problem.other_solutions.each do |solution| %>
     <%= render partial: "solutions/problem_solution", locals: {:solution => solution} %>
   <% end %>
   <div id="new_solution_form">

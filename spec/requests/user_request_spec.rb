@@ -1,11 +1,12 @@
 require 'spec_helper'
 
 describe User do
-  let(:user)    { FactoryGirl.create(:user) }
-  let(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
-  let(:problem) { FactoryGirl.create(:problem, :user_id => user.id) }
+  let(:user)     { FactoryGirl.create(:user) }
+  let(:profile)  { FactoryGirl.create(:profile, :user_id => user.id) }
+  let(:problem)  { FactoryGirl.create(:problem, :user_id => user.id) }
+  let(:solution) { FactoryGirl.create(:problem, :user_id => user.id) }
 
-  let(:auth)    { TwitterAuth.default }
+  let(:auth)     { TwitterAuth.default }
 
   before {
     user
@@ -30,7 +31,7 @@ describe User do
         visit root_path
         click_link_or_button("Sign up with Twitter")
         current_path.should == welcome_path
-        page.should have_content "Welcome, Example"
+        page.should have_content "Welcome, @example"
       end
     end
   end

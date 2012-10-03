@@ -1,5 +1,6 @@
 class Solution < ActiveRecord::Base
-  attr_accessible :published_at, :body, :solution, :problem_id, :user_id
+  attr_accessible :published_at, :body, :solution,
+                  :problem_id, :user_id, :original
 
   validates :body, :presence => true,
                    :length    => { :in => 20..255 },

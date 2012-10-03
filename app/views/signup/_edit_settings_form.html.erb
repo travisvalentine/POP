@@ -1,5 +1,9 @@
 <%= form_for @profile, :url => signup_path(@profile), :method => :put do |f| %>
   <div class="input-container">
+    <p class="label"><%= f.label :name %></p>
+    <%= f.text_field :name %>
+  </div>
+  <div class="input-container">
     <p class="label"><%= f.label :bio %></p>
     <%= f.text_field :bio %>
   </div>

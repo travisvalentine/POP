@@ -30,4 +30,12 @@ class Problem < ActiveRecord::Base
     issues.first
   end
 
+  def original_solution
+    solutions.select{|s| s.original == true }.first
+  end
+
+  def other_solutions
+    solutions.select{|s| s.original == false }
+  end
+
 end
