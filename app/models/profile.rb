@@ -42,6 +42,7 @@ class Profile < ActiveRecord::Base
   end
 
   def congresspeople
+    return {} if address.blank?
     @congresspeople ||= Sunlight::Legislator.all_for(
       :address => address
     ).reject { |k,v| v.nil? }.stringify_keys

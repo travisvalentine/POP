@@ -7,6 +7,11 @@ describe User do
 
   let(:auth)    { TwitterAuth.default }
 
+  before {
+    user
+    profile
+  }
+
   context "who is unauthenticated" do
     describe "and visits their settings page" do
       it "gets redirected to login" do
@@ -31,10 +36,11 @@ describe User do
   end
 
   context "who is authenticated" do
+    use_vcr_cassette
+
     before(:each) do
-      user
-      profile
       login_as(user)
+      profile
     end
 
     describe "and visits their profile page" do

@@ -1,8 +1,13 @@
 require 'spec_helper'
 
 describe "Password Reset" do
-  let!(:user) { FactoryGirl.create(:user) }
-  let!(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:profile) { FactoryGirl.create(:profile, :user_id => user.id) }
+
+  before {
+    user
+    profile
+  }
 
   context "when a user tries to reset their password" do
     before(:each) do
