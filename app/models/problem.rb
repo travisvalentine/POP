@@ -6,6 +6,7 @@ class Problem < ActiveRecord::Base
                    :length    => { :in => 20..255 }
 
   belongs_to :user
+  has_and_belongs_to_many :politicians
 
   has_many :solutions, :order => "up_votes DESC, created_at DESC",
                        :dependent => :destroy

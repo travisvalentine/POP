@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   has_many :factchecks
   has_many :comments
 
+  has_and_belongs_to_many :politicians
+
   validates_presence_of :email,
                         :unless => :provider?
 
