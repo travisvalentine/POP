@@ -1,34 +1,16 @@
 <div class="container-head">
   <h2 class="issue-name"><%= @issue.name %></h2>
 </div>
-<% @issue.problems.each do |issue_problem| %>
-  <div class="issue-problem row">
-    <div class="vote onecol last">
-      <%= upvote_problem(issue_problem, "up-large.png") %>
-      <h1 class="count"><%= issue_problem.votes %></h1>
-      <%= downvote_problem(issue_problem, "down-large.png") %>
-    </div>
-    <div class="issue-problem-details eightcol">
-      <p>
-        <%= issue_problem.body %>
-      </p>
-    </div>
-  </div>
-    <% issue_problem.solutions.each do |solution| %>
-    <div class="issue-problem-solution row">
-      <div class="vote-small onecol last">
-        <%= upvote_solution(solution, "up-small.png") %>
-        <h4 class="count"><%= solution.votes %></h4>
-        <%= downvote_solution(solution, "down-small.png") %>
-      </div>
-      <div class="issue-problem-solution-details eightcol">
-        <p>
-          <%= solution.body %>
-        </p>
-        <p>
-          <%= link_to issue_problem.user.name, user_path(issue_problem.user) %>
-        </p>
-      </div>
-    <% end %>
+
+<div class="filter">
+  <%= link_to "All Problems", problems_path, :class => "btn" %>
+  <% Issue.with_problems.each do |issue| %>
+    <%= link_to issue.name, issue_path(issue), :class => "btn" %>
+  <% end %>
+</div>
+
+<% unless @issue.problems.empty? %>
+  <div class="problem">
+    <%= render :partial => "problems/problem", :collection => @issue.problems %>
   </div>
 <% end %>
