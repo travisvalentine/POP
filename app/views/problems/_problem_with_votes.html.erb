@@ -22,6 +22,7 @@
 
   <% if current_user_problem?(@problem) %>
     | <%= link_to "edit", edit_problem_path(@problem) %>
+    | <%= link_to "delete", problem_path(@problem), :method => :delete, :confirm => "Are you sure you want to delete your problem and its solutions?" %>
   <% end %>
 
 </div>

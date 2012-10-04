@@ -47,6 +47,15 @@ class ProblemsController < ApplicationController
     @problem = Problem.find(params[:id])
   end
 
+  def destroy
+    @problem = current_user.problems.find(params[:id])
+    if @problem.destroy
+      redirect_to problems_path, :notice => "Problem successfully deleted."
+    else
+      redirect_to problem_path(@problem), :notice => "There was a problem. Try again."
+    end
+  end
+
 private
 
   def post_to_twitter(problem)

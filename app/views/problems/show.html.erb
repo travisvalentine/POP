@@ -1,11 +1,18 @@
 <%= content_for(:head) do %>
+  <%= javascript_include_tag "charCount.js" %>
   <script type="text/javascript">
     $(function(){
       $('#new_solution_form').toggle();
       $('#toggle_solution_form').click(function(){
         $('#new_solution_form').toggle();
+        $('.counter').toggle();
       });
-    })
+      $("#solution_body").charCount({
+        allowed: 250,
+        warning: 20,
+        counterText: " characters remaining"
+      });
+    });
   </script>
 <% end %>
 <div id="problem">

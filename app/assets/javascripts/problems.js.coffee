@@ -11,6 +11,11 @@ $ ->
     warning: 20
     counterText: " characters remaining"
 
+  $("#solution_body").charCount
+    allowed: 250
+    warning: 20
+    counterText: " characters remaining"
+
   charCounter = $("span.counter")
   charCounter.toggle()
 
