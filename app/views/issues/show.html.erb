@@ -1,18 +1,20 @@
-<div class="index-head">
-  <h1 class="issue-name"><%= @issue.name %></h1>
-</div>
+<div id="issue">
+  <div class="index-head">
+    <h1 class="issue-name"><%= @issue.name %></h1>
+  </div>
 
-<div class="filter">
-  <%= link_to "All Problems", problems_path, :class => "btn-light" %>
-  <% Issue.with_problems.each do |issue| %>
-    <% if @issue != issue %>
-      <%= link_to issue.name, issue_path(issue), :class => "btn-light" %>
+  <div class="filter">
+    <%= link_to "All Problems", problems_path, :class => "btn-light" %>
+    <% Issue.with_problems.each do |issue| %>
+      <% if @issue != issue %>
+        <%= link_to issue.name, issue_path(issue), :class => "btn-light" %>
+      <% end %>
     <% end %>
+  </div>
+
+  <% unless @issue.problems.empty? %>
+    <div class="problem">
+      <%= render :partial => "problems/problem", :collection => @issue.problems %>
+    </div>
   <% end %>
 </div>
-
-<% unless @issue.problems.empty? %>
-  <div class="problem">
-    <%= render :partial => "problems/problem", :collection => @issue.problems %>
-  </div>
-<% end %>
