@@ -17,7 +17,7 @@ class ProblemsController < ApplicationController
         original:   true
       )
       redirect_to(@problem, :notice => 'Problem was successfully created.')
-      post_to_twitter(@problem) if params[:tweet].present?
+      post_to_twitter(@problem, params) if params[:tweet].present?
     else
       render :action => "new"
     end
@@ -58,15 +58,23 @@ class ProblemsController < ApplicationController
 
 private
 
-  def post_to_twitter(problem)
-    if problem.issue.present?
-      message = "I just offered a solution to #{problem.issue.name}" +
-              "  - #{problem_url(problem)}"
-    else
-      message = "I just offered a solution. Check it out:" +
-                "  - #{problem_url(problem)}"
+  def post_to_twitter(problem, params)
+    plain_message = "I just offered a solution. Check it out: "
+    issue_message = "I just offered a solution to #{problem.issue.name} " if problem.issue.present?
+    problem_url = "#{problem_url(problem)}"
+
+    if problem.issue.blank? && !params[:tweet_bo] && !params[:tweet_mr]
+      message = plain_message + problem_url
+    elsif problem.issue.present? && params[:tweet_bo]
+      message = issue_message + "cc @BarackObama - " + problem_url
+    elsif problem.issue.present? && params[:tweet_mr]
+      message = issue_message + "cc @MittRomney - " + problem_url
+    elsif problem.issue.blank? && params[:tweet_bo]
+      message = plain_message + "cc @BarackObama - " + problem_url
+    elsif problem.issue.blank? && params[:tweet_mr]
+      message = plain_message + "cc @MittRomney - " + problem_url
     end
-    # current_user.post_to_twitter(message)
+
     Resque.enqueue(TwitterPoster, current_user.id, message)
   end
 end

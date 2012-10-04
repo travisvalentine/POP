@@ -19,7 +19,27 @@ $ ->
   charCounter = $("span.counter")
   charCounter.toggle()
 
+  $('#candidates').toggle()
+
   $("textarea#problem_body").focus()
+
+  $("input#tweet").change ->
+    if $('input').is(':checked')
+      $('#candidates').toggle()
+    else
+      $('#candidates').toggle()
+
+  $("input#tweet_bo").change ->
+    if $("input#tweet_bo").is(':checked')
+      $("input#tweet_mr").attr('disabled', true)
+    else
+      $("input#tweet_mr").attr('disabled', false)
+
+  $("input#tweet_mr").change ->
+    if $("input#tweet_mr").is(':checked')
+      $("input#tweet_bo").attr('disabled', true)
+    else
+      $("input#tweet_bo").attr('disabled', false)
 
   # $("textarea#problem_body").next().toggle()
 
