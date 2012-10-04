@@ -3,6 +3,7 @@ class SolutionsController < ApplicationController
   before_filter :authenticate, :only => :destroy
 
   def new
+    @problem = Problem.find(params[:id])
     @solution = @problem.solutions.new
   end
 

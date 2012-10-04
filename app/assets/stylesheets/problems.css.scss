@@ -17,6 +17,14 @@
   }
 }
 
+.filter {
+  margin: 10px 0;
+}
+
+div#index, div#problem {
+  min-height: 600px;
+}
+
 .problem-show {
   margin: 30px 0 20px 5px;
 }
@@ -30,9 +38,8 @@
   }
 }
 
-#problem_details {
+#problem_details, #problem_original_solution {
   float: left;
-  height: 90px;
   width: 90%;
 
   h1 {
@@ -75,14 +82,33 @@
 .overview {
   float: left;
   margin-right: 15px;
-  width: 35px;
+  width: 120px;
+
+  div.votes {
+    display: inline-block;
+    margin-right: 10px;
+    width: 36px;
+  }
+
+  div.solutions {
+    display: inline-block;
+    width: 60px;
+  }
 }
 
-.solution-count {
-
-}
-
-.vote-count {
+.vote-count, .solution-count {
   margin: 0 auto;
   text-align: center;
+}
+
+.add-solution {
+  margin: 10px 0;
+  width: 55%;
+
+  .field_with_errors {
+
+    .message {
+      margin: -65px 575px 0;
+    }
+  }
 }

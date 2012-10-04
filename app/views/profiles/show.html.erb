@@ -1,20 +1,22 @@
-<div id="profile_info">
-  <%= render partial: "profile_info" %>
+<div id="profile">
+  <div id="profile_info">
+    <%= render partial: "profile_info" %>
+  </div>
+  <div id="profile_votes">
+    <h4>Votes</h4>
+    <p>Up votes: <%= @profile.user.up_votes %></p>
+    <p>Down votes: <%= @profile.user.down_votes %></p>
+  </div>
+
+  <% unless @profile.problems.empty? %>
+    <%= render partial: "profile_problems" %>
+  <% end %>
+
+  <% unless @profile.solutions.empty? %>
+    <%= render partial: "profile_solutions" %>
+  <% end %>
+
+  <% unless @profile.address.blank? && current_user_profile?(@profile) %>
+    <%= render partial: "profile_congresspeople" %>
+  <% end %>
 </div>
-<div id="profile_votes">
-  <h4>Votes</h4>
-  <p>Up votes: <%= @profile.user.up_votes %></p>
-  <p>Down votes: <%= @profile.user.down_votes %></p>
-</div>
-
-<% unless @profile.problems.empty? %>
-  <%= render partial: "profile_problems" %>
-<% end %>
-
-<% unless @profile.solutions.empty? %>
-  <%= render partial: "profile_solutions" %>
-<% end %>
-
-<% unless @profile.address.blank? && other_user_profile?(@profile) %>
-  <%= render partial: "profile_congresspeople" %>
-<% end %>

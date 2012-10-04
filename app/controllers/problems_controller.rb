@@ -23,6 +23,22 @@ class ProblemsController < ApplicationController
     end
   end
 
+  def edit
+    @problem = current_user.problems.find(params[:id])
+    @solution = @problem.original_solution
+  end
+
+  def update
+    @problem = current_user.problems.find(params[:id])
+    @solution = @problem.solutions.find(params[:id])
+    if @problem.update_attributes(params[:problem])
+      @solution.update_attributes(params[:problem][:solution])
+      redirect_to problem_path(@problem), :alert => 'Problem updated successfully.'
+    else
+      render :edit, :alert => 'There was an error. Please try again.'
+    end
+  end
+
   def index
     @problems = Problem.votes.page(params[:page]).per(10)
   end

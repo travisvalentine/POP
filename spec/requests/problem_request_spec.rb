@@ -31,6 +31,12 @@ describe Problem do
                                                     :problem_id => problem_with_upvote.id,
                                                     :user_id => user.id) }
 
+  let(:problem_issue)          { problem.issues.create(:name => "Issue") }
+
+  let(:problem_upvote_issue)   { problem_with_upvote.issues.create(:name => "Issue 2") }
+
+  let(:problem_without_issue)  { problem_without_votes.issues.create(:name => "Issue 3") }
+
   before {
     user
     profile
@@ -41,6 +47,7 @@ describe Problem do
       login_as(user)
       problem
       solution
+      problem_issue
     end
 
     it "shows the problem title and it's solution" do
@@ -87,6 +94,7 @@ describe Problem do
       before(:each) {
         problem_without_votes
         solution_without_votes
+        problem_without_issue
         visit problem_path(problem_without_votes)
       }
 
@@ -108,6 +116,7 @@ describe Problem do
       before(:each) {
         problem_with_upvote
         solution_with_upvote
+        problem_upvote_issue
         visit problem_path(problem_with_upvote)
       }
 

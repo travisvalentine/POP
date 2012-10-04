@@ -1,9 +1,9 @@
 <%= form_for @problem.solutions.new, :validate => true do |f| %>
   <%= f.hidden_field :problem_id, :value => @problem.id %>
-  <div class="field">
-    <%= f.text_field :body, :placeholder => "Body" %>
+  <div class="add-solution input-container clearfix">
+    <%= f.text_area :body, :placeholder => "Enter your solution" %>
   </div>
   <div id="button">
-    <%= f.submit 'Submit' %>
+    <%= f.submit 'Add', :class => 'btn-gop-red lg-text' %>
   </div>
 <% end %>

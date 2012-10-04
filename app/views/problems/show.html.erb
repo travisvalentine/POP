@@ -8,21 +8,22 @@
     })
   </script>
 <% end %>
+<div id="problem">
+  <div class="problem-show row">
+    <%= render partial: "problem_with_votes" %>
+  </div>
 
-<div class="problem-show row">
-  <%= render partial: "problem_with_votes" %>
-  <%= @problem.original_solution.body if @problem.original_solution.present? %>
-</div>
-
-<% unless @problem.other_solutions.empty? %>
   <div id="problem_solutions" class="row">
-    <h3>Solutions (<%= @problem.other_solutions.count %>)</h3>
-    <%= link_to "Add a solution", "#", :id => "toggle_solution_form", :class => "btn-light-blue lg-text" %>
-    <% @problem.other_solutions.each do |solution| %>
-      <%= render partial: "solutions/problem_solution", locals: {:solution => solution} %>
+    <% if @problem.other_solutions.empty? %>
+      <%= link_to "Add Solution", "#", :id => "toggle_solution_form", :class => "btn-light-blue lg-text" %>
+    <% else %>
+      <% @problem.other_solutions.each do |solution| %>
+        <%= render partial: "solutions/problem_solution", locals: {:solution => solution} %>
+      <% end %>
+      <%= link_to "Add Solution", "#", :id => "toggle_solution_form", :class => "btn-light-blue lg-text" %>
     <% end %>
     <div id="new_solution_form">
       <%= render partial: "solutions/form" %>
     </div>
   </div>
-<% end %>
+</div>
