@@ -1,10 +1,10 @@
-<div id="profile_congresspeople">
+<div id="congresspeople" class="profile">
 
   <h4>My congresspeople:</h4>
 
   <% @profile.congresspeople.each_pair do |k,v| %>
     <div class="member">
-      <p><%= "#{k.humanize.titleize}: #{v.firstname} #{v.lastname} (#{v.party}), @#{v.twitter_id}" %></p>
+      <p><%= "#{k.humanize.titleize}: #{v.firstname} #{v.lastname} (#{v.party})" %> <%= link_to "@#{v.twitter_id}", "http://twitter.com/#{v.twitter_id}", :target => "_blank" %></p>
     </div>
   <% end %>
 

@@ -1,15 +1,44 @@
 #profile {
   min-height: 600px;
-}
 
-#profile_info {
-  margin: 20px 0 40px;
+  .profile {
+    margin-top: 30px;
+  }
 
-  h3 {
-    font-weight: 500;
+  #info {
+    margin-top: 20px;
+
+    h3 {
+      font-weight: 500;
+    }
   }
 }
 
-#profile_problems {
-  margin: 40px 0;
+#edit_profile {
+  margin-bottom: 80px;
+
+  #button {
+    margin: 10px 0 40px 0;
+  }
+}
+
+.delete {
+//  margin: 100px 0;
+}
+
+span#twitter {
+  font-size: 16px;
+  position: absolute;
+  margin: 15px 0 0 7px;
+  pointer-events: none;
+}
+
+input#profile_twitter {
+  padding-left: 19px;
+  width: 96.5%;
+}
+
+select#profile_party_affiliation, select#profile_birthday_2i,
+select#profile_birthday_1i, select#profile_birthday_3i,{
+  margin-top: 5px;
 }

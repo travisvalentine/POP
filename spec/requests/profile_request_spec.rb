@@ -20,7 +20,7 @@ describe "Profile Show" do
     end
 
     it "has Members of Congress" do
-      page.should have_content("Representative: Eleanor Norton (D), @EleanorNorton")
+      page.should have_content("Representative: Eleanor Norton (D) @EleanorNorton")
     end
   end
 

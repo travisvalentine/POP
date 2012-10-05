@@ -73,7 +73,16 @@ div#index, div#problem, div#issue {
     float: left;
     margin-bottom: 0px !important;
 
+    h4 {
+      margin: 0;
+
+      a {
+        color: $med-blue;
+      }
+    }
+
     p {
+      color: gray;
       margin: 0;
     }
   }
@@ -86,12 +95,13 @@ div#index, div#problem, div#issue {
 
   div.votes {
     display: inline-block;
-    margin-right: 10px;
+    margin: 0 10px 0 0;
     width: 36px;
   }
 
   div.solutions {
     display: inline-block;
+    margin-bottom: 0;
     width: 60px;
   }
 }

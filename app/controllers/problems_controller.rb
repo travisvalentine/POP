@@ -16,7 +16,7 @@ class ProblemsController < ApplicationController
         user_id:    current_user.id,
         original:   true
       )
-      redirect_to(@problem, :notice => 'Problem was successfully created.')
+      redirect_to(problems_path(@problem), :notice => 'Problem was successfully created.')
       post_to_twitter(@problem, params) if params[:tweet].present?
     else
       render :action => "new"

@@ -14,11 +14,8 @@
   </div>
   <div class="input-container">
     <p class="label"><%= f.label :twitter %></p>
+    <span id="twitter">@</span>
     <%= f.text_field :twitter %>
-  </div>
-  <div class="input-container">
-    <p class="label"><%= f.label :job_title %></p>
-    <%= f.text_field :job_title %>
   </div>
   <div class="input-container">
     <p class="label"><%= f.label :bio %></p>
@@ -33,6 +30,6 @@
     <%= f.select :party_affiliation, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party', 'Yes, I like to Party']), :prompt => "Pick your poison" %>
   </div>
   <div id="button">
-    <%= submit_tag 'Save', :class => 'btn-med-blue lg-text' %>
+    <%= submit_tag 'Save', :class => 'btn-large btn-med-blue lg-text' %>
   </div>
 <% end %>

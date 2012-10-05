@@ -1,4 +1,4 @@
-<div id="profile_problems">
+<div id="problems" class="profile">
 
   <% if current_user %>
     <h4>My problems:</h4>
@@ -6,7 +6,7 @@
     <h4>Things <%= @profile.first_name %> cares about:</h4>
   <% end %>
 
-  <% @profile.problems.each do |problem| %>
+  <% @profile.problems.reverse.each do |problem| %>
     <div class="profile-problem">
       <p><%= link_to problem.body, problem %></p>
     </div>

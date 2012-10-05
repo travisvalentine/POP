@@ -1,8 +1,13 @@
 <div id="profile">
-  <div id="profile_info">
+  <div id="info" class="profile">
     <%= render partial: "profile_info" %>
   </div>
-  <div id="profile_votes">
+
+  <% unless @profile.address.blank? && current_user_profile?(@profile) %>
+    <%= render partial: "profile_congresspeople" %>
+  <% end %>
+
+  <div id="votes" class="profile">
     <h4>Votes</h4>
     <p>Up votes: <%= @profile.user.up_votes %></p>
     <p>Down votes: <%= @profile.user.down_votes %></p>
@@ -14,9 +19,5 @@
 
   <% unless @profile.solutions.empty? %>
     <%= render partial: "profile_solutions" %>
-  <% end %>
-
-  <% unless @profile.address.blank? && current_user_profile?(@profile) %>
-    <%= render partial: "profile_congresspeople" %>
   <% end %>
 </div>
