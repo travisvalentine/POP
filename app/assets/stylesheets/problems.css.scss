@@ -116,6 +116,12 @@
     line-height: 30px;
     margin-bottom: 0;
 
+    &.byline {
+      color: #808080;
+      font-family: "georgia";
+      font-style: italic;
+    }
+
     span a {
       &:first-child {
         margin-right: 0;
