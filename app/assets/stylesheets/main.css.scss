@@ -8,6 +8,10 @@
   margin-bottom: 20px;
 }
 
+div#index, div#problem, div#issue, div#about {
+  min-height: 600px;
+}
+
 //.inaug {
 //  background-color: #fff;
 //  background: url(lincoln.png) no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
@@ -24,9 +28,9 @@
 }
 
 h1.old {
-  font-family: "Helvetica Neue", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
-  font-size:35px;
+  font-family:"Helvetica Neue", serif;
   font-weight: 500;
+  font-size:35px;
   color: #1C031E;
   margin: 0;
   text-align:center;

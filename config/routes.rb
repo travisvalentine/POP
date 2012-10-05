@@ -8,6 +8,7 @@ POP::Application.routes.draw do
   match "/settings" => "settings#show", :as => 'settings'
   match "/login" => "sessions#new", :as => "login"
   match "/signup/welcome" => "signup#edit", :as => "welcome"
+  match "/about" => "info#about", :as => "about"
 
   match "/auth/:provider/callback" => "oauth#create"
   match "auth/failure", :to => redirect('/')

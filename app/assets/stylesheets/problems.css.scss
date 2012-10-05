@@ -21,10 +21,6 @@
   margin: 10px 0;
 }
 
-div#index, div#problem, div#issue {
-  min-height: 600px;
-}
-
 .problem-show {
   margin: 30px 0 20px 5px;
 }
@@ -36,6 +32,10 @@ div#index, div#problem, div#issue {
     display:inline;
     margin-right: 10px;
   }
+}
+
+#problem_details {
+  color: $light-blue;
 }
 
 #problem_details, #problem_original_solution {
@@ -77,7 +77,7 @@ div#index, div#problem, div#issue {
       margin: 0;
 
       a {
-        color: $med-blue;
+        color: $light-blue;
       }
     }
 

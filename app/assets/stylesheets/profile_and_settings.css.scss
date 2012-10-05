@@ -42,3 +42,23 @@ select#profile_party_affiliation, select#profile_birthday_2i,
 select#profile_birthday_1i, select#profile_birthday_3i,{
   margin-top: 5px;
 }
+
+#about {
+  .info-container {
+    margin: 30px 0;
+
+    ul {
+      margin-bottom: 15px;
+      margin-top: 15px;
+
+      li {
+        list-style-type: none;
+
+        h5 {
+          margin-bottom: 3px;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
