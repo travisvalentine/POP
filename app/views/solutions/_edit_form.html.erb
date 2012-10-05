@@ -1,0 +1,10 @@
+<h4>Edit your Solution</h4>
+
+<%= form_for @solution, :validate => true do |f| %>
+  <div class="edit-solution input-container clearfix">
+    <%= f.text_area :body, :placeholder => "Enter your solution" %>
+  </div>
+  <div id="button">
+    <%= f.submit 'Save', :class => 'btn-gop-red lg-text' %>
+  </div>
+<% end %>

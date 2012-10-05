@@ -1,7 +1,7 @@
 module ProfilesHelper
 
   def current_user_profile?(profile)
-    profile == current_user.profile
+    profile.id == current_user.profile.id
   end
 
 end

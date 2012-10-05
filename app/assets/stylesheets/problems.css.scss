@@ -116,10 +116,12 @@
     line-height: 30px;
     margin-bottom: 0;
 
-    &.byline {
+    span a {
+      &:first-child {
+        margin-right: 0;
+      }
       color: #808080;
-      font-family: "georgia";
-      font-style: italic;
+      font-size: 12px;
     }
   }
 }
@@ -176,6 +178,17 @@
 .vote-count, .solution-count {
   margin: 0 auto;
   text-align: center;
+}
+
+.edit-solution {
+  width: 48%;
+
+  .field_with_errors {
+
+    .message {
+      margin: -65px 575px 0;
+    }
+  }
 }
 
 .add-solution {

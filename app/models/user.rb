@@ -101,8 +101,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def has_no_address?
-    profile.address.blank?
+  def has_address?
+    profile.address.present?
   end
 
 protected

@@ -1,5 +1,5 @@
 class SolutionsController < ApplicationController
-  before_filter :find_problem, :except => [:destroy, :create]
+  before_filter :find_problem, :except => [:destroy, :create, :edit, :update]
   before_filter :authenticate, :only => :destroy
 
   def new
@@ -22,7 +22,16 @@ class SolutionsController < ApplicationController
   end
 
   def edit
-    solution = @problem.solutions.find(params[:id])
+    @solution = current_user.solutions.find(params[:id])
+  end
+
+  def update
+    @solution = current_user.solutions.find(params[:id])
+    if @solution.update_attributes(params[:solution])
+      redirect_to problem_path(@solution.problem), :alert => 'Solution updated successfully.'
+    else
+      render :edit, :alert => 'There was an error. Please try again.'
+    end
   end
 
   def destroy

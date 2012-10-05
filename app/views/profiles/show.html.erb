@@ -3,7 +3,7 @@
     <%= render partial: "profile_info" %>
   </div>
 
-  <% unless current_user_profile?(@profile) && current_user.has_no_address? %>
+  <% if current_user_profile?(@profile) && current_user.has_address? %>
     <%= render partial: "profile_congresspeople" %>
   <% end %>
 
