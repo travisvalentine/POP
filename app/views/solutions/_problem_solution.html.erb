@@ -9,7 +9,7 @@
     <% if solution.user.name != current_user.name %>
       <p class="byline">- by <%= link_to solution.user.name, solution.user.profile %></p>
     <% else %>
-      <p class="admin-links"><span><%= link_to "edit", edit_solution_path(solution) %></span></p>
+      <p class="admin-links"><span><%= link_to "edit", edit_solution_path(solution) %> <%= link_to "delete", solution_path(solution), :method => :delete, :confirm => "Are you sure you want to delete your solution?" %></span</p>
     <% end %>
   </div>
 </div>

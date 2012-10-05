@@ -35,10 +35,9 @@ class SolutionsController < ApplicationController
   end
 
   def destroy
-    @problem = current_user.problems.find(params[:problem_id])
-    solution = @problem.solutions.find(params[:id])
-    solution.destroy
-    redirect_to @problem, :notice => 'Solution deleted.'
+    @solution = current_user.solutions.find(params[:id])
+    @solution.destroy
+    redirect_to @solution.problem, :notice => 'Solution deleted.'
   end
 
   private
