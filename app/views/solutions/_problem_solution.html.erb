@@ -7,7 +7,7 @@
   <div class="solution-details">
     <p><%= solution.body %></p>
     <% if solution.user.name != current_user.name %>
-    <%= link_to solution.user.name, solution.user.profile %>
+      <p class="byline">- <%= link_to solution.user.name, solution.user.profile %></p>
     <% end %>
   </div>
 </div>

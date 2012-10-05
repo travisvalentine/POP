@@ -108,13 +108,19 @@
 
 .solution-details {
   float: left;
-  height: 54px;
+  height: auto;
   margin-bottom: 0;
   width: 90%;
 
   p {
-    line-height: 50px;
+    line-height: 30px;
     margin-bottom: 0;
+
+    &.byline {
+      color: #808080;
+      font-family: "georgia";
+      font-style: italic;
+    }
   }
 }
 
