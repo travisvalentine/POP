@@ -2,6 +2,8 @@
   <%= javascript_include_tag "charCount.js" %>
   <script type="text/javascript">
     $(function(){
+      var real_height= $('.problem-show').height();
+      $('.problem-show .vote').height(real_height);
       $('#new_solution_form').toggle();
       $('#toggle_solution_form').click(function(){
         $('#new_solution_form').toggle();
