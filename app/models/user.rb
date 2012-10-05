@@ -101,6 +101,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def has_no_address?
+    profile.address.blank?
+  end
+
 protected
 
   def encrypt_new_password
