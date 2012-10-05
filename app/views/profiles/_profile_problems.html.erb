@@ -8,7 +8,7 @@
 
   <% @profile.problems.reverse.each do |problem| %>
     <div class="profile-problem">
-      <p><%= link_to problem.body, problem %></p>
+      <p><%= link_to truncate(problem.body, :length => 80), problem %></p>
     </div>
   <% end %>
 
