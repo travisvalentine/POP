@@ -105,6 +105,10 @@ class User < ActiveRecord::Base
     profile.address.present?
   end
 
+  def connected_with_twitter?
+    provider.present? && provider == "twitter"
+  end
+
 protected
 
   def encrypt_new_password
