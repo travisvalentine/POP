@@ -137,11 +137,11 @@
 }
 
 .other-problem {
-  border-bottom: 1px dotted #ccc;
+  border-top: 1px dotted #ccc;
   padding: 15px 0;
 
-  &:last-child {
-    border-bottom: 0;
+  &:first-child {
+    border: 0px;
   }
 
   .details {

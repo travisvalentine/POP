@@ -1,0 +1,30 @@
+nav.pagination {
+  margin-bottom: 30px;
+
+  span {
+
+    &.current {
+      @include border-radius(5px);
+      background-color: $dark-blue;
+      border: 1px solid $dark-blue;
+      color: #fff;
+      padding: 5px 2px;
+      margin: 0 4px;
+    }
+
+    a {
+
+      &:hover {
+        background-color: $gop-red;
+        border: 1px solid $gop-red;
+        text-decoration: none;
+      }
+
+      @include border-radius(5px);
+      background-color: $light-blue;
+      border: 1px solid $light-blue;
+      color: #fff;
+      padding: 5px;
+    }
+  }
+}
