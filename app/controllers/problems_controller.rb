@@ -40,7 +40,7 @@ class ProblemsController < ApplicationController
   end
 
   def index
-    @problems = Problem.votes.page(params[:page]).per(10)
+    @problems = Kaminari.paginate_array(Problem.by_votes).page(params[:page]).per(10)
   end
 
   def show

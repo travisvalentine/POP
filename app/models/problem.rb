@@ -17,7 +17,9 @@ class Problem < ActiveRecord::Base
 
   make_voteable
 
-  scope :votes, order("up_votes DESC, created_at DESC")
+  def self.by_votes
+    all.sort{ |a,b| b.votes <=> a.votes }
+  end
 
   def solution
     solutions
@@ -36,7 +38,7 @@ class Problem < ActiveRecord::Base
   end
 
   def other_solutions
-    solutions.select{|s| s.original == false }
+    solutions.select{|s| s.original == false }.sort{|a,b| b.votes <=> a.votes}
   end
 
 end
