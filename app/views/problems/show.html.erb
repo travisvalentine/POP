@@ -14,6 +14,13 @@
         warning: 20,
         counterText: " characters remaining"
       });
+      $('.comment-form').toggle();
+      $('.add-comment').click(function(){
+        $('#comment_body').removeData("changed");
+        $('#comment_body').removeData("valid");
+        $('#comment_body').trigger('element:validate:pass')
+        $(this).next().toggle();
+      });
     });
   </script>
 <% end %>

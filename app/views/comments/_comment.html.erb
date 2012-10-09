@@ -1,0 +1,3 @@
+<div class="comment" data-comment-id="<%= comment.id %>">
+  <%= comment.body %> - <%= link_to "#{comment.user.first_name}", profile_path(comment.user.profile) %>
+</div>

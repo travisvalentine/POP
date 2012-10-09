@@ -1,0 +1,8 @@
+<%= form_for Comment.new, :validate => true, :method => :post do |f| %>
+  <%= f.hidden_field :solution_id, :value => solution.id %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.text_area :body, :placeholder => "Add a comment" %>
+  <div id="button">
+    <%= f.submit "Add a comment", :class => "btn-light" %>
+  </div>
+<% end %>

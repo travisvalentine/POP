@@ -25,6 +25,7 @@ POP::Application.routes.draw do
     resources :solutions
   end
   resources :solutions
+  resources :comments
   resources :password_resets
   resources :problem_upvotes, :only => [:create]
   resources :problem_downvotes, :only => [:create]

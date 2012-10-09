@@ -1,6 +1,10 @@
 class Comment < ActiveRecord::Base
-  belongs_to :solution
+  attr_accessible :solution_id, :user_id, :body
 
-  validates :body, :presence => true
+  belongs_to :solution
+  belongs_to :user
+
+  validates :body, :presence => true,
+                   :length    => { :in => 20..255 }
 
 end
