@@ -44,11 +44,21 @@ if Rails.env.development?
                                     :name => "Random Account",
                                     :user_id => user.id)
 
-  20.times do
+  10.times do
     user.problems.create(:body => Faker::Lorem::paragraph(sentence_count=2))
   end
 
+  10.times do
+    test.problems.create(:body => Faker::Lorem::paragraph(sentence_count=2))
+  end
+
   user.problems.each do |p|
-    p.solutions.create(:body => Faker::Lorem::paragraph(sentence_count=2))
+    p.solutions.create(:body => Faker::Lorem::paragraph(sentence_count=2),
+                       :user_id => user.id)
+  end
+
+  test.problems.each do |p|
+    p.solutions.create(:body => Faker::Lorem::paragraph(sentence_count=2),
+                       :user_id => test.id)
   end
 end

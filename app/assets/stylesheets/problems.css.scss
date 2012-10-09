@@ -48,6 +48,50 @@
       border-top: 0px;
     }
 
+    .comments {
+      border-top: 1px dotted #ccc;
+      margin: 15px 0 0px 30px;
+      width: 97.4%;
+    }
+
+    .comment {
+      margin: 5px 0;
+      width: 100%;
+
+      &:first-child {
+        margin-top: 15px;
+      }
+    }
+
+    .new-comment {
+      margin: 5px 0 0px 30px;
+      width: 97.4%;
+
+      .add-comment {
+        float: left;
+        margin-bottom: 5px;
+        width: inherit;
+      }
+
+      .comment-form {
+        margin-top: 10px;
+        width: inherit;
+
+        .field_with_errors .message {
+          margin: 15px 10px 0;
+        }
+
+        textarea {
+          height: 50px;
+          width: 70%;
+        }
+      }
+    }
+
+    .comment-form, .comment, .comments, .new-comment {
+      float: left;
+    }
+
   }
 
   a#toggle_solution_form {
