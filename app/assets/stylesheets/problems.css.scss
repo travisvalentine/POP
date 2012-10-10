@@ -91,7 +91,17 @@
     .comment-form, .comment, .comments, .new-comment {
       float: left;
     }
+  }
 
+  #new_solution_form {
+    form {
+      border-top: 1px dotted #808080;
+      padding-top: 10px;
+    }
+
+    span.counter {
+      display: none;
+    }
   }
 
   a#toggle_solution_form {

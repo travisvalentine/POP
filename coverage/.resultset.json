@@ -567,6 +567,7 @@
         null,
         1,
         null,
+        null,
         null
       ],
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/models/factcheck.rb": [
@@ -1537,6 +1538,6 @@
         null
       ]
     },
-    "timestamp": 1349749426
+    "timestamp": 1349836823
   }
 }

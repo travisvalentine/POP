@@ -4,11 +4,6 @@
     $(function(){
       var real_height= $('.problem-show').height();
       $('.problem-show .vote').height(real_height);
-      $('#new_solution_form').toggle();
-      $('#toggle_solution_form').click(function(){
-        $('#new_solution_form').toggle();
-        $('.counter').toggle();
-      });
       $("#solution_body").charCount({
         allowed: 250,
         warning: 20,
@@ -30,16 +25,14 @@
   </div>
 
   <div id="problem_solutions" class="row">
-    <% if @problem.other_solutions.empty? %>
-      <%= link_to "Add Solution", "#", :id => "toggle_solution_form", :class => "btn-light-blue lg-text" %>
-    <% else %>
-      <h2>Solutions</h2>
+    <% if @problem.other_solutions.present? %>
+      <h2><%= pluralize(@problem.solutions.count, "Solution", "Solutions") %></h2>
       <% @problem.other_solutions.each do |solution| %>
         <%= render partial: "solutions/problem_solution", locals: {:solution => solution} %>
       <% end %>
-      <%= link_to "Add Solution", "#", :id => "toggle_solution_form", :class => "btn-light-blue lg-text" %>
     <% end %>
     <div id="new_solution_form">
+      <h2>Add a Solution</h2>
       <%= render partial: "solutions/form" %>
     </div>
   </div>
