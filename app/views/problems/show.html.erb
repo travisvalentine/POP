@@ -16,6 +16,11 @@
         $('#comment_body').trigger('element:validate:pass')
         $(this).next().toggle();
       });
+      $('.remaining-comments').toggle();
+      $('.all-comments').click(function(){
+        $(this).hide();
+        $(this).next().toggle();
+      });
     });
   </script>
 <% end %>
@@ -25,15 +30,18 @@
   </div>
 
   <div id="problem_solutions" class="row">
+
     <% if @problem.other_solutions.present? %>
       <h2><%= pluralize(@problem.solutions.count, "Solution", "Solutions") %></h2>
       <% @problem.other_solutions.each do |solution| %>
         <%= render partial: "solutions/problem_solution", locals: {:solution => solution} %>
       <% end %>
     <% end %>
+
     <div id="new_solution_form">
       <h2>Add a Solution</h2>
       <%= render partial: "solutions/form" %>
     </div>
   </div>
+
 </div>

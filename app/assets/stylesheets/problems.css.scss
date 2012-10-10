@@ -52,10 +52,20 @@
       border-top: 1px dotted #ccc;
       margin: 15px 0 0px 30px;
       width: 97.4%;
+
+      a.all-comments {
+        color: $dark-blue;
+        font-size: 13px;
+      }
+
+      .remaining-comments .comment:first-child {
+        margin-top: 3px;
+      }
     }
 
     .comment {
-      margin: 5px 0;
+      font-size: 13px;
+      margin: 3px 0;
       width: 100%;
 
       &:first-child {
@@ -64,11 +74,13 @@
     }
 
     .new-comment {
-      margin: 5px 0 0px 30px;
+      margin-top: 0px;
       width: 97.4%;
 
       .add-comment {
+        color: $dark-blue;
         float: left;
+        font-size: 13px;
         margin-bottom: 5px;
         width: inherit;
       }
