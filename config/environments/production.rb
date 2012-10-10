@@ -61,4 +61,7 @@ POP::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  # use middleware to handle Heroku www subdomain
+  config.middleware.use "WwwMiddleware"
 end
