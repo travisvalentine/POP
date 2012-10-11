@@ -61,9 +61,9 @@ private
   def post_to_twitter(problem, params)
     message = ["I just offered a solution"]
     problem.issue.present? ? message << " to #{problem.issue.name}. Check it out: " : message << ". Check it out: "
-    message << "cc @BarackObama - " if params[:tweet_bo]
-    message << "cc @MittRomney - " if params[:tweet_mr]
     message << problem_url(problem)
+    message << " - cc @BarackObama" if params[:tweet_bo]
+    message << " - cc @MittRomney" if params[:tweet_mr]
     Resque.enqueue(TwitterPoster, current_user.id, message.join(""))
   end
 end
