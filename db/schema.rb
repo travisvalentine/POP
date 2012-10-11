@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121003033933) do
+ActiveRecord::Schema.define(:version => 20121010232523) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "solution_id"
   end
 
@@ -25,36 +25,51 @@ ActiveRecord::Schema.define(:version => 20121003033933) do
     t.text     "body"
     t.string   "link"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "issue_problems", :force => true do |t|
     t.integer  "problem_id"
     t.integer  "issue_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "issues", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "problem_solutions", :force => true do |t|
+  create_table "politician_problems", :force => true do |t|
+    t.integer  "politician_id"
     t.integer  "problem_id"
-    t.integer  "solution_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "politician_users", :force => true do |t|
+    t.integer  "politician_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "politicians", :force => true do |t|
+    t.string "title"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "party"
+    t.string "twitter"
   end
 
   create_table "problems", :force => true do |t|
     t.text     "body"
     t.datetime "published_at"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.integer  "up_votes",     :default => 0, :null => false
     t.integer  "down_votes",   :default => 0, :null => false
   end
@@ -66,8 +81,8 @@ ActiveRecord::Schema.define(:version => 20121003033933) do
     t.string   "twitter"
     t.string   "job_title"
     t.string   "party_affiliation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "image"
     t.string   "location"
     t.string   "name"
@@ -77,8 +92,8 @@ ActiveRecord::Schema.define(:version => 20121003033933) do
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
@@ -88,8 +103,8 @@ ActiveRecord::Schema.define(:version => 20121003033933) do
     t.text     "body"
     t.datetime "published_at"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.integer  "problem_id"
     t.integer  "up_votes",     :default => 0,     :null => false
     t.integer  "down_votes",   :default => 0,     :null => false
@@ -99,8 +114,8 @@ ActiveRecord::Schema.define(:version => 20121003033933) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "hashed_password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.integer  "up_votes",               :default => 0, :null => false

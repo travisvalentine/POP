@@ -2,9 +2,9 @@
 
   <h4>My congresspeople:</h4>
 
-  <% @profile.congresspeople.each_pair do |k,v| %>
+  <% @profile.congresspeople.each do |c| %>
     <div class="member">
-      <p><%= "#{k.humanize.titleize}: #{v.firstname} #{v.lastname} (#{v.party})" %> <%= link_to "@#{v.twitter_id}", "http://twitter.com/#{v.twitter_id}", :target => "_blank" %></p>
+      <p><%= "#{c.title}: #{c.first_name} #{c.last_name} (#{c.party})" %> <%= link_to "@#{c.twitter}", "http://twitter.com/#{c.twitter}", :target => "_blank" unless c.twitter.blank? %></p>
     </div>
   <% end %>
 

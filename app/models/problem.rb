@@ -7,6 +7,9 @@ class Problem < ActiveRecord::Base
 
   belongs_to :user
 
+  has_many :politician_problems
+  has_many :politicians, :through => :politician_problems
+
   has_many :solutions, :order => "up_votes DESC, created_at DESC",
                        :dependent => :destroy
 

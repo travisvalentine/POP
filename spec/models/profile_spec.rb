@@ -16,16 +16,6 @@ describe Profile do
     auth
   }
 
-  context "#congresspeople" do
-    use_vcr_cassette
-
-    it "returs a Hash of Members of Congress from Sunlight's API" do
-      congresspeople = Profile.first.congresspeople
-      congresspeople.should be_kind_of(Hash)
-      congresspeople.keys.should include("representative")
-    end
-  end
-
   describe ".create_with_omniauth(user_id, auth)" do
     it "creates a Profile from the auth hash and assigns it to the User" do
       pending

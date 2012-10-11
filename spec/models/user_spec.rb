@@ -68,5 +68,32 @@ describe User do
     end
   end
 
+  describe "#create_politicians_from_address" do
+    it "creates politicians from the Sunlight API" do
+      response = {:senior_senator => double("sunlight_legislator",
+                                            :firstname  => "John",
+                                            :lastname   => "Kerry",
+                                            :party      => "D",
+                                            :twitter_id => "JohnKerry"),
+                  :junior_senator => double("sunlight_legislator",
+                                            :firstname  => "Scott",
+                                            :lastname   => "Brown",
+                                            :party      => "R",
+                                            :twitter_id => "USSenScottBrown"),
+                  :representative => double("sunlight_legislator",
+                                            :firstname  => "Barney",
+                                            :lastname   => "Frank",
+                                            :party      => "D",
+                                            :twitter_id => "")}
+      address = "550 Chestnut St. Waban, MA 02468"
+      Sunlight::Legislator.stub(:all_for).with(:address => address).and_return(response)
+      expect{user.create_politicians_from_address(address)}.to change{user.politicians.count}.by(3)
+      user.politicians.map(&:first_name).should include("John", "Scott", "Barney")
+      user.politicians.map(&:last_name).should include("Kerry", "Brown", "Frank")
+      user.politicians.map(&:party).should include("D", "R")
+      user.politicians.map(&:twitter).should include("JohnKerry", "USSenScottBrown", "")
+    end
+  end
+
 
 end
