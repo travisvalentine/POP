@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   has_many :factchecks
   has_many :comments
 
+  has_many :politician_users
+  has_many :politicians, :through => :politician_users
+
   validates_presence_of :email,
                         :unless => :provider?
 
@@ -109,6 +112,25 @@ class User < ActiveRecord::Base
 
   def connected_with_twitter?
     provider.present? && provider == "twitter"
+  end
+
+  def create_politicians_from_address(address)
+    response = Sunlight::Legislator.all_for(:address => address)
+    response.each_pair do |k,v|
+      if v
+        politician = Politician.find_by_fec_id(v.fec_id)
+        unless politician
+          politicians.create(:title      => k.to_s.humanize.titleize,
+                             :first_name => v.firstname,
+                             :last_name  => v.lastname,
+                             :party      => v.party,
+                             :twitter    => v.twitter_id,
+                             :fec_id     => v.fec_id)
+        else
+          politician_users.create(:politician_id => politician.id, :user_id => id)
+        end
+      end
+    end
   end
 
 protected
