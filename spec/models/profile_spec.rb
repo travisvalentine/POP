@@ -25,4 +25,16 @@ describe Profile do
     end
   end
 
+  describe "#add_politicians" do
+    it "does not create politicians if address does not change" do
+      profile.save
+      user.should_not_receive(:create_politicians_from_address)
+    end
+
+    it "does not create politicians if address is blank" do
+      profile.update_attribute(:address, "")
+      user.should_not_receive(:create_politicians_from_address)
+    end
+  end
+
 end
