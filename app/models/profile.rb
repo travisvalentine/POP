@@ -14,6 +14,8 @@ class Profile < ActiveRecord::Base
 
   validates_confirmation_of :party_affiliation, :unless => :user_created_from_twitter?
 
+  after_save :add_politicians, :if => :address
+
   def self.create_with_omniauth(user_id, auth)
     create! do |profile|
       profile.user_id   = user_id
@@ -42,10 +44,11 @@ class Profile < ActiveRecord::Base
   end
 
   def congresspeople
-    return {} if address.blank?
-    @congresspeople ||= Sunlight::Legislator.all_for(
-      :address => address
-    ).reject { |k,v| v.nil? }.stringify_keys
+    user.politicians
+  end
+
+  def add_politicians
+    user.create_politicians_from_address(address)
   end
 
 end

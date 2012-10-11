@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010013639) do
+ActiveRecord::Schema.define(:version => 20121010232523) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -42,6 +42,28 @@ ActiveRecord::Schema.define(:version => 20121010013639) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "politician_problems", :force => true do |t|
+    t.integer  "politician_id"
+    t.integer  "problem_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "politician_users", :force => true do |t|
+    t.integer  "politician_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "politicians", :force => true do |t|
+    t.string "title"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "party"
+    t.string "twitter"
+  end
+
   create_table "problems", :force => true do |t|
     t.text     "body"
     t.datetime "published_at"
@@ -50,11 +72,6 @@ ActiveRecord::Schema.define(:version => 20121010013639) do
     t.datetime "updated_at",                  :null => false
     t.integer  "up_votes",     :default => 0, :null => false
     t.integer  "down_votes",   :default => 0, :null => false
-  end
-
-  create_table "problems_politicians", :id => false, :force => true do |t|
-    t.integer "problem_id",    :null => false
-    t.integer "politician_id", :null => false
   end
 
   create_table "profiles", :force => true do |t|
@@ -107,11 +124,6 @@ ActiveRecord::Schema.define(:version => 20121010013639) do
     t.string   "uid"
     t.string   "oauth_token"
     t.string   "oauth_secret"
-  end
-
-  create_table "users_politicians", :id => false, :force => true do |t|
-    t.integer "user_id",       :null => false
-    t.integer "politician_id", :null => false
   end
 
   create_table "votings", :force => true do |t|
