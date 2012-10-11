@@ -126,7 +126,24 @@
   }
 }
 
-#problem_original_solution {
+#problem_details {
+  float: left;
+  width: 90%;
+
+  h1 {
+    line-height: 32px;
+    font-weight: 400;
+  }
+
+  h3 {
+    color: lighten($gop-red,8%);
+    font-family: "ff-meta-serif-web-pro","Helvetica Neue", serif;
+    font-size:26px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+  }
+
   h4 {
     color: lighten(#333, 20%);
     margin: 5px 0 15px;
@@ -151,25 +168,7 @@
       font-size: 12px;
     }
   }
-}
 
-#problem_details h3 {
-  color: lighten($gop-red,8%);
-  font-family: "ff-meta-serif-web-pro","Helvetica Neue", serif;
-  font-size:26px;
-  font-style: normal;
-  font-weight: 500;
-  margin: 0;
-}
-
-#problem_details, #problem_original_solution {
-  float: left;
-  width: 90%;
-
-  h1 {
-    line-height: 32px;
-    font-weight: 400;
-  }
 }
 
 .solution-details {
