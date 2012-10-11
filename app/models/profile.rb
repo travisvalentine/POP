@@ -21,8 +21,8 @@ class Profile < ActiveRecord::Base
       profile.user_id   = user_id
       profile.image     = auth['info']['image'] rescue nil
       profile.location  = auth['info']['location'] rescue ""
-      profile.name      = auth["info"]["name"]
-      profile.bio       = auth["info"]["description"]
+      profile.name      = auth["info"]["name"] rescue ""
+      profile.bio       = auth["info"]["description"] rescue ""
       profile.twitter   = auth["info"]["nickname"]
     end
   end
@@ -48,7 +48,7 @@ class Profile < ActiveRecord::Base
   end
 
   def add_politicians
-    if address_changed? && !address.blank?
+    if !address.blank? && address_changed?
       user.politician_users.destroy_all
       user.create_politicians_from_address(address)
     end
