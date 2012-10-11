@@ -7,7 +7,8 @@ class OauthController < ApplicationController
     if user.nil?
       user = User.create_with_omniauth(auth)
       Profile.create_with_omniauth(user.id, auth)
-      login_from_oauth(user.id)
+      session[:user_id] = user_id
+      redirect_to welcome_path
       return
     elsif user.present? and user.profile.present?
       user.update_from_omniauth(auth)
