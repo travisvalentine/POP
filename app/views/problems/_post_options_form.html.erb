@@ -1,0 +1,7 @@
+<div id="post_options" class="clearfix">
+  <%= render partial: "issue_container" %>
+  <%= render partial: "politician_container" %>
+</div>
+<% if current_user.connected_with_twitter? %>
+  <%= render partial: "twitter_container" %>
+<% end %>
