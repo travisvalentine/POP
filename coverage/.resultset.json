@@ -300,19 +300,8 @@
         0,
         0,
         0,
-        null,
         0,
         0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        null,
         0,
         null,
         null
@@ -728,6 +717,15 @@
         1,
         null,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/travisvalentine/hungry-projects/open_source/POP/app/models/user.rb": [
@@ -787,6 +785,8 @@
         null,
         null,
         1,
+        2,
+        2,
         2,
         2,
         2,
@@ -1538,6 +1538,6 @@
         null
       ]
     },
-    "timestamp": 1349836823
+    "timestamp": 1349922434
   }
 }

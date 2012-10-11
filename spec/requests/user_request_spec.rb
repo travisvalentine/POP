@@ -6,7 +6,7 @@ describe User do
   let(:problem)  { FactoryGirl.create(:problem, :user_id => user.id) }
   let(:solution) { FactoryGirl.create(:problem, :user_id => user.id) }
 
-  let(:auth)     { TwitterAuth.default }
+  let(:auth)     { TwitterOauthHash.default }
 
   before {
     user

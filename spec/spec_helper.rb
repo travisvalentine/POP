@@ -46,6 +46,10 @@ RSpec.configure do |config|
         :name => "Example Oauth",
         :description => "This is an example",
         :nickname => "example",
+      },
+      :credentials => {
+        :token => 'wfaefjio234940',
+        :secret => '38210ajfawe1390',
       }
   })
 
