@@ -6,12 +6,6 @@
 
 <div id="problem_details">
   <h3><%= @problem.body %></h3>
-</div>
-
-<div id="problem_original_solution">
-
-  <h4><%= @problem.original_solution.body if @problem.original_solution.present? %></h4>
-
   <p id="byline">- by <%= link_to @problem.user.profile.name, @problem.user.profile %>
     <% if @problem.user.profile.bio? %>
      , <%= @problem.user.profile.bio %>
@@ -28,5 +22,4 @@
     <% end %>
   </span>
   </p>
-
 </div>
