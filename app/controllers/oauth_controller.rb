@@ -7,6 +7,7 @@ class OauthController < ApplicationController
     if user.nil?
       user = User.create_with_omniauth(auth)
       Profile.create_with_omniauth(user.id, auth)
+      user.update_from_omniauth(auth)
       login_from_oauth(user.id)
       return
     elsif user.present? and user.profile.present?

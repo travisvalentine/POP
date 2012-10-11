@@ -16,7 +16,7 @@ class ProblemsController < ApplicationController
         user_id:    current_user.id,
         original:   true
       )
-      redirect_to(problems_path(@problem), :notice => 'Problem was successfully created.')
+      redirect_to(problem_path(@problem), :notice => 'Problem was successfully created.')
       post_to_twitter(@problem, params) if params[:tweet].present?
     else
       render :action => "new"
@@ -60,7 +60,7 @@ private
 
   def post_to_twitter(problem, params)
     message = ["I just offered a solution"]
-    problem.issue.present? ?  message << "to #{problem.issue.name} " :  message << ". Check it out: "
+    problem.issue.present? ? message << " to #{problem.issue.name}" : message << ". Check it out: "
     message << "cc @BarackObama - " if params[:tweet_bo]
     message << "cc @MittRomney - " if params[:tweet_mr]
     message << problem_url(problem)
