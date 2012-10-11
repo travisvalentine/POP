@@ -3,4 +3,6 @@ class PoliticianUser < ActiveRecord::Base
 
   belongs_to :politician
   belongs_to :user
+
+  validates_uniqueness_of :politician_id, :scope => :user_id
 end
