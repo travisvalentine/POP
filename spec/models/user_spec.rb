@@ -74,17 +74,20 @@ describe User do
                                             :firstname  => "John",
                                             :lastname   => "Kerry",
                                             :party      => "D",
-                                            :twitter_id => "JohnKerry"),
+                                            :twitter_id => "JohnKerry",
+                                            :fec_id     => "S4MA00069"),
                   :junior_senator => double("sunlight_legislator",
                                             :firstname  => "Scott",
                                             :lastname   => "Brown",
                                             :party      => "R",
-                                            :twitter_id => "USSenScottBrown"),
+                                            :twitter_id => "USSenScottBrown",
+                                            :fec_id     => "S0MA00109"),
                   :representative => double("sunlight_legislator",
                                             :firstname  => "Barney",
                                             :lastname   => "Frank",
                                             :party      => "D",
-                                            :twitter_id => "")}
+                                            :twitter_id => "",
+                                            :fec_id     => "H0MA04036")}
       address = "550 Chestnut St. Waban, MA 02468"
       Sunlight::Legislator.stub(:all_for).with(:address => address).and_return(response)
       expect{user.create_politicians_from_address(address)}.to change{user.politicians.count}.by(3)
@@ -92,6 +95,33 @@ describe User do
       user.politicians.map(&:last_name).should include("Kerry", "Brown", "Frank")
       user.politicians.map(&:party).should include("D", "R")
       user.politicians.map(&:twitter).should include("JohnKerry", "USSenScottBrown", "")
+      user.politicians.map(&:fec_id).should include("S4MA00069", "S0MA00109", "H0MA04036")
+    end
+
+    it "creates a new association but not a new record for existing politicians" do
+      response = {:senior_senator => double("sunlight_legislator",
+                                            :firstname  => "John",
+                                            :lastname   => "Kerry",
+                                            :party      => "D",
+                                            :twitter_id => "JohnKerry",
+                                            :fec_id     => "S4MA00069"),
+                  :junior_senator => double("sunlight_legislator",
+                                            :firstname  => "Scott",
+                                            :lastname   => "Brown",
+                                            :party      => "R",
+                                            :twitter_id => "USSenScottBrown",
+                                            :fec_id     => "S0MA00109"),
+                  :representative => double("sunlight_legislator",
+                                            :firstname  => "Barney",
+                                            :lastname   => "Frank",
+                                            :party      => "D",
+                                            :twitter_id => "",
+                                            :fec_id     => "H0MA04036")}
+      address = "550 Chestnut St. Waban, MA 02468"
+      Sunlight::Legislator.stub(:all_for).with(:address => address).and_return(response)
+      user.create_politicians_from_address(address)
+      expect{user2.create_politicians_from_address(address)}.to_not change{Politician.count}.by(3)
+      user2.politicians.count.should == 3
     end
   end
 

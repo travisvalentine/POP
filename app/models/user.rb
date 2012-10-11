@@ -116,11 +116,17 @@ class User < ActiveRecord::Base
     response = Sunlight::Legislator.all_for(:address => address)
     response.each_pair do |k,v|
       if v
-        politicians.create(:title      => k.to_s.humanize.titleize,
-                           :first_name => v.firstname,
-                           :last_name  => v.lastname,
-                           :party      => v.party,
-                           :twitter    => v.twitter_id)
+        politician = Politician.find_by_fec_id(v.fec_id)
+        unless politician
+          politicians.create(:title      => k.to_s.humanize.titleize,
+                             :first_name => v.firstname,
+                             :last_name  => v.lastname,
+                             :party      => v.party,
+                             :twitter    => v.twitter_id,
+                             :fec_id     => v.fec_id)
+        else
+          politician_users.create(:politician_id => politician.id, :user_id => id)
+        end
       end
     end
   end
