@@ -48,7 +48,10 @@ class Profile < ActiveRecord::Base
   end
 
   def add_politicians
-    user.create_politicians_from_address(address)
+    if address_changed? && !address.blank?
+      user.politician_users.destroy_all
+      user.create_politicians_from_address(address)
+    end
   end
 
 end
