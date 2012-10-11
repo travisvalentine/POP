@@ -7,18 +7,12 @@ class OauthController < ApplicationController
     if user.nil?
       user = User.create_with_omniauth(auth)
       Profile.create_with_omniauth(user.id, auth)
-      session[:user_id] = user_id
-      redirect_to welcome_path
+      login_from_oauth(user.id)
       return
     elsif user.present? and user.profile.present?
       user.update_from_omniauth(auth)
       session[:user_id] = user.id
       redirect_to problems_path, :notice => "Welcome back!"
-    elsif user.present? and !user.profile.present?
-      Profile.create_with_omniauth(user.id, auth)
-      session[:user_id] = user_id
-      redirect_to welcome_path
-    end
   end
 
 private
