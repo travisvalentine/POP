@@ -16,6 +16,8 @@ class OauthController < ApplicationController
       user.update_from_omniauth(auth)
       session[:user_id] = user.id
       redirect_to problems_path, :notice => "Welcome back!"
+    else
+      redirect_to root_path, :notice => "WHAT"
     end
   end
 
