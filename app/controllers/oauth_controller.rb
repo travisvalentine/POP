@@ -2,6 +2,10 @@ class OauthController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
+    if auth.nil? || auth.blank?
+      redirect_to root_path, :notice => "We can't access Twitter at this time. Please try again."
+    end
+
     user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
 
     if user.nil?
@@ -11,12 +15,12 @@ class OauthController < ApplicationController
       login_from_oauth(user.id)
       Rails.logger.debug "logged in from auth"
       return
-    elsif user.present? and user.profile.present?
+    elsif user.present? && user.profile.present?
       Rails.logger.debug "User is present with a profile"
       user.update_from_omniauth(auth)
       session[:user_id] = user.id
       redirect_to problems_path, :notice => "Welcome back!"
-    else
+    elsif user.present? && user.profile.nil?
       redirect_to root_path, :notice => "WHAT"
     end
   end
