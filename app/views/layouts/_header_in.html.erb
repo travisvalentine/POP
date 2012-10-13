@@ -10,9 +10,8 @@
       <div class="nav-collapse">
         <ul class="nav" id="content_nav">
           <%= index_active %>
-          <li class="dropdown">
-          </li>
         </ul>
+        <%= select_tag "problem[issue_ids][]", options_for_select([["", ""]]+ Politician.with_problems.collect{ |pol| ["#{pol.short_title}. #{pol.name}",politician_path(pol)] } ), :class=>'chzn-container chzn-container-multi', :data => { :placeholder => "Select an Issue (Optional)" } %>
         <ul class="nav pull-right">
           <li id="user_profile"><%= image_tag(current_user.profile.image, :alt => "#{current_user.name}'s Image") if current_user.profile.image.present? %><%= link_to current_user.name, current_user.profile %></li>
           <li class="divider-vertical"></li>

@@ -181,6 +181,10 @@ textarea#problem_solution_body {
 #post_options {
   height: 29px;
   margin: 20px 0;
+
+  select {
+    width: 180px;
+  }
 }
 
 @-moz-document url-prefix() {

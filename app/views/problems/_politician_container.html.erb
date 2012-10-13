@@ -1,3 +1,3 @@
-<div id="politician_container" class="pull-right">
-  <%= select_tag "problem[politicians_ids][]", options_for_select([["", ""]]+ current_user.politicians.all.collect{ |pol| ["#{} #{pol.last_name} - #{pol.party}",pol.id] } ), :class=>'chzn-select', :data => { :placeholder => "Assign to a Politician (Optional)" } %>
+<div id="politician_container" class="pull-left">
+  <%= select_tag "problem[politician_ids][]", options_for_select([["", ""]]+ current_user.politicians.all.collect{ |pol| ["#{pol.short_title} #{pol.last_name} - #{pol.party}",pol.id] } ), :class=>'chzn-select', :data => { :placeholder => "Add a Politician (Option)" } %>
 </div>
