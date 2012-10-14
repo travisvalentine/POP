@@ -1,6 +1,8 @@
 <div class="index-head">
   <h1>What people are thinking</h1>
-  <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
+  <% if current_user %>
+    <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
+  <% end %>
 </div>
 <div class="filter">
   <% Issue.with_problems.each do |issue| %>

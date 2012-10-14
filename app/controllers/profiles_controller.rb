@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_filter :authenticate, :only => [:edit, :update]
+  before_filter :authenticate, :only => [:edit, :update, :index]
 
   def new
     @profile = Profile.new(params[:profile])

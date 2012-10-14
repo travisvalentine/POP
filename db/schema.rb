@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20121014174834) do
 
   create_table "notifications", :force => true do |t|
     t.text     "body"
+    t.string   "notification_type"
+    t.integer  "problem_id"
     t.integer  "user_id"
     t.integer  "related_object_id"
     t.boolean  "read",              :default => false

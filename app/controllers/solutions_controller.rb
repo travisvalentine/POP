@@ -1,6 +1,6 @@
 class SolutionsController < ApplicationController
+  before_filter :authenticate
   before_filter :find_problem, :except => [:destroy, :create, :edit, :update]
-  before_filter :authenticate, :only => :destroy
 
   def new
     @problem = Problem.find(params[:id])
