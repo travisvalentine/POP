@@ -3,6 +3,13 @@
     <%= render partial: "profile_info" %>
   </div>
 
+  <% if current_user_profile?(@profile) && current_user.has_notifications? %>
+    <div id="notifications">
+      <h4>Notifications</h4>
+      <%= render partial: "notifications/notification", collection: current_user.unread_notifications %>
+    </div>
+  <% end %>
+
   <% if current_user_profile?(@profile) && current_user.has_address? %>
     <%= render partial: "profile_congresspeople" %>
   <% end %>
