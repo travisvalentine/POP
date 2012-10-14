@@ -23,6 +23,7 @@
 
 <% if homepage? || completing_profile? %>
 <div>
+  <%= render "shared/errors" %>
   <%= yield %>
 <% else %>
 <div class="container">
