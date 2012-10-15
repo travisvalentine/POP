@@ -117,6 +117,7 @@ class User < ActiveRecord::Base
 
   def unread_notifications
     notifications.select { |notification| notification.read == false }
+  end
 
   def has_politicians?
     politicians.present?
