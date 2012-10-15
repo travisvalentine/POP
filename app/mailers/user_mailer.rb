@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
 
-  default :from => "Test <hungryopensource@gmail.com>",
-          :return_path => "hungryopensource@gmail.com"
+  default :from => "Test <oursolutionis@gmail.com>",
+          :return_path => "oursolutionis@gmail.com"
 
   def password_reset(user)
     @user = user

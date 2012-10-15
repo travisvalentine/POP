@@ -7,7 +7,9 @@ describe User do
   let(:auth)        { TwitterOauthHash.default }
 
   let(:user2)       { FactoryGirl.create(:user, :email => "test@testing.com") }
-  let(:profile2)    { FactoryGirl.create(:profile, :user_id => user2.id) }
+  let(:profile2)    { FactoryGirl.create(:profile,
+                                         :name => "Not Taken",
+                                         :user_id => user2.id) }
 
   let(:update_auth) { TwitterOauthHash.updated_auth }
 

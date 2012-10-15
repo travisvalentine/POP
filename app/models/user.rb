@@ -44,6 +44,8 @@ class User < ActiveRecord::Base
                        },
                        :unless => :provider?
 
+  validates_associated :profile
+
   before_save :encrypt_new_password
 
   make_voter
@@ -100,10 +102,7 @@ class User < ActiveRecord::Base
       result = client.update(message)
 
     rescue Twitter::Error => e
-      if e.is_a? Twitter::Error::Unauthorized
-        self.needs_reauthorization = e.message
-        self.save
-      end
+      Rails.logger.debug "Posts to Twitter failing - #{e.class.name} errors"
     end
   end
 
