@@ -38,10 +38,16 @@
       <% end %>
     <% end %>
 
+    <% if current_user %>
     <div id="new_solution_form">
       <h2>Add a Solution</h2>
       <%= render partial: "solutions/form" %>
     </div>
+    <% else %>
+    <div id="new_solution_form">
+      <h2>Add a Solution</h2>
+      <%= link_to "Sign up / Sign in to add a solution", root_path %>
+    <% end %>
   </div>
 
 </div>

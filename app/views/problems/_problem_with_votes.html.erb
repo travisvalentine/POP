@@ -1,8 +1,14 @@
-<div class="vote big">
-  <%= upvote_problem(@problem, "up-large.png") %>
-  <h1><%= @problem.votes %></h1>
-  <%= downvote_problem(@problem, "down-large.png") %>
-</div>
+<% if current_user %>
+  <div class="vote big">
+    <%= upvote_problem(@problem, "up-large.png") %>
+    <h1><%= @problem.votes %></h1>
+    <%= downvote_problem(@problem, "down-large.png") %>
+  </div>
+<% else %>
+  <div class="vote big">
+    <h1><%= @problem.votes %></h1>
+  </div>
+<% end %>
 
 <div id="problem_details">
   <h3><%= @problem.body %></h3>
@@ -16,7 +22,7 @@
     <%= link_to "#{@problem.issue.name} ", issue_path(@problem.issue) if @problem.issue.present? %>
 
   <span>
-    <% if current_user_problem?(@problem) %>
+    <% if current_user && current_user_problem?(@problem) %>
       <%= link_to "edit", edit_problem_path(@problem) %>
       <%= link_to "delete", problem_path(@problem), :method => :delete, :confirm => "Are you sure you want to delete your problem and its solutions?" %>
     <% end %>

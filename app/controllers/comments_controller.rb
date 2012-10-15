@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :find_problem_solution, :only => [:new]
-  before_filter :authenticate, :only => :destroy
+  before_filter :authenticate
 
   def new
     @comment = Comment.new
@@ -19,28 +18,10 @@ class CommentsController < ApplicationController
 
   end
 
-  def edit
-    @solution = current_user.solutions.find(params[:id])
-  end
-
-  def update
-    @solution = current_user.solutions.find(params[:id])
-    if @solution.update_attributes(params[:solution])
-      redirect_to problem_path(@solution.problem), :alert => 'Solution updated successfully.'
-    else
-      render :edit, :alert => 'There was an error. Please try again.'
-    end
-  end
-
   def destroy
-    @solution = current_user.solutions.find(params[:id])
-    @solution.destroy
-    redirect_to @solution.problem, :notice => 'Solution deleted.'
+    @comment = current_user.comments.find(params[:id])
+    @comment.destroy
+    redirect_to(:back, :notice => 'Comment deleted.')
   end
 
-  private
-    def find_problem_solution
-      @problem = Problem.find(params[:id])
-      @solution = @problem.solutions.find(params[:id])
-    end
 end

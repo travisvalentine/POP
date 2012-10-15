@@ -68,6 +68,19 @@
       margin: 3px 0;
       width: 100%;
 
+      &:hover {
+        .delete-icon {
+          visibility: visible;
+        }
+      }
+
+      .delete-icon {
+        height: 15px;
+        margin: 2px 5px;
+        position: absolute;
+        visibility: hidden;
+      }
+
       &:first-child {
         margin-top: 15px;
       }

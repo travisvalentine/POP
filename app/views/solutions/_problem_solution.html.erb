@@ -1,12 +1,19 @@
 <div class="problem-solution clearfix">
-  <div class="vote small">
-    <%= upvote_solution(solution, "up-small.png") %>
-    <h4><%= solution.votes %></h4>
-    <%= downvote_solution(solution, "down-small.png") %>
-  </div>
+  <% if current_user %>
+    <div class="vote small">
+      <%= upvote_solution(solution, "up-small.png") %>
+      <h4><%= solution.votes %></h4>
+      <%= downvote_solution(solution, "down-small.png") %>
+    </div>
+  <% else %>
+    <div class="vote small">
+      <h4><%= solution.votes %></h4>
+    </div>
+  <% end %>
+
   <div class="solution-details">
     <p><%= solution.body %></p>
-    <% if solution.user.name != current_user.name %>
+    <% if current_user && solution.user.name != current_user.name %>
       <p class="byline">- by <%= link_to solution.user.name, solution.user.profile %></p>
     <% else %>
       <p class="admin-links"><span><%= link_to "edit", edit_solution_path(solution) %> <%= link_to "delete", solution_path(solution), :method => :delete, :confirm => "Are you sure you want to delete your solution?" %></span</p>

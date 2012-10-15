@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :problem do
-		body 			"This is a test problem body"
+		body 			Faker::Lorem::paragraph(sentence_count=2)
 		solution
 	end
 end

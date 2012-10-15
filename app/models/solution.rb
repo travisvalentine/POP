@@ -14,12 +14,18 @@ class Solution < ActiveRecord::Base
 
   accepts_nested_attributes_for :problem
 
+  after_create :send_solution_notification, :unless => Proc.new{ self.original == true }
+
   def comments_shortened
     comments[0...3]
   end
 
   def comments_full
     comments[3..-1]
+  end
+
+  def send_solution_notification
+    Notification.create_from_solution(self.body, self.user_id, self.problem_id)
   end
 
 end
