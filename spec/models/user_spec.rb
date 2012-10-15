@@ -61,18 +61,6 @@ describe User do
     end
   end
 
-  describe "#age" do
-    it "calculates a user's age" do
-      pending
-    end
-  end
-
-  describe "#legal" do
-    it "returns false if less than 13" do
-      pending
-    end
-  end
-
   describe "#create_politicians_from_address" do
     it "creates politicians from the Sunlight API" do
       response = {:senior_senator => double("sunlight_legislator",
