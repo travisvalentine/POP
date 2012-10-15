@@ -1,4 +1,5 @@
 class ProblemUpvotesController < ApplicationController
+  before_filter :authenticate
   before_filter :set_return_session
 
   def create

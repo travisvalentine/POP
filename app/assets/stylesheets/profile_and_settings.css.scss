@@ -21,8 +21,16 @@
   }
 }
 
-.delete {
-//  margin: 100px 0;
+#notifications {
+  a.mark-read {
+    visibility: hidden;
+  }
+
+  .notification:hover {
+    a.mark-read {
+      visibility: visible;
+    }
+  }
 }
 
 span#twitter {
@@ -42,7 +50,7 @@ select#profile_birthday_1i, select#profile_birthday_3i,{
   margin-top: 5px;
 }
 
-#about {
+#page {
   .info-container {
     margin: 30px 0;
 

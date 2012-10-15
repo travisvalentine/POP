@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   has_many :solutions
   has_many :factchecks
   has_many :comments
+  has_many :notifications
 
   has_many :politician_users
   has_many :politicians, :through => :politician_users
@@ -108,6 +109,14 @@ class User < ActiveRecord::Base
 
   def has_address?
     profile.address.present?
+  end
+
+  def has_notifications?
+    notifications.present?
+  end
+
+  def unread_notifications
+    notifications.select { |notification| notification.read == false }
   end
 
   def has_politicians?

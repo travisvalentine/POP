@@ -1,6 +1,8 @@
-<div class="new-comment">
-  <%= link_to "add a comment", "#", :class => "add-comment" %>
-  <div class="comment-form">
-    <%= render partial: "comments/form", :locals => {:solution => solution} %>
+<% if current_user %>
+  <div class="new-comment">
+    <%= link_to "add a comment", "#", :class => "add-comment" %>
+    <div class="comment-form">
+      <%= render partial: "comments/form", :locals => {:solution => solution} %>
+    </div>
   </div>
-</div>
+<% end %>
