@@ -1,6 +1,6 @@
 class Problem < ActiveRecord::Base
   attr_accessible :published_at, :body, :solution, :issue_ids, :issue_id,
-                  :solutions_attributes
+                  :solutions_attributes, :politician_ids
 
   validates :body, :presence  => true,
                    :length    => { :in => 20..255 }
@@ -16,7 +16,7 @@ class Problem < ActiveRecord::Base
   has_many :issue_problems
   has_many :issues, :through => :issue_problems
 
-  accepts_nested_attributes_for :solutions, :issues
+  accepts_nested_attributes_for :solutions, :issues, :politicians
 
   make_voteable
 
@@ -34,6 +34,10 @@ class Problem < ActiveRecord::Base
 
   def issue
     issues.first
+  end
+
+  def politician
+    politicians.first
   end
 
   def original_solution

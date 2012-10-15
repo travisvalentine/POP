@@ -181,6 +181,18 @@ textarea#problem_solution_body {
 #post_options {
   height: 29px;
   margin: 20px 0;
+
+  select {
+    width: 170px;
+  }
+
+  #politician_container {
+    margin-left: 15px;
+
+    select {
+      width: 160px;
+    }
+  }
 }
 
 @-moz-document url-prefix() {

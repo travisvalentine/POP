@@ -1,4 +1,5 @@
 $ ->
+  $(".chzn-select header").chosen
   $(".chzn-select").chosen disable_search_threshold: 25
 
   $("#problem_body").charCount
