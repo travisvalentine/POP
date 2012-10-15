@@ -7,6 +7,8 @@ describe User do
   let(:auth)        { TwitterOauthHash.default }
 
   let(:user2)       { FactoryGirl.create(:user, :email => "test@testing.com") }
+  let(:profile2)    { FactoryGirl.create(:profile, :user_id => user2.id) }
+
   let(:update_auth) { TwitterOauthHash.updated_auth }
 
   before {
@@ -26,6 +28,7 @@ describe User do
   describe "#update_from_omniauth(auth)" do
     before {
       user2
+      profile2
       update_auth
     }
 

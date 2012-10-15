@@ -115,6 +115,10 @@ class User < ActiveRecord::Base
     notifications.present?
   end
 
+  def has_unread_notifications?
+    unread_notifications.count > 0
+  end
+
   def unread_notifications
     notifications.select { |notification| notification.read == false }
   end

@@ -1,17 +1,17 @@
 <h3><%= @profile.name %></h3>
-<p class="main-info">Bio: <%= @profile.bio %></p>
+<p class="main-info"><span>Bio:</span> <%= @profile.bio %></p>
 
 <% unless @profile.party_affiliation.blank? %>
-  <p class="main-info">Party: <%= @profile.party_affiliation %><% if @profile.job_title? %>, &nbsp;<%= @profile.job_title %><% end %></p>
+  <p class="main-info"><span>Party:</span> <%= @profile.party_affiliation %><% if @profile.job_title? %>, &nbsp;<%= @profile.job_title %><% end %></p>
 <% end %>
 
 <% unless @profile.twitter.blank? %>
-  <p class="main-info">Twitter: <%= link_to "@#{@profile.twitter}", "http://twitter.com/#{@profile.twitter}", :target => "_blank" %>
+  <p class="main-info"><span>Twitter:</span> <%= link_to "@#{@profile.twitter}", "http://twitter.com/#{@profile.twitter}", :target => "_blank" %>
   </p>
 <% end %>
 
 <% if current_user_profile?(@profile) and @profile.address.present? %>
-  <p class="main-info">Address (visible to just you): <%= @profile.address %></p>
+  <p class="main-info"><span>Address (visible to just you):</span> <%= @profile.address %></p>
 <% end %>
 
 <% if current_user_profile?(@profile) %>

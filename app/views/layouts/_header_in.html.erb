@@ -25,7 +25,7 @@
         </ul>
         <ul class="nav pull-right">
           <li id="user_profile"><%= image_tag(current_user.profile.image, :alt => "#{current_user.name}'s Image") if current_user.profile.image.present? %><%= link_to current_user.name, current_user.profile %>
-            <span class="notifications"><%= current_user.unread_notifications.count if current_user.has_notifications? %></span>
+            <span class="notifications"><%= current_user.unread_notifications.count if current_user.has_unread_notifications? %></span>
           </li>
           <li class="divider-vertical"></li>
           <li class="dropdown">
