@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
                        },
                        :unless => :provider?
 
-  validates_associated :profile
+  #validates_associated :profile
 
   before_save :encrypt_new_password
 
