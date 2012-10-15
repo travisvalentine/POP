@@ -30,10 +30,14 @@ ul[aria-labelledby="user_settings"] {
   }
 
   span.notifications {
+    background-color: $gop-red;
+    border-radius: 50%;
     color: #fff;
+    font-size: 11px;
+    padding: 0 5px;
     position: absolute;
-    right: 35px;
-    top: 0;
+    right: 28px;
+    top: 2px;
   }
 
   a {
