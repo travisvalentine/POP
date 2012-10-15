@@ -1,4 +1,2 @@
-<p><%= link_to problem_path(notification.problem_id) do %>
-  New <%= notification.notification_type.capitalize %>: <%= notification.body %>
-<% end %>
+<p>New <%= notification.notification_type.capitalize %>: <%= link_to notification.body, problem_path(notification.problem_id) %>
 </p>

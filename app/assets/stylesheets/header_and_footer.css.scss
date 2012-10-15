@@ -29,6 +29,13 @@ ul[aria-labelledby="user_settings"] {
     width: 30px;
   }
 
+  span.notifications {
+    color: #fff;
+    position: absolute;
+    right: 35px;
+    top: 0;
+  }
+
   a {
     display: inline-block;
     padding: 10px 5px;
