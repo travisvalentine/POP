@@ -2,6 +2,13 @@
 
   .profile {
     margin-top: 30px;
+
+    h4 {
+      border-bottom: 1px dotted #ccc;
+      color: lighten(#333,35%);
+      font-family: "adelle","Helvetica Neue", serif;
+      padding-bottom: 10px;
+    }
   }
 
   #info {
@@ -12,12 +19,6 @@
       font-family: "adelle","Helvetica Neue", serif;
     }
 
-  }
-  h4 {
-    border-bottom: 1px dotted #ccc;
-    color: lighten(#333,35%);
-    font-family: "adelle","Helvetica Neue", serif;
-    padding-bottom: 10px;
   }
 
 }
