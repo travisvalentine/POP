@@ -183,7 +183,15 @@ textarea#problem_solution_body {
   margin: 20px 0;
 
   select {
-    width: 180px;
+    width: 170px;
+  }
+
+  #politician_container {
+    margin-left: 15px;
+
+    select {
+      width: 160px;
+    }
   }
 }
 

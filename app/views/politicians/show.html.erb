@@ -1,18 +1,9 @@
 <div id="page">
   <div class="index-head">
-    <h1 class="politician-name"><%= @politician.name %></h1>
+    <h1 class="politician-name"><%= "#{@politician.short_title}. #{@politician.name}'s Problems" %></h1>
     <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
   </div>
 
-<!--   <div class="filter">
-    <%#= link_to "All Problems", problems_path, :class => "btn-light" %>
-    <%# Issue.with_problems.each do |issue| %>
-      <%# if @issue != issue %>
-        <%#= link_to issue.name, issue_path(issue), :class => "btn-light" %>
-      <%# end %>
-    <%# end %>
-  </div>
- -->
   <% unless @politician.problems.empty? %>
     <div class="problem">
       <%= render :partial => "problems/problem", :collection => @politician.problems %>
