@@ -110,6 +110,10 @@ class User < ActiveRecord::Base
     profile.address.present?
   end
 
+  def has_politicians?
+    politicians.present?
+  end
+
   def connected_with_twitter?
     provider.present? && provider == "twitter"
   end
@@ -120,12 +124,13 @@ class User < ActiveRecord::Base
       if v
         politician = Politician.find_by_fec_id(v.fec_id)
         unless politician
-          politicians.create(:title      => k.to_s.humanize.titleize,
-                             :first_name => v.firstname,
-                             :last_name  => v.lastname,
-                             :party      => v.party,
-                             :twitter    => v.twitter_id,
-                             :fec_id     => v.fec_id)
+          politicians.create(:title       => k.to_s.humanize.titleize,
+                             :short_title => v.title,
+                             :first_name  => v.firstname,
+                             :last_name   => v.lastname,
+                             :party       => v.party,
+                             :twitter     => v.twitter_id,
+                             :fec_id      => v.fec_id)
         else
           politician_users.create(:politician_id => politician.id, :user_id => id)
         end
