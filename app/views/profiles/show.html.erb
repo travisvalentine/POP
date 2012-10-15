@@ -6,7 +6,7 @@
   <% if current_user_profile?(@profile) && current_user.has_notifications? %>
     <div id="notifications" class="profile">
       <h4>Notifications</h4>
-      <%= render partial: "notifications/notification", collection: current_user.unread_notifications %>
+      <%= render partial: "notifications/notification", collection: current_user.notifications %>
     </div>
   <% end %>
 

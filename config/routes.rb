@@ -15,6 +15,7 @@ POP::Application.routes.draw do
 
   resources :oauth, :only => [:create]
   resources :signup, :only => [:edit, :update]
+  resources :notifications, :only => [:update]
   resources :settings
   resources :users
   resources :profiles

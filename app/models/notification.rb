@@ -21,4 +21,8 @@ class Notification < ActiveRecord::Base
                               :problem_id => problem.id)
   end
 
+  def has_been_read?
+    read == true
+  end
+
 end

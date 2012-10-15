@@ -1,3 +1,5 @@
 <p class="notification" data-id="<%= notification.id %>">New <%= notification.notification_type.capitalize %>: <%= link_to notification.body, problem_path(notification.problem_id) %>
-  <%= link_to "mark read", nil, :class => "mark-read" %>
+  <% unless notification.has_been_read? %>
+    <%= link_to "mark read", notification_path(notification, :read => true), :method => :put, :class => "mark-read" %>
+  <% end %>
 </p>
