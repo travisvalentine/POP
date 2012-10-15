@@ -21,6 +21,7 @@ POP::Application.routes.draw do
   resource :session
   resources :sessions
   resources :issues, :only => [:show]
+  resources :politicians, :only => [:show]
   resources :problems do
     resources :solutions
   end

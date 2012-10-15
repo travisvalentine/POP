@@ -71,18 +71,21 @@ describe User do
   describe "#create_politicians_from_address" do
     it "creates politicians from the Sunlight API" do
       response = {:senior_senator => double("sunlight_legislator",
+                                            :title      => "Sen",
                                             :firstname  => "John",
                                             :lastname   => "Kerry",
                                             :party      => "D",
                                             :twitter_id => "JohnKerry",
                                             :fec_id     => "S4MA00069"),
                   :junior_senator => double("sunlight_legislator",
+                                            :title      => "Sen",
                                             :firstname  => "Scott",
                                             :lastname   => "Brown",
                                             :party      => "R",
                                             :twitter_id => "USSenScottBrown",
                                             :fec_id     => "S0MA00109"),
                   :representative => double("sunlight_legislator",
+                                            :title      => "Rep",
                                             :firstname  => "Barney",
                                             :lastname   => "Frank",
                                             :party      => "D",
@@ -91,6 +94,7 @@ describe User do
       address = "550 Chestnut St. Waban, MA 02468"
       Sunlight::Legislator.stub(:all_for).with(:address => address).and_return(response)
       expect{user.create_politicians_from_address(address)}.to change{user.politicians.count}.by(3)
+      user.politicians.map(&:short_title).should include("Sen", "Sen", "Rep")
       user.politicians.map(&:first_name).should include("John", "Scott", "Barney")
       user.politicians.map(&:last_name).should include("Kerry", "Brown", "Frank")
       user.politicians.map(&:party).should include("D", "R")
@@ -100,18 +104,21 @@ describe User do
 
     it "creates a new association but not a new record for existing politicians" do
       response = {:senior_senator => double("sunlight_legislator",
+                                            :title      => "Sen",
                                             :firstname  => "John",
                                             :lastname   => "Kerry",
                                             :party      => "D",
                                             :twitter_id => "JohnKerry",
                                             :fec_id     => "S4MA00069"),
                   :junior_senator => double("sunlight_legislator",
+                                            :title      => "Sen",
                                             :firstname  => "Scott",
                                             :lastname   => "Brown",
                                             :party      => "R",
                                             :twitter_id => "USSenScottBrown",
                                             :fec_id     => "S0MA00109"),
                   :representative => double("sunlight_legislator",
+                                            :title      => "Rep",
                                             :firstname  => "Barney",
                                             :lastname   => "Frank",
                                             :party      => "D",

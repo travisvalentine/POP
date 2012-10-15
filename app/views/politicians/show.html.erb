@@ -1,0 +1,12 @@
+<div id="page">
+  <div class="index-head">
+    <h1 class="politician-name"><%= "#{@politician.short_title}. #{@politician.name}'s Problems" %></h1>
+    <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
+  </div>
+
+  <% unless @politician.problems.empty? %>
+    <div class="problem">
+      <%= render :partial => "problems/problem", :collection => @politician.problems %>
+    </div>
+  <% end %>
+</div>

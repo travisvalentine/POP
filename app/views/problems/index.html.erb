@@ -9,7 +9,7 @@
     <%= link_to issue.name, issue_path(issue), :class => "btn-light" %>
   <% end %>
 </div>
-<div id="index" class="problems">
+<div id="page" class="problems">
 <% unless @problems.empty? %>
   <div class="problem">
     <%= render @problems %>
