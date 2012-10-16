@@ -1,5 +1,4 @@
 $ ->
-  $("body").addClass "inaug"
   $(".form-container").toggle()
   $("#email_signup").click ->
     $(this).parent().parent().animate
