@@ -14,7 +14,7 @@ class Solution < ActiveRecord::Base
 
   accepts_nested_attributes_for :problem
 
-  after_create :send_solution_notification, :unless => Proc.new{ self.original == true }
+  after_create :send_solution_notification, :unless => :original?
 
   def comments_shortened
     comments[0...3]
