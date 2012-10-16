@@ -910,7 +910,7 @@
 }
 
 @media (max-width: 979px) {
-  body {
+  /*body {
     padding-top: 0;
   }
   .navbar-fixed-top,
@@ -1047,7 +1047,7 @@
   .navbar-static .navbar-inner {
     padding-right: 10px;
     padding-left: 10px;
-  }
+  }*/
 }
 
 @media (min-width: 980px) {
