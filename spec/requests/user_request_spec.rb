@@ -3,8 +3,10 @@ require 'spec_helper'
 describe User do
   let(:user)     { FactoryGirl.create(:user) }
   let(:profile)  { FactoryGirl.create(:profile, :user_id => user.id) }
-  let(:problem)  { FactoryGirl.create(:problem, :user_id => user.id) }
-  let(:solution) { FactoryGirl.create(:problem, :user_id => user.id) }
+  let(:problem)  { FactoryGirl.create(:problem,
+                                      :body => "This is a non-truncated body.",
+                                      :user_id => user.id) }
+  let(:solution) { FactoryGirl.create(:solution, :user_id => user.id) }
 
   let(:auth)     { TwitterOauthHash.default }
 
@@ -47,6 +49,7 @@ describe User do
     describe "and visits their profile page" do
       before(:each) do
         problem
+        solution
         visit profile_path(profile)
       end
 
@@ -64,6 +67,13 @@ describe User do
 
       it "sees their problems" do
         page.should have_content "My problems"
+        within("#problems") do
+          page.should have_link problem.body
+        end
+      end
+
+      it "sees their solutions" do
+        page.should have_content "My solutions"
         within("#problems") do
           page.should have_link problem.body
         end
