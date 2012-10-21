@@ -3,12 +3,13 @@ POP::Application.routes.draw do
   require 'resque/server'
   mount Resque::Server.new, :at => "/resque"
 
-  root :to => "users#new"
+  root :to => "problems#index"
   match "/logout" => "sessions#destroy", :as => "logout"
   match "/settings" => "settings#show", :as => 'settings'
   match "/login" => "sessions#new", :as => "login"
   match "/signup/welcome" => "signup#edit", :as => "welcome"
   match "/about" => "info#about", :as => "about"
+  match "/signup" => "users#new", :as => "signup"
 
   match "/auth/:provider/callback" => "oauth#create"
   match "auth/failure", :to => redirect('/')

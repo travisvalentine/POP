@@ -11,13 +11,21 @@
   }
 }
 
-#login {
+#login, #join {
   font-size: 12px;
   font-weight: 600;
   line-height: 26px;
   margin-top: 5px;
   padding: 0px 15px;
+}
 
+#join {
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+
+  &:hover {
+    background-color: $gop-red;
+  }
 }
 
 .btn { @include button(simple, #D9D9D9); font-size: 110%; }

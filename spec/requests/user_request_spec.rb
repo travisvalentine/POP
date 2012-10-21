@@ -30,7 +30,7 @@ describe User do
 
     describe "and isn't a user yet" do
       it "creates the user from twitter auth and redirects them to complete their profile" do
-        visit root_path
+        visit signup_path
         click_link_or_button("Sign up with Twitter")
         current_path.should == welcome_path
         page.should have_content "Welcome, @example"
@@ -84,7 +84,7 @@ describe User do
 
       it "has the app name with a link to the homepage" do
         page.find(".brand").click
-        current_path.should == problems_path
+        current_path.should == root_path
       end
 
       it "links to the current user's profile" do
@@ -122,14 +122,14 @@ describe User do
     let(:profile2) { FactoryGirl.build(:profile, :user_id => new_user2.id) }
 
     it "can JOIN from the home page" do
-      visit root_path
+      visit signup_path
       page.should have_content "Be a part of the solution"
       page.should have_selector("form#new_user")
     end
 
     describe "signing up" do
       before(:each) do
-        visit root_path
+        visit signup_path
         fill_signup_form_as(new_user1, profile)
       end
 
@@ -179,7 +179,7 @@ describe User do
 
     describe "when signing up" do
       before(:each) do
-        visit root_path
+        visit signup_path
         fill_in 'user_profile_attributes_name', :with => 'Citizen Kane'
         fill_in 'user_email', :with => 'disgruntled@usa.gov'
         fill_in 'user_password', :with => 'password'
