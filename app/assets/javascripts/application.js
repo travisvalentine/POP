@@ -7,3 +7,4 @@
 //= require alerts
 //= require forms
 //= require bootstrap
+//= require embeds

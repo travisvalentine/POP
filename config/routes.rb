@@ -13,26 +13,30 @@ POP::Application.routes.draw do
   match "/auth/:provider/callback" => "oauth#create"
   match "auth/failure", :to => redirect('/')
 
-  resources :oauth, :only => [:create]
-  resources :signup, :only => [:edit, :update]
-  resources :notifications, :only => [:update]
-  resources :settings
-  resources :users
-  resources :profiles
-  resource :session
-  resources :sessions
+  resources :comments, :only => [:new, :create, :destroy]
+  resources :embeds, :only => [:show]
+  resources :existing_problem_votes, :only => [:create]
+  resources :existing_solution_votes, :only => [:create]
   resources :issues, :only => [:show]
-  resources :politicians, :only => [:show]
+  resources :notifications, :only => [:update]
+  resources :oauth, :only => [:create]
+  resources :password_resets
+  resources :politicians, :only => [:show] do
+    resources :problems, :only => [:new, :create]
+  end
   resources :problems do
     resources :solutions
   end
-  resources :solutions
-  resources :comments, :only => [:new, :create, :destroy]
-  resources :password_resets
   resources :problem_upvotes, :only => [:create]
   resources :problem_downvotes, :only => [:create]
+  resources :profiles
+  resources :signup, :only => [:edit, :update]
   resources :solution_upvotes, :only => [:create]
   resources :solution_downvotes, :only => [:create]
-  resources :existing_problem_votes, :only => [:create]
-  resources :existing_solution_votes, :only => [:create]
+  resources :solutions
+  resource  :session
+  resources :sessions
+  resources :settings, :only => [:show]
+  resources :users
+  resources :widgets, :only => [:show]
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014174834) do
+ActiveRecord::Schema.define(:version => 20121028202839) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -152,5 +152,12 @@ ActiveRecord::Schema.define(:version => 20121014174834) do
   add_index "votings", ["voteable_type", "voteable_id", "voter_type", "voter_id"], :name => "unique_voters", :unique => true
   add_index "votings", ["voteable_type", "voteable_id"], :name => "index_votings_on_voteable_type_and_voteable_id"
   add_index "votings", ["voter_type", "voter_id"], :name => "index_votings_on_voter_type_and_voter_id"
+
+  create_table "widgets", :force => true do |t|
+    t.integer  "politician_id"
+    t.string   "size"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
 end
