@@ -1,5 +1,5 @@
-desc "Scrape US Conference of Mayors"
-task :get_mayors => :environment do
+desc "Scrape the US Conference of Mayors"
+task :mayors => :environment do
 
   require 'rubygems'
   require 'nokogiri'
