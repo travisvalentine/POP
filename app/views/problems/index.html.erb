@@ -1,6 +1,6 @@
 <div class="index-head">
   <h1>What people are solving</h1>
-  <% if current_user %>
+  <% if logged_in? %>
     <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
   <% end %>
 </div>
