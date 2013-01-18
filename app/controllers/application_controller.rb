@@ -35,7 +35,7 @@ private
   helper_method :logged_in?
 
   def homepage?
-    request.fullpath == root_path
+    request.fullpath == problems_path
   end
   helper_method :homepage?
 
