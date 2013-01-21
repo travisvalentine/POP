@@ -36,11 +36,13 @@ $ ->
     else
       $("input#tweet_mr").attr('disabled', false)
 
-  $("input#tweet_mr").change ->
-    if $("input#tweet_mr").is(':checked')
-      $("input#tweet_bo").attr('disabled', true)
+  $("#candidates input").change ->
+    if $("#candidates input").is(":checked")
+      $("#candidates input").not(":checked").each (index, checkbox) =>
+        $(checkbox).attr('disabled', true)
     else
-      $("input#tweet_bo").attr('disabled', false)
+      $("#candidates input").not(":checked").each (index, checkbox) =>
+        $(checkbox).attr('disabled', false)
 
   # $("textarea#problem_body").next().toggle()
 

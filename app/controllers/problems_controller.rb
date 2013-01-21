@@ -59,11 +59,12 @@ class ProblemsController < ApplicationController
 private
 
   def post_to_twitter(problem, params)
+    raise params.inspect
     message = ["I just offered a solution"]
     problem.issue.present? ? message << " to #{problem.issue.name}. Check it out: " : message << ". Check it out: "
     message << problem_url(problem)
-    message << " - cc @BarackObama" if params[:tweet_bo]
-    message << " - cc @MittRomney" if params[:tweet_mr]
+    message << " - cc @#{params[:tweet_pres]}" if params[:tweet_pres]
+    message << " - cc @#{params[:tweet_pol]}" if params[:tweet_pol]
     Resque.enqueue(TwitterPoster, current_user.id, message.join(""))
   end
 end
