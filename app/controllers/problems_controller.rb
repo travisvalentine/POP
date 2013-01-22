@@ -14,8 +14,7 @@ class ProblemsController < ApplicationController
       @solution.save!
       @solution.update_attributes(
         problem_id: @problem.id,
-        user_id:    current_user.id,
-        original:   true
+        user_id:    current_user.id
       )
       redirect_to(problem_path(@problem), :notice => 'Problem was successfully created.')
       post_to_twitter(@problem, params) if params[:tweet].present?
