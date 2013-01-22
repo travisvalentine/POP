@@ -10,7 +10,7 @@
   <% if current_user_profile?(@profile) && current_user.has_notifications? %>
     <div id="notifications" class="profile">
       <h4>Notifications<% if current_user.has_unread_notifications? %>: <span class="unread"><%= current_user.unread_notifications.count %> unread</span><% end %></h4>
-      <%= render partial: "notifications/notification", collection: current_user.notifications.reverse %>
+      <%= render partial: "notifications/notification", collection: current_user.notifications[0...5].reverse %>
     </div>
   <% end %>
 
