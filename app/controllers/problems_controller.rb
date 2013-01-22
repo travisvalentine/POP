@@ -1,5 +1,6 @@
 class ProblemsController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
+  before_filter :set_return_session, :only => [:show, :index]
 
   def new
     @problem = Problem.new

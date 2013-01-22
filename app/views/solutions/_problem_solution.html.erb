@@ -1,15 +1,9 @@
 <div class="problem-solution clearfix">
-  <% if current_user %>
-    <div class="vote small">
-      <%= upvote_solution(solution, "up-small.png") %>
-      <h4><%= solution.votes %></h4>
-      <%= downvote_solution(solution, "down-small.png") %>
-    </div>
-  <% else %>
-    <div class="vote small">
-      <h4><%= solution.votes %></h4>
-    </div>
-  <% end %>
+  <div class="vote small">
+    <%= upvote_solution(solution, "up-small.png") %>
+    <h4><%= solution.votes %></h4>
+    <%= downvote_solution(solution, "down-small.png") %>
+  </div>
 
   <div class="solution-details">
     <p><%= solution.body %></p>

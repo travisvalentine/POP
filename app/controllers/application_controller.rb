@@ -28,6 +28,7 @@ private
   def set_return_session
     session[:return_to] = request.referrer
   end
+  helper_method :set_return_session
 
   def logged_in?
     current_user.is_a? User
