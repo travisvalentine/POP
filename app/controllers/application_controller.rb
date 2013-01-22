@@ -26,9 +26,8 @@ private
   helper_method :reset_session
 
   def set_return_session
-    session[:return_to] ||= request.referer
+    session[:return_to] = request.referer
   end
-  helper_method :set_return_session
 
   def logged_in?
     current_user.is_a? User
