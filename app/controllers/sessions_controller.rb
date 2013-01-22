@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_filter :set_return_session, :only => [:create]
 
   def create
     user = User.authenticate(params[:email], params[:password])

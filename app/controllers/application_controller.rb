@@ -26,7 +26,7 @@ private
   helper_method :reset_session
 
   def set_return_session
-    session[:return_to] = request.referrer
+    session[:return_to] ||= request.referer
   end
   helper_method :set_return_session
 

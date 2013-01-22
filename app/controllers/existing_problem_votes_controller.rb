@@ -1,6 +1,6 @@
 class ExistingProblemVotesController < ApplicationController
-  before_filter :authenticate
   before_filter :set_return_session
+  before_filter :authenticate
 
   def create
     @problem = Problem.find(params[:id])
