@@ -17,7 +17,8 @@ task :mayors => :environment do
     tables = agent.page.search("table.pagesSectionBodyTightBorder")
     tables.each do |mayor|
       puts mayor.css("a")
-      puts mayor.text
+      puts mayor.css("td:first-child").search('strong').xpath('text()')
+      puts mayor.css("img").last
     end
   end
 
