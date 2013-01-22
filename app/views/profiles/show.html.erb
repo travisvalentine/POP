@@ -1,24 +1,16 @@
 <div id="page">
-  <div id="info" class="profile">
+  <div id="info" class="profile problem-show">
     <%= render partial: "profile_info" %>
+
+    <% if current_user_profile?(@profile) && current_user.has_address? %>
+      <%= render partial: "profile_congresspeople" %>
+    <% end %>
   </div>
 
   <% if current_user_profile?(@profile) && current_user.has_notifications? %>
     <div id="notifications" class="profile">
-      <h4>Notifications <% if current_user.has_unread_notifications? %>- <span class="unread"><%= current_user.unread_notifications.count %> unread</span><% end %></h4>
-      <%= render partial: "notifications/notification", collection: current_user.notifications %>
-    </div>
-  <% end %>
-
-  <% if current_user_profile?(@profile) && current_user.has_address? %>
-    <%= render partial: "profile_congresspeople" %>
-  <% end %>
-
-  <% if current_user_profile?(@profile) %>
-    <div id="votes" class="profile">
-      <h4>Votes</h4>
-      <p>Up votes: <%= @profile.user.up_votes %></p>
-      <p>Down votes: <%= @profile.user.down_votes %></p>
+      <h4>Notifications<% if current_user.has_unread_notifications? %>: <span class="unread"><%= current_user.unread_notifications.count %> unread</span><% end %></h4>
+      <%= render partial: "notifications/notification", collection: current_user.notifications.reverse %>
     </div>
   <% end %>
 
