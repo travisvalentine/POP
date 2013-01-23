@@ -39,6 +39,11 @@ private
   end
   helper_method :homepage?
 
+  def signing_up?
+    request.fullpath == signup_path
+  end
+  helper_method :signing_up?
+
   def completing_profile?
     request.fullpath == welcome_path
   end

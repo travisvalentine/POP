@@ -35,7 +35,7 @@
   <%= render 'layouts/header_out' %>
 <% end %>
 
-<% if completing_profile? %>
+<% if signing_up? or completing_profile? %>
 <div>
   <%= render "shared/errors" %>
   <%= yield %>
