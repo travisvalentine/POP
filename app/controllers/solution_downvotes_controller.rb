@@ -1,6 +1,6 @@
 class SolutionDownvotesController < ApplicationController
-  before_filter :authenticate
   before_filter :set_return_session
+  before_filter :authenticate
 
   def create
     @solution = Solution.find(params[:id])

@@ -1,14 +1,8 @@
-<% if current_user %>
-  <div class="vote big">
-    <%= upvote_problem(@problem, "up-large.png") %>
-    <h1><%= @problem.votes %></h1>
-    <%= downvote_problem(@problem, "down-large.png") %>
-  </div>
-<% else %>
-  <div class="vote big">
-    <h1><%= @problem.votes %></h1>
-  </div>
-<% end %>
+<div class="vote big">
+  <%= upvote_problem(@problem, "up-large.png") %>
+  <h1><%= @problem.votes %></h1>
+  <%= downvote_problem(@problem, "down-large.png") %>
+</div>
 
 <div id="problem_details">
   <h3><%= @problem.body %></h3>

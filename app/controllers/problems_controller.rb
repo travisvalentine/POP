@@ -1,4 +1,5 @@
 class ProblemsController < ApplicationController
+  before_filter :set_return_session, :only => [:show, :index]
   before_filter :authenticate, :except => [:index, :show]
 
   def new
@@ -13,8 +14,7 @@ class ProblemsController < ApplicationController
       @solution.save!
       @solution.update_attributes(
         problem_id: @problem.id,
-        user_id:    current_user.id,
-        original:   true
+        user_id:    current_user.id
       )
       redirect_to(problem_path(@problem), :notice => 'Problem was successfully created.')
       post_to_twitter(@problem, params) if params[:tweet].present?
@@ -40,7 +40,7 @@ class ProblemsController < ApplicationController
   end
 
   def index
-    @problems = Kaminari.paginate_array(Problem.by_votes).page(params[:page]).per(10)
+    @problems = Kaminari.paginate_array(Problem.by_votes).page(params[:page]).per(12)
   end
 
   def show
@@ -62,8 +62,8 @@ private
     message = ["I just offered a solution"]
     problem.issue.present? ? message << " to #{problem.issue.name}. Check it out: " : message << ". Check it out: "
     message << problem_url(problem)
-    message << " - cc @BarackObama" if params[:tweet_bo]
-    message << " - cc @MittRomney" if params[:tweet_mr]
+    message << " - cc @#{params[:tweet_pres]}" if params[:tweet_pres]
+    message << " - cc @#{params[:tweet_pol]}" if params[:tweet_pol]
     Resque.enqueue(TwitterPoster, current_user.id, message.join(""))
   end
 end

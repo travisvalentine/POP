@@ -25,4 +25,12 @@ class Politician < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def first_initial
+    "#{first_name[0]}."
+  end
+
+  def initials
+    "#{first_name[0]}#{last_name[0]}".downcase
+  end
+
 end

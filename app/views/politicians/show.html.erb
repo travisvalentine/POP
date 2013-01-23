@@ -1,7 +1,10 @@
 <div id="page">
   <div class="index-head">
-    <h1 class="politician-name"><%= "#{@politician.short_title}. #{@politician.name}'s Problems" %></h1>
-    <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
+    <h1 class="politician-name"><%= "Concerns of #{@politician.short_title}. #{@politician.name}'s Constituents" %></h1>
+    <% if logged_in? %>
+      <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
+    <% else %>
+    <% end %>
   </div>
 
   <% unless @politician.problems.empty? %>

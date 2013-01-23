@@ -5,12 +5,14 @@
   </label>
   <div id="candidates">
     <label class="checkbox">
-      <%= check_box_tag "tweet_bo", true %>
+      <%= check_box_tag "tweet_pres", "BarackObama" %>
       <p>cc @BarackObama</p>
     </label>
-    <label class="checkbox">
-      <%= check_box_tag "tweet_mr", true %>
-      <p>cc @MittRomney</p>
-    </label>
+    <% current_user.politicians.each do |pol| %>
+      <label class="checkbox">
+        <%= check_box_tag "tweet_pol", "#{pol.twitter}" %>
+        <p>cc @<%= pol.twitter %></p>
+      </label>
+    <% end %>
   </div>
 </div>
