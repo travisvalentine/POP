@@ -1,0 +1,15 @@
+<%= form_for(@problem, :validate => true) do |f| %>
+
+  <%= f.hidden_field :published_at, :value => Time.now %>
+
+  <%= render partial: "problem_form", locals: { f: f } %>
+
+  <%= render partial: "solution_form", locals: { f: f } %>
+
+  <%= render partial: "post_options_form", locals: { f: f } %>
+
+  <div id="button">
+    <%= f.submit 'Add', :class => 'btn btn-large btn-gop-red' %>
+  </div>
+
+<% end %>

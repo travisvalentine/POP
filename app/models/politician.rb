@@ -8,6 +8,8 @@ class Politician < ActiveRecord::Base
   has_many :politician_users
   has_many :users, :through => :politician_users
 
+  has_one :widget
+
   validates :fec_id, :presence => true, :uniqueness => true
 
 

@@ -4,7 +4,10 @@
 
   <% @profile.congresspeople.each do |c| %>
     <div class="member">
-      <p><%= "#{c.title}: #{c.first_name} #{c.last_name} (#{c.party})" %> <%= link_to "@#{c.twitter}", "http://twitter.com/#{c.twitter}", :target => "_blank" unless c.twitter.blank? %></p>
+      <p><%= "#{c.title}" %>:
+        <%= link_to "#{c.first_name} #{c.last_name}", politician_path(c) %>
+        <%= "(#{c.party})" %>
+        <%= link_to "@#{c.twitter}", "http://twitter.com/#{c.twitter}", :target => "_blank" unless c.twitter.blank? %></p>
     </div>
   <% end %>
 

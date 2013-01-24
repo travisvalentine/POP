@@ -66,7 +66,7 @@ describe User do
       end
 
       it "sees their problems" do
-        page.should have_content "My problems"
+        page.should have_content "My concerns"
         within("#problems") do
           page.should have_link problem.body
         end
@@ -74,8 +74,8 @@ describe User do
 
       it "sees their solutions" do
         page.should have_content "My solutions"
-        within("#problems") do
-          page.should have_link problem.body
+        within("#solutions") do
+          page.should have_link solution.body
         end
       end
     end
