@@ -39,5 +39,13 @@ POP::Application.routes.draw do
   resources :sessions
   resources :settings, :only => [:show]
   resources :users
-  resources :widgets, :only => [:show]
+  resources :widgets, :only => [:new, :create, :show]
+
+  namespace :api do
+    namespace :v1 do
+      resources :politicians, :only => [] do
+        resources :problems, :only => [:new, :create, :index]
+      end
+    end
+  end
 end

@@ -1,4 +1,6 @@
 class Widget < ActiveRecord::Base
+  belongs_to :politician
+
   include Rails.application.routes.url_helpers
 
   attr_accessible :politician_id, :size
