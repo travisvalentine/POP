@@ -1,0 +1,28 @@
+<%= widget_id_meta(@widget) %>
+<div id="page" class="row">
+  <div class="row widget-center">
+    <%= render partial: "templates/widget", locals: {widget: @widget}  %>
+  </div>
+
+  <div class="row widget-row">
+    <div class="span11 offset1">
+      <h2>Copy and paste this code into your website's HTML to embed this widget on your page:</h2>
+    </div>
+  </div>
+
+  <div class="row widget-row">
+    <div class="span8 offset1">
+      <pre id="embed-code"><%= @widget.embed_code %></pre>
+    </div>
+
+    <div class="span3">
+      <div id="widgettest" class='btn btn-primary'>Copy to clipboard</div>
+    </div>
+  </div>
+</div>
+<script>
+  $('#widgettest').zclip({
+    path:'http://zeroclipboard.googlecode.com/svn-history/r10/trunk/ZeroClipboard.swf',
+    copy:$('#embed-code').text()
+  });
+</script>
