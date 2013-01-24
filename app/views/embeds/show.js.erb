@@ -7,6 +7,6 @@ popUpWindow = function(url, title, w, h) {
   return window.open(url, title, "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + w + ", height=" + h + ", top=" + top + ", left=" + left);
 };
 document.write("<%= escape_javascript(render(:partial => "embeds/widget_css", :locals => {:widget => @widget})).html_safe %>");
-document.write("<%= escape_javascript(render(:partial => "templates/os_#{@widget.size}", :locals => {:widget => @widget})).html_safe %>");
+document.write("<%= escape_javascript(render(:partial => "templates/widget", :locals => {:widget => @widget})).html_safe %>");
 var widget = document.getElementById("os-widget-pop");
-widget.addEventListener("click", function() {popUpWindow("http://www.google.com", "os-widget", 650, 650)}, false);
+widget.addEventListener("click", function() {popUpWindow("http://localhost:3000/api/v1/politicians/<%= @widget.politician_id %>/problems/new", "os-widget", 750, 750)}, false);
