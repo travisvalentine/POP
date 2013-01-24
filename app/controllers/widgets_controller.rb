@@ -1,5 +1,5 @@
 class WidgetsController < ApplicationController
-  #before_filter :authenticate
+  before_filter :authenticate
   before_filter :find_widget, only: [:show]
 
   def new
