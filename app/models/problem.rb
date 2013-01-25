@@ -1,6 +1,6 @@
 class Problem < ActiveRecord::Base
   attr_accessible :published_at, :body, :solution, :issue_ids, :issue_id,
-                  :solutions_attributes, :politician_ids
+                  :solutions_attributes, :politician_ids, :user_id
 
   validates :body, :presence  => true,
                    :length    => { :in => 20..255 }

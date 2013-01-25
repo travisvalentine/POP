@@ -12,7 +12,6 @@ class Politician < ActiveRecord::Base
 
   validates :fec_id, :presence => true, :uniqueness => true
 
-
   def self.with_problems
     select { |pol| pol.has_problems? }
   end

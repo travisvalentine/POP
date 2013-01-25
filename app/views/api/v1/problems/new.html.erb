@@ -1,3 +1,16 @@
+<%= content_for(:head) do %>
+  <%= javascript_include_tag "chosen.jquery.min", "charCount.js", "problems" %>
+  <%= stylesheet_link_tag "chosen.css" %>
+  <script type="text/javascript">
+    $(function(){
+      $('.brand').click(function(){
+        window.open('http://oursolution.is/signup', 'oursolution.is', '');
+        window.close();
+        return false;
+      });
+    });
+  </script>
+<% end %>
 <div class="row">
   <div class="span6 offset3 center new-problem">
     <div id="form_header">
@@ -5,7 +18,7 @@
       <p id="disclaimer">* You must propose a solution.</p>
     </div>
     <div class="new-problem-container">
-    <%= render :partial => 'form' %>
+    <%= render :partial => 'api/v1/problems/form' %>
     </div>
   </div><!-- end content -->
 </div><!-- end wrapper -->

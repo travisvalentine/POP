@@ -1,12 +1,12 @@
-<%= widget_id_meta(@widget) %>
+<%= content_for(:head) do %>
+  <%= javascript_include_tag "jquery.zclip.min" %>
+  <%= widget_id_meta(@widget) %>
+<% end %>
 <div id="page" class="row">
-  <div class="row widget-center">
-    <%= render partial: "templates/widget", locals: {widget: @widget}  %>
-  </div>
-
   <div class="row widget-row">
     <div class="span11 offset1">
       <h2>Copy and paste this code into your website's HTML to embed this widget on your page:</h2>
+      <%= render partial: "templates/widget", locals: {widget: @widget}  %>
     </div>
   </div>
 
