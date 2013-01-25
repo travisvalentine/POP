@@ -16,8 +16,16 @@ class Politician < ActiveRecord::Base
     select { |pol| pol.has_problems? }
   end
 
-  def self.in_office
-    all.sort_by{|p|p.last_name}.map{|p| [p.name,p.id]}
+  def self.members_of_congress
+    where('title <> ?', "Mayor").where('title <> ?', "Governor").sort_by{|p|p.first_name}.map{|p| [p.name,p.id]}
+  end
+
+  def self.governors
+    where(:title => "Governor").sort_by{|p|p.first_name}.map{|p| [p.name,p.id]}
+  end
+
+  def self.mayors
+    where(:title => "Mayor").sort_by{|p|p.first_name}.map{|p| [p.name,p.id]}
   end
 
   def has_problems?

@@ -5,6 +5,8 @@ class Widget < ActiveRecord::Base
 
   attr_accessible :politician_id, :size
 
+  validates :politician_id, presence: true, uniqueness: true
+
   belongs_to :politician
 
   def embed_link

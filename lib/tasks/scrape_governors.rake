@@ -40,7 +40,27 @@ task :governors => :environment do
       gov_last_name  = "last"
     end
 
-    puts "#{gov_state} Governor #{gov_first_name} #{gov_last_name} - #{gov_party}"
+    # Save Governors to DB
+
+    # Note: some of the logic above still doesn't parse
+    # Govs properly, particularly those with initials, suffixes, etc.
+    # so it's best to run this once without persisting so you know what's up
+    # and can go back into the DB and fix accordingly when you run it
+    # and persist the data
+    puts "Scraping #{gov_first_name} #{gov_last_name}"
+
+    db_gov = Politician.create!(
+               title:        "Governor",
+               first_name:   gov_first_name,
+               last_name:    gov_last_name,
+               party:        gov_party,
+               short_title:  "Gov",
+
+               # Turn off validation on fec_id for scraping
+               # Currently fec_id is checked for uniqueness
+               # but we don't scrape that
+               fec_id:       nil
+            )
   end
 
 end
