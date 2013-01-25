@@ -43,9 +43,12 @@ POP::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      match "/login" => "sessions#new", :as => "login"
       resources :politicians, :only => [] do
-        resources :problems, :only => [:new, :create, :index]
+        resources :problems,  :only => [:new, :create, :index]
       end
+      resource  :session,     :only => [:create]
+      resources :sessions,    :only => [:new, :create]
     end
   end
 end
