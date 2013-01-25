@@ -1,0 +1,18 @@
+<div class="other-problem clearfix">
+  <div class="overview">
+    <div class="votes">
+      <h4 class="vote-count"><%= problem.votes %></h4>
+      <span>Votes</span>
+    </div>
+    <div class="solutions">
+      <h4 class="solution-count"><%= problem.solutions.count %></h4>
+      <span>Solutions</span>
+    </div>
+  </div>
+  <div class="details">
+    <h4><%= link_to truncate(problem.body, length: 95 ), problem_path(problem) %></h4>
+    <% if problem.issue.present? %>
+      <p><%= problem.issue.name %></p>
+    <% end %>
+  </div>
+</div>

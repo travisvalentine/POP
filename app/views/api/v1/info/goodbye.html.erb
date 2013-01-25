@@ -1,0 +1,15 @@
+<%= content_for(:head) do %>
+  <script type="text/javascript">
+    $(function(){
+      setTimeout(function(){
+          window.close();
+      }, 2000);
+    });
+  </script>
+<% end %>
+<div id="page">
+  <div class="info-container">
+    <h3>Goodbye</h3>
+    <p>You will now be redirected out of the popup and into the main app.</p>
+  </div>
+</div>

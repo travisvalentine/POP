@@ -44,12 +44,13 @@
 
 .btn-light-blue { @include button(simple, $light-blue); }
 .btn-med-blue { @include button(simple, $med-blue); }
-.btn-dark-blue { @include button(simple, $dark-blue); }
+.btn-dark-blue, .osln-btn-dark-blue { @include button(simple, $dark-blue); }
 .btn-gop-red { @include button(simple, $gop-red); }
 
 .btn-grey { @include button; }
 
 .btn-large { padding: 10px 20px; font-size: 120%; }
+.btn-small, .osln-btn-small { padding: 4px 8px; font-size: 90%; }
 
 .lg-text { font-size: 110%; }
 
