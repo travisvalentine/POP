@@ -12,7 +12,7 @@ POP::Application.routes.draw do
   match "/signup" => "users#new", :as => "signup"
 
   match "/auth/:provider/callback" => "oauth#create"
-  match "auth/failure", :to => redirect('/')
+  match "/auth/failure", :to => redirect('/')
 
   resources :comments, :only => [:new, :create, :destroy]
   resources :embeds, :only => [:show]
@@ -43,12 +43,16 @@ POP::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      match "/auth/:provider/callback" => "oauth#create"
+      match "/auth/failure", :to => redirect('/')
+      match "/goodbye" => "info#goodbye", :as => "goodbye"
       match "/login" => "sessions#new", :as => "login"
+      match "/logout" => "sessions#destroy", :as => "logout"
       resources :politicians, :only => [] do
         resources :problems,  :only => [:new, :create, :index]
       end
-      resource  :session,     :only => [:create]
-      resources :sessions,    :only => [:new, :create]
+      resource  :session
+      resources :sessions
     end
   end
 end

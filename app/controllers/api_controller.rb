@@ -40,7 +40,7 @@ class ApiController < ActionController::Base
   end
 
   def access_denied
-    redirect_to session[:return_to], :alert => "Please log in to continue" and return false
+    redirect_to api_v1_login_path, :alert => "Please log in to continue" and return false
   end
 
 end

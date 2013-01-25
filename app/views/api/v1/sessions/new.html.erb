@@ -1,3 +1,15 @@
+<%= content_for(:head) do %>
+  <%= javascript_include_tag "chosen.jquery.min", "charCount.js", "problems" %>
+  <script type="text/javascript">
+    $(function(){
+      $('.brand, .join').click(function(){
+        window.open('http://oursolution.is/signup', 'oursolution.is', '');
+        window.close();
+        return false;
+      });
+    });
+  </script>
+<% end %>
 <div class="row">
   <div class="span5 offset3">
     <div id="login" class="span5 center">
@@ -6,7 +18,6 @@
 
       <div id="form_header" class="clearfix">
         <h1 id="login">Welcome Back</h1>
-        <p id="login"><%= link_to image_tag("sign-in-with-twitter-d.png"), "/auth/twitter" %></p>
       </div>
       <div class="input-container">
         <p class="label"><label for="email">Email:</label></p>
@@ -17,9 +28,13 @@
         <p><%= password_field_tag :password, nil, :autocomplete => 'off' %></p>
       </div>
       <div id="submit_button"><%= submit_tag 'Log In', :class => 'btn-med-blue btn-large' %></div>
-      <div id="password_reset"><p><%= link_to "Forgot your password?", new_password_reset_path %></p></div>
     <% end %>
 
     </div>
+  </div>
+</div>
+<div class="row">
+  <div class="span5 offset3 api-footer-alert">
+    <h5>Notice:</h5><p>At the moment you can't login to Twitter from the widget. You have to be logged in prior to opening the widget.</p>
   </div>
 </div>

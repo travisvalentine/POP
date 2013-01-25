@@ -1,4 +1,4 @@
-class Api::V1::SessionsController < ApplicationController
+class Api::V1::SessionsController < ApiController
   before_filter :set_return_session
 
   def create
@@ -13,4 +13,8 @@ class Api::V1::SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    reset_session
+    redirect_to api_v1_goodbye_path, :notice => "We are redirecting you to the main app."
+  end
 end
