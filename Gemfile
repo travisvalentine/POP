@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'bourbon', "~> 2.1.1"
 gem 'client_side_validations'
 gem 'escape_utils'
+gem 'exception_notification', '2.6.1' # fix for Heroku
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'make_voteable'

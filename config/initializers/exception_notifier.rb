@@ -1,0 +1,1 @@
+ExceptionNotifier::Notifier.delivery_method = :smtp if defined?(ExceptionNotifier)

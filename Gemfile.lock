@@ -65,6 +65,8 @@ GEM
       unf (~> 0.0.3)
     erubis (2.7.0)
     escape_utils (0.2.4)
+    exception_notification (2.6.1)
+      actionmailer (>= 3.0.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.1.0)
@@ -263,6 +265,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   database_cleaner
   escape_utils
+  exception_notification (= 2.6.1)
   factory_girl_rails
   faker
   fakeweb
