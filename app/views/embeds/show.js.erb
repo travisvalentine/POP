@@ -9,4 +9,4 @@ popUpWindow = function(url, title, w, h) {
 document.write("<%= escape_javascript(render(:partial => "embeds/widget_css", :locals => {:widget => @widget})).html_safe %>");
 document.write("<%= escape_javascript(render(:partial => "templates/widget", :locals => {:widget => @widget})).html_safe %>");
 var widget = document.getElementById("os-widget-pop");
-widget.addEventListener("click", function() {popUpWindow("http://localhost:3000/api/v1/politicians/<%= @widget.politician_id %>/problems/new", "os-widget", 900, 850)}, false);
+widget.addEventListener("click", function() {popUpWindow("http://localhost:3000/api/v1/politicians/<%= @widget.politician_id %>/problems/new", "os-widget", 950, 750)}, false);
