@@ -1,3 +1,12 @@
+<%= content_for(:head) do %>
+  <%= javascript_include_tag "chosen.jquery.min" %>
+  <%= stylesheet_link_tag "chosen.css" %>
+  <script type="text/javascript">
+    $(function(){
+      $(".chzn-select").chosen()
+    })
+  </script>
+<% end %>
 <div id="page" class="row">
   <div id="widget" class="span6 offset3">
     <div class="info-container">
@@ -5,10 +14,7 @@
     </div>
     <%= form_for @widget do |f| %>
       <p>
-        <%= f.label "Choose a Politician" %>
-      </p>
-      <p>
-        <%= f.select :politician_id, options_for_select([["", ""]]+ Politician.all.collect{ |pol| [pol.name,pol.id] } ), :class=>'chzn-select', :data => { :placeholder => "Select a Politician" } %>
+        <%= f.select :politician_id, Politician.in_office, {:include_blank => ""}, { :class=>'chzn-select' } %>
       </p>
       <div>
         <%= f.submit "Create", class: "btn btn-large btn-dark-blue" %>

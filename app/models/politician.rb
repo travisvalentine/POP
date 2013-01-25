@@ -16,6 +16,10 @@ class Politician < ActiveRecord::Base
     select { |pol| pol.has_problems? }
   end
 
+  def self.in_office
+    all.sort_by{|p|p.last_name}.map{|p| [p.name,p.id]}
+  end
+
   def has_problems?
     problems.present?
   end
