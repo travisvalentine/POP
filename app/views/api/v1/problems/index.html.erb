@@ -1,0 +1,20 @@
+<%= content_for(:head) do %>
+  <script type="text/javascript">
+    $(function(){
+      setTimeout(function(){
+          window.close();
+      }, 2000);
+    });
+  </script>
+<% end %>
+<div id="page">
+  <div class="index-head">
+    <h3 class="politician-name"><%= "Concerns of #{@politician.short_title}. #{@politician.name}'s Constituents" %></h3>
+  </div>
+
+  <% unless @problems.empty? %>
+    <div class="problem">
+      <%= render @problems %>
+    </div>
+  <% end %>
+</div>

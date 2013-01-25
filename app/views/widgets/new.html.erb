@@ -1,12 +1,18 @@
 <div id="page" class="row">
   <div id="widget" class="span6 offset3">
-    <div class="index-head">
-      <h1>Get a widget for your Politican below:</h1>
+    <div class="info-container">
+      <h3>Get a widget for your Politican below:</h3>
     </div>
     <%= form_for @widget do |f| %>
-      <%= f.label "Choose a Politician" %>
-      <%= f.select :politician_id, options_for_select([["", ""]]+ Politician.all.collect{ |pol| [pol.name,pol.id] } ), :class=>'chzn-select', :data => { :placeholder => "Select a Politician" } %>
-      <%= f.submit "Create", class: "btn btn-large btn-dark-blue" %>
+      <p>
+        <%= f.label "Choose a Politician" %>
+      </p>
+      <p>
+        <%= f.select :politician_id, options_for_select([["", ""]]+ Politician.all.collect{ |pol| [pol.name,pol.id] } ), :class=>'chzn-select', :data => { :placeholder => "Select a Politician" } %>
+      </p>
+      <div>
+        <%= f.submit "Create", class: "btn btn-large btn-dark-blue" %>
+      </div>
     <% end %>
   </div>
 </div>

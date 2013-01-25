@@ -1,0 +1,12 @@
+<div id="tweet_container" class="pull-right">
+  <label class="checkbox">
+    <%= check_box_tag "tweet", true %>
+    <%= image_tag("twitter-logo.png") %><p>Tweet your Solution</p>
+  </label>
+  <div id="candidates">
+    <label class="checkbox">
+      <%= check_box_tag "tweet_pol", "#{@politician.twitter}" %>
+      <p>cc @<%= @politician.twitter %></p>
+    </label>
+  </div>
+</div>

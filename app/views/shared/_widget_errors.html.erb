@@ -1,0 +1,7 @@
+<% flash.each do |name, msg| %>
+  <% if name.to_s == "notice" %>
+    <%= content_tag :div, msg, :class => "api-notice vanish" if msg.is_a?(String) %>
+  <% else %>
+    <%= content_tag :div, msg, :class => "api-#{name}" if msg.is_a?(String) %>
+  <% end %>
+<% end %>

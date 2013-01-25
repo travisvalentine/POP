@@ -1,12 +1,12 @@
-<%= form_for(@problem, :validate => true) do |f| %>
-
+<%= form_for(@problem, :url => api_v1_politician_problems_path, html: { class: "new-api-problem"}, :validate => true) do |f| %>
+  <%= hidden_field_tag "problem[politician_ids][]", @politician.id %>
   <%= f.hidden_field :published_at, :value => Time.now %>
 
-  <%= render partial: "problem_form", locals: { f: f } %>
+  <%= render partial: "api/v1/problems/problem_form", locals: { f: f } %>
 
-  <%= render partial: "solution_form", locals: { f: f } %>
+  <%= render partial: "api/v1/problems/solution_form", locals: { f: f } %>
 
-  <%= render partial: "post_options_form", locals: { f: f } %>
+  <%= render partial: "api/v1/problems/post_options_form", locals: { f: f } %>
 
   <div id="button">
     <%= f.submit 'Add', :class => 'btn btn-large btn-gop-red' %>
