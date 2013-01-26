@@ -3,3 +3,19 @@
     margin: 3em 10em;
   }
 }
+
+.widget.span2 {
+  border: 1px dotted lighten($gop-red, 20%);
+  margin-top: 5px;
+  margin-left: 10px;
+  padding: 9px;
+
+  h4 {
+    color: darken($gop-red, 10%);
+    margin-top: 0;
+  }
+
+  p {
+    color: #808080;
+  }
+}

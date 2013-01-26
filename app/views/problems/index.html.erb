@@ -9,11 +9,18 @@
     <%= link_to issue.name, issue_path(issue), :class => "pill-light" %>
   <% end %>
 </div>
-<div id="page" class="problems">
+<div id="page" class="problems span10">
 <% unless @problems.empty? %>
   <div class="problem">
     <%= render @problems %>
     <%= paginate @problems %>
   </div>
 <% end %>
+</div>
+<div id="notice" class="widget span2">
+  <h4>Widgets for all</h4>
+  <p>
+    Embed a widget for your Representative, Senator, Governor, or Mayor. If we don't have your politician listed, you can create one.
+  </p>
+  <%= link_to "Create a widget", new_widget_path, class: "btn-small btn-white" %>
 </div>

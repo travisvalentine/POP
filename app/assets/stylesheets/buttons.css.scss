@@ -66,7 +66,8 @@
 .btn-dark-blue, .osln-btn-dark-blue { @include button(simple, $dark-blue); }
 .btn-gop-red { @include button(simple, $gop-red); }
 
-.btn-grey { @include button; }
+.btn-grey { @include button(simple, gray); }
+.btn-white { @include button(simple, #fff); }
 
 .btn-large { padding: 10px 20px; font-size: 120%; }
 .btn-small, .osln-btn-small { padding: 4px 8px; font-size: 90%; }
@@ -76,5 +77,11 @@
 .btn-gop-red:hover, .btn-light-blue:hover,
 
 .osln-btn-small:hover, .btn-dark-blue:hover,
-.btn-med-blue:hover, .btn-light:hover, .osln-btn-dark-blue:hover
-{ color: #fff; text-decoration: none; }
+.btn-med-blue:hover, .btn-light:hover, .osln-btn-dark-blue:hover {
+  color: #fff; text-decoration: none;
+}
+
+.btn-grey:hover, .btn-white:hover {
+  color: #000;
+  text-decoration: none;
+}
