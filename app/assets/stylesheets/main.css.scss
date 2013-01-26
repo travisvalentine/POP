@@ -1,7 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Cantora+One|Imprima);
 
 ::selection, ::moz-selection {
-  background: #CEE3E8;
+  background: lighten($gop-red, 20%);
+  color: #fff;
 }
 
 body {

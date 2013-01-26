@@ -233,6 +233,15 @@
     p {
       color: #808080;
       margin: 0;
+
+      a {
+        color: #808080;
+        margin: 0;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

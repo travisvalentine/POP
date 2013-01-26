@@ -14,4 +14,22 @@ module ProblemsHelper
       link_to image_tag(image), problem_downvotes_path(:id => problem.id), :id => "downvote_big", :method => :post
     end
   end
+
+  def votes_text(votes_count)
+    case
+    when votes_count == 0, votes_count > 1
+      "Votes"
+    else
+      "Vote"
+    end
+  end
+
+  def solutions_text(solutions_count)
+    case
+    when solutions_count == 0, solutions_count > 1
+      "Solutions"
+    else
+      "Solution"
+    end
+  end
 end

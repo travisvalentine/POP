@@ -2,15 +2,14 @@
   <div class="index-head">
     <h1 class="issue-name"><%= @issue.name %></h1>
     <% if logged_in? %>
-      <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-light-blue lg-text' %>
+      <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-dark-blue lg-text' %>
     <% end %>
   </div>
 
   <div class="filter">
-    <%= link_to "All Problems", problems_path, :class => "btn-light" %>
     <% Issue.with_problems.each do |issue| %>
       <% if @issue != issue %>
-        <%= link_to issue.name, issue_path(issue), :class => "btn-light" %>
+        <%= link_to issue.name, issue_path(issue), :class => "pill-light" %>
       <% end %>
     <% end %>
   </div>
