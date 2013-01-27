@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121028202839) do
+ActiveRecord::Schema.define(:version => 20130127213429) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -68,13 +68,14 @@ ActiveRecord::Schema.define(:version => 20121028202839) do
   end
 
   create_table "politicians", :force => true do |t|
-    t.string "title"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "party"
-    t.string "twitter"
-    t.string "fec_id"
-    t.string "short_title"
+    t.string  "title"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "party"
+    t.string  "twitter"
+    t.string  "fec_id"
+    t.string  "short_title"
+    t.boolean "active",      :default => true
   end
 
   create_table "problems", :force => true do |t|

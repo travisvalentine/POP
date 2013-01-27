@@ -1,0 +1,56 @@
+<%= content_for(:head) do %>
+  <%= javascript_include_tag "chosen.jquery.min" %>
+  <%= stylesheet_link_tag "chosen.css" %>
+  <script type="text/javascript">
+    $(function(){
+      $(".chzn-select").chosen()
+    })
+  </script>
+<% end %>
+<div id="page" class="row">
+  <div id="widget" class="span6 offset3">
+    <div class="info-container">
+      <h3>Create a Politician:</h3>
+    </div>
+    <%= form_for @politician do |f| %>
+      <% if @politician.errors.any? %>
+        <div id="errorRight">
+          <p>Oops, something went wrong:</p>
+          <ul>
+          <% @politician.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.hidden_field :active, value: false %>
+      <p>
+        <%= f.label :title, "Title" %>
+        <%= f.select :title, options_for_select(['President', 'Representative', 'Senator', 'Governor', 'Mayor', 'State Senator', 'State Representative']), :prompt => "Select an option" %>
+      </p>
+      <p>
+        <%= f.label :short_title, "Short Title" %>
+        <%= f.select :short_title, options_for_select(['Pres', 'Rep', 'Sen', 'Gov', 'Mayor', 'State Sen', 'State Rep']), :prompt => "Select an option" %>
+      </p>
+      <p>
+        <%= f.label :first_name, "First name" %>
+        <%= f.text_field :first_name, :placeholder => "e.g., Barack" %>
+      </p>
+      <p>
+        <%= f.label :last_name, "Last name" %>
+        <%= f.text_field :last_name, :placeholder => "e.g., Obama" %>
+      </p>
+      <p>
+        <%= f.label :party, "Party affiliation" %>
+        <%= f.select :party, options_for_select(['Democrat', 'Independent', 'Republican', 'Tea Party']), :prompt => "Select an option" %>
+      </p>
+      <p>
+        <%= f.label :twitter, "Twitter handle" %>
+        <%= f.text_field :twitter, :placeholder => "e.g., @BarackObama" %>
+      </p>
+      <div>
+          <%= f.submit "Create", class: "btn-large btn-dark-blue" %>
+      </div>
+    <% end %>
+  </div>
+</div>

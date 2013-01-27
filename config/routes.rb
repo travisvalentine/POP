@@ -22,7 +22,7 @@ POP::Application.routes.draw do
   resources :notifications, :only => [:update]
   resources :oauth, :only => [:create]
   resources :password_resets
-  resources :politicians, :only => [:show] do
+  resources :politicians, :only => [:new, :create, :show] do
     resources :problems, :only => [:new, :create]
   end
   resources :problems do

@@ -56,6 +56,20 @@
   text-decoration: none;
 }
 
+.nice-button {
+  @include border-radius(3px);
+  background-color: darken(#00B4EA, 2%);
+  color: #fff;
+  padding: 10px;
+  margin-right: 5px;
+
+  &:hover {
+    background-color: $gop-red;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 .btn-light-blue-shiny { @include button(shiny, $light-blue); }
 .btn-med-blue-shiny { @include button(shiny, $med-blue); }
 .btn-dark-blue-shiny { @include button(shiny, $dark-blue); }

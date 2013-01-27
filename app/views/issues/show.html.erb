@@ -1,8 +1,8 @@
 <div id="page">
   <div class="index-head">
-    <h1 class="issue-name"><%= @issue.name %></h1>
+    <h3 class="issue-name"><%= @issue.name %></h3>
     <% if logged_in? %>
-      <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'btn-dark-blue lg-text' %>
+      <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'nice-button lg-text' %>
     <% end %>
   </div>
 

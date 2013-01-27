@@ -1,6 +1,6 @@
 class Politician < ActiveRecord::Base
   attr_accessible :title, :short_title, :first_name, :last_name,
-                  :party, :twitter, :fec_id
+                  :party, :twitter, :fec_id, :active
 
   has_many :politician_problems
   has_many :problems, :through => :politician_problems
@@ -10,10 +10,15 @@ class Politician < ActiveRecord::Base
 
   has_one :widget
 
-  validates :fec_id, :presence => true, :uniqueness => true
+  validates :fec_id, :presence => true, :uniqueness => true, :if => Proc.new{ |p| p.active == true }
+  validates :title, :short_title, :first_name, :last_name, :party, :presence => true
+
+  def self.active
+    where(:active => true)
+  end
 
   def self.with_problems
-    select { |pol| pol.has_problems? }
+    where(:active => true).select { |pol| pol.has_problems? }
   end
 
   def self.members_of_congress
