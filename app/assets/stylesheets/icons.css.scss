@@ -1,0 +1,64 @@
+[class^="icon-"],[class*=" icon-"] {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  *margin-right: .3em;
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: url('icons-32x32-gray.png');
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+  margin-top: -7px;
+}
+
+.icon-civil-rights {
+  background-position: -1px 0;
+  width: 25px;
+  height: 29px;
+}
+
+.icon-defense {
+  background-position: 0 -35px;
+  width: 32px;
+  height: 25px;
+}
+
+.icon-energy-environment {
+  background-position: -3px -63px;
+  width: 27px;
+  height: 32px;
+}
+
+.icon-ethics {
+  background-position: -1px -99px;
+  width: 31px;
+  height: 26px;
+}
+
+.icon-fiscal-responsibility {
+  background-position: -4px -127px;
+  width: 25px;
+  height: 33px;
+}
+
+.icon-taxes {
+  background-position: -2px -161px;
+  width: 27px;
+  height: 30px;
+}
+
+.icon-technology {
+  background-position: -6px -192px;
+  width: 21px;
+  height: 32px;
+}
+
+.icon-disabilities, .icon-economy, .icon-education, .icon-ethics,
+.icon-foreign-policy, .icon-health-care, .icon-homeland-security,
+.icon-immigration, .icon-rural, .icon-seniors-social-security,
+.icon-service, .icon-urban-policy, .icon-veterans, .icon-women {
+  background-position: -4px -127px;
+  width: 25px;
+  height: 33px;
+  margin-top: -12px;
+}

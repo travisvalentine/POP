@@ -13,4 +13,8 @@ class Issue < ActiveRecord::Base
     problems.present?
   end
 
+  def icon_class_name
+    name.downcase.parameterize
+  end
+
 end

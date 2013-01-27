@@ -3,7 +3,7 @@
 }
 
 .index-head {
-  margin-top: 15px;
+  margin-top: 5px;
 
   h3 {
     color: #808080;
@@ -20,7 +20,16 @@
 }
 
 .filter {
+  border-bottom: 1px solid #ccc;
+  clear: both;
   margin: 5px 0;
+
+  li {
+    display: inline-block;
+    line-height: 44px;
+    list-style-type: none;
+    margin-right: 10px;
+  }
 }
 
 .problems.span10 {

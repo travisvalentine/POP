@@ -6,13 +6,19 @@
     <% end %>
   </div>
 
-  <div class="filter">
-    <%= link_to "All Solutions", problems_path, :class => "pill-light" %>
-    <% Issue.with_problems.each do |issue| %>
-      <% if @issue != issue %>
-        <%= link_to issue.name, issue_path(issue), :class => "pill-light" %>
+  <div id="tabs" class="clearfix">
+    <ul class="filter">
+      <li>
+        <%= link_to "All Solutions", problems_path, :class => "pill-light" %>
+      </li>
+      <% Issue.with_problems.each do |issue| %>
+      <li>
+        <%= link_to issue_path(issue), :class => "pill-light" do %>
+          <i class="icon-<%= issue.icon_class_name %>"></i>
+          <%= issue.name %>
+        <% end %>
+      </li>
       <% end %>
-    <% end %>
   </div>
 
   <% unless @issue.problems.empty? %>
