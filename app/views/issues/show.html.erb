@@ -7,6 +7,7 @@
   </div>
 
   <div class="filter">
+    <%= link_to "All Solutions", problems_path, :class => "pill-light" %>
     <% Issue.with_problems.each do |issue| %>
       <% if @issue != issue %>
         <%= link_to issue.name, issue_path(issue), :class => "pill-light" %>
