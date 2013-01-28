@@ -6,7 +6,7 @@
 </div>
 <div id="tabs" class="clearfix">
   <ul class="filter">
-    <li>
+    <li class="active">
       <%= link_to "All Solutions", problems_path, :class => "pill-light" %>
     </li>
     <% Issue.with_problems.each do |issue| %>

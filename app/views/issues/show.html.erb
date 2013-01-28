@@ -12,7 +12,7 @@
         <%= link_to "All Solutions", problems_path, :class => "pill-light" %>
       </li>
       <% Issue.with_problems.each do |issue| %>
-      <li>
+      <li class="<%= "active" if current_issue?(issue) %>">
         <%= link_to issue_path(issue), :class => "pill-light" do %>
           <i class="icon-<%= issue.icon_class_name %>"></i>
           <%= issue.name %>
