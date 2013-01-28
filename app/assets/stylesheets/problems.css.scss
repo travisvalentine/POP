@@ -30,6 +30,12 @@
     list-style-type: none;
     margin-right: 4px;
 
+    &.dropdown {
+      .caret {
+        margin-top: 20px;
+      }
+    }
+
     &.active {
       a.pill-light {
         background-color: #fff;

@@ -19,6 +19,30 @@
         <% end %>
       </li>
       <% end %>
+      <% unless Issue.remaining.nil? %>
+        <li class="dropdown active">
+          <a href="#" class="dropdown-toggle pill-light" data-toggle="dropdown" id="issue_list">More Issues
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="issue_list">
+            <% Issue.remaining.each do |issue| %>
+              <li><%= link_to issue.name, issue_path(issue) %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+      <% unless Politician.with_problems.empty? %>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle pill-light" data-toggle="dropdown" id="issue_list">By Politician
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="issue_list">
+          <% Politician.with_problems.each do |pol| %>
+            <li><%= link_to "#{pol.short_title}. #{pol.name}", politician_path(pol) %></li>
+          <% end %>
+        </ul>
+      </li>
+      <% end %>
   </div>
 
   <% unless @issue.problems.empty? %>

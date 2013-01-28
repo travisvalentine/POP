@@ -1,12 +1,50 @@
-<div id="page">
-  <div class="index-head">
-    <h3 class="politician-name"><%= "Concerns of #{@politician.short_title}. #{@politician.name}'s Constituents" %></h3>
-    <% if logged_in? %>
-      <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'nice-button lg-text' %>
-    <% else %>
+<div class="index-head">
+  <h3 class="politician-name"><%= "Concerns of #{@politician.short_title}. #{@politician.name}'s Constituents" %></h3>
+  <% if logged_in? %>
+    <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'nice-button lg-text' %>
+  <% else %>
+  <% end %>
+</div>
+<div id="tabs" class="clearfix">
+  <ul class="filter">
+    <li>
+      <%= link_to "All Solutions", problems_path, :class => "pill-light" %>
+    </li>
+    <% Issue.with_problems.each do |issue| %>
+      <li>
+        <%= link_to issue_path(issue), :class => "pill-light" do %>
+          <i class="icon-<%= issue.icon_class_name %>"></i>
+          <%= issue.name %>
+        <% end %>
+      </li>
     <% end %>
-  </div>
-
+    <% unless Issue.remaining.nil? %>
+      <li class="dropdown active">
+        <a href="#" class="dropdown-toggle pill-light" data-toggle="dropdown" id="issue_list">More Issues
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="issue_list">
+          <% Issue.remaining.each do |issue| %>
+            <li><%= link_to issue.name, issue_path(issue) %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+    <% unless Politician.with_problems.empty? %>
+      <li class="dropdown active">
+        <a href="#" class="dropdown-toggle pill-light" data-toggle="dropdown" id="issue_list">By Politician
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="issue_list">
+          <% Politician.with_problems.each do |pol| %>
+            <li><%= link_to "#{pol.short_title}. #{pol.name}", politician_path(pol) %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div id="page" class="problems span10">
   <% unless @politician.problems.empty? %>
     <div class="problem">
       <%= render :partial => "problems/problem", :collection => @politician.problems %>
