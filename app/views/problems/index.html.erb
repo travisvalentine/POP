@@ -34,7 +34,7 @@
       <a href="#" class="dropdown-toggle pill-light" data-toggle="dropdown" id="issue_list">By Politician
         <b class="caret"></b>
       </a>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="issue_list">
+      <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="issue_list">
         <% Politician.with_problems.each do |pol| %>
           <li><%= link_to "#{pol.short_title}. #{pol.name}", politician_path(pol) %></li>
         <% end %>
