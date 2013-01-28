@@ -66,7 +66,7 @@ describe User do
       end
 
       it "sees their problems" do
-        page.should have_content "My concerns"
+        page.should have_content "My problems"
         within("#problems") do
           page.should have_link problem.body
         end

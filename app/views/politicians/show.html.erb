@@ -1,5 +1,5 @@
 <div class="index-head">
-  <h3 class="politician-name"><%= "Concerns of #{@politician.short_title}. #{@politician.name}'s Constituents" %></h3>
+  <h3 class="politician-name"><%= "Problems of #{@politician.short_title}. #{@politician.name}'s Constituents" %></h3>
   <% if logged_in? %>
     <%= link_to "Add a New Problem, #{current_user.first_name}", new_problem_path, :class => 'nice-button lg-text' %>
   <% else %>
@@ -18,7 +18,7 @@
         <% end %>
       </li>
     <% end %>
-    <% unless Issue.remaining.empty? %>
+    <% unless Issue.remaining.blank? %>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle pill-light" data-toggle="dropdown" id="issue_list">More Issues
           <b class="caret"></b>
