@@ -8,20 +8,6 @@
       </a>
       <%= link_to "oursolution.is", root_path, :class => "brand" %>
       <div class="nav-collapse">
-        <ul class="nav" id="content_nav">
-          <% unless Politician.with_problems.empty? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="issue_list">By Politician
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="issue_list">
-              <% Politician.with_problems.each do |pol| %>
-                <li><%= link_to "#{pol.short_title}. #{pol.name}", politician_path(pol) %></li>
-              <% end %>
-            </ul>
-          </li>
-          <% end %>
-        </ul>
         <ul class="nav pull-right">
           <% if request.path == "/login" %>
           <li><%= link_to "JOIN", {:controller =>"users", :action => "new"}, {:id => 'login', :class => 'h-btn'} %></li>
