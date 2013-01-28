@@ -18,8 +18,8 @@
         <% end %>
       </li>
     <% end %>
-    <% unless Issue.remaining.nil? %>
-      <li class="dropdown active">
+    <% unless Issue.remaining.empty? %>
+      <li class="dropdown">
         <a href="#" class="dropdown-toggle pill-light" data-toggle="dropdown" id="issue_list">More Issues
           <b class="caret"></b>
         </a>
