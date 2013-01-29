@@ -6,11 +6,11 @@ class Issue < ActiveRecord::Base
   has_many :problems, :through => :issue_problems
 
   def self.with_problems
-    select { |issue| issue.has_problems? }[0..6]
+    select { |issue| issue.has_problems? }[0..5]
   end
 
   def self.remaining
-    select { |issue| issue.has_problems? }[7..-1]
+    select { |issue| issue.has_problems? }[6..-1]
   end
 
   def has_problems?
