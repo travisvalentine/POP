@@ -21,4 +21,8 @@ class Issue < ActiveRecord::Base
     name.downcase.parameterize
   end
 
+  def to_param
+    "#{id} #{name}".parameterize
+  end
+
 end

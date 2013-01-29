@@ -48,4 +48,14 @@ class Problem < ActiveRecord::Base
     solutions.select{|s| s.original == false }.sort{|a,b| b.votes <=> a.votes}
   end
 
+  def body_url
+    body_array = body.split(" ")
+    truncated_body = body_array[0..4].join(" ")
+    truncated_body
+  end
+
+  def to_param
+    "#{id} #{body_url}".parameterize
+  end
+
 end
