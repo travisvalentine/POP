@@ -11,7 +11,7 @@ class Politician < ActiveRecord::Base
   has_one :widget
 
   #validates :fec_id, :presence => true, :uniqueness => true, :if => Proc.new{ |p| p.active == true }
-  validates :title, :short_title, :first_name, :last_name, :party, :presence => true
+  validates :title, :short_title, :first_name, :last_name, :presence => true
 
   def self.active
     where(:active => true)
