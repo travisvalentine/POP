@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessor     :password
+  attr_accessor     :password, :password_confirmation
   attr_accessible   :email, :password, :password_confirmation,
                     :profile_attributes, :profile, :oauth_token,
                     :oauth_secret
