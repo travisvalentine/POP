@@ -11,11 +11,12 @@ $ ->
     day_empty   = $("#user_profile_attributes_birthday_3i").val() is ""
     year_empty  = $("#user_profile_attributes_birthday_1i").val() is ""
     if month_empty or day_empty or year_empty
+      $("#birthday_selects label.message").show()
       $("#birthday_selects label.message").text("Birthday can't be blank")
     else
       $("#birthday_selects label.message").hide()
 
-  $("#birthday_selects label.message").text("Birthday can't be blank")
+  $("#birthday_selects label.message").hide()
 
   $("form.new_user #birthday_selects select").live "change", checkBirthdaySelects
 
@@ -24,6 +25,7 @@ $ ->
     day_empty   = $("#user_profile_attributes_birthday_3i").val() is ""
     year_empty  = $("#user_profile_attributes_birthday_1i").val() is ""
     if month_empty or day_empty or year_empty
+      $("#birthday_selects label.message").show()
       $("#birthday_selects label.message").text("Birthday can't be blank")
       event.preventDefault()
     else

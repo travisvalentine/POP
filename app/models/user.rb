@@ -26,10 +26,10 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create,
                         :unless => :provider?
 
-  validates_confirmation_of :email, :unless => :provider?
+  # validates_confirmation_of :email, :unless => :provider?
 
-  validates_confirmation_of :password,
-                            :unless => :provider?
+  # validates_confirmation_of :password,
+                            # :unless => :provider?
 
   validates :email, :uniqueness => true,
                     :presence => true,
