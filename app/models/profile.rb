@@ -5,14 +5,9 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   accepts_nested_attributes_for :user
 
-  validates_uniqueness_of :name
-  validates_presence_of :name
+  validates :name, :presence => true, :uniqueness => true
 
-  # validates_presence_of :birthday, :unless => :user_created_from_twitter?
-
-  # validates_confirmation_of :birthday, :unless => :user_created_from_twitter?
-
-  validates_confirmation_of :party_affiliation, :unless => :user_created_from_twitter?
+  validates_presence_of :birthday, :unless => :user_created_from_twitter?
 
   after_save :add_politicians, :if => :address
 

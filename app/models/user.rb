@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   has_many :politician_users
   has_many :politicians, :through => :politician_users
 
-  validates_presence_of :email,
+  validates_presence_of :password, :on => :create,
                         :unless => :provider?
 
   validates_confirmation_of :email, :unless => :provider?
@@ -31,11 +31,10 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password,
                             :unless => :provider?
 
-  validates :email, :email_format => true,
-                    :uniqueness => true,
-                    :length => {
-                        :within => 5..40,
-                    },
+  validates :email, :uniqueness => true,
+                    :presence => true,
+                    :length => { :within => 5..50 },
+                    :format => { :with => /^[^@][\w.+-]+@[\w.-]+[.][a-z]{2,4}$/i },
                     :unless => :provider?
 
   validates :password, :length => {

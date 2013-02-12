@@ -1,8 +1,7 @@
 <%= content_for(:head) do %>
-  <%= javascript_include_tag "rails.validations.custom" %>
+  <%= javascript_include_tag "hack_validations" %>
 <% end %>
-
-<%= form_for(@user, :html => {:multipart => true}, :validate => true) do |f| %>
+<%= form_for(@user, :validate => true) do |f| %>
   <% if @user.errors.any? %>
   <div id="errorRight">
     <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -15,20 +14,29 @@
   <% end %>
   <%= f.fields_for :profile do |profile| %>
   <div class="input-container">
-    <%= profile.text_field :name, :placeholder => "Enter your name or a username" %>
+    <%= profile.text_field :name, :placeholder => "Enter your name or a username", :validate => true %>
+    <div class="field_with_errors">
+      <label class="message"></label>
+    </div>
   </div>
   <% end %>
   <div class="input-container">
-    <%= f.text_field :email, :placeholder => "Enter your email" %>
+    <%= f.text_field :email, :placeholder => "Enter your email", :validate => true %>
   </div>
   <div class="input-container">
-    <%= f.password_field :password, :placeholder => "Choose a password" %>
+    <%= f.password_field :password, :placeholder => "Choose a password", :validate => true %>
   </div>
   <%= f.fields_for :profile do |profile| %>
   <div class="input-container">
     <%= profile.text_field :bio, :placeholder => "Enter a short bio, if you'd like" %>
   </div>
-  <div class="input-container">
+  <div class="input-container" id="address">
+    <%= profile.text_field :address, :placeholder => "Enter an address to helps us find your Members of Congress" %>
+    <div class="field_with_errors">
+      <label class="message"></label>
+    </div>
+  </div>
+  <div class="input-container" id="birthday_selects">
     <p>What's your Birthday?</p>
     <%= profile.date_select :birthday,
       { :start_year => Time.now.year,
@@ -36,6 +44,9 @@
         :order => [:month, :day, :year],
         :prompt => {:month => 'Month', :day => 'Day', :year => 'Year'} }
     %>
+    <div class="field_with_errors">
+      <label class="message"></label>
+    </div>
   </div>
   <div class="input-container select">
     <p>What's your Party affiliation?</p>
