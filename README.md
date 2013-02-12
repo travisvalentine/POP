@@ -1,6 +1,6 @@
 # About oursolution.is
 
-Instead of just outright venting, I thought it'd be more productive to have people provide solutions to the things that bother or affect them regarding Government. So I made this app.
+An open-source app encouraging people to provide a solution to the problem they have with the Government. Assign an issue to your solution, or add your address to assign it to one of your Politicians. If you sign up with Twitter you can tweet your solution to the President or your Representative.
 
 Thanks to everyone who has helped out. The current list can be [found here](http://oursolution.is/about).
 
