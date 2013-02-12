@@ -9,8 +9,10 @@ Thanks to everyone who has helped out. The current list can be [found here](http
   * Add more tests
   * Clean up Oauth, Session code
   * Figure out a solution for Twitter auth within the API used for widgets
+  * Allow users without an address to assign a Politician to their solution
   * Add address to Politican
   * Add politicians not from Sunlight to Users by address
+  * Clean up politician data from [Sunlight](http://sunlightlabs.github.com/congress/)
 
 ### Contributing
 
