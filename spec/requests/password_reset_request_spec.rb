@@ -37,9 +37,6 @@ describe "Password Reset" do
       user.send_password_reset
       visit edit_password_reset_path(user.password_reset_token)
       fill_in 'user_password', :with => "123abc"
-      click_button 'Reset Password'
-      page.should have_content("doesn't match confirmation")
-      fill_in 'user_password', :with => "123abc"
       fill_in 'user_password_confirmation', :with => "123abc"
       click_button 'Reset Password'
       current_path.should == profile_path(user.profile)
