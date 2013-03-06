@@ -1,4 +1,4 @@
-desc "pings oursolution.is every 10 mimnutes"
+desc "pings oursolution.is every 10 minutes"
 task :pings do
   require 'net/http'
   require 'uri'
