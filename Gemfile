@@ -36,6 +36,10 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 group :test do
   gem 'cane', :git => "git://github.com/square/cane.git"
   gem 'capybara'

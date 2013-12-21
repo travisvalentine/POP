@@ -140,6 +140,7 @@ GEM
     multipart-post (1.2.0)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9)
+    newrelic_rpm (3.7.1.180)
     nifty-generators (0.4.6)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
@@ -297,6 +298,7 @@ DEPENDENCIES
   launchy
   make_voteable
   mechanize
+  newrelic_rpm
   nifty-generators
   nokogiri
   omniauth
