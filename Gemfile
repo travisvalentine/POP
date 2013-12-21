@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+ruby '1.9.3'
 
 gem 'bourbon', "~> 2.1.1"
 gem 'client_side_validations'
