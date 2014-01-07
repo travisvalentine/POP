@@ -22,3 +22,7 @@ Thanks to everyone who has helped out. The current list can be [found here](http
 ### Feedback
 
   * Hit me up on [Twitter](http://twitter.com/travisvalentine)
+
+### License
+
+oursolution.is released under the [MIT License](https://github.com/travisvalentine/POP/blob/master/LICENSE.md).
