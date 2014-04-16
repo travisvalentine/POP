@@ -3,7 +3,7 @@
   <%= widget_id_meta(@widget) %>
 <% end %>
 <div id="page" class="row">
-  <div id="widget" class="span10 offset1">
+  <div id="widget" class="col-md-10 offset1">
     <div class="info-container">
       <h3>Below is a widget for <%= @widget.politician.title %> <%= @widget.politician.name %></h3>
       <p><%= link_to "Copy and paste", "#", id: "widget-src", class: "btn-small btn-light-blue" %> the code below into your website's HTML to embed the widget on your page.</p>

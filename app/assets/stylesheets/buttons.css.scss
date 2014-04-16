@@ -1,7 +1,10 @@
 @import "colors";
 
 .h-btn {
-  @include border-radius(5px);
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
   background-color: #fff;
   border: 1px solid #FFCCD2;
   letter-spacing: 1px;
@@ -39,7 +42,10 @@
 
 .pill-light {
   background-color: #f2f2f2;
-  @include border-radius(5px 5px 0 0);
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(0px);
+  @include border-right-radius(0px);
   border-top: 1px solid lighten($gop-red, 30%);
   border-right: 1px solid lighten($gop-red, 30%);
   border-left: 1px solid lighten($gop-red, 30%);
@@ -59,7 +65,10 @@
 }
 
 .nice-button {
-  @include border-radius(3px);
+  @include border-top-radius(3px);
+  @include border-bottom-radius(3px);
+  @include border-left-radius(3px);
+  @include border-right-radius(3px);
   background-color: darken(#00B4EA, 2%);
   color: #fff;
   padding: 10px;

@@ -41,7 +41,10 @@
   }
 
   #twitter_oauth {
-    @include border-radius(3px);
+    @include border-top-radius(3px);
+    @include border-bottom-radius(3px);
+    @include border-left-radius(3px);
+    @include border-right-radius(3px);
     background-color: darken(#00B4EA, 2%);
     color: #fff;
     padding: 10px 10px 10px 0;
@@ -60,7 +63,10 @@
     }
 
     img {
-      @include border-radius(3px 0px 0px 3px);
+      @include border-top-radius(3px);
+      @include border-bottom-radius(0px);
+      @include border-left-radius(0px);
+      @include border-right-radius(3px);
       height: 34px;
       margin-top:-4px;
     }

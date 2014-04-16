@@ -49,14 +49,17 @@
   }
 }
 
-.problems.span10 {
+.problems.col-md-10 {
   margin: 0px;
 }
 
 .problem-show {
   background-color: #F6FCFD;
   border: 1px solid #FBBABB;
-  @include border-radius(5px);
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
   margin: 30px 0 20px 5px;
   padding: 20px;
 }

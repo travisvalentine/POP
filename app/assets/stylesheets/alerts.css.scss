@@ -1,5 +1,8 @@
 .api-alert {
-  @include border-radius(0px 0px 8px 8px);
+  @include border-top-radius(0px);
+  @include border-bottom-radius(0px);
+  @include border-left-radius(8px);
+  @include border-right-radius(8px);
   background-color: lighten($gop-red, 30%);
   margin-left: -10px;
   border: 1px solid lighten($gop-red, 15%);
@@ -13,7 +16,10 @@
 }
 
 .api-footer-alert {
-  @include border-radius(8px);
+  @include border-top-radius(8px);
+  @include border-bottom-radius(8px);
+  @include border-left-radius(8px);
+  @include border-right-radius(8px);
   background-color: lighten($gop-red, 30%);
   border: 1px solid lighten($gop-red, 15%);
   color: darken($gop-red, 25%);
@@ -24,7 +30,10 @@
 }
 
 .api-notice {
-  @include border-radius(0px 0px 8px 8px);
+  @include border-top-radius(0px);
+  @include border-bottom-radius(0px);
+  @include border-left-radius(8px);
+  @include border-right-radius(8px);
   background-color: #FFFEE0;
   border: 1px solid #FBEED5;
   color: #C09853;
@@ -37,7 +46,10 @@
 }
 
 .flash-alert {
-  @include border-radius(0px 0px 8px 8px);
+  @include border-top-radius(0px);
+  @include border-bottom-radius(0px);
+  @include border-left-radius(8px);
+  @include border-right-radius(8px);
   background-color: lighten($gop-red, 30%);
   margin-left: -10px;
   border: 1px solid lighten($gop-red, 15%);
@@ -51,7 +63,10 @@
 }
 
 .flash-notice {
-  @include border-radius(0px 0px 8px 8px);
+  @include border-top-radius(0px);
+  @include border-bottom-radius(0px);
+  @include border-left-radius(8px);
+  @include border-right-radius(8px);
   background-color: #FFFEE0;
   border: 1px solid #FBEED5;
   color: #C09853;

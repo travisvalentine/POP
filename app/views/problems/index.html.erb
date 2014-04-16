@@ -5,7 +5,7 @@
   <% end %>
 </div>
 <div id="tabs" class="clearfix">
-  <ul class="filter">
+  <ul class="nav nav-tabs">
     <li class="active">
       <%= link_to "All Solutions", problems_path, :class => "pill-light" %>
     </li>
@@ -43,7 +43,7 @@
     <% end %>
   </ul>
 </div>
-<div id="page" class="problems span10">
+<div id="page" class="problems col-md-10">
 <% unless @problems.empty? %>
   <div class="problem">
     <%= render @problems %>
@@ -51,7 +51,7 @@
   </div>
 <% end %>
 </div>
-<div id="notice" class="widget span2">
+<div id="notice" class="widget col-md-2">
   <h4>Widgets for all</h4>
   <p>
     Embed a widget for your Representative, Senator, Governor, or Mayor. If we don't have your politician listed, you can create one.
