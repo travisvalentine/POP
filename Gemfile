@@ -43,7 +43,6 @@ end
 group :test do
   gem 'cane', :git => "git://github.com/square/cane.git"
   gem 'capybara'
-  gem 'faker'
   gem 'fakeweb'
   gem 'growl'
   gem 'guard-rspec'
