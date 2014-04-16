@@ -7,8 +7,6 @@ class Widget < ActiveRecord::Base
 
   validates :politician_id, presence: true, uniqueness: true
 
-  belongs_to :politician
-
   def embed_link
     embed_url(self, format: :js, host: RAW_URL)
   end
