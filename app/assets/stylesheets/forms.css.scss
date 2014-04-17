@@ -77,6 +77,7 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
 /* ============================== */
 
 #home_signup {
+  @include clearfix;
   background-color: #FAFAFA;
   padding: 30px 30px 50px;
   @include border-top-radius(5px);
@@ -84,7 +85,7 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
   @include border-left-radius(5px);
   @include border-right-radius(5px);
   margin-top: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   top: 50px;
   opacity: .9;
 
@@ -263,7 +264,7 @@ textarea#problem_solution_body {
 }
 
 .input-container, #issue_container {
-  p.label {
+  p.label-text {
     font-size:14px;
     margin: 4px 0 2px;
     padding: 0;

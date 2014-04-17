@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="details">
-    <h4><%= link_to truncate(problem.body, length: 95 ), problem_path(problem) %></h4>
+    <h4><%= link_to truncate(problem.body, length: 90 ), problem_path(problem) %></h4>
     <% if problem.issue.present? %>
       <p><%= link_to problem.issue.name, issue_path(problem.issue) %></p>
     <% end %>

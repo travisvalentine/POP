@@ -3495,6 +3495,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 1px solid #ddd;
 }
 .nav-tabs > li {
+  border-color: #eee #eee #ddd;
   float: left;
   margin-bottom: -1px;
 }
@@ -3642,7 +3643,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+//  margin-bottom: 20px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {

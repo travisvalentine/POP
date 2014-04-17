@@ -15,7 +15,7 @@
           <li><%= link_to "JOIN", {:controller =>"users", :action => "new"}, {:id => 'login', :class => 'h-btn'} %></li>
         <% else %>
           <li><%= link_to "JOIN", {:controller =>"users", :action => "new"}, {:id => 'join', :class => 'h-btn btn-light-blue'} %></li>
-          <li class="divider-vertical header"></li>
+          <li class="divider"></li>
           <li><%= link_to "SIGN IN", {:controller =>"sessions", :action => "new"}, {:id => 'login', :class => 'h-btn'} %></li>
         <% end %>
       </ul>
