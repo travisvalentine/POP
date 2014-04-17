@@ -5,7 +5,10 @@
   border: 1px;
   border-style:solid;
   border-color: #8DA09C;
-  @include border-radius(3px);
+  @include border-top-radius(3px);
+  @include border-bottom-radius(3px);
+  @include border-left-radius(3px);
+  @include border-right-radius(3px);
   text-shadow: none;
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.20);
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.20);
@@ -59,7 +62,7 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
 
 #birthday_selects .field_with_errors .message { display: block; }
 .field_with_errors { overflow: auto; display: inline; }
-.field_with_errors .message { white-space: nowrap; display: inline-block; font-size:14px; position:absolute; background-color: black; padding: 6px 10px; color: #fff; @include border-radius(5px); margin:-38px 578px 0;
+.field_with_errors .message { white-space: nowrap; display: inline-block; font-size:14px; position:absolute; background-color: black; padding: 6px 10px; color: #fff; @include border-top-radius(5px); @include border-bottom-radius(5px); @include border-left-radius(5px); @include border-right-radius(5px); margin:-38px 578px 0;
   &:after { content:""; width:0; height:0; border-top:10px solid transparent; border-bottom:10px solid transparent; border-right:10px solid black;border-left:10px solid transparent; position:absolute; left:0;margin:5px 0 0 -15px;top:0}
 }
 
@@ -74,11 +77,15 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
 /* ============================== */
 
 #home_signup {
+  @include clearfix;
   background-color: #FAFAFA;
   padding: 30px 30px 50px;
-  @include border-radius(5px);
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
   margin-top: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   top: 50px;
   opacity: .9;
 
@@ -153,7 +160,10 @@ select#user_profile_attributes_birthday_3i, select#profile_birthday_3i {
 #complete_signup {
   background-color: #FAFAFA;
   padding: 30px;
-  @include border-radius(5px);
+  @include border-top-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include border-right-radius(5px);
   margin-top: 20px;
   margin-bottom: 20px;
   top: 50px;
@@ -220,13 +230,19 @@ textarea#problem_solution_body {
     }
 
     img {
-      @include border-radius(3px 0px 0px 3px);
+      @include border-top-radius(3px);
+      @include border-bottom-radius(0px);
+      @include border-left-radius(0px);
+      @include border-right-radius(3px);
       margin-top: -2px;
       width:29px;
     }
 
     p {
-      @include border-radius(0px 3px 3px 0px);
+      @include border-top-radius(0px);
+      @include border-bottom-radius(3px);
+      @include border-left-radius(3px);
+      @include border-right-radius(0px);
       background-color: darken(#00B4EA, 2%);
       color: #fff;
       display:inline-block;
@@ -239,13 +255,16 @@ textarea#problem_solution_body {
     margin-bottom: 0;
 
     p {
-      @include border-radius(3px);
+      @include border-top-radius(3px);
+      @include border-bottom-radius(3px);
+      @include border-left-radius(3px);
+      @include border-right-radius(3px);
     }
   }
 }
 
 .input-container, #issue_container {
-  p.label {
+  p.label-text {
     font-size:14px;
     margin: 4px 0 2px;
     padding: 0;

@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="span5 offset3">
-    <div id="login" class="span5 center">
+  <div class="col-md-12 offset3">
+    <div id="login" class="col-md-5 center">
 
     <%= form_tag session_path, :class => "clearfix" do %>
 
@@ -9,11 +9,11 @@
         <p id="login"><%= link_to image_tag("sign-in-with-twitter-d.png"), "/auth/twitter" %></p>
       </div>
       <div class="input-container">
-        <p class="label"><label for="email">Email:</label></p>
+        <p class="label-text"><label for="email">Email:</label></p>
         <p><%= text_field_tag :email, nil, :autofocus => true, :autocomplete => 'off' %></p>
       </div>
       <div class="input-container">
-        <p class="label"><label for="password">Password:</label></p>
+        <p class="label-text"><label for="password">Password:</label></p>
         <p><%= password_field_tag :password, nil, :autocomplete => 'off' %></p>
       </div>
       <div id="submit_button"><%= submit_tag 'Log In', :class => 'btn-med-blue btn-large' %></div>

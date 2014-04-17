@@ -3,7 +3,7 @@
   <%= stylesheet_link_tag "chosen.css" %>
   <script type="text/javascript">
     $(function(){
-      $('.brand').click(function(){
+      $('.navbar-brand').click(function(){
         window.open('http://oursolution.is/signup', 'oursolution.is', '');
         window.close();
         return false;
@@ -12,7 +12,7 @@
   </script>
 <% end %>
 <div class="row">
-  <div class="span7 offset2 center new-problem">
+  <div class="col-md-7 offset2 center new-problem">
     <div id="form_header">
       <h3 class="old">Let <%= @politician.short_title %>. <%= @politician.last_name %> know what ails you</h3>
       <p id="disclaimer">* You must propose a solution.</p>

@@ -38,7 +38,10 @@
 
 #notifications {
   a.mark-read {
-    @include border-radius(5px);
+    @include border-top-radius(5px);
+    @include border-bottom-radius(5px);
+    @include border-left-radius(5px);
+    @include border-right-radius(5px);
     background-color: $med-blue;
     color: #fff;
     font-size: 12px;

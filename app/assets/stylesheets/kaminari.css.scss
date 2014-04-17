@@ -4,7 +4,10 @@ nav.pagination {
   span {
 
     &.current {
-      @include border-radius(5px);
+      @include border-top-radius(5px);
+      @include border-bottom-radius(5px);
+      @include border-left-radius(5px);
+      @include border-right-radius(5px);
       background-color: $dark-blue;
       border: 1px solid $dark-blue;
       color: #fff;
@@ -20,7 +23,10 @@ nav.pagination {
         text-decoration: none;
       }
 
-      @include border-radius(5px);
+      @include border-top-radius(5px);
+      @include border-bottom-radius(5px);
+      @include border-left-radius(5px);
+      @include border-right-radius(5px);
       background-color: $light-blue;
       border: 1px solid $light-blue;
       color: #fff;

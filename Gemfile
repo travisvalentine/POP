@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 ruby '1.9.3'
 
-gem 'bourbon', "~> 2.1.1"
+gem 'bourbon'
 gem 'client_side_validations'
 gem 'escape_utils'
 gem 'exception_notification', '2.6.1' # fix for Heroku

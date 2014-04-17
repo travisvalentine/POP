@@ -83,7 +83,7 @@ describe User do
     context "and navigating the site from the header" do
 
       it "has the app name with a link to the homepage" do
-        page.find(".brand").click
+        page.find(".navbar-brand").click
         current_path.should == root_path
       end
 

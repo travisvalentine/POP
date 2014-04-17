@@ -6,7 +6,7 @@
   <% end %>
 </div>
 <div id="tabs" class="clearfix">
-  <ul class="filter">
+  <ul class="nav nav-tabs">
     <li>
       <%= link_to "All Solutions", problems_path, :class => "pill-light" %>
     </li>
@@ -44,7 +44,7 @@
     <% end %>
   </ul>
 </div>
-<div id="page" class="problems span10">
+<div id="page" class="problems col-md-10">
   <% unless @politician.problems.empty? %>
     <div class="problem">
       <%= render :partial => "problems/problem", :collection => @politician.problems %>

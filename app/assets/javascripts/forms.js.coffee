@@ -3,7 +3,7 @@ $ ->
   $("#email_signup").click ->
     $(this).parent().parent().animate
       marginTop: "20px"
-      height: "437px"
+      height: "500px"
     , 300
     $("#address label.message").text("Optional. We will not share.")
     $("#birthday_selects label.message").text("Birthday can't be blank")

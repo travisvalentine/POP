@@ -2,7 +2,7 @@
   <%= javascript_include_tag "chosen.jquery.min", "charCount.js", "problems" %>
   <script type="text/javascript">
     $(function(){
-      $('.brand, .join').click(function(){
+      $('.navbar-brand, .join').click(function(){
         window.open('http://oursolution.is/signup', 'oursolution.is', '');
         window.close();
         return false;
@@ -11,8 +11,8 @@
   </script>
 <% end %>
 <div class="row">
-  <div class="span5 offset3">
-    <div id="login" class="span5 center">
+  <div class="col-md-12 offset3">
+    <div id="login" class="col-md-5 center">
 
     <%= form_tag session_path, :class => "clearfix" do %>
 
@@ -34,7 +34,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="span5 offset3 api-footer-alert">
+  <div class="col-md-5 offset3 api-footer-alert">
     <h5>Notice:</h5><p>At the moment you can't login to Twitter from the widget. You have to be logged in prior to opening the widget.</p>
   </div>
 </div>
